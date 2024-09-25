@@ -75,11 +75,11 @@
                         <label class="fs-6 form-label fw-bold text-gray-900 mb-5">가입 대상</label>
                         <div class="d-flex">
                             <div class="form-check form-check-custom form-check-solid mb-5 me-5">
-                                <input class="form-check-input" type="checkbox" id="savings_search_category_1">
+                                <input class="form-check-input" type="checkbox" id="savings_search_category_1" checked>
                                 <label class="form-check-label flex-grow-1 fw-semibold text-gray-700 fs-6" for="savings_search_category_1">제한 없음</label>
                             </div>
                             <div class="form-check form-check-custom form-check-solid mb-5 me-5">
-                                <input class="form-check-input" type="checkbox" id="savings_search_category_2" checked>
+                                <input class="form-check-input" type="checkbox" id="savings_search_category_2" >
                                 <label class="form-check-label flex-grow-1 fw-semibold text-gray-700 fs-6" for="savings_search_category_2">제한 있음(서민 전용, 일부제한)</label>
                             </div>
                         </div>
