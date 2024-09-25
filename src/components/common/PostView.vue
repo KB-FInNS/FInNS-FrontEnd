@@ -97,12 +97,10 @@
                         </div>
                     </div>
                     <div class="pt-2">
-                        <!--카테고리-->
-                        <span class="svg-icon svg-icon-dark svg-icon-2hx">
-                        </span>
-                        <!--가격-->
+
+                        <!--가격 카테고리-->
                         <span class="fw-bold p-3" style="background-color: #F1F7FF; border-radius: 5px;">
-                            <img :src="category[0].icon" alt="icon" style="height: 30px; width: 30px;" />
+                            <img :src="category[0].icon" alt="icon" style="height: 26px; width: 26px;" />
                             {{ category[0].name }}</span>
                         <span class="fs-6 fw-bold text-gray-700 mb-5 ms-2">에 소비했어요</span>
                     </div>
@@ -200,15 +198,15 @@
                         <!--end::Author-->
                         <!--begin::Input group-->
                         <div class="position-relative w-100">
-                            <!--begin::Input-->
+                            <!--댓글 작성-->
                             <textarea type="text" class="form-control form-control-solid border ps-5" rows="1"
                                 name="search" value="" data-kt-autosize="true"
                                 placeholder="댓글을 작성하세요."></textarea>
-                            <!--end::Input-->
+                            
                         </div>
-                        <!--end::Input group-->
+                        
                     </div>
-                    <!--end::Comment form-->
+                    
                 </div>
                 <!--end::Card footer-->
             </div>
