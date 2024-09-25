@@ -35,7 +35,7 @@
                                     <span class="path1"></span>
                                     <span class="path2"></span>
                                 </i>
-                                <input v-model="" type="text" class="form-control form-control-solid ps-10" placeholder="예금 상품명을 입력해주세요.">
+                                <input type="text" class="form-control form-control-solid ps-10" placeholder="예금 상품명을 입력해주세요.">
                             </div>
                             <div class="d-flex align-items-center">
                                 <button type="submitSearch" class="btn btn-primary me-5">검색</button>
