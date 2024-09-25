@@ -156,7 +156,9 @@
                     <!--begin::Stat-->
                     <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
                       <!--begin::Label-->
-                      <div class="fw-semibold fs-5 text-gray-500 text-center">소비 내역 수</div>
+                      <div class="fw-semibold fs-5 text-gray-500 text-center">
+                        <router-link to="/profile/creditHistory">소비 내역 수</router-link>
+                      </div>
                       <!--end::Label-->
                       <!--begin::Number-->
                       <div class="d-flex align-items-center justify-content-center">
@@ -173,7 +175,7 @@
                     <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
                       <!--begin::Label-->
                       <div class="fw-semibold fs-5 text-gray-500 text-center">
-                        <router-link to="/profile/follower"><span @click="follower">팔로워</span></router-link>
+                        <router-link to="/profile/follower">팔로워</router-link>
                       </div>
                       <!--end::Label-->
                       <!--begin::Number-->
@@ -191,7 +193,7 @@
                     <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
                       <!--begin::Label-->
                       <div class="fw-semibold fs-5 text-gray-500 text-center">
-                        <router-link to="/profile/following"><span @click="following">팔로잉</span></router-link>
+                        <router-link to="/profile/following">팔로잉</router-link>
                       </div>
                       <!--end::Label-->
                       <!--begin::Number-->
@@ -223,27 +225,12 @@
   </div>
   <!--end::Post-->
 
-  <div class="mb-8">
-    <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold justify-content-center">
-      <!--begin::Nav item-->
-      <li class="nav-item">
-        <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/profile/creditHistory" exact-active-class="active">소비 내역</router-link>
-      </li>
-      <!--end::Nav item-->
-      <!--begin::Nav item-->
-      <li class="nav-item" style="margin-left: 300px">
-        <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/profile/analysis" exact-active-class="active">분석</router-link>
-      </li>
-      <!--end::Nav item-->
-    </ul>
-  </div>
-
   <router-view class="mt-10"></router-view>
+  
 </template>
 
 <script setup>
 import '@/assets/js/custom/pages/user-profile/general.js';
 import CountUp from 'vue-countup-v3';
-const follower = () => {};
-const following = () => {};
+
 </script>
