@@ -35,7 +35,7 @@
                                     <span class="path1"></span>
                                     <span class="path2"></span>
                                 </i>
-                                <input type="text" class="form-control form-control-solid ps-10" placeholder="예금 상품명을 입력해주세요.">
+                                <input v-model="" type="text" class="form-control form-control-solid ps-10" placeholder="예금 상품명을 입력해주세요.">
                             </div>
                             <div class="d-flex align-items-center">
                                 <button type="submitSearch" class="btn btn-primary me-5">검색</button>
@@ -141,39 +141,37 @@
                         </div>
                         <!--end::Controls-->
                     </div>
-                        <!-- 데이터 테이블 -->
-                    <div>
-                        <table id="kt_datatable_column_rendering" class="table table-striped table-row-bordered gy-5 gs-7">
-                            <thead>
-                            <tr class="fw-semibold fs-6 text-gray-800">
-                                <th>은행</th>
-                                <th>상품명</th>
-                                <th>기본 금리</th>
-                                <th>최고 금리</th>
-                                <th>상세 정보</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr v-for="(item, index) in sortedDataList" :key="index">
-                                <td>
-                                    <img :src="item.img_url" alt="depositkor_co_nm" width="28" height="24" loading="eager" />
-                                    {{ item.kor_co_nm }}
-                                </td>
-                                <td>{{ item.fin_prdt_nm }}</td>
-                                <td>{{ item.intr_rate }}</td>
-                                <td>{{ item.intr_rate2 }}</td>
-                                <td>
-                                    <div class="d-flex mb-4">
-                                        <a href="#" class="btn btn-sm btn-primary me-3" @click="viewDetails(item)">자세히 보기</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>            
+
+                    <!-- 데이터 테이블 -->
+                    <table id="kt_datatable_column_rendering" class="table table-striped table-row-bordered gy-5 gs-7">
+                        <thead>
+                        <tr class="fw-semibold fs-6 text-gray-800">
+                            <th>은행</th>
+                            <th>상품명</th>
+                            <th>기본 금리</th>
+                            <th>최고 금리</th>
+                            <th>상세 정보</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="(item, index) in sortedDataList" :key="index">
+                            <td>
+                                <img :src="item.img_url" alt="depositkor_co_nm" width="28" height="24" loading="eager" />
+                                {{ item.kor_co_nm }}
+                            </td>
+                            <td>{{ item.fin_prdt_nm }}</td>
+                            <td>{{ item.intr_rate }}</td>
+                            <td>{{ item.intr_rate2 }}</td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-primary me-3" @click="viewDetails(item)">자세히 보기</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                         
-                    <!-- 페이징 -->
+                    <!-- 페이지네이션 -->
                     <div id="" class="row">
+                        <!-- 페이지 개수 -->
                         <div id="" class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start">
                             <div class="dataTables_length" id="">
                                 <label>
@@ -186,6 +184,7 @@
                                 </label>
                             </div>
                         </div>
+                    <!-- 페이징 -->
                         <div id="" class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end">
                             <div class="dataTables_paginate paging_simple_numbers" id="">
                                 <ul class="pagination">
