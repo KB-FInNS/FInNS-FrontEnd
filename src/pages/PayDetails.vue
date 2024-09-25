@@ -89,7 +89,7 @@
 export default {
   data() {
     return {
-      publicScope: '전체공개',
+      publicScope: 'aaaa',
       category: '',
       memo: '',
       amount: 120000,
