@@ -7,7 +7,7 @@ import Deposit from '@/pages/Deposit.vue';
 import InstallmentSavings from '@/pages/InstallmentSavings.vue';
 import Card from '@/pages/Card.vue';
 import Message from '@/pages/Message.vue';
-import Payment from '@/components/common/Payment.vue';
+import CreditHistory from '@/components/common/CreditHistory.vue';
 import Analysis from '@/components/common/Analysis.vue';
 
 const router = createRouter({
@@ -16,11 +16,11 @@ const router = createRouter({
         { path: '/', name: "Home", component: Home },
         { path: '/search', name: "Search", component: Search },
         { path: '/profile', name: "Profile", component: Profile,
-            redirect: '/profile/payment',
+            redirect: '/profile/creditHistory',
             children: [
                 {
-                    path: 'payment',
-                    component: Payment
+                    path: 'creditHistory',
+                    component: CreditHistory
                 },
                 {
                     path: 'analysis',
@@ -32,7 +32,6 @@ const router = createRouter({
         { path: '/installmentSavings', name: "InstallmentSavings", component: InstallmentSavings },
         { path: '/card', name: "Card", component: Card },
         { path: '/message', name: "Message", component: Message },
-        { path: '/profile/payment', name: "Payment", component: Payment },
     ]
 });
 

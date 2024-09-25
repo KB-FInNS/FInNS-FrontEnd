@@ -1,7 +1,6 @@
 <template>
-    <div class="content fs-6 d-flex flex-column flex-column-fluid" id="kt_content">
         <!--begin::Toolbar-->
-        <div class="toolbar" id="kt_toolbar">
+        <div class="toolbar mt-10" id="kt_toolbar">
             <div class="container-fluid d-flex flex-stack flex-wrap flex-sm-nowrap">
                 <div class="d-flex flex-column align-items-start justify-content-center flex-wrap me-2">
                     <h1 class="text-gray-900 fw-bold my-1 fs-2">프로필</h1>
@@ -11,7 +10,7 @@
         <!--end::Toolbar-->
         
         <!--begin::Post-->
-        <div class="post fs-6 d-flex flex-column-fluid" id="kt_post">
+        <div class="post fs-6 d-flex flex-column-fluid mt-8" id="kt_post">
             <!--begin::Container-->
             <div class="container-xxl">
                 <!--begin::Navbar-->
@@ -52,7 +51,7 @@
                                     <!--end::User-->
                                     <!--begin::Actions-->
                                     <div class="d-flex my-4">
-                                        <a href="#" class="btn btn-sm btn-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal">금융 MBTI 진단</a>
+                                        <router-link to="/mbti" class="btn btn-sm btn-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal">금융 MBTI 진단</router-link>
                                         <!--begin::Menu-->
                                         <div class="me-0">
                                             <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
@@ -213,25 +212,27 @@
                     </div>
                 </div>
                 <!--end::Navbar-->
-
-                <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold">
-                    <!--begin::Nav item-->
-                    <li class="nav-item mt-2">
-                        <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/profile/payment" exact-active-class="active">소비 내역</router-link>
-                    </li>
-                    <!--end::Nav item-->
-                    <!--begin::Nav item-->
-                    <li class="nav-item mt-2">
-                        <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/profile/analysis" exact-active-class="active">분석</router-link>
-                    </li>
-                    <!--end::Nav item-->
-                </ul>
             </div>
             <!--end::Container-->
         </div>
         <!--end::Post-->
+    
+    <div class="mb-8">
+        <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold justify-content-center">
+            <!--begin::Nav item-->
+            <li class="nav-item">
+                <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/profile/creditHistory" exact-active-class="active">소비 내역</router-link>
+            </li>
+            <!--end::Nav item-->
+            <!--begin::Nav item-->
+            <li class="nav-item" style="margin-left: 300px">
+                <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/profile/analysis" exact-active-class="active">분석</router-link>
+            </li>
+            <!--end::Nav item-->
+        </ul>
     </div>
-    <router-view></router-view>
+
+    <router-view class="mt-10"></router-view>
 </template>
 
 <script setup>

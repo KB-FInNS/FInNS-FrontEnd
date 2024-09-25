@@ -66,7 +66,7 @@
                     <!--end:Menu item-->
 
                     <!--begin:Menu item-->
-                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion mt-5">
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion mt-5 show">
                         <!--begin:Menu link-->
                         <span class="menu-link">
                             <span class="menu-icon svg-icon svg-icon-muted svg-icon-2hx">
@@ -149,5 +149,9 @@
 </template>
 
 <script setup>
-
+    
 </script>
+
+<style scoped>
+
+</style>
