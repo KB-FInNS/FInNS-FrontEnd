@@ -11,6 +11,7 @@ import Analysis from '@/components/common/Analysis.vue';
 import Follower from '@/components/common/Follower.vue';
 import Following from '@/components/common/Following.vue';
 import PayDetails from '@/pages/PayDetails.vue';
+import CardWorldCup from '@/pages/CardWorldCup.vue';
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -43,6 +44,10 @@ const router = createRouter({
           name: 'PayDetails',
           component: PayDetails,
         },
+        {
+          path : 'cardworldcup',
+          component : CardWorldCup,
+        }
       ],
     },
     { path: '/deposit', name: 'Deposit', component: Deposit },
@@ -53,6 +58,7 @@ const router = createRouter({
     },
     { path: '/card', name: 'Card', component: Card },
     { path: '/message', name: 'Message', component: Message },
+    { path : '/cardworldcup', name : 'cardWorldCup', component : CardWorldCup},
   ],
 });
 

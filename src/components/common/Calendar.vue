@@ -18,6 +18,7 @@ const internalInstance = getCurrentInstance();
 const emitter = internalInstance.appContext.config.globalProperties.emitter;
 
 let calendar;
+let previousDate = null; // 이전에 클릭한 날짜를 저장할 변수
 
 const initializeCalendar = () => {
   const calendarEl = document.getElementById('kt_calendar_app');
@@ -30,21 +31,78 @@ const initializeCalendar = () => {
       center: 'title',
       right: 'today prev,next'
     },
+    eventDidMount: function(info) {
+        // 경계선을 없애기
+        info.el.style.border = 'none'; // 경계선 제거
+    },
     selectable: true,
     select: (info) => {             // 캘린더에서 특정 날짜를 클릭했을 때
       emitter.emit('day_click', info.startStr);
 
-      // var events = calendar.getEvents();
-      // events.forEach(function(event) {
-      //   if (event.startStr === info.startStr) {
-      //     // 이벤트 배경색을 회색으로 변경
-      //     event.setProp('backgroundColor', 'grey');
-      //   }
-      // });
+      var events = calendar.getEvents();
+      events.forEach(function(event) {
+        if (event.startStr === info.startStr) {
+          // 이벤트 배경색을 회색으로 변경
+          event.setProp('backgroundColor', '#F9F9F9');
+        }
+      });
+
+      // 이전 날짜의 배경색 초기화
+      if (previousDate) {
+        const previousDateElement = document.querySelector(`td[data-date="${previousDate}"]`);
+        if (previousDateElement) {
+            previousDateElement.style.backgroundColor = 'white'; // 흰색으로 초기화
+        }
+      }
+      // 이전 날짜의 이벤트 배경색을 흰색으로 변경
+      events.forEach(function(event) {
+          if (event.startStr === previousDate) {
+              event.setProp('backgroundColor', 'white'); // 흰색으로 초기화
+          }
+      });
+
+      window.scrollTo({
+        top: 800, // 스크롤할 y축 위치
+        behavior: 'smooth' // 부드러운 스크롤 효과
+      });
+
+      previousDate = info.startStr;
     },
-    eventClick: () => {         // 캘린더의 특정 이벤트를 클릭했을 때
-      emitter.emit('day_click', info.startStr);
+    eventClick: (info) => {         // 캘린더의 특정 이벤트를 클릭했을 때
+      emitter.emit('day_click', info.event.startStr);
+
+      const clickedEvent = info.event; // 클릭한 이벤트
+      const eventStartDate = clickedEvent.startStr; // 이벤트의 시작 날짜 문자열
+
+      // 이벤트의 시작 날짜 배경색 변경
+      const dateElement = document.querySelector(`td[data-date="${eventStartDate}"]`);
+      if (dateElement) {
+          dateElement.style.backgroundColor = '#F9F9F9'; // 해당 날짜의 배경색
+      }
+      // 클릭한 이벤트의 배경색 변경
+      clickedEvent.setProp('backgroundColor', '#F9F9F9'); // 클릭한 이벤트의 배경색
       
+      // 이전 날짜의 배경색 초기화
+      if (previousDate) {
+        const previousDateElement = document.querySelector(`td[data-date="${previousDate}"]`);
+        if (previousDateElement) {
+            previousDateElement.style.backgroundColor = 'white'; // 흰색으로 초기화
+        }
+      }
+      // 이전 날짜의 이벤트 배경색 초기화
+      var events = calendar.getEvents();
+      events.forEach(function(event) {
+          if (event.startStr === previousDate) {
+              event.setProp('backgroundColor', 'white'); // 흰색으로 초기화
+          }
+      });
+
+      window.scrollTo({
+        top: 800, // 스크롤할 y축 위치
+        behavior: 'smooth' // 부드러운 스크롤 효과
+      });
+
+      previousDate = eventStartDate;
     },
     events: [
       { title: '50000', start: '2024-09-01' },

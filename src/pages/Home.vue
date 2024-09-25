@@ -3,16 +3,15 @@
         <div class="row mt-8">
             <!--게시글 피드-->
             <PostView />
-            <div class="col-lg-4">
 
+            <div class="col-lg-4">
+                <!--이달의 TOP 랭킹-->
                 <div class="card mb-5 mb-xl-8" style="background-color: #F1F7FF;">
-                    <!--begin::Header-->
                     <div class="card-header border-0 pt-5">
                         <h1 class="mt-4" style="text-shadow: 3px;">이달의 TOP 랭킹</h1>
                         <div v-for="(category, index) in rankings" :key="index">
                             <div class="mt-2">
                                 <h2 class="ms-2 fs-1">
-                                    <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/keenthemes/craft/docs/core/html/src/media/icons/duotune/general/gen020.svg-->
                                     <span class="svg-icon svg-icon-warning svg-icon-2hx me-2"><svg width="26"
                                             height="26" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -23,23 +22,21 @@
                                         </svg>
                                     </span>
                                     <span class="fs-2">{{ category.title }}</span>
-                                    
                                 </h2>
+
                                 <ul>
                                     <li v-for="(item, idx) in category.items" :key="idx">
-                                        <span class="ms-2 me-5 fw-bold fs-1" style="font-variant-numeric: tabular-nums;">{{ idx + 1 }}</span>
+                                        <span class="ms-3 me-5 fw-bold fs-1"
+                                            style="font-variant-numeric: tabular-nums;">{{ idx + 1 }}</span>
 
-                                        <!-- 유저 아바타 -->
-                                        <div class="symbol symbol-40px me-5">
+                                        <!-- 유저 목록 -->
+                                        <div class="symbol symbol-40px me-5 ms-1">
                                             <img :src="`${item.profileImage}`" class="h-50 align-self-center" alt="" />
                                         </div>
-                                        <!-- 유저 이름 및 회사 정보 -->
-                                        <!-- <div class="d-flex align-items-center flex-row-fluid flex-wrap"> -->
-                                        <div class="flex-grow-1 me-5">
+                                        <div class="flex-grow-1 me-6">
                                             <a class="text-gray-800 text-hover-primary fs-6 fw-bold">
                                                 {{ item.name }}
                                             </a>
-
                                         </div>
                                         <span class="ms-10 ps-7">{{ item.amount }}</span>
                                     </li>
@@ -48,11 +45,10 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
+
                 <!--추천 친구-->
                 <div class="card mb-5 mb-xl-8">
-                    <!--begin::Header-->
                     <div class="card-header border-0 pt-5">
                         <h3 class="card-title align-items-start flex-column">
                             <span class="d-flex align-items-center card-label fw-bold text-gray-900 fs-4">
@@ -65,13 +61,10 @@
                                 </i>
                                 회원님을 위한 추천
                             </span>
-
                             <span class="text-muted mt-1 fw-bold fs-7 ms-11">나와 비슷한 소비 습관을 가진 사용자</span>
                         </h3>
 
                     </div>
-                    <!--end::Header-->
-                    <!--begin::Body-->
                     <div class="card-body pt-5">
                         <!-- User List 반복 -->
                         <div v-for="(user, index) in users" :key="index">
@@ -82,22 +75,23 @@
                                     <img :src="`${user.avatar}`" class="h-50 align-self-center" alt="" />
                                 </div>
                                 <!-- 유저 이름 및 회사 정보 -->
-                                <!-- <div class="d-flex align-items-center flex-row-fluid flex-wrap"> -->
                                 <div class="flex-grow-1 me-5">
                                     <a :href="user.profileLink" class="text-gray-800 text-hover-primary fs-6 fw-bold">
                                         {{ user.name }}
                                     </a>
-                                    <span class="text-muted fw-semibold d-block fs-7">{{ user.company }}</span>
                                 </div>
-                                <a :href="user.profileLink" class="btn btn-sm btn-light fs-8 fw-bold">Follow</a>
-                                <!-- </div> -->
+                                <div class="ms-2">
+                                    <button class="btn btn-sm" :class="user.isFollowing ? 'btn-primary' : 'btn-light'"
+                                        @click="toggleFollow(user)" style="height : 32px;">
+                                        <span>{{ user.isFollowing ? '팔로잉' : '팔로우' }}</span>
+                                    </button>
+                                </div>
+
                             </div>
                             <div v-if="index !== users.length - 1" class="separator separator-dashed my-4"></div>
                         </div>
                     </div>
-                    <!--end::Body-->
                 </div>
-                <!--end::Social widget 1-->
             </div>
         </div>
     </div>
@@ -126,39 +120,41 @@ const rankings = ref([
     },
 ]);
 
-const users = [
+const users = ref([
     {
         name: "Jacob Jones",
         avatar: 'src/assets/media/avatars/300-11.jpg',
-        company: "Barone LLC.",
-        profileLink: "pages/user-profile/overview.html"
+        profileLink: "pages/user-profile/overview.html",
+        isFollowing: true
     },
     {
         name: "Annette Black",
         avatar: "src/assets/media/avatars/300-2.jpg",
-        company: "Binford Ltd.",
-        profileLink: "pages/user-profile/overview.html"
+        profileLink: "pages/user-profile/overview.html",
+        isFollowing: true
     },
     {
         name: "Devon Lane",
         avatar: "src/assets/media/avatars/300-7.jpg",
-        company: "Acme Co.",
-        profileLink: "pages/user-profile/overview.html"
+        profileLink: "pages/user-profile/overview.html",
+        isFollowing: true
     },
     {
         name: "Kristin Watson",
         avatar: "src/assets/media/avatars/300-9.jpg",
-        company: "Biffco Enterprises Ltd.",
-        profileLink: "pages/user-profile/overview.html"
+        profileLink: "pages/user-profile/overview.html",
+        isFollowing: true
     },
     {
         name: "Eleanor Pena",
         avatar: "src/assets/media/avatars/300-12.jpg",
-        company: "Abstergo Ltd.",
-        profileLink: "pages/user-profile/overview.html"
+        profileLink: "pages/user-profile/overview.html",
+        isFollowing: true
     }
-];
-
+]);
+const toggleFollow = (user) => {
+    user.isFollowing = !user.isFollowing; // 선택한 사용자의 팔로우 상태 전환
+};
 </script>
 
 <style scoped>
@@ -167,9 +163,7 @@ const users = [
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #ffffff;
-    border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
