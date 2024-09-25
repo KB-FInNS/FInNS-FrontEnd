@@ -99,115 +99,121 @@
                     <table id="kt_datatable_column_rendering" class="table table-striped table-row-bordered gy-5 gs-7">
                         <tbody>
                             <tr>
-                                <div class="card card-flush shadow-sm m-5">
-                                    <div class="card-side d-flex justify-content-between m-7 align-items-center">
-                                        <div class="left ms-5">
-                                            <img src="../assets/media/avatars/American Express Blue Card.png" alt=""  width="300" height="180">
+                                <td>
+                                    <div class="card card-flush shadow-sm m-5">
+                                        <div class="card-side d-flex justify-content-between m-7 align-items-center">
+                                            <div class="left ms-5">
+                                                <img src="../assets/media/avatars/American Express Blue Card.png" alt=""  width="300" height="180">
+                                            </div>
+                                            <div class="flex-grow-1 ms-10 ">
+                                                    <!--begin::Head-->
+                                                    <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                                                        <!--begin::Details-->
+                                                        <div class="d-flex flex-column">
+                                                            <!--begin::Status-->
+                                                            <div class="d-flex align-items-center mb-1">
+                                                                <a href="#" class="text-gray-800 text-hover-primary fs-2 fw-bold me-3">[KB]Our WE_SH 카드</a>
+                                                            </div>
+                                                            <!--end::Status-->
+                                                        </div>
+                                                        <!--end::Details-->
+                                                        <!--begin::Actions-->
+                                                        <div class="d-flex mb-4">
+                                                            <a href="#" class="btn btn-sm btn-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_new_target">자세히 보기</a>
+                                                        </div>
+                                                        <!--end::Actions-->
+                                                    </div>
+                                                    <!--end::Head-->
+                                                    <!--begin::Info-->
+                                                    <div class="d-flex flex-wrap justify-content-start">
+                                                        <!--begin::Stats-->
+                                                        <div class="d-flex flex-wrap">
+                                                            <!--begin::Stat-->
+                                                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                                <!--begin::Number-->
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="fs-4 fw-bold">전기/수소차 충전</div>
+                                                                </div>
+                                                                <!--end::Number-->
+                                                                <!--begin::Label-->
+                                                                <div class="fw-semibold fs-6 text-gray-500">20% 청구 할인</div>
+                                                                <!--end::Label-->
+                                                            </div>
+                                                            <!--end::Stat-->
+                                                            <!--begin::Stat-->
+                                                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                                <!--begin::Number-->
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="fs-4 fw-bold">주차, 세차</div>
+                                                                </div>
+                                                                <!--end::Number-->
+                                                                <!--begin::Label-->
+                                                                <div class="fw-semibold fs-6 text-gray-500">20% 청구 할인</div>
+                                                                <!--end::Label-->
+                                                            </div>
+                                                            <!--end::Stat-->
+                                                            <!--begin::Stat-->
+                                                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                                <!--begin::Number-->
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="fs-4 fw-bold">OTT</div>
+                                                                </div>
+                                                                <!--end::Number-->
+                                                                <!--begin::Label-->
+                                                                <div class="fw-semibold fs-6 text-gray-500">20%</div>
+                                                                <!--end::Label-->
+                                                            </div>
+                                                            <!--end::Stat-->
+                                                        </div>
+                                                        <!--end::Stats-->
+                                                        <!--begin::Users-->
+                                                    
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
                                         </div>
-                                        <div class="flex-grow-1 ms-10 ">
-												<!--begin::Head-->
-												<div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
-													<!--begin::Details-->
-													<div class="d-flex flex-column">
-														<!--begin::Status-->
-														<div class="d-flex align-items-center mb-1">
-															<a href="#" class="text-gray-800 text-hover-primary fs-2 fw-bold me-3">[KB]Our WE_SH 카드</a>
-														</div>
-														<!--end::Status-->
-													</div>
-													<!--end::Details-->
-													<!--begin::Actions-->
-													<div class="d-flex mb-4">
-														<a href="#" class="btn btn-sm btn-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_new_target">자세히 보기</a>
-													</div>
-													<!--end::Actions-->
-												</div>
-												<!--end::Head-->
-												<!--begin::Info-->
-												<div class="d-flex flex-wrap justify-content-start">
-													<!--begin::Stats-->
-													<div class="d-flex flex-wrap">
-                                                        <!--begin::Stat-->
-														<div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
-															<!--begin::Number-->
-															<div class="d-flex align-items-center">
-																<div class="fs-4 fw-bold">전기/수소차 충전</div>
-															</div>
-															<!--end::Number-->
-															<!--begin::Label-->
-															<div class="fw-semibold fs-6 text-gray-500">20% 청구 할인</div>
-															<!--end::Label-->
-														</div>
-														<!--end::Stat-->
-                                                        <!--begin::Stat-->
-														<div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
-															<!--begin::Number-->
-															<div class="d-flex align-items-center">
-																<div class="fs-4 fw-bold">주차, 세차</div>
-															</div>
-															<!--end::Number-->
-															<!--begin::Label-->
-															<div class="fw-semibold fs-6 text-gray-500">20% 청구 할인</div>
-															<!--end::Label-->
-														</div>
-														<!--end::Stat-->
-														<!--begin::Stat-->
-														<div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
-															<!--begin::Number-->
-															<div class="d-flex align-items-center">
-																<div class="fs-4 fw-bold">OTT</div>
-															</div>
-															<!--end::Number-->
-															<!--begin::Label-->
-															<div class="fw-semibold fs-6 text-gray-500">20%</div>
-															<!--end::Label-->
-														</div>
-														<!--end::Stat-->
-													</div>
-													<!--end::Stats-->
-													<!--begin::Users-->
-												
-												</div>
-												<!--end::Info-->
-											</div>
                                     </div>
-                                </div>
+                                </td>
                             </tr>
                             <tr>
-                                <div class="card card-flush shadow-sm m-5">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Title</h3>
-                                        <div class="card-toolbar">
-                                            <button type="button" class="btn btn-sm btn-light">
-                                                Action
-                                            </button>
+                                <td>
+                                    <div class="card card-flush shadow-sm m-5">
+                                        <div class="card-header">
+                                            <h3 class="card-title">Title</h3>
+                                            <div class="card-toolbar">
+                                                <button type="button" class="btn btn-sm btn-light">
+                                                    Action
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="card-body py-5">
+                                            Lorem Ipsum is simply dummy text...
+                                        </div>
+                                        <div class="card-footer">
+                                            Footer
                                         </div>
                                     </div>
-                                    <div class="card-body py-5">
-                                        Lorem Ipsum is simply dummy text...
-                                    </div>
-                                    <div class="card-footer">
-                                        Footer
-                                    </div>
-                                </div>
+                                </td>
                             </tr>
                             <tr>
-                                <div class="card card-flush shadow-sm m-5">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Title</h3>
-                                        <div class="card-toolbar">
-                                            <button type="button" class="btn btn-sm btn-light">
-                                                Action
-                                            </button>
+                                <td>
+                                    <div class="card card-flush shadow-sm m-5">
+                                        <div class="card-header">
+                                            <h3 class="card-title">Title</h3>
+                                            <div class="card-toolbar">
+                                                <button type="button" class="btn btn-sm btn-light">
+                                                    Action
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="card-body py-5">
+                                            Lorem Ipsum is simply dummy text...
+                                        </div>
+                                        <div class="card-footer">
+                                            Footer
                                         </div>
                                     </div>
-                                    <div class="card-body py-5">
-                                        Lorem Ipsum is simply dummy text...
-                                    </div>
-                                    <div class="card-footer">
-                                        Footer
-                                    </div>
-                                </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
