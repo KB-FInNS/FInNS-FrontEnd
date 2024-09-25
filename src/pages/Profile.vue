@@ -172,40 +172,40 @@
                     </div>
                     <!--end::Stat-->
                     <!--begin::Stat-->
-                    <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
-                      <!--begin::Label-->
-                      <div class="fw-semibold fs-5 text-gray-500 text-center">
-                        <router-link to="/profile/follower">팔로워</router-link>
-                      </div>
-                      <!--end::Label-->
-                      <!--begin::Number-->
-                      <div class="d-flex align-items-center justify-content-center">
-                        <i class="ki-duotone ki-arrow-down fs-3 text-danger me-3">
-                          <span class="path1"></span>
-                          <span class="path2"></span>
-                        </i>
-                        <count-up class="fs-2 fw-bold" :end-val="91"></count-up>
-                      </div>
-                      <!--end::Number-->
-                    </div>
+                    <router-link to="/profile/follower"
+                      ><div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                        <!--begin::Label-->
+                        <div class="fw-semibold fs-5 text-gray-500 text-center">팔로워</div>
+                        <!--end::Label-->
+                        <!--begin::Number-->
+                        <div class="d-flex align-items-center justify-content-center">
+                          <i class="ki-duotone ki-arrow-down fs-3 text-danger me-3">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                          </i>
+                          <count-up class="fs-2 fw-bold" :end-val="91"></count-up>
+                        </div>
+                        <!--end::Number-->
+                      </div></router-link
+                    >
                     <!--end::Stat-->
                     <!--begin::Stat-->
-                    <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
-                      <!--begin::Label-->
-                      <div class="fw-semibold fs-5 text-gray-500 text-center">
-                        <router-link to="/profile/following">팔로잉</router-link>
-                      </div>
-                      <!--end::Label-->
-                      <!--begin::Number-->
-                      <div class="d-flex align-items-center justify-content-center">
-                        <i class="ki-duotone ki-arrow-up fs-3 text-success me-3">
-                          <span class="path1"></span>
-                          <span class="path2"></span>
-                        </i>
-                        <count-up class="fs-2 fw-bold" :end-val="113"></count-up>
-                      </div>
-                      <!--end::Number-->
-                    </div>
+                    <router-link to="/profile/following"
+                      ><div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                        <!--begin::Label-->
+                        <div class="fw-semibold fs-5 text-gray-500 text-center">팔로잉</div>
+                        <!--end::Label-->
+                        <!--begin::Number-->
+                        <div class="d-flex align-items-center justify-content-center">
+                          <i class="ki-duotone ki-arrow-up fs-3 text-success me-3">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                          </i>
+                          <count-up class="fs-2 fw-bold" :end-val="113"></count-up>
+                        </div>
+                        <!--end::Number-->
+                      </div></router-link
+                    >
                     <!--end::Stat-->
                   </div>
                   <!--end::Stats-->
@@ -226,11 +226,9 @@
   <!--end::Post-->
 
   <router-view class="mt-10"></router-view>
-  
 </template>
 
 <script setup>
 import '@/assets/js/custom/pages/user-profile/general.js';
 import CountUp from 'vue-countup-v3';
-
 </script>
