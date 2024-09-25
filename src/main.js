@@ -6,6 +6,12 @@ import VueAwesomePaginate from 'vue-awesome-paginate';
 
 import App from './App.vue';
 import router from './router';
+import mitt from 'mitt';
+
+const app = createApp(App);
+
+const emitter = mitt();
+app.config.globalProperties.emitter = emitter;
 
 // const importAllCss = async () => {
 //   const cssFiles = import.meta.glob('/src/assets/**/*.css');
@@ -21,8 +27,6 @@ import router from './router';
 // };
 // importAllCss();
 // importAllJs();
-
-const app = createApp(App);
 
 app.use(VueAwesomePaginate);
 app.use(createPinia());
