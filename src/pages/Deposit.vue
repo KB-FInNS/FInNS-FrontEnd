@@ -47,7 +47,7 @@
             <label class="fs-6 form-label fw-bold text-gray-900">가입 기간</label>
             <div class="nav-group nav-group-fluid">
               <label
-                ><input v-model="selectedPeriod" type="radio" class="btn-check" name="depositPeriod" value="all" checked /><span
+                ><input v-model="selectedPeriod" type="radio" class="btn-check" name="depositPeriod" value="전체" checked /><span
                   class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bold px-4"
                   >전체</span
                 ></label
@@ -87,7 +87,7 @@
             <label class="fs-6 form-label fw-bold text-gray-900 mb-5">이자 계산 방식</label>
             <div class="nav-group nav-group-fluid">
               <label
-                ><input v-model="selectedInttype" type="radio" class="btn-check" value="all" checked /><span
+                ><input v-model="selectedInttype" type="radio" class="btn-check" value="전체" checked /><span
                   class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bold px-4"
                   >전체</span
                 ></label
@@ -112,12 +112,12 @@
           <label class="fs-6 form-label fw-bold text-gray-900 mb-5">가입 제한</label>
           <div class="d-flex">
             <div class="form-check form-check-custom form-check-solid mb-5 me-5">
-              <input v-model="selectedMember" class="form-check-input" type="checkbox" id="deposit_search_category_1" value="제한없음"/>
-              <label class="form-check-label flex-grow-1 fw-semibold text-gray-700 fs-6" for="deposit_search_category_1">제한 없음</label>
+              <input v-model="selectedMember" class="form-check-input" type="checkbox" id="deposit_search_Membery_1" value="제한없음"/>
+              <label class="form-check-label flex-grow-1 fw-semibold text-gray-700 fs-6" for="deposit_search_Membery_1">제한 없음</label>
             </div>
             <div class="form-check form-check-custom form-check-solid mb-5 me-5">
-              <input v-model="selectedMember" class="form-check-input" type="checkbox" id="deposit_search_category_2" value="제한있음"/>
-              <label class="form-check-label flex-grow-1 fw-semibold text-gray-700 fs-6" for="deposit_search_category_2">제한 있음(서민 전용, 일부제한)</label>
+              <input v-model="selectedMember" class="form-check-input" type="checkbox" id="deposit_search_Membery_2" value="제한있음"/>
+              <label class="form-check-label flex-grow-1 fw-semibold text-gray-700 fs-6" for="deposit_search_Membery_2">제한 있음(서민 전용, 일부제한)</label>
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@
           <label class="fs-6 form-label fw-bold text-gray-900 mb-5">가입 방법</label>
           <div class="d-flex">
             <div class="form-check form-check-custom form-check-solid mb-5 me-5">
-              <input v-model="selectedJoinWay" value="전체" class="form-check-input" type="checkbox" id="deposit_search_period_1">
+              <input v-model="selectedJoinWay" @click="toggleAllJoinWays" value="전체" class="form-check-input" type="checkbox" id="deposit_search_period_1">
               <label class="form-check-label flex-grow-1 fw-semibold text-gray-700 fs-6" for="deposit_search_period_1">전체</label>
             </div>
             <div class="form-check form-check-custom form-check-solid mb-5 me-5">
@@ -248,7 +248,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 
 // 일시적인 데이터set
 const dataList = [
@@ -342,32 +342,57 @@ const dataList = [
   },
 ];
 
+// 검색어
+const searchDeposit = ref(''); 
 
-
-// 데이터 총 개수
-const totalDeposit = computed(() => dataList.length);
-const searchDeposit = ref(''); // 검색어
-const selectedPeriod = ref('all'); // 기본적으로 'all' 설정
-const selectedSort = ref('default'); // 정렬 기준
+// 정렬 기준
+const selectedSort = ref('default'); 
 
 // 필터링 및 선택 상태를 위한 상태 관리 변수 추가
-const selectedInttype = ref('all'); // 기본적으로 'all' 설정
+const selectedPeriod = ref('전체'); // 기본적으로 'all' 설정
+const selectedInttype = ref('전체'); // 기본적으로 'all' 설정
 const selectedMember = ref(["제한없음", "제한있음"]);   // 기본값으로 배열 설정
-const selectedJoinWay = ref([]); // 기본적으로 모든 선택 방법이 체크된 상태
+const selectedJoinWay = ref(["전체", "영업점", "인터넷", "스마트폰", "모집인", "전화(텔레뱅킹)"]); // 기본적으로 "전체"가 체크된 상태로 설정
+
+// '전체' 체크박스의 클릭 동작을 처리
+const toggleAllJoinWays = () => {
+  if (selectedJoinWay.value.includes('전체')) {
+    // "전체"가 선택된 상태라면 모든 옵션을 활성화
+    selectedJoinWay.value = [];
+  } else {
+    // "전체"가 선택되지 않은 상태라면 "전체"를 선택
+    selectedJoinWay.value = ["전체", "영업점", "인터넷", "스마트폰", "모집인", "전화(텔레뱅킹)"];
+  }
+};
+
+// 다른 체크박스의 상태를 감지하여 "전체" 체크박스 해제
+watch(selectedJoinWay, (newVal) => {
+  // 모든 항목이 선택되어 있으면 '전체' 체크박스도 선택
+  if (newVal.length === 6 && !newVal.includes('전체')) {
+    selectedJoinWay.value = ["전체", "영업점", "인터넷", "스마트폰", "모집인", "전화(텔레뱅킹)"];
+  }
+  // 하나라도 체크가 해제되면 '전체' 체크박스를 해제
+  else if (newVal.length < 6 && newVal.includes('전체')) {
+    selectedJoinWay.value = newVal.filter(option => option !== '전체');
+  }
+});
 
 // 필터링된 데이터 리스트 계산
 const filteredDataList = computed(() => {
   return dataList.filter(item => {
     const matchesSearch = item.fin_prdt_nm.includes(searchDeposit.value);
-    const matchesPeriod = selectedPeriod.value === 'all' || item.save_trm === selectedPeriod.value;
-    const matchesInttype = selectedInttype.value === 'all' || item.intr_rate_type_nm === selectedInttype.value;
-    const matchesMemberCheck = selectedMember.value.includes("제한없음")
-      ? item.join_member === "제한없음" : item.join_member !== "제한없음";
+    const matchesPeriod = selectedPeriod.value === '전체' || item.save_trm === selectedPeriod.value;
+    const matchesInttype = selectedInttype.value === '전체' || item.intr_rate_type_nm === selectedInttype.value;
+    const matchesMemberCheck = selectedMember.value.includes('제한없음') && item.join_member === '제한없음'
+      || selectedMember.value.includes('제한있음') && item.join_member !== '제한없음';
+    const matchesJoinWayCheck = selectedJoinWay.value.includes('전체') || selectedJoinWay.value.includes(item.join_way);
 
-
-    return matchesSearch && matchesPeriod && matchesInttype && matchesMemberCheck;// && matchesJoinWayCheck;
+    return matchesSearch && matchesPeriod && matchesInttype && matchesMemberCheck&& matchesJoinWayCheck;
   });
 });
+
+// 데이터 총 개수
+const totalDeposit = computed(() => filteredDataList.value.length);
 
 // 정렬된 데이터 리스트 계산
 const sortedDataList = computed(() => {
