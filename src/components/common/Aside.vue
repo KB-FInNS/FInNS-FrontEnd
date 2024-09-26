@@ -153,7 +153,7 @@
           <!--begin:Menu item-->
           <div
             data-kt-menu-trigger="click"
-            class="menu-item menu-accordion mt-5 show"
+            class="menu-item menu-accordion mt-5"
           >
             <!--begin:Menu link-->
             <span class="menu-link">

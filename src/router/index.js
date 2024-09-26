@@ -1,15 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import DefaultLayout from '@/components/common/DefaultLayout.vue'; // 사이드바가 있는 기본 레이아웃
 import AuthLayout from '@/components/common/AuthLayout.vue'; // 사이드바가 없는 로그인, 회원가입 레이아웃
-import Home from '@/pages/Home.vue';
+import Main from '@/pages/Main.vue';
 import Search from '@/pages/Search.vue';
-import Profile from '@/pages/Profile.vue';
+import Profile from '@/pages/profile/Profile.vue';
 import Deposit from '@/pages/Deposit.vue';
 import InstallmentSavings from '@/pages/InstallmentSavings.vue';
 import Card from '@/pages/Card.vue';
 import Message from '@/pages/Message.vue';
-import CreditHistory from '@/components/common/CreditHistory.vue';
-import Analysis from '@/components/common/Analysis.vue';
+import CreditHistory from '@/pages/profile/CreditHistory.vue';
+import Analysis from '@/pages/profile/Analysis.vue';
 import Follower from '@/components/common/Follower.vue';
 import Following from '@/components/common/Following.vue';
 import PayDetails from '@/pages/PayDetails.vue';
@@ -28,7 +28,7 @@ const router = createRouter({
       path: '/',
       component: DefaultLayout, // 사이드바가 있는 기본 레이아웃
       children: [
-        { path: '', name: 'Home', component: Home },
+        { path: '', name: 'Main', component: Main },
 
         {
           path: 'search',

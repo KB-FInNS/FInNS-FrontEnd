@@ -4,7 +4,7 @@
       <!-- 사이드바 -->
       <Aside />
 
-      <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+      <div style="padding-right:0%" class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
         <router-view />
         <!-- 자식 라우트를 렌더링 -->
       </div>
