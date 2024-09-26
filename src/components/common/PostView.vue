@@ -116,7 +116,7 @@
                         <!--end::Separator-->
                         <!--begin::Nav-->
                         <ul class="nav py-3">
-                            
+
                             <!--댓글보기 버튼-->
                             <li class="nav-item">
                                 <a class="nav-link btn btn-sm btn-color-gray-600 btn-active-light-muted fw-bold px-4 me-1 collapsible active"
@@ -127,22 +127,35 @@
                                         <span class="path3"></span>
                                     </i>댓글보기</a>
                             </li>
-                            
-                            
+
+
                             <!--좋은소비 버튼-->
                             <li class="nav-item">
-                                <a href="#"
-                                    class="nav-link btn btn-sm  btn-active-color-primary btn-active-light-primary fw-bold px-4 me-1">
+                                <button class="btn btn-sm"
+                                    :style="{ backgroundColor: goodisActive ? '#F1F7FF' : '#FFFFFF'}"
+                                    @click="goodtoggleActive(), badisActive = false" style="height : 32px;">
                                     <i class="ki-duotone ki-like text-primary fs-2 me-1">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                     </i>
-                                    <span class="text-primary">좋은소비</span>
-                                    </a>
+                                    <span class="text-primary fw-bold">좋은소비</span>
+                                </button>
                             </li>
-                            
+
                             <!--이돈이면 버튼-->
                             <li class="nav-item">
+                                <button class="btn btn-sm"
+                                    :style="{ backgroundColor: badisActive ? '#FFEFEF' : '#FFFFFF'}"
+                                    @click="badtoggleActive(), goodisActive = false" style="height : 32px;">
+                                    <i class="ki-duotone ki-dislike text-danger fs-2 me-1">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    <span class="text-danger fw-bold">이돈이면...</span>
+                                </button>
+                            </li>
+                            <!--이돈이면 버튼-->
+                            <!-- <li class="nav-item">
                                 <a href="#"
                                     class="nav-link btn btn-sm btn-color-gray-600 btn-active-color-danger btn-active-light-danger fw-bold px-4">
                                     <i class="ki-duotone ki-dislike text-danger fs-2 me-1">
@@ -151,7 +164,7 @@
                                     </i>
                                     <span class="text-danger">이 돈이면...</span>
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                         <!--end::Nav-->
                         <!--begin::Separator-->
@@ -174,17 +187,18 @@
                                         <a href="#" class="text-gray-800 text-hover-primary fw-bold me-6">Mr.
                                             Anderson</a>
                                         <!--end::Name-->
-                    
+
                                     </div>
                                     <!--end::Info-->
                                     <!--begin::Text-->
-                                    <span class="text-gray-800 fs-7 fw-normal pt-1">맛있는 삼겹살을 드셨네요! 근데 과소비 하신건 아닌지....</span>
+                                    <span class="text-gray-800 fs-7 fw-normal pt-1">맛있는 삼겹살을 드셨네요! 근데 과소비 하신건
+                                        아닌지....</span>
                                     <!--end::Text-->
                                 </div>
                                 <!--end::Wrapper-->
                             </div>
                             <!--end::Comment-->
-                            
+
                         </div>
                         <!--end::Collapse-->
                     </div>
@@ -200,13 +214,12 @@
                         <div class="position-relative w-100">
                             <!--댓글 작성-->
                             <textarea type="text" class="form-control form-control-solid border ps-5" rows="1"
-                                name="search" value="" data-kt-autosize="true"
-                                placeholder="댓글을 작성하세요."></textarea>
-                            
+                                name="search" value="" data-kt-autosize="true" placeholder="댓글을 작성하세요."></textarea>
+
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
                 <!--end::Card footer-->
             </div>
@@ -216,9 +229,18 @@
     </div>
 </template>
 <script setup>
-import { onMounted, nextTick } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 import { tns } from 'tiny-slider/src/tiny-slider.js'; // Tiny Slider 가져오기
 
+const goodisActive = ref(false)
+const badisActive = ref(false)
+
+const goodtoggleActive = () => {
+    goodisActive.value = !goodisActive.value
+}
+const badtoggleActive = () => {
+    badisActive.value = !badisActive.value
+}
 
 onMounted(async () => {
     // nextTick을 사용하여 DOM이 업데이트된 후 슬라이더 초기화
@@ -238,20 +260,18 @@ onMounted(async () => {
 });
 
 const category = [
-    {name :'식비&카페', icon: 'src/assets/media/category/meal.png'},
-    {name :'쇼핑', icon: './assets/media/category/shopping.png'},
-    {name :'미용', icon: './assets/media/category/alcohol.png'},
-    {name :'의료', icon: './assets/media/category/alcohol.png'},
-    {name :'통신', icon: './assets/media/category/alcohol.png'},
-    {name :'교통', icon: './assets/media/category/alcohol.png'},
-    {name :'문화&여행', icon: './assets/media/category/alcohol.png'},
-    {name :'교육', icon: './assets/media/category/alcohol.png'},
-    {name :'술&유흥', icon: './assets/media/category/alcohol.png'},
-    {name :'기타', icon: './assets/media/category/alcohol.png'}
+    { name: '식비&카페', icon: 'src/assets/media/category/meal.png' },
+    { name: '쇼핑', icon: './assets/media/category/shopping.png' },
+    { name: '미용', icon: './assets/media/category/alcohol.png' },
+    { name: '의료', icon: './assets/media/category/alcohol.png' },
+    { name: '통신', icon: './assets/media/category/alcohol.png' },
+    { name: '교통', icon: './assets/media/category/alcohol.png' },
+    { name: '문화&여행', icon: './assets/media/category/alcohol.png' },
+    { name: '교육', icon: './assets/media/category/alcohol.png' },
+    { name: '술&유흥', icon: './assets/media/category/alcohol.png' },
+    { name: '기타', icon: './assets/media/category/alcohol.png' }
 ];
 
 </script>
 
-<style lang="">
-
-</style>
+<style scoped></style>
