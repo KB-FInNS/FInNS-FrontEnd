@@ -79,7 +79,7 @@
             >
               <span
                 class="menu-icon svg-icon svg-icon-2hx"
-                style="color: black"
+                style="color: grey"
               >
                 <svg
                   width="24"
@@ -149,6 +149,80 @@
             <!--end:Menu link-->
           </div>
           <!--end:Menu item-->
+
+          <!--begin:Menu item-->
+          <div class="menu-item mt-5">
+            <!--begin:Menu link-->
+            <router-link
+              class="menu-link"
+              to="/mbti"
+              exact-active-class="active"
+            >
+              <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/keenthemes/craft/docs/core/html/src/media/icons/duotune/maps/map009.svg-->
+              <span class="svg-icon svg-icon-muted svg-icon-2hx">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    opacity="0.3"
+                    d="M13.625 22H9.625V3C9.625 2.4 10.025 2 10.625 2H12.625C13.225 2 13.625 2.4 13.625 3V22Z"
+                    fill="#ff0000"
+                  />
+                  <path
+                    d="M19.625 10H12.625V4H19.625L21.025 6.09998C21.325 6.59998 21.325 7.30005 21.025 7.80005L19.625 10Z"
+                    fill="#ffff00"
+                  />
+                  <path
+                    d="M3.62499 16H10.625V10H3.62499L2.225 12.1001C1.925 12.6001 1.925 13.3 2.225 13.8L3.62499 16Z"
+                    fill="#ff0000"
+                  />
+                </svg>
+              </span>
+
+              <!--end::Svg Icon-->
+              <span class="menu-title mx-5">금융 MBTI</span>
+            </router-link>
+            <!--end:Menu link-->
+          </div>
+          <!--end:Menu item-->
+
+          <!--카드 월드컵-->
+          <div class="menu-item mt-5">
+            <!--begin:Menu link-->
+            <router-link
+              class="menu-link"
+              to="/cardworldcup"
+              exact-active-class="active"
+            >
+              <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/keenthemes/craft/docs/core/html/src/media/icons/duotune/general/gen020.svg-->
+              <span class="svg-icon svg-icon-warning svg-icon-2hx"
+                ><svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14 18V16H10V18L9 20H15L14 18Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    opacity="0.3"
+                    d="M20 4H17V3C17 2.4 16.6 2 16 2H8C7.4 2 7 2.4 7 3V4H4C3.4 4 3 4.4 3 5V9C3 11.2 4.8 13 7 13C8.2 14.2 8.8 14.8 10 16H14C15.2 14.8 15.8 14.2 17 13C19.2 13 21 11.2 21 9V5C21 4.4 20.6 4 20 4ZM5 9V6H7V11C5.9 11 5 10.1 5 9ZM19 9C19 10.1 18.1 11 17 11V6H19V9ZM17 21V22H7V21C7 20.4 7.4 20 8 20H16C16.6 20 17 20.4 17 21ZM10 9C9.4 9 9 8.6 9 8V5C9 4.4 9.4 4 10 4C10.6 4 11 4.4 11 5V8C11 8.6 10.6 9 10 9ZM10 13C9.4 13 9 12.6 9 12V11C9 10.4 9.4 10 10 10C10.6 10 11 10.4 11 11V12C11 12.6 10.6 13 10 13Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+              <!--end::Svg Icon-->
+              <span class="menu-title mx-5">카드 월드컵</span>
+            </router-link>
+            <!--end:Menu link-->
+          </div>
 
           <!--begin:Menu item-->
           <div
@@ -295,85 +369,13 @@
             <!--end:Menu link-->
           </div>
           <!--end:Menu item-->
-          <!--카드 월드컵-->
-          <div class="menu-item mt-5">
-            <!--begin:Menu link-->
-            <router-link
-              class="menu-link"
-              to="/cardworldcup"
-              exact-active-class="active"
-            >
-              <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/keenthemes/craft/docs/core/html/src/media/icons/duotune/general/gen020.svg-->
-              <span class="svg-icon svg-icon-warning svg-icon-2hx"
-                ><svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14 18V16H10V18L9 20H15L14 18Z"
-                    fill="currentColor"
-                  />
-                  <path
-                    opacity="0.3"
-                    d="M20 4H17V3C17 2.4 16.6 2 16 2H8C7.4 2 7 2.4 7 3V4H4C3.4 4 3 4.4 3 5V9C3 11.2 4.8 13 7 13C8.2 14.2 8.8 14.8 10 16H14C15.2 14.8 15.8 14.2 17 13C19.2 13 21 11.2 21 9V5C21 4.4 20.6 4 20 4ZM5 9V6H7V11C5.9 11 5 10.1 5 9ZM19 9C19 10.1 18.1 11 17 11V6H19V9ZM17 21V22H7V21C7 20.4 7.4 20 8 20H16C16.6 20 17 20.4 17 21ZM10 9C9.4 9 9 8.6 9 8V5C9 4.4 9.4 4 10 4C10.6 4 11 4.4 11 5V8C11 8.6 10.6 9 10 9ZM10 13C9.4 13 9 12.6 9 12V11C9 10.4 9.4 10 10 10C10.6 10 11 10.4 11 11V12C11 12.6 10.6 13 10 13Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <!--end::Svg Icon-->
-              <span class="menu-title mx-5">카드 월드컵</span>
-            </router-link>
-            <!--end:Menu link-->
-          </div>
+          
           <!--begin:Menu item-->
-          <div class="menu-item mt-5">
-            <!--begin:Menu link-->
-            <router-link
-              class="menu-link"
-              to="/mbti"
-              exact-active-class="active"
-            >
-              <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/keenthemes/craft/docs/core/html/src/media/icons/duotune/maps/map009.svg-->
-              <span class="svg-icon svg-icon-muted svg-icon-2hx">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    opacity="0.3"
-                    d="M13.625 22H9.625V3C9.625 2.4 10.025 2 10.625 2H12.625C13.225 2 13.625 2.4 13.625 3V22Z"
-                    fill="#ff0000"
-                  />
-                  <path
-                    d="M19.625 10H12.625V4H19.625L21.025 6.09998C21.325 6.59998 21.325 7.30005 21.025 7.80005L19.625 10Z"
-                    fill="#ffff00"
-                  />
-                  <path
-                    d="M3.62499 16H10.625V10H3.62499L2.225 12.1001C1.925 12.6001 1.925 13.3 2.225 13.8L3.62499 16Z"
-                    fill="#ff0000"
-                  />
-                </svg>
-              </span>
-
-              <!--end::Svg Icon-->
-              <span class="menu-title mx-5">MBTI 분석</span>
-            </router-link>
-            <!--end:Menu link-->
-          </div>
-          <!--end:Menu item-->
-        </div>
-        <!--begin:Menu item-->
         <div class="menu-item mt-5">
           <!--begin:Menu link-->
           <router-link
             class="menu-link"
-            to="/PostDetails"
+            to="/postDetails"
             exact-active-class="active"
           >
             <span
@@ -403,6 +405,7 @@
           <!--end:Menu link-->
         </div>
         <!--end:Menu item-->
+        </div>
       </div>
       <!--end::Menu-->
     </div>

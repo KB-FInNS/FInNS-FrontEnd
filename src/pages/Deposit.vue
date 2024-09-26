@@ -649,6 +649,6 @@ const viewDetails = (item) => {
 }
 
 .default-color {
-  color: #000;
+  color: #98A1B7;
 }
 </style>
