@@ -186,6 +186,24 @@
                         </router-link>
                         <!--end:Menu link-->
                     </div>
+                    <!--금융상품추천-->
+                    <div class="recommendation-container">
+                        <div class="card-container">
+                            
+                            <div v-for="(item, index) in products" :key="index" class="recommendation-card">
+                                <div class="icon">
+                                    <img :src="item.icon" alt="상품 아이콘" />
+                                </div>
+                                <div class="card-content pt-12">
+                                    <h4>{{ item.title }}</h4>
+                                    <p>
+                                    <router-link :to="item.link1">{{ item.linkText1 }}</router-link>
+                                    |
+                                    <router-link :to="item.link2">{{ item.linkText2 }}</router-link></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!--end::Menu-->
@@ -196,7 +214,74 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 
+const products = ref([
+{
+    icon: 'src/assets/media/icons/sug1.jpg', // 아이콘 링크
+    title: '금리가 가장 높은 상품',
+    link1: { name: 'Deposit' }, 
+    link2: { name: 'InstallmentSavings' }, 
+    linkText1: '예금 상품', 
+    linkText2: '적금 상품', 
+  },
+  {
+    icon: 'src/assets/media/icons/sug2.jpg', // 아이콘 링크
+    title: '최다 가입 상품',
+    link1: { name: 'Deposit' }, 
+    link2: { name: 'InstallmentSavings' }, // 라우트 이름
+    linkText1: '예금 상품', // 링크에 표시될 텍스트
+    linkText2: '적금 상품', // 링크에 표시될 텍스트
+  },
+]);
 </script>
 
-<style scoped></style>
+<style scoped>
+.recommendation-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recommendation-card {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* background-color: #dceafd; */
+  border: 1.5px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  width: 225px;
+  margin: 10px 0;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); */
+  justify-content: left;
+}
+
+.icon {
+  margin-bottom: 30px;
+  position: absolute; /* card-container의 왼쪽 상단에 고정 */
+  
+}
+
+.icon img {
+  width: 30px;
+  height: 30px;
+
+}
+
+.card-content h4 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.card-content p {
+  font-size: 15px;
+  color: #666;
+}
+</style>

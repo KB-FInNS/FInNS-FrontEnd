@@ -1,14 +1,14 @@
 <template>
     <div class="container">
-        <div class="row mt-8">
+        <div class="row mt-10">
             <!--게시글 피드-->
             <PostView />
 
             <div class="col-lg-4">
                 <!--이달의 TOP 랭킹-->
-                <div class="card mb-5 mb-xl-8" style="background-color: #F1F7FF;">
+                <div class="card mb-5 mb-xl-8"qWEARSTDYUIOP>
                     <div class="card-header border-0 pt-5">
-                        <h1 class="mt-4" style="text-shadow: 3px;">이달의 TOP 랭킹</h1>
+                        <h1 class="mt-5" style="text-shadow: 3px;">이달의 TOP 랭킹</h1>
                         <div v-for="(category, index) in rankings" :key="index">
                             <div class="mt-2">
                                 <h2 class="ms-2 fs-1">
@@ -163,7 +163,7 @@ const toggleFollow = (user) => {
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #ffffff;
-    padding: 20px;
+
 }
 
 h1 {
