@@ -101,6 +101,12 @@ const router = createRouter({
           component: Message,
           // beforeEnter: isAuthenticated,,
         },
+        {
+          path: '/auth/update',
+          name: 'Update',
+          component: Update,
+          // beforeEnter: isAuthenticated,,
+        },
       ],
     },
 
@@ -111,12 +117,6 @@ const router = createRouter({
       children: [
         { path: 'login', name: 'Login', component: Login },
         { path: 'join', name: 'Join', component: Join },
-        {
-          path: 'update',
-          name: 'Update',
-          component: Update,
-          // beforeEnter: isAuthenticated,,
-        },
       ],
     },
   ],

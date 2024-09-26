@@ -1,21 +1,24 @@
 <template>
   <div class="join-container d-flex">
-    <!-- Left Section: Image and Branding -->
-    <div
-      class="left-section d-flex flex-column justify-content-center align-items-center"
-    >
-      <img
-        src="@/assets/media/avatars/loginpage.png"
-        alt="Brand Image"
-        class="brand-image"
-      />
-      <h1 class="brand-title">FInNS</h1>
+    <!-- Left Section: Image/Branding -->
+    <div class="login-left">
+      <div class="branding">
+        <div>
+          <img src="@/assets/media/avatars/login_logo.png" class="logo" />
+          <i class="logo">FInNS</i>
+        </div>
+        <img
+          src="@/assets/media/avatars/loginpage.png"
+          alt="Illustration"
+          class="login-image"
+        />
+      </div>
     </div>
 
     <!-- Right Section: Join Form -->
     <div class="right-section d-flex flex-column justify-content-center">
       <div class="form-container">
-        <h1 class="form-title">회원 가입</h1>
+        <h1 class="form-title" style="color: white">회원 가입</h1>
         <form @submit.prevent="join">
           <div class="mb-3 mt-3">
             <label for="username" class="form-label">
@@ -41,9 +44,6 @@
               @input="changeUsername"
               v-model="member.username"
             />
-            <small class="form-text text-muted"
-              >* 아이디는 중복 확인을 해야 합니다.</small
-            >
           </div>
 
           <div class="mb-3">
@@ -58,7 +58,7 @@
           </div>
 
           <div class="mb-3">
-            <label for="password2" class="form-label"> 비밀번호 확인 * </label>
+            <label for="password" class="form-label"> 비밀번호 확인 * </label>
             <input
               type="password"
               class="form-control"
@@ -78,15 +78,14 @@
               v-model="member.email"
             />
           </div>
-
           <div class="mb-3">
-            <label for="mbti" class="form-label"> MBTI * </label>
+            <label for="birth" class="form-label"> 생년월일 * </label>
             <input
               type="text"
               class="form-control"
-              placeholder="MBTI를 입력하세요..."
-              id="mbti"
-              v-model="member.mbti"
+              placeholder="이메일을 입력하세요..."
+              id="birth"
+              v-model="member.birth"
             />
           </div>
 
@@ -153,52 +152,56 @@ const join = async () => {
 </script>
 
 <style scoped>
-/* 전체 레이아웃 설정 */
+/* 전체 레이아웃 */
 .join-container {
   display: flex;
   height: 100vh;
-  width: 100vw;
 }
 
 /* 왼쪽 섹션: 이미지와 로고 */
-.left-section {
+.left-section,
+.login-left {
+  background-color: #fefefe;
   flex: 1;
-  background-color: #ffffff;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 100px;
+  margin: 40px;
+  color: rgb(0, 0, 0);
 }
 
-.brand-image {
-  max-width: 300px;
-  height: auto;
+.branding {
+  text-align: center;
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 
-.brand-title {
-  font-size: 48px;
-  font-weight: bold;
-  color: #0a74da;
+.login-image {
+  max-width: 100%;
+  height: auto;
 }
 
 /* 오른쪽 섹션: 회원가입 폼 */
 .right-section {
+  background-color: #5dc0f6;
   flex: 1;
-  background-color: #0a74da;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
 }
 
 .form-container {
-  background-color: #ffffff;
+  background-color: #5dc0f6;
   padding: 40px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
 }
 
 .form-title {
@@ -212,21 +215,22 @@ const join = async () => {
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 8px;
+  color: white;
 }
 
 .form-control {
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff;
   padding: 10px;
 }
 
 .form-text {
   font-size: 12px;
-  color: #999;
+  color: #ffffff;
 }
 
 .btn-primary {
-  background-color: #0062cc;
+  background-color: #22adfc;
   border-color: #0062cc;
 }
 
@@ -248,5 +252,22 @@ const join = async () => {
 
 .w-100 {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .join-container {
+    flex-direction: column;
+  }
+
+  .left-section,
+  .login-left {
+    display: none;
+  }
+
+  .right-section {
+    flex: none;
+    width: 100%;
+    padding: 20px;
+  }
 }
 </style>

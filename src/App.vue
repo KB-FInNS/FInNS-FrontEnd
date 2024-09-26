@@ -23,6 +23,4 @@ const isLoginPage = computed(() => {
 });
 </script>
 
-<style scoped>
-/* 스타일링 필요 시 추가 */
-</style>
+<style scoped></style>
