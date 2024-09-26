@@ -71,10 +71,6 @@ const router = createRouter({
               name: 'PayDetails',
               component: PayDetails,
             },
-            {
-              path: 'cardworldcup',
-              component: CardWorldCup,
-            },
           ],
         },
         {
@@ -100,6 +96,10 @@ const router = createRouter({
           name: 'Message',
           component: Message,
           // beforeEnter: isAuthenticated,,
+        },
+        {
+          path: 'cardworldcup',
+          component: CardWorldCup,
         },
       ],
     },
