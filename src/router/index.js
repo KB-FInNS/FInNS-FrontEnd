@@ -66,11 +66,7 @@ const router = createRouter({
               path: 'following',
               component: Following,
             },
-            {
-              path: 'payDetails/:id', // 소비 상세 페이지
-              name: 'PayDetails',
-              component: PayDetails,
-            },
+
             {
               path: 'cardworldcup',
               component: CardWorldCup,
@@ -100,6 +96,11 @@ const router = createRouter({
           name: 'Message',
           component: Message,
           // beforeEnter: isAuthenticated,,
+        },
+        {
+          path: 'payDetails/:id', // 소비 상세 페이지
+          name: 'PayDetails',
+          component: PayDetails,
         },
       ],
     },

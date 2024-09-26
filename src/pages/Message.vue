@@ -1,7 +1,3 @@
-<template>
-    메시지 페이지!!
-</template>
+<template>메시지 페이지!!</template>
 
-<script setup>
-
-</script>
+<script setup></script>
