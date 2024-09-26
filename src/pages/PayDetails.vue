@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="Head m-5">
+    <div class="Head">
       <Header
         titleText="소비 상세"
         descriptionText="소비 내역을 상세하게 확인 및 수정할 수 있습니다"
@@ -116,7 +116,7 @@
 </template>
 
 <script>
-import Header from '@/components/common/Header.vue';
+import Header from '@/components/common/Banner.vue';
 
 export default {
   components: {

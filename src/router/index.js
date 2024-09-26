@@ -19,7 +19,7 @@ import Update from '@/pages/auth/ProfilePage.vue';
 import Login from '@/pages/auth/LoginPage.vue';
 import Join from '@/pages/auth/JoinPage.vue';
 import { isAuthenticated } from '@/util/guards';
-
+import PostDetails from '@/pages/PostDetails.vue';
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -98,9 +98,14 @@ const router = createRouter({
           // beforeEnter: isAuthenticated,,
         },
         {
-          path: 'payDetails/:id', // 소비 상세 페이지
+          path: '/payDetails/:id', // 소비 상세 페이지
           name: 'PayDetails',
           component: PayDetails,
+        },
+        {
+          path: '/PostDetails', // 게시물 상세 페이지
+          name: 'PostDetails',
+          component: PostDetails,
         },
       ],
     },
