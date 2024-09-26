@@ -38,7 +38,7 @@
                                                 {{ item.name }}
                                             </a>
                                         </div>
-                                        <span class="ms-10 ps-7">{{ item.amount }}</span>
+                                        <span style="position: absolute; right: 40px;" class="ms-10 ps-7">{{ item.amount }}</span>
                                     </li>
                                 </ul>
                                 <br>

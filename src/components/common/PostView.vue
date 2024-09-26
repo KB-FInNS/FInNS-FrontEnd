@@ -1,5 +1,5 @@
 <template>
-    <div class="col-lg-7">
+    <div class="col-lg-8">
         <!--begin::Posts-->
         <div class="mb-10" id="kt_social_feeds_posts">
             <!--begin::Post 1-->

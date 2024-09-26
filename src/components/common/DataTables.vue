@@ -6,27 +6,25 @@
     <div class="table-responsive">
       <table
         id="kt_datatable_vertical_scroll"
-        class="table table-row-bordered gy-5 gs-7"
+        class="table table-row-bordered gy-5 gs-7 text-center"
       >
         <thead>
           <tr class="fw-bold fs-5 text-gray-800">
-            <th><div class="ms-10">공개유무</div></th>
+            <th>공개유무</th>
             <th>카테고리</th>
             <th>사용처</th>
             <th>금액</th>
             <th>결제일시</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           <tr
             v-for="(item, index) in data"
             :key="index"
-            :class="{ 'bg-gray-300': !item.checked }"
+            :class="{ 'bg-gray-200': !item.checked }"
           >
-            <td>
-              <div
-                class="form-check form-check-solid form-check-custom form-switch mt-4 ms-10"
-              >
+            <td class="form-check form-check-solid form-check-custom form-switch">
                 <input
                   class="form-check-input"
                   type="checkbox"
@@ -34,16 +32,15 @@
                   v-model="item.checked"
                   @change="updatePublic(item)"
                 />
-              </div>
             </td>
-            <td id="category" class="category">
+            <td class="category">
               <img :src="item.category" style="width: 40px; height: 40px" />
             </td>
-            <td id="place" class="place">{{ item.place }}</td>
-            <td id="amount" class="amount">
+            <td class="place">{{ item.place }}</td>
+            <td class="amount">
               {{ item.amount.toLocaleString() }}
             </td>
-            <td id="date" class="date">{{ item.date }}</td>
+            <td class="date">{{ item.date }}</td>
             <td>
               <a @click="goToDetail" class="btn btn-sm btn-primary hover-scale"
                 >소비 상세</a
@@ -84,7 +81,8 @@ const props = defineProps({
 </script>
 
 <style scoped>
-.bg-gray {
-  background-color: #d3d3d3; /* 회색 배경 */
+td {
+  vertical-align: middle;
 }
+
 </style>

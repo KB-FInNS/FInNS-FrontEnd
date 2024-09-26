@@ -1,34 +1,12 @@
-<script setup>
-import { computed, reactive, ref } from 'vue';
-import { useAuthStore } from '@/stores/auth';
-import { useRoute, useRouter } from 'vue-router';
-
-const cr = useRoute();
-const router = useRouter();
-const auth = useAuthStore();
-const member = reactive({
-  username: '',
-  password: '',
-});
-const error = ref('');
-const disableSubmit = computed(() => !(member.username && member.password));
-const login = async () => {
-  try {
-    await auth.login(member);
-    router.push('/');
-  } catch (e) {
-    // 로그인 에러
-    error.value = e.response.data;
-  }
-};
-</script>
-
 <template>
   <div class="login-container">
     <!-- Left Section: Image/Branding -->
     <div class="login-left">
       <div class="branding">
-        <h1 class="logo">FInNS</h1>
+        <div>
+          <img src="@/assets/media/avatars/login_logo.png" class="logo" />
+          <i class="logo">FInNS</i>
+        </div>
         <img
           src="@/assets/media/avatars/loginpage.png"
           alt="Illustration"
@@ -40,12 +18,12 @@ const login = async () => {
     <!-- Right Section: Login Form -->
     <div class="login-right">
       <div class="login-box">
-        <h2>환영합니다!</h2>
+        <h2 style="color: white">환영합니다!</h2>
         <p>FInNS 계정으로 로그인하세요.</p>
         <form @submit.prevent="login">
           <div class="mb-3 mt-3">
             <label for="username" class="form-label">
-              <i class="fa-solid fa-user"></i> 아이디:
+              <i class="fa-solid fa-user"></i> 아이디
             </label>
             <input
               type="text"
@@ -56,7 +34,7 @@ const login = async () => {
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">
-              <i class="fa-solid fa-lock"></i> 비밀번호:
+              <i class="fa-solid fa-lock"></i> 비밀번호
             </label>
             <input
               type="password"
@@ -73,12 +51,17 @@ const login = async () => {
           >
             로그인
           </button>
-          <div class="mt-3 text-center">또는</div>
-          <button class="btn btn-success mt-2 w-100">
+          <div class="text-center">또는</div>
+          <button class="btn btn-success mt-2 w-100 naver-login-btn">
+            <img
+              src="../../assets/media/avatars/login_naver.png"
+              class="naver-logo"
+            />
             네이버 아이디로 로그인
           </button>
-          <div class="text-center mt-4">
-            <router-link to="/auth/join"
+
+          <div class="text-center pt-4">
+            <router-link to="/auth/join" style="color: white"
               >계정이 없으신가요? 가입하기</router-link
             >
           </div>
@@ -87,6 +70,32 @@ const login = async () => {
     </div>
   </div>
 </template>
+
+<script setup>
+import { computed, reactive, ref } from 'vue';
+import { useAuthStore } from '@/stores/auth';
+import { useRoute, useRouter } from 'vue-router';
+
+const cr = useRoute();
+const router = useRouter();
+const auth = useAuthStore();
+const member = reactive({
+  username: '',
+  password: '',
+});
+const error = ref('');
+const disableSubmit = computed(() => !(member.username && member.password));
+
+const login = async () => {
+  try {
+    await auth.login(member);
+    router.push('/');
+  } catch (e) {
+    // 로그인 에러
+    error.value = e.response.data;
+  }
+};
+</script>
 
 <style scoped>
 /* 전체 레이아웃 */
@@ -102,8 +111,9 @@ const login = async () => {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  color: white;
+  padding: 100px;
+  margin: 40px;
+  color: rgb(0, 0, 0);
 }
 
 .branding {
@@ -123,19 +133,20 @@ const login = async () => {
 
 /* 오른쪽 섹션 (로그인 폼) */
 .login-right {
-  background-color: #00a3ff;
+  background-color: #5dc0f6;
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 .login-box {
-  background-color: white;
+  background-color: #5dc0f6;
   padding: 40px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+  max-width: 500px;
   width: 100%;
   text-align: center;
 }
@@ -148,37 +159,40 @@ h2 {
 p {
   font-size: 14px;
   margin-bottom: 30px;
-  color: #6c757d;
+  color: #ffffff;
 }
 
 .form-label {
   font-weight: bold;
   font-size: 14px;
+  color: white;
 }
 
 .form-control {
   padding: 10px;
   font-size: 14px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff;
   border-radius: 5px;
   margin-top: 5px;
 }
 
 .btn-primary {
-  background-color: #0a74da;
-  border-color: #0a74da;
+  background-color: #22adfc;
+  border-color: #12549b;
   width: 100%;
 }
 
 .btn-success {
   background-color: #2ecc71;
   border-color: #2ecc71;
-  color: white;
+  color: rgb(255, 255, 255);
   width: 100%;
+  height: 43px;
 }
 
 .text-center {
   text-align: center;
+  color: white;
 }
 
 .mt-3 {
@@ -211,5 +225,18 @@ p {
     width: 100%;
     padding: 20px;
   }
+}
+/* 네이버 로그인 버튼 정렬 */
+.naver-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* 이미지와 텍스트 사이 간격 */
+  padding: 10px; /* 버튼의 패딩 */
+}
+
+/* 네이버 로고의 크기 조정 */
+.naver-logo {
+  height: 34px;
 }
 </style>

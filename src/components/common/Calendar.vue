@@ -1,7 +1,8 @@
 <template>
+  <div class="m-10">
     <div id="kt_calendar_app"></div>
-    
-    
+  </div>
+  
 </template>
 
 <script setup>
@@ -10,7 +11,6 @@ import "@/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"
 
 import { Calendar } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
-import interactionPlugin from "@fullcalendar/interaction";
 import { getCurrentInstance, onMounted } from 'vue';
 
 
@@ -24,8 +24,9 @@ const initializeCalendar = () => {
   const calendarEl = document.getElementById('kt_calendar_app');
   
   calendar = new Calendar(calendarEl, {
-    plugins: [dayGridPlugin, interactionPlugin],
+    plugins: [dayGridPlugin],
     locale: "ko",
+    initialView: 'dayGridMonth',
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
@@ -155,4 +156,5 @@ onMounted(() => {
 </script>
 
 <style scoped>
+
 </style>

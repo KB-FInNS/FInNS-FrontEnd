@@ -20,6 +20,4 @@
 import Aside from '@/components/common/Aside.vue'; // 사이드바 컴포넌트 가져오기
 </script>
 
-<style scoped>
-/* 필요한 스타일 추가 */
-</style>
+<style scoped></style>
