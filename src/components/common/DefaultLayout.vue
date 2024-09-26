@@ -4,7 +4,11 @@
       <!-- 사이드바 -->
       <Aside />
 
-      <div style="padding-right:0%" class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+      <div
+        class="wrapper d-flex flex-column flex-row-fluid"
+        style="padding-right: 0%"
+        id="kt_wrapper"
+      >
         <router-view />
         <!-- 자식 라우트를 렌더링 -->
       </div>
@@ -16,6 +20,4 @@
 import Aside from '@/components/common/Aside.vue'; // 사이드바 컴포넌트 가져오기
 </script>
 
-<style scoped>
-/* 필요한 스타일 추가 */
-</style>
+<style scoped></style>
