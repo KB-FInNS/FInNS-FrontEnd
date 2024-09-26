@@ -69,7 +69,7 @@ const updatePublic = (item) => {
 // };
 
 const goToDetail = (id) => {
-  router.push(`/profile/payDetails/${id}`); // 해당 id에 맞는 PayDetails 페이지로 이동
+  router.push(`/payDetails/${id}`); // 해당 id에 맞는 PayDetails 페이지로 이동
 };
 
 const props = defineProps({
