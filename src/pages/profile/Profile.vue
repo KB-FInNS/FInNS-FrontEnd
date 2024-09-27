@@ -1,5 +1,5 @@
 <template>
-  <div class="card m-10">
+  <div class="card mt-10 ms-10 me-10 mb-5">
     <div class="card-body pt-9 pb-0">
       <!--begin::Details-->
       <div class="d-flex flex-wrap flex-sm-nowrap">
@@ -24,112 +24,80 @@
 
               <!--begin::Info-->
               <div class="d-flex flex-wrap fw-semibold fs-6 mb-4 pe-2">
-                <a href="#" class="d-flex align-items-center text-gray-500 text-hover-primary me-5 mb-2 mt-3">
+                <router-link to="/mbti" class="d-flex align-items-center text-gray-500 text-hover-primary me-5 mb-2 mt-3">
                   <i class="ki-duotone ki-profile-circle fs-4 me-1">
                     <span class="path1"></span>
                     <span class="path2"></span>
-                    <span class="path3"></span> </i
-                  >자기관리마니아</a
-                >
+                    <span class="path3"></span>
+                  </i>
+                  먹는게제일좋아형
+                </router-link>
               </div>
               <!--end::Info-->
             </div>
             <!--end::User-->
+
             <!--begin::Actions-->
             <div class="d-flex">
-              <router-link to="/mbti" class="btn btn-sm btn-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal">금융 MBTI 진단</router-link>
+              <!-- 라우팅 -->
+              <router-link to="/mbti" class="btn btn-sm btn-primary me-3">
+                금융 MBTI 진단
+              </router-link>
+
+              <!-- 모달 트리거 버튼 (display: none; - JS를 통해 제어) -->
+              <button
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#kt_modal_offer_a_deal"
+                style="display: none"
+                ref="modalTrigger"
+              ></button>
+
               <!--begin::Menu-->
               <div class="me-0">
-                <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                <button
+                  class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
+                  data-kt-menu-trigger="click"
+                  ref="menuButton"
+                >
                   <i class="ki-solid ki-dots-horizontal fs-2x me-1"></i>
                 </button>
                 <!--begin::Menu 3-->
-                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3" data-kt-menu="true">
-                  <!--begin::Heading-->
+                <div
+                  class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3"
+                  data-kt-menu="true"
+                >
+                  <!-- 메뉴 항목들 -->
                   <div class="menu-item px-3">
-                    <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">설정</div>
+                    <!-- 프로필 수정 버튼 -->
+                    <router-link to="/auth/" class="menu-link px-3">
+                      프로필 수정
+                    </router-link>
                   </div>
-                  <!--end::Heading-->
-                  <!--begin::Menu item-->
                   <div class="menu-item px-3">
-                    <a href="#" class="menu-link px-3">Create Invoice</a>
-                  </div>
-                  <!--end::Menu item-->
-                  <!--begin::Menu item-->
-                  <div class="menu-item px-3">
-                    <a href="#" class="menu-link flex-stack px-3"
-                      >Create Payment
-                      <span class="ms-2" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference">
+                    <!-- Create Payment 버튼과 툴팁 -->
+                    <a href="#" class="menu-link flex-stack px-3">
+                      Create Payment
+                      <span
+                        class="ms-2"
+                        data-bs-toggle="tooltip"
+                        title="Specify a target name for future usage and reference"
+                      >
                         <i class="ki-duotone ki-information fs-6">
                           <span class="path1"></span>
                           <span class="path2"></span>
                           <span class="path3"></span>
-                        </i> </span
-                    ></a>
-                  </div>
-                  <!--end::Menu item-->
-                  <!--begin::Menu item-->
-                  <div class="menu-item px-3">
-                    <a href="#" class="menu-link px-3">Generate Bill</a>
-                  </div>
-                  <!--end::Menu item-->
-                  <!--begin::Menu item-->
-                  <div class="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-end">
-                    <a href="#" class="menu-link px-3">
-                      <span class="menu-title">Subscription</span>
-                      <span class="menu-arrow"></span>
+                        </i>
+                      </span>
                     </a>
-                    <!--begin::Menu sub-->
-                    <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                      <!--begin::Menu item-->
-                      <div class="menu-item px-3">
-                        <a href="#" class="menu-link px-3">Plans</a>
-                      </div>
-                      <!--end::Menu item-->
-                      <!--begin::Menu item-->
-                      <div class="menu-item px-3">
-                        <a href="#" class="menu-link px-3">Billing</a>
-                      </div>
-                      <!--end::Menu item-->
-                      <!--begin::Menu item-->
-                      <div class="menu-item px-3">
-                        <a href="#" class="menu-link px-3">Statements</a>
-                      </div>
-                      <!--end::Menu item-->
-                      <!--begin::Menu separator-->
-                      <div class="separator my-2"></div>
-                      <!--end::Menu separator-->
-                      <!--begin::Menu item-->
-                      <div class="menu-item px-3">
-                        <div class="menu-content px-3">
-                          <!--begin::Switch-->
-                          <label class="form-check form-switch form-check-custom form-check-solid">
-                            <!--begin::Input-->
-                            <input class="form-check-input w-30px h-20px" type="checkbox" value="1" checked="checked" name="notifications" />
-                            <!--end::Input-->
-                            <!--end::Label-->
-                            <span class="form-check-label text-muted fs-6">Recuring</span>
-                            <!--end::Label-->
-                          </label>
-                          <!--end::Switch-->
-                        </div>
-                      </div>
-                      <!--end::Menu item-->
-                    </div>
-                    <!--end::Menu sub-->
                   </div>
-                  <!--end::Menu item-->
-                  <!--begin::Menu item-->
-                  <div class="menu-item px-3 my-1">
-                    <a href="#" class="menu-link px-3">Settings</a>
-                  </div>
-                  <!--end::Menu item-->
                 </div>
                 <!--end::Menu 3-->
               </div>
               <!--end::Menu-->
             </div>
             <!--end::Actions-->
+
           </div>
           <!--end::Title-->
           <!--begin::Stats-->
@@ -142,7 +110,7 @@
                 <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
                   <!--begin::Label-->
                   <div class="fw-semibold fs-5 text-gray-500 text-center">
-                    <router-link class="text-gray-900 text-hover-primary fw-bold" to="/profile/creditHistory">소비 내역 수</router-link>
+                    <router-link class="text-gray-900 text-hover-primary fw-bold" to="/profile/spending">소비 내역 수</router-link>
                   </div>
                   <!--end::Label-->
                   <!--begin::Number-->
@@ -221,6 +189,7 @@
 <script setup>
 import '@/assets/js/custom/pages/user-profile/general.js';
 import CountUp from 'vue-countup-v3';
+import { ref, onMounted, nextTick } from 'vue';
 
 // 갱신 버튼 클릭 시 사용
 // import { ref } from 'vue';
@@ -241,5 +210,26 @@ import CountUp from 'vue-countup-v3';
 //     console.error('데이터 가져오는 중 오류 발생:', error);
 //   }
 // };
+
+
+// 모달 트리거를 위한 ref
+const modalTrigger = ref(null);
+// 메뉴를 위한 ref
+const menuButton = ref(null);
+
+onMounted(async () => {
+  // DOM이 렌더링된 후 초기화
+  await nextTick();
+
+  // 모달 트리거
+  if (modalTrigger.value) {
+    modalTrigger.value.click();
+  }
+
+  // 메뉴 초기화 (만약 `KTMenu`를 사용 중이라면)
+  if (window.KTMenu && menuButton.value) {
+    window.KTMenu.createInstances();
+  }
+});
 
 </script>

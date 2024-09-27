@@ -238,7 +238,7 @@ import { ref } from 'vue';
 
 const products = ref([
 {
-    icon: 'src/assets/media/icons/sug1.jpg', // 아이콘 링크
+    icon: '/src/assets/media/icons/sug1.jpg', // 아이콘 링크
     title: '금리가 가장 높은 상품',
     link1: { name: 'Deposit' }, 
     link2: { name: 'InstallmentSavings' }, 
@@ -246,7 +246,7 @@ const products = ref([
     linkText2: '적금 상품', 
   },
   {
-    icon: 'src/assets/media/icons/sug2.jpg', // 아이콘 링크
+    icon: '/src/assets/media/icons/sug2.jpg', // 아이콘 링크
     title: '최다 가입 상품',
     link1: { name: 'Deposit' }, 
     link2: { name: 'InstallmentSavings' }, // 라우트 이름
