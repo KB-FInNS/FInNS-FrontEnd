@@ -2,67 +2,116 @@
 import authApi from '@/api/authApi';
 import { useAuthStore } from '@/stores/auth';
 import { computed, reactive, ref } from 'vue';
-// Auth store
+import { useRouter } from 'vue-router';
+
+// 인증 스토어
 const auth = useAuthStore();
+const router = useRouter();
 
-// Refs for avatar handling
-const avatar = ref(null); // Avatar file input reference
-const avatarPath = ref('/src/assets/media/avatars/default_avatar.png'); // Default avatar image path
+// 아바타 처리를 위한 Ref
+const avatar = ref(null); // 아바타 파일 입력 참조
+const avatarPath = ref('/src/assets/media/avatars/default_avatar.png'); // 기본 아바타 이미지 경로
 
-// Member reactive state
+// 회원 정보를 담고 있는 reactive 상태
 const member = reactive({
   username: auth.username,
   email: auth.email,
-  birth: auth.birth,
-  password: '',
-  password1: '',
+  birth: auth.birth, // 추가: 생년월일
+  oldPassword: '',
+  newPassword: '',
+  newPassword2: '',
   avatar: null,
-  mbti: '', // Assuming this needs to be initialized
+  mbti: auth.mbti, // 추가: MBTI
 });
 
-// Error message state
+// 비밀번호 변경 상태
+const changePassword = reactive({
+  oldPassword: '',
+  newPassword: '',
+  newPassword2: '',
+});
+
+// 에러 메시지 상태
 const error = ref('');
+const inputPassword = () => (error.value = '');
+const resetError = () => (error.value = '');
 
-// Computed property for disabling the submit button
-const disableSubmit = computed(() => !member.email || !member.password);
+// 전송 버튼 비활성화 여부 계산 속성
+const disableSubmit = computed(
+  () =>
+    !changePassword.oldPassword ||
+    !changePassword.newPassword ||
+    !changePassword.newPassword2
+);
+const logout = (e) => {
+  // 로그아웃 처리
+  auth.logout();
+  router.push('/auth/login'); // 로그아웃 후 메인 페이지로 이동
+};
 
-// Submit handler for the form
+// 폼 전송 핸들러
 const onSubmit = async () => {
   if (!confirm('수정하시겠습니까?')) return;
 
-  // If a new avatar file is selected, update the member object
+  // 새 비밀번호와 확인 비밀번호가 일치하는지 검사
+  if (changePassword.newPassword !== changePassword.newPassword2) {
+    error.value = '새 비밀번호가 일치하지 않습니다.';
+    return;
+  }
+
+  // 새 아바타 파일이 선택되었을 경우 member 객체에 업데이트
   if (avatar.value && avatar.value.files.length > 0) {
     member.avatar = avatar.value.files[0];
   }
 
-  // Try updating the profile through an API call
+  // changePassword의 값을 member에 합침
+  member.oldPassword = changePassword.oldPassword;
+  member.newPassword = changePassword.newPassword;
+
+  // FormData 객체 생성
+  const formData = new FormData();
+  formData.append('username', member.username);
+  formData.append('email', member.email);
+  formData.append('birth', member.birth);
+  formData.append('mbti', member.mbti);
+  formData.append('oldPassword', member.oldPassword);
+  formData.append('newPassword', member.newPassword);
+
+  // 아바타가 있을 경우 FormData에 추가
+  if (member.avatar) {
+    formData.append('avatar', member.avatar);
+  }
+
+  // API 호출을 통한 프로필 업데이트 시도
   try {
-    await authApi.update(member);
+    await authApi.update(formData);
     error.value = '';
     auth.changeProfile(member);
     alert('정보를 수정하였습니다.');
   } catch (e) {
-    error.value = e.response?.data || 'An error occurred';
+    // 오류 메시지를 상세하게 출력
+    console.error('업데이트 에러:', e.response);
+    error.value = e.response?.data?.message || '오류가 발생했습니다.';
   }
 };
 
-// Handler for editing avatar (trigger file input)
+// 아바타 편집 핸들러 (파일 입력 트리거)
 const onEditAvatar = () => {
-  avatar.value?.click(); // Trigger file input click
+  avatar.value?.click(); // 파일 입력 클릭 트리거
 };
 
-// Watch for file changes and update avatar preview
+// 파일 변경을 감시하고 아바타 미리보기 업데이트
 const onAvatarChange = (event) => {
   const file = event.target.files[0];
   if (file) {
-    // Create a URL for the new image and update avatarPath
+    // 새로운 이미지의 URL을 생성하고 avatarPath 업데이트
     avatarPath.value = URL.createObjectURL(file);
   }
 };
 
-// Handler for deleting avatar (reset to default image)
+// 아바타 삭제 핸들러 (기본 이미지로 재설정)
 const onDeleteAvatar = () => {
-  avatarPath.value = '/src/assets/media/avatars/default_avatar.png'; // Set to default avatar image
+  avatarPath.value = '/src/assets/media/avatars/default_avatar.png'; // 기본 아바타 이미지로 설정
   alert('프로필 사진이 삭제되었습니다.');
 };
 </script>
@@ -153,28 +202,44 @@ const onDeleteAvatar = () => {
             </div>
           </div>
           <div class="mb-6 row">
-            <label for="password" class="col-sm-4 col-form-label fw-bold"
-              >비밀번호</label
+            <label for="oldPassword" class="col-sm-4 col-form-label fw-bold"
+              >이전 비밀번호</label
             >
             <div class="col-sm-8">
               <input
                 type="password"
                 class="form-control"
-                id="password"
-                v-model="member.password"
+                placeholder="이전 비밀번호"
+                v-model="changePassword.oldPassword"
+                @input="inputPassword"
               />
             </div>
           </div>
           <div class="mb-6 row">
-            <label for="password" class="col-sm-4 col-form-label fw-bold"
-              >비밀번호 확인</label
+            <label for="newPassword" class="col-sm-4 col-form-label fw-bold"
+              >새 비밀번호</label
             >
             <div class="col-sm-8">
               <input
                 type="password"
                 class="form-control"
-                id="password2"
-                v-model="member.password2"
+                placeholder="새 비밀번호"
+                v-model="changePassword.newPassword"
+                @input="resetError"
+              />
+            </div>
+          </div>
+          <div class="mb-6 row">
+            <label for="newPassword2" class="col-sm-4 col-form-label fw-bold"
+              >새 비밀번호 확인</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="password"
+                class="form-control"
+                placeholder="새 비밀번호 확인"
+                v-model="changePassword.newPassword2"
+                @input="resetError"
               />
             </div>
           </div>
@@ -203,6 +268,12 @@ const onDeleteAvatar = () => {
           :disabled="disableSubmit"
         >
           저장
+        </button>
+      </div>
+      <!-- 로그아웃 버튼 -->
+      <div class="d-flex justify-content-end mt-3">
+        <button @click.prevent="logout" class="btn btn-danger btn-lg">
+          <i class="fa-solid fa-right-from-bracket"></i> 로그아웃
         </button>
       </div>
     </form>
@@ -270,6 +341,7 @@ const onDeleteAvatar = () => {
   font-size: 16px;
   border-radius: 6px;
 }
+
 .edit-avatar-btn {
   top: 5px;
   right: 5px; /* Adjusted to align with the delete button */

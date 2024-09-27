@@ -16,7 +16,8 @@ export default {
     formData.append('username', member.username);
     formData.append('email', member.email);
     formData.append('password', member.password);
-    formData.append('mbti', member.mbti);
+    formData.append('birth', member.birth);
+
     if (member.avatar) {
       formData.append('avatar', member.avatar);
     }
@@ -25,27 +26,36 @@ export default {
     return data;
   },
   async update(member) {
+    console.log('업데이트 요청 username:', member.username); // username 확인 로그
     const formData = new FormData();
     formData.append('username', member.username);
     formData.append('password', member.password);
     formData.append('email', member.email);
+    // birth 형식 변환 확인
+    formData.append(
+      'birth',
+      member.birth instanceof Date
+        ? member.birth.toISOString().split('T')[0]
+        : member.birth
+    );
+
     if (member.avatar) {
       formData.append('avatar', member.avatar);
     }
-    const { data } = await api.put(
-      `${BASE_URL}/${member.username}`,
-      formData,
-      headers
-    );
+
+    // 올바른 URL과 헤더 전달 확인
+    const { data } = await api.put(`${BASE_URL}/${member.username}`, formData, {
+      headers,
+    });
     console.log('AUTH PUT: ', data);
     return data;
   },
-  async changePassword(formData) {
-    const { data } = await api.put(
-      `${BASE_URL}/${formData.username}/changepassword`,
-      formData
-    );
-    console.log('AUTH PUT: ', data);
-    return data;
-  },
+  // async changePassword(formData) {
+  //   const { data } = await api.put(
+  //     `${BASE_URL}/${formData.username}/changepassword`,
+  //     formData
+  //   );
+  //   console.log('AUTH PUT: ', data);
+  //   return data;
+  // },
 };

@@ -81,9 +81,9 @@
           <div class="mb-3">
             <label for="birth" class="form-label"> 생년월일 * </label>
             <input
-              type="text"
+              type="date"
               class="form-control"
-              placeholder="이메일을 입력하세요..."
+              placeholder="생년월일을 입력하세요..."
               id="birth"
               v-model="member.birth"
             />
@@ -144,7 +144,7 @@ const join = async () => {
   }
   try {
     await authApi.create(member);
-    router.push({ name: 'home' });
+    router.push({ name: 'Main' });
   } catch (e) {
     console.error(e);
   }

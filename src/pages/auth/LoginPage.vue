@@ -44,13 +44,7 @@
             />
           </div>
           <div v-if="error" class="text-danger">{{ error }}</div>
-          <button
-            type="submit"
-            class="btn btn-primary mt-4"
-            :disabled="disableSubmit"
-          >
-            로그인
-          </button>
+          <button type="submit" class="btn btn-primary mt-4">로그인</button>
           <div class="text-center">또는</div>
           <button class="btn btn-success mt-2 w-100 naver-login-btn">
             <img
@@ -80,8 +74,8 @@ const cr = useRoute();
 const router = useRouter();
 const auth = useAuthStore();
 const member = reactive({
-  username: '',
-  password: '',
+  username: 'asd',
+  password: '1234',
 });
 const error = ref('');
 const disableSubmit = computed(() => !(member.username && member.password));
