@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="Head">
-      <Header
+      <Banner
         titleText="소비 상세"
         descriptionText="소비 내역을 상세하게 확인 및 수정할 수 있습니다"
       />
@@ -115,59 +115,63 @@
   </div>
 </template>
 
-<script>
-import Header from '@/components/common/Banner.vue';
+<script setup>
+// `import`는 동일하게 유지
+import { ref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import Banner from '@/components/common/Banner.vue';
 
-export default {
-  components: {
-    Header,
-  },
+// `components` 등록 불필요, 바로 사용 가능
+// `data`를 Composition API의 `ref`로 선언
+const publicScope = ref('전체공개');
+const category = ref('');
+const memo = ref('');
+const amount = ref(120000);
+const place = ref('다이소 군자점');
+const paymentDate = ref('2024년 9월 10일 14:38');
+const paymentMethod = ref('국민 K-패스 CHECK');
+const id = ref(null);
 
-  data() {
-    return {
-      publicScope: '전체공개',
-      category: '',
-      memo: '',
-      amount: 120000,
-      place: '다이소 군자점',
-      paymentDate: '2024년 9월 10일 14:38',
-      paymentMethod: '국민 K-패스 CHECK',
-      id: null,
-    };
-  },
-  created() {
-    this.id = this.$route.params.id;
-    this.loadDetails(this.id);
-  },
-  methods: {
-    loadDetails(id) {
-      // API 또는 데이터베이스에서 데이터를 불러오는 로직을 여기에 추가
-      // 현재는 예시 데이터를 표시 중
-      if (id == 1) {
-        this.amount = 12000;
-        this.place = '스타벅스';
-        this.paymentDate = '2024년 9월 10일 14:38';
-        this.paymentMethod = '신한 카드';
-      } else if (id == 2) {
-        this.amount = 15000;
-        this.place = 'CGV';
-        this.paymentDate = '2024년 9월 11일 16:00';
-        this.paymentMethod = '현대 카드';
-      } else {
-        this.amount = 5000;
-        this.place = '이디야 커피';
-        this.paymentDate = '2024년 9월 12일 12:00';
-        this.paymentMethod = '카카오페이';
-      }
-    },
-    cancel() {
-      this.$router.go(-1); // 이전 페이지로 돌아가기
-    },
-    confirm() {
-      alert('변경 사항이 저장되었습니다.');
-    },
-  },
-};
+// `vue-router`의 `useRoute`, `useRouter` 사용
+const route = useRoute();
+const router = useRouter();
+
+// `created` 대신 `onMounted` 사용
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  id.value = route.params.id;
+  loadDetails(id.value);
+});
+
+// 기존 `methods`를 일반 함수로 정의
+function loadDetails(id) {
+  // 예시 데이터 표시
+  if (id == 1) {
+    amount.value = 12000;
+    place.value = '스타벅스';
+    paymentDate.value = '2024년 9월 10일 14:38';
+    paymentMethod.value = '신한 카드';
+  } else if (id == 2) {
+    amount.value = 15000;
+    place.value = 'CGV';
+    paymentDate.value = '2024년 9월 11일 16:00';
+    paymentMethod.value = '현대 카드';
+  } else {
+    amount.value = 5000;
+    place.value = '이디야 커피';
+    paymentDate.value = '2024년 9월 12일 12:00';
+    paymentMethod.value = '카카오페이';
+  }
+}
+
+function cancel() {
+  router.go(-1); // 이전 페이지로 돌아가기
+}
+
+function confirm() {
+  alert('변경 사항이 저장되었습니다.');
+}
 </script>
 
 <style scoped>
