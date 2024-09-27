@@ -31,17 +31,22 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center">
                             <!-- 검색 입력 -->
-                            <div class="position-relative w-md-400px me-md-2">
-                                <i
-                                    class="ki-duotone ki-magnifier fs-3 text-gray-500 position-absolute top-50 translate-middle ms-6">
-                                    <span class="path1"></span>
-                                    <span class="path2"></span>
-                                </i>
-                                <input type="text" class="form-control form-control-solid ps-10" name="cardSearch"
-                                    placeholder="카드명을 입력해주세요.">
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <button type="submit" class="btn btn-primary me-5">검색</button>
+                            <div class="card-body">
+                                <div class="col-lg-6">
+                                    <label class="fs-6 form-label fw-bold text-gray-900">검색</label>
+                                    <div class="d-flex align-items-center">
+                                        <div class="position-relative w-md-550px me-md-2">
+                                            <i
+                                                class="ki-duotone ki-magnifier fs-3 text-gray-500 position-absolute top-50 translate-middle ms-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            <input v-model="searchInstallment" type="text"
+                                                class="form-control form-control-solid ps-10"
+                                                placeholder="은행명, 카드 상품명을 입력해주세요.">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
