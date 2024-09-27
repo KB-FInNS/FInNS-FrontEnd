@@ -8,13 +8,13 @@ import Deposit from '@/pages/Deposit.vue';
 import InstallmentSavings from '@/pages/InstallmentSavings.vue';
 import Card from '@/pages/Card.vue';
 import Message from '@/pages/Message.vue';
-import CreditHistory from '@/pages/profile/CreditHistory.vue';
+import Spending from '@/pages/profile/Spending.vue';
 import Analysis from '@/pages/profile/Analysis.vue';
 import Follower from '@/components/common/Follower.vue';
 import Following from '@/components/common/Following.vue';
 import PayDetails from '@/pages/PayDetails.vue';
 import CardWorldCup from '@/pages/CardWorldCup.vue';
-import Mbti from '@/pages/Mbtidiagnosis.vue';
+import Mbti from '@/pages/FinanceMbti.vue';
 import Update from '@/pages/auth/ProfilePage.vue';
 import Login from '@/pages/auth/LoginPage.vue';
 import Join from '@/pages/auth/JoinPage.vue';
@@ -46,12 +46,12 @@ const router = createRouter({
           path: 'profile',
           name: 'Profile',
           component: Profile,
-          redirect: '/profile/creditHistory',
+          redirect: '/profile/spending',
           // beforeEnter: isAuthenticated,,
           children: [
             {
-              path: 'creditHistory',
-              component: CreditHistory,
+              path: 'spending',
+              component: Spending,
             },
             {
               path: 'analysis',
@@ -98,7 +98,7 @@ const router = createRouter({
           component: PayDetails,
         },
         {
-          path: '/PostDetails', // 게시물 상세 페이지
+          path: '/postDetails', // 게시물 상세 페이지
           name: 'PostDetails',
           component: PostDetails,
         },

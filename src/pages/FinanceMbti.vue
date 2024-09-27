@@ -10,7 +10,7 @@
   <div class="justify-content-center align-items-center text-center bg-title">
     <h1 class="text-gray-900 fw-bold pt-8 mt-14 my-1 fs-1">금융 MBTI</h1>
     <h2 class="text-gray-700 fw-bold p-4 fs-2">
-      소비내역 분석을 바탕으로 한 나의 MBTI 를 확인해보세요
+      소비 내역 분석을 바탕으로 한 나의 MBTI를 확인해 보세요.
     </h2>
   </div>
 
@@ -413,7 +413,7 @@
               <div class="card-body">
                 <!-- 이미지 추가 -->
                 <div class="image-container">
-                  <img src="../assets/media/avatars/kb_insyu.png" />
+                  <img src="../assets/media/avatars/kb_insyu.png" height="220px"/>
                 </div>
               </div>
             </div>
@@ -560,10 +560,10 @@ onMounted(fetchData);
   background-color: #eff6f9; /* card 첫번째 색상 */
 }
 .bg-Two {
-  background-color: #f4fff2; /* Powder Blue 색상 */
+  background-color: #EFFFEC; /* Powder Blue 색상 */
 }
 .bg-Three {
-  background-color: #f8dcf7; /* Powder Blue 색상 */
+  background-color: #FFF2FF; /* Powder Blue 색상 */
 }
 .bg-four {
   background-color: #f3f2ff; /* Powder Blue 색상 */
@@ -572,10 +572,10 @@ onMounted(fetchData);
   background-color: #fff6f2; /* Powder Blue 색상 */
 }
 .bg-six {
-  background-color: #fffef2; /* Powder Blue 색상 */
+  background-color: #FFFEED; /* Powder Blue 색상 */
 }
 .bg-seven {
-  background-color: #f7f2ff; /* Powder Blue 색상 */
+  background-color: #FFF2FB; /* Powder Blue 색상 */
 }
 .bg-eight {
   background-color: #ebfdff; /* Powder Blue 색상 */
