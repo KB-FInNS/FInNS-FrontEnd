@@ -82,6 +82,18 @@
       <button class="btn btn-secondary" @click="cancel">취소</button>
       <button class="btn btn-primary" @click="confirm">확인</button>
     </div>
+
+    <!--begin:: 게시물 사진-->
+    <Carousel>
+      <Slide v-for="(image, index) in images" :key="index">
+        <img :src="image" alt="Image Slide" class="carousel-image" />
+      </Slide>
+
+      <template #addons>
+        <Navigation />
+        <Pagination />
+      </template>
+    </Carousel>
   </div>
 </template>
 
@@ -89,6 +101,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import Banner from '@/components/common/Banner.vue';
+import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
 
 // 공개 범위, 카테고리, 금액의 상태 관리
 const publicScope = ref('전체공개');
@@ -107,6 +120,13 @@ function cancel() {
 function confirm() {
   alert('게시물 수정이 완료되었습니다.');
 }
+
+// 이미지 목록
+const images = ref([
+  'src/assets/media/food/samgeob1.jpg',
+  'src/assets/media/food/samgeob2.jpg',
+  'src/assets/media/food/samgeob3.jpg',
+]);
 </script>
 
 <style scoped>
@@ -150,5 +170,13 @@ function confirm() {
 
 button {
   width: 46%;
+}
+
+.carousel-image {
+  width: 100%;
+  /* 이미지가 Carousel의 너비에 맞춰짐 */
+  height: 500px;
+  /* contain : 사진 크기에 맞게, cover : carousel 에 맞게(이미지 잘림) */
+  object-fit: contain;
 }
 </style>
