@@ -111,7 +111,7 @@ const rankings = ref([
         ],
     },
     {
-        title: '조회수 TOP 3',
+        title: '좋은소비 TOP 3',
         items: [
             { name: 'Yujin_1219', amount: '1,000,000회', profileImage: 'src/assets/media/avatars/300-4.jpg' },
             { name: 'Yujin_1219', amount: '900,000회', profileImage: 'src/assets/media/avatars/300-2.jpg' },
