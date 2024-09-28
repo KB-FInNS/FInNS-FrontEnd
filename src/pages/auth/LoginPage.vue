@@ -43,14 +43,14 @@
             :disabled="disableSubmit">
             <div style=" font-weight:550; font-size: 17px;">로그인</div>
           </button>
-          <div class="divider">
+          <!-- <div class="divider">
             <span>OR</span>
-          </div>
-          <button class="btn mt-2 w-100 naver-login-btn"
+          </div> -->
+          <!-- <button class="btn mt-2 w-100 naver-login-btn"
             style="border-radius: 13px; height: 50px; border: 1px solid #fff; /* 버튼의 테두리 추가 */">
             <img src="../../assets/media/avatars/login_naver.png" class="naver-logo" />
             <div style=" font-weight: 550; font-size: 16px; color: white;">네이버 아이디로 로그인</div>
-          </button>
+          </button> -->
 
           <div class="text-center pt-6">
             <router-link to="/auth/join" class="link-text" style="color: white; font-size: 15px;">회원이 아니신가요?
@@ -226,20 +226,20 @@ p {
 }
 
 /* 네이버 로그인 버튼 정렬 */
-.naver-login-btn {
+/* .naver-login-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 8px; */
   /* 이미지와 텍스트 사이 간격 */
-  padding: 10px;
+ /* adding: 10px; p */
   /* 버튼의 패딩 */
-}
+/* } */
 
 /* 네이버 로고의 크기 조정 */
-.naver-logo {
+/* .naver-logo {
   height: 34px;
-}
+} */
 
 .divider {
   display: flex;
