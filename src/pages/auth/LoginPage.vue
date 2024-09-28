@@ -1,11 +1,11 @@
 <template>
   <div class="login-container">
-    <!-- Left Section: Image/Branding -->
+    <!-- Left Section: Image/Brand*ing -->
     <div class="login-left">
       <div class="branding mt-4">
-        <div style="font-size:xx-large; font-weight: bolder;">
-          <img src="@/assets/media/avatars/login_logo.png" style="height: 100px;"/>
-          FInNS
+        <div>
+          <img src="@/assets/media/avatars/login_logo.png" class="logo" />
+          <span class="logo">FInNS</span>
         </div>
         <img src="@/assets/media/avatars/loginpage.png" alt="Illustration" class="login-image" />
       </div>
@@ -21,14 +21,23 @@
             <label for="username" class="form-label">
               아이디
             </label>
-            <input type="text" class="form-control" placeholder="아이디를 입력하세요..." v-model="member.username" />
+            <input type="text" class="form-control" placeholder="아이디를 입력하세요." v-model="member.username" />
           </div>
+
           <div class="mb-3" style="text-align: left; margin-top: 30px;">
-            <label for="password" class="form-label">
-              비밀번호
-            </label>
-            <input type="password" class="form-control" placeholder="비밀번호를 입력하세요..." v-model="member.password" />
+            <div class="form-inline">
+              <label style="display: block; position: relative;">
+                <span class="form-label">비밀번호</span>
+                <input :type="passwordHidden ? 'password' : 'text'" class="password-field form-control d-inline"
+                  v-model="member.password" placeholder="비밀번호를 입력하세요."
+                  style="width: 100%; padding-right: 35px; box-sizing: border-box;" />
+                <span class="display-eye fa" :class="passwordHidden ? 'fa-eye-slash' : 'fa-eye'"
+                  @click="togglePasswordVisibility" style="position: absolute; top: 70%; right: 20px; font-size: 1.5em;
+        transform: translateY(-50%); cursor: pointer; color: #757575;"></span>
+              </label>
+            </div>
           </div>
+
           <div v-if="error" class="text-danger">{{ error }}</div>
           <button type="submit" class="btn btn-primary mt-9" style="border-radius: 13px; height: 50px;"
             :disabled="disableSubmit">
@@ -37,14 +46,15 @@
           <div class="divider">
             <span>OR</span>
           </div>
-          <button class="btn mt-2 w-100 naver-login-btn" style="border-radius: 13px; height: 50px; border: 1px solid #fff; /* 버튼의 테두리 추가 */">
-            <img src="../../assets/media/avatars/login_naver.png" class="naver-logo"/>
+          <button class="btn mt-2 w-100 naver-login-btn"
+            style="border-radius: 13px; height: 50px; border: 1px solid #fff; /* 버튼의 테두리 추가 */">
+            <img src="../../assets/media/avatars/login_naver.png" class="naver-logo" />
             <div style=" font-weight: 550; font-size: 16px; color: white;">네이버 아이디로 로그인</div>
           </button>
 
           <div class="text-center pt-6">
-            <router-link to="/auth/join" class="link-text"
-            style="color: white; font-size: 15px;">계정이 없으신가요? 가입하기</router-link>
+            <router-link to="/auth/join" class="link-text" style="color: white; font-size: 15px;">회원이 아니신가요?
+              가입하기</router-link>
           </div>
         </form>
       </div>
@@ -76,6 +86,12 @@ const login = async () => {
     error.value = e.response.data;
   }
 };
+
+const passwordText = ref('');
+const passwordHidden = ref(true);
+const togglePasswordVisibility = () => {
+  passwordHidden.value = !passwordHidden.value;
+};
 </script>
 
 <style scoped>
@@ -106,8 +122,6 @@ const login = async () => {
 }
 
 .login-image {
-  /* max-width: 100%;
-  height: auto; */
   width: 600px;
   height: auto;
 }
@@ -151,6 +165,7 @@ p {
 }
 
 .form-control {
+  position: relative;
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ffffff;
@@ -237,16 +252,69 @@ p {
 .divider::after {
   content: '';
   flex: 1;
-  border-bottom: 1px solid #fff; /* 선의 색상 (하얀색) */
+  border-bottom: 1px solid #fff;
+  /* 선의 색상 (하얀색) */
   margin: 0 10px;
 }
 
 .divider span {
   font-size: 18px;
   font-weight: normal;
-  color: white; /* 텍스트 색상 */
+  color: white;
+  /* 텍스트 색상 */
 }
+
 .link-text:hover {
-  font-weight:900; /**호버시 글자 두껍게**/
+  font-weight: bold;
+  /**호버시 글자 두껍게**/
+}
+
+.display-eye {
+  cursor: pointer;
+  margin-left: 5px;
+  right: 10px;
+  /* 입력 필드의 오른쪽에 위치 */
+  /* transform: translateY(-50%); 수직 중앙 정렬 */
+  cursor: pointer;
+  color: #000000;
+}
+
+.input-container {
+  position: relative;
+  display: inline-block;
+  /* 인라인 블록으로 설정 */
+}
+
+.password-field {
+  padding-right: 30px;
+  /* 아이콘을 위한 오른쪽 패딩 추가 */
+}
+
+div.pwform {
+  position: relative;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ffffff;
+  background-color: white;
+  border-radius: 13px;
+  margin-top: 5px;
+  height: 50px;
+}
+
+.form-control input {
+
+  width: 400px;
+  height: 30px;
+  background-color: rgb(255, 255, 255);
+  border: 0;
+  color: white;
+  text-indent: 10px;
+}
+
+.form-control span {
+  position: absolute;
+  left: 75%;
+  top: 27px;
+  color: rgb(255, 255, 255);
 }
 </style>
