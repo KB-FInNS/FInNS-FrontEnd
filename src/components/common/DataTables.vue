@@ -26,7 +26,9 @@
             v-for="(item, index) in data"
             :key="index"
             :class="{ 'bg-gray-200': !item.checked }"
-            class="fs-5 text-gray-700"
+            class="fs-5 text-gray-600 fw-bold"
+            @click="goToPostDetail(item.id)"
+            style="cursor: pointer;"
           >
             <td class="form-check form-check-solid form-check-custom form-switch justify-content-center mt-2" style="border: none;">
                 <input
@@ -35,6 +37,7 @@
                   id="googleswitch"
                   v-model="item.checked"
                   @change="updatePublic(item)"
+                  @click.stop
                 />
             </td>
             <td></td>
@@ -43,16 +46,15 @@
             </td>
             <td></td>
 
-            <td class="place">{{ item.place }}</td>
+            <td class="place" style="color:black">{{ item.place }}</td>
             <td></td>
             <td class="amount">
               {{ item.amount.toLocaleString() }}원
             </td>
             <td class="date">{{ item.date }}</td>
             <td class="">
-              <a @click="goToDetail" class="btn btn-sm btn-primary hover-scale">소비 상세</a>
+              <a @click.stop="goToPayDetail" class="btn btn-sm btn-primary hover-scale fw-bold">소비 상세</a>
             </td>
-
           </tr>
         </tbody>
       </table>
@@ -71,11 +73,11 @@ const updatePublic = (item) => {
   // 공개 범위 바꾸는 코드 작성!
 };
 
-// const goToDetail = () => {
-//   emitter.emit('item_edit_click', { item: item, index: item.index });
-// };
+const goToPostDetail = (id) => {
+  router.push(`/postDetails/${id}`); // 해당 id에 맞는 PayDetails 페이지로 이동
+};
 
-const goToDetail = (id) => {
+const goToPayDetail = (id) => {
   router.push(`/payDetails/${id}`); // 해당 id에 맞는 PayDetails 페이지로 이동
 };
 

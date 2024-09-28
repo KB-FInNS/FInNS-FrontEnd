@@ -46,6 +46,7 @@ const initializeCalendar = () => {
       info.el.style.justifyContent = 'center';
       info.el.style.backgroundColor = 'transparent'; // 배경색 제거
       info.el.style.border = 'none'; // 경계선 제거
+      info.el.style.fontSize = '16px'; // 원하는 글자 크기로 설정
     },
     dayCellContent: function (info) {
       var number = document.createElement("a");
@@ -75,16 +76,16 @@ const initializeCalendar = () => {
       calendar.select(info.event.startStr);
     },
     events: [
-      { title: '50000', start: '2024-09-01' },
-      { title: '40000', start: '2024-09-07' },
-      { title: '30000', start: '2024-09-11' },
-      { title: '20000', start: '2024-09-12' },
-      { title: '10000', start: '2024-09-13' },
-      { title: '6000', start: '2024-09-14' },
-      { title: '7000', start: '2024-09-15' },
-      { title: '8000', start: '2024-09-16' },
-      { title: '9000', start: '2024-09-17' },
-      { title: '9000', start: '2024-09-27' },
+      { title: '-50,000원', start: '2024-09-01' },
+      { title: '-40,000원', start: '2024-09-07' },
+      { title: '-30,000원', start: '2024-09-11' },
+      { title: '-20,000원', start: '2024-09-12' },
+      { title: '-10,000원', start: '2024-09-13' },
+      { title: '-6,000원', start: '2024-09-14' },
+      { title: '-7,000원', start: '2024-09-15' },
+      { title: '-8,000원', start: '2024-09-16' },
+      { title: '-9,000원', start: '2024-09-17' },
+      { title: '-9,000원', start: '2024-09-27' },
     ],
   });
 

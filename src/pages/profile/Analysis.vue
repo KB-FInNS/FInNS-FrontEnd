@@ -20,7 +20,7 @@
       <div v-if="categorys.length === 0">
         <h4 id="nolist">소비 내역이 없습니다!</h4>
       </div>
-      <div v-else>
+      <div v-else v-if="isTableVisible">
         <div class="table-responsive" style="height: 450px; width: 700px; overflow-y: auto;">
           <table
             id="kt_datatable_vertical_scroll"
@@ -54,7 +54,16 @@ const loadGoogleCharts = () => {
   document.head.appendChild(script);
 };
 
-let categorys = ref([]);
+let categorys = ref();
+let isTableVisible = ref(false); // 테이블 표시 여부
+
+const props = defineProps({
+  categorys: {
+    type: Array,
+    required: true,
+  },
+});
+
 categorys.value = [
   {
     category: '식비 & 카페',
@@ -146,15 +155,10 @@ const drawChart = () => {
     // 차트 그리기
     const chart = new google.visualization.PieChart(document.getElementById('kt_docs_google_chart_pie'));
     chart.draw(data, options);
+
+    isTableVisible.value = true; // 테이블 표시
   });
 };
-
-const props = defineProps({
-  categorys: {
-    type: Array,
-    required: true,
-  },
-});
 
 onMounted(() => {
   loadGoogleCharts();
