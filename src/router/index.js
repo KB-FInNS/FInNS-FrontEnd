@@ -20,6 +20,9 @@ import Login from '@/pages/auth/LoginPage.vue';
 import Join from '@/pages/auth/JoinPage.vue';
 import { isAuthenticated } from '@/util/guards';
 import PostDetails from '@/pages/PostDetails.vue';
+import ProductDetail from '@/pages/ProductDetail.vue';
+// import DepositDetail from '@/pages/DepositDetail.vue';
+// import installmentSavingsDetail from '@/pages/installmentSavingsDetail.vue';
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -111,6 +114,18 @@ const router = createRouter({
         {
           path: 'cardworldcup',
           component: CardWorldCup,
+        },
+        {
+          path: '/Deposit/:financial_product_no', // 예금 상품 상세 페이지
+          name: 'DepositDetail',
+          // component: DepositDetail,
+          component: ProductDetail,
+        },
+        {
+          path: '/installmentSavings/:financial_product_no', // 적금 상품 상세 페이지
+          name: 'installmentSavingsDetail',
+          // component: installmentSavingsDetail,
+          component: ProductDetail,
         },
       ],
     },

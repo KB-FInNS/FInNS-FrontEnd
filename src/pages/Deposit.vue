@@ -27,6 +27,7 @@
     <div class="tab-content" id="myTabContent">
       <!-- 예금 탭 내용-->
       <div class="m-5 mb-1">
+        <!-- 검색어 필터링 -->
         <div class="card mb-10">
           <!-- 검색 입력 -->
           <div class="card-body">
@@ -50,22 +51,22 @@
             <div class="col-lg-6">
               <label class="fs-6 form-label fw-bold text-gray-900">가입 기간</label>
               <div class="nav-group nav-group-fluid">
-                <label><input v-model="selectedPeriod" type="radio" class="btn-check" name="depositPeriod" value="전체"
+                <label><input v-model="selectedPeriod" type="radio" class="btn-check" value="전체"
                     checked /><span
                     class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bold px-4">전체</span></label>
-                <label><input v-model="selectedPeriod" type="radio" class="btn-check" name="depositPeriod"
+                <label><input v-model="selectedPeriod" type="radio" class="btn-check" 
                     value="1" /><span
                     class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bold px-4">1개월</span></label>
-                <label><input v-model="selectedPeriod" type="radio" class="btn-check" name="depositPeriod"
+                <label><input v-model="selectedPeriod" type="radio" class="btn-check" 
                     value="3" /><span
                     class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bold px-4">3개월</span></label>
-                <label><input v-model="selectedPeriod" type="radio" class="btn-check" name="depositPeriod"
+                <label><input v-model="selectedPeriod" type="radio" class="btn-check" 
                     value="12" /><span
                     class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bold px-4">1년</span></label>
-                <label><input v-model="selectedPeriod" type="radio" class="btn-check" name="depositPeriod"
+                <label><input v-model="selectedPeriod" type="radio" class="btn-check" 
                     value="24" /><span
                     class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bold px-4">2년</span></label>
-                <label><input v-model="selectedPeriod" type="radio" class="btn-check" name="depositPeriod"
+                <label><input v-model="selectedPeriod" type="radio" class="btn-check" 
                     value="36" /><span
                     class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bold px-4">3년</span></label>
               </div>
@@ -182,7 +183,7 @@
                 <select v-model="selectedSort" class="form-select form-select-solid" data-control="select1"
                   data-placeholder="Select an option" data-hide-search="true">
                   <option value="default" selected>기본 정렬</option>
-                  <option value="intr_rate2Desc">최고 금리순</option>
+                  <option value="intr_rate2">최고 금리순</option>
                 </select>
                 <!--end::Select-->
               </div>
@@ -212,7 +213,7 @@
                 <td>{{ item.intr_rate }}</td>
                 <td>{{ item.intr_rate2 }}</td>
                 <td>
-                  <a href="#" class="btn btn-sm btn-primary me-3" @click="viewDetails(item)">자세히 보기</a>
+                  <a class="btn btn-sm btn-primary me-3" @click="gotoDepositDetail(item)">자세히 보기</a>
                 </td>
               </tr>
             </tbody>
@@ -261,301 +262,24 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue';
+// import { useRoute } from 'vue-router';
+import { useRouter } from 'vue-router';
+import { ref, computed, watch, onMounted  } from 'vue';
+// const route = useRoute();
+ const router = useRouter();
 
 // 일시적인 데이터set
-const dataList = [
-  {
-    save_trm: '12',
-    intr_rate_type_nm: '단리',
-    join_member: '제한없음',
-    join_way: '인터넷',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_KB_Symbol.png',
-    kor_co_nm: 'KB국민은행',
-    fin_prdt_nm: '주택청약종합저축',
-    intr_rate: '1.5%',
-    intr_rate2: '3.5%',
-  },
-  {
-    save_trm: '24',
-    intr_rate_type_nm: '단리',
-    join_member: '제한없음',
-    join_way: '스마트폰',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_SHINHAN_Symbol.png',
-    kor_co_nm: '신한은행',
-    fin_prdt_nm: '자유적립예금',
-    intr_rate: '1.7%',
-    intr_rate2: '3.8%',
-  },
-  {
-    save_trm: '36',
-    intr_rate_type_nm: '복리',
-    join_member: '일부제한',
-    join_way: '영업점',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_WOORI_Symbol.png',
-    kor_co_nm: '우리은행',
-    fin_prdt_nm: '정기예금',
-    intr_rate: '2.0%',
-    intr_rate2: '4.0%',
-  },
-  {
-    save_trm: '12',
-    intr_rate_type_nm: '단리',
-    join_member: '서민 전용',
-    join_way: '모집인',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_HANA_Symbol.png',
-    kor_co_nm: '하나은행',
-    fin_prdt_nm: '비과세저축',
-    intr_rate: '1.8%',
-    intr_rate2: '3.9%',
-  },
-  {
-    save_trm: '3',
-    intr_rate_type_nm: '복리',
-    join_member: '서민 전용',
-    join_way: '모집인',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_HANA_Symbol.png',
-    kor_co_nm: '하나은행',
-    fin_prdt_nm: '비과세저축',
-    intr_rate: '1.8%',
-    intr_rate2: '3.9%',
-  },
-  {
-    save_trm: '1',
-    intr_rate_type_nm: '복리',
-    join_member: '서민 전용',
-    join_way: '모집인',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_HANA_Symbol.png',
-    kor_co_nm: '하나은행',
-    fin_prdt_nm: '비과세저축',
-    intr_rate: '1.8%',
-    intr_rate2: '3.9%',
-  },
-  {
-    save_trm: '1',
-    intr_rate_type_nm: '단리',
-    join_member: '서민 전용',
-    join_way: '모집인',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_HANA_Symbol.png',
-    kor_co_nm: '하나은행',
-    fin_prdt_nm: '비과세저축',
-    intr_rate: '1.8%',
-    intr_rate2: '3.9%',
-  },
-  {
-    save_trm: '1',
-    intr_rate_type_nm: '단리',
-    join_member: '서민 전용',
-    join_way: '모집인',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_HANA_Symbol.png',
-    kor_co_nm: '하나은행',
-    fin_prdt_nm: '비과세저축',
-    intr_rate: '1.8%',
-    intr_rate2: '3.9%',
-  },
-  {
-    save_trm: '12',
-    intr_rate_type_nm: '복리',
-    join_member: '제한없음',
-    join_way: '인터넷',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_KB_Symbol.png',
-    kor_co_nm: 'KB국민은행',
-    fin_prdt_nm: '정기예금',
-    intr_rate: '1.9%',
-    intr_rate2: '4.2%',
-  },
-  {
-    save_trm: '24',
-    intr_rate_type_nm: '단리',
-    join_member: '서민 전용',
-    join_way: '스마트폰',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_SHINHAN_Symbol.png',
-    kor_co_nm: '신한은행',
-    fin_prdt_nm: '장기예금',
-    intr_rate: '2.1%',
-    intr_rate2: '4.5%',
-  },
-  {
-    save_trm: '36',
-    intr_rate_type_nm: '복리',
-    join_member: '제한없음',
-    join_way: '영업점',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_WOORI_Symbol.png',
-    kor_co_nm: '우리은행',
-    fin_prdt_nm: '정기적금',
-    intr_rate: '2.5%',
-    intr_rate2: '5.0%',
-  },
-  {
-    save_trm: '12',
-    intr_rate_type_nm: '단리',
-    join_member: '일부제한',
-    join_way: '모집인',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_HANA_Symbol.png',
-    kor_co_nm: '하나은행',
-    fin_prdt_nm: '주택청약저축',
-    intr_rate: '1.6%',
-    intr_rate2: '3.6%',
-  },
-  {
-    save_trm: '24',
-    intr_rate_type_nm: '복리',
-    join_member: '서민 전용',
-    join_way: '모집인',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_KB_Symbol.png',
-    kor_co_nm: 'KB국민은행',
-    fin_prdt_nm: '세이프저축',
-    intr_rate: '2.2%',
-    intr_rate2: '4.8%',
-  },
-  {
-    save_trm: '6',
-    intr_rate_type_nm: '단리',
-    join_member: '제한없음',
-    join_way: '인터넷',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_WOORI_Symbol.png',
-    kor_co_nm: '우리은행',
-    fin_prdt_nm: '정기예금',
-    intr_rate: '1.4%',
-    intr_rate2: '3.2%',
-  },
-  {
-    save_trm: '1',
-    intr_rate_type_nm: '복리',
-    join_member: '일부제한',
-    join_way: '모집인',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_SHINHAN_Symbol.png',
-    kor_co_nm: '신한은행',
-    fin_prdt_nm: '정기적금',
-    intr_rate: '1.9%',
-    intr_rate2: '3.5%',
-  },
-  {
-    save_trm: '3',
-    intr_rate_type_nm: '단리',
-    join_member: '서민 전용',
-    join_way: '영업점',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_HANA_Symbol.png',
-    kor_co_nm: '하나은행',
-    fin_prdt_nm: '비과세예금',
-    intr_rate: '1.7%',
-    intr_rate2: '4.1%',
-  },
-  {
-    save_trm: '6',
-    intr_rate_type_nm: '복리',
-    join_member: '제한없음',
-    join_way: '스마트폰',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_WOORI_Symbol.png',
-    kor_co_nm: '우리은행',
-    fin_prdt_nm: '자유적립예금',
-    intr_rate: '2.4%',
-    intr_rate2: '4.9%',
-  },
-  {
-    save_trm: '12',
-    intr_rate_type_nm: '단리',
-    join_member: '서민 전용',
-    join_way: '인터넷',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_KB_Symbol.png',
-    kor_co_nm: 'KB국민은행',
-    fin_prdt_nm: '정기예금',
-    intr_rate: '1.8%',
-    intr_rate2: '4.0%',
-  },
-  {
-    save_trm: '36',
-    intr_rate_type_nm: '복리',
-    join_member: '일부제한',
-    join_way: '영업점',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_SHINHAN_Symbol.png',
-    kor_co_nm: '신한은행',
-    fin_prdt_nm: '단기예금',
-    intr_rate: '2.2%',
-    intr_rate2: '4.5%',
-  },
-  {
-    save_trm: '24',
-    intr_rate_type_nm: '단리',
-    join_member: '서민 전용',
-    join_way: '모집인',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_WOORI_Symbol.png',
-    kor_co_nm: '우리은행',
-    fin_prdt_nm: '비과세저축',
-    intr_rate: '1.5%',
-    intr_rate2: '3.8%',
-  },
-  {
-    save_trm: '6',
-    intr_rate_type_nm: '단리',
-    join_member: '제한없음',
-    join_way: '스마트폰',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_HANA_Symbol.png',
-    kor_co_nm: '하나은행',
-    fin_prdt_nm: '주택청약종합저축',
-    intr_rate: '1.9%',
-    intr_rate2: '3.9%',
-  },
-  {
-    save_trm: '1',
-    intr_rate_type_nm: '복리',
-    join_member: '서민 전용',
-    join_way: '모집인',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_WOORI_Symbol.png',
-    kor_co_nm: '우리은행',
-    fin_prdt_nm: '단기예금',
-    intr_rate: '1.6%',
-    intr_rate2: '4.0%',
-  },
-  {
-    save_trm: '12',
-    intr_rate_type_nm: '단리',
-    join_member: '제한없음',
-    join_way: '영업점',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_SHINHAN_Symbol.png',
-    kor_co_nm: '신한은행',
-    fin_prdt_nm: '정기예금',
-    intr_rate: '1.8%',
-    intr_rate2: '4.3%',
-  },
-  {
-    save_trm: '36',
-    intr_rate_type_nm: '복리',
-    join_member: '서민 전용',
-    join_way: '인터넷',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_KB_Symbol.png',
-    kor_co_nm: 'KB국민은행',
-    fin_prdt_nm: '자유적립예금',
-    intr_rate: '2.3%',
-    intr_rate2: '4.7%',
-  },
-  {
-    save_trm: '24',
-    intr_rate_type_nm: '단리',
-    join_member: '일부제한',
-    join_way: '스마트폰',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_WOORI_Symbol.png',
-    kor_co_nm: '우리은행',
-    fin_prdt_nm: '정기적금',
-    intr_rate: '1.4%',
-    intr_rate2: '3.6%',
-  },
-  {
-    save_trm: '1',
-    intr_rate_type_nm: '복리',
-    join_member: '제한없음',
-    join_way: '영업점',
-    img_url: 'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_SHINHAN_Symbol.png',
-    kor_co_nm: '신한은행',
-    fin_prdt_nm: '단기적금',
-    intr_rate: '2.0%',
-    intr_rate2: '4.1%',
-  },
-];
+const dataList = ref([]);
 
-// const route = useRoute();
-// const router = useRouter();
-
+// 컴포넌트가 마운트될 때 데이터를 가져오기
+onMounted(async () => {
+  try {
+    const response = await fetch('/src/assets/dataList.json');  // data.json 파일의 경로를 정확하게 지정
+    dataList.value = await response.json();
+  } catch (error) {
+    alert('Error fetching data:', error);
+  }
+});
 // 검색어
 const searchDeposit = ref('');
 
@@ -597,7 +321,7 @@ watch(selectedJoinWay, (newVal) => {
 
   // 필터링된 데이터 리스트 계산
 const filteredDataList = computed(() => {
-  return dataList.filter(item => {
+  return dataList.value.filter(item => {
     const matchesSearch = item.fin_prdt_nm.includes(searchDeposit.value) || item.kor_co_nm.includes(searchDeposit.value);
     const matchesPeriod = selectedPeriod.value === '전체' || item.save_trm === selectedPeriod.value;
     const matchesInttype = selectedInttype.value === '전체' || item.intr_rate_type_nm === selectedInttype.value;
@@ -622,7 +346,7 @@ const totalPages = computed(() => {
 const sortedDataList = computed(() => {
   const data = [...filteredDataList.value];
 
-  if (selectedSort.value === 'intr_rate2Desc') {
+  if (selectedSort.value === 'intr_rate2') {
     data.sort((a, b) => parseFloat(b.intr_rate2) - parseFloat(a.intr_rate2));
   }
 
@@ -636,12 +360,16 @@ const changePage = (page) => {
   currentPage.value = page;
 };
 
-// 자세히 보기 함수 -> 페이지 진행
-const viewDetails = (item) => {
-  alert(
-    `가입기간: ${item.save_trm}\n이자 계산방식: ${item.intr_rate_type_nm}\n가입 대상: ${item.join_member}\n가입 방법: ${item.join_way}\n은행: ${item.kor_co_nm}\n상품: ${item.fin_prdt_nm}\n기본 금리: ${item.intr_rate}\n최대 금리: ${item.intr_rate2}`
-  );
-};
+// 해당 item 전체를 문자열로 변환하여 넘김
+const gotoDepositDetail = (item) => {
+  router.push({
+    path: `/Deposit/${item.financial_product_no}`,
+    query: {
+      item: JSON.stringify(item)
+    }
+  });
+}
+
 </script>
 <style>
 .selected-color {
