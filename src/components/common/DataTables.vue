@@ -9,12 +9,15 @@
         class="table table-row-bordered gy-5 gs-7 text-center"
       >
         <thead>
-          <tr class="fw-bold fs-5 text-gray-800">
+          <tr class="fw-bold fs-3 text-gray-800">
             <th>공개유무</th>
+            <th></th>
             <th>카테고리</th>
-            <th>사용처</th>
-            <th>금액</th>
-            <th>결제일시</th>
+            <th></th>
+            <th class="">사용처</th>
+            <th></th>
+            <th class="">금액</th>
+            <th class="">결제일시</th>
             <th></th>
           </tr>
         </thead>
@@ -23,8 +26,9 @@
             v-for="(item, index) in data"
             :key="index"
             :class="{ 'bg-gray-200': !item.checked }"
+            class="fs-5 text-gray-700"
           >
-            <td class="form-check form-check-solid form-check-custom form-switch">
+            <td class="form-check form-check-solid form-check-custom form-switch justify-content-center mt-2" style="border: none;">
                 <input
                   class="form-check-input"
                   type="checkbox"
@@ -33,19 +37,22 @@
                   @change="updatePublic(item)"
                 />
             </td>
+            <td></td>
             <td class="category">
               <img :src="item.category" style="width: 40px; height: 40px" />
             </td>
+            <td></td>
+
             <td class="place">{{ item.place }}</td>
+            <td></td>
             <td class="amount">
-              {{ item.amount.toLocaleString() }}
+              {{ item.amount.toLocaleString() }}원
             </td>
             <td class="date">{{ item.date }}</td>
-            <td>
-              <a @click="goToDetail" class="btn btn-sm btn-primary hover-scale"
-                >소비 상세</a
-              >
+            <td class="">
+              <a @click="goToDetail" class="btn btn-sm btn-primary hover-scale">소비 상세</a>
             </td>
+
           </tr>
         </tbody>
       </table>

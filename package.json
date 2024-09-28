@@ -26,7 +26,8 @@
     "vue-awesome-paginate": "^1.2.0",
     "vue-carousel": "^0.18.0",
     "vue-countup-v3": "^1.4.2",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "vue3-carousel": "^0.3.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.2",
