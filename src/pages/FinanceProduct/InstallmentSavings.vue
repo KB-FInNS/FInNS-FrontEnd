@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Banner titleText="적금 상품" descriptionText="안정적인 수익을 목적으로 하는 사랑 받는 적금 상품입니다." />
     <!-- 탭 -->
     <div class="m-5">
       <ul class="nav nav-tabs nav-line-tabs mb-5 fs-6">
@@ -29,21 +30,24 @@
       <div class="m-5 mb-1">
         <!-- 검색어 필터링 -->
         <div class="card mb-10">
+          <!-- 검색어 -->
           <div class="card-body">
-            <div class="col-lg-6">
-              <label class="fs-6 form-label fw-bold text-gray-900">검색</label>
-              <div class="d-flex align-items-center">
-                <div class="position-relative w-md-550px me-md-2">
-                  <i class="ki-duotone ki-magnifier fs-3 text-gray-500 position-absolute top-50 translate-middle ms-6">
-                    <span class="path1"></span>
-                    <span class="path2"></span>
-                  </i>
-                  <input v-model="searchInstallment" type="text" class="form-control form-control-solid ps-10"
-                    placeholder="은행명, 적금 상품명을 입력해주세요.">
-                </div>
+            <label class="fs-6 form-label fw-bold text-gray-900 me-3">검색</label>
+            <div class="d-flex align-items-center">
+              <div class="position-relative w-md-600px me-2">
+                <i class="ki-duotone ki-magnifier fs-3 text-gray-500 position-absolute top-50 translate-middle ms-6">
+                  <span class="path1"></span>
+                  <span class="path2"></span>
+                </i>
+                <input v-model="searchInstallment" @keyup.enter="searchEnter" type="text" class="form-control form-control-solid ps-10"
+                  placeholder="은행명, 적금 상품명을 입력해주세요.">
+              </div>
+              <div>
+                <button class="btn btn-primary px-4" @click="searchEnter">검색</button>
               </div>
             </div>
           </div>
+
 
           <!-- 가입 기간 필터 -->
           <div class="m-5 mb-1 ms-10">
@@ -112,7 +116,8 @@
           <div class="d-flex flex-wrap flex-stack pb-7">
             <!--begin::Title-->
             <div class="d-flex flex-wrap align-items-center my-1">
-              <h3 class="fw-bold me-2 my-1">{{ totalInstallmentSavings }} <span class="text-gray-500 fs-6">적금 상품 개수</span></h3>
+              <h3 class="fw-bold me-2 my-1">{{ totalInstallmentSavings }} <span class="text-gray-500 fs-6">적금 상품
+                  개수</span></h3>
             </div>
             <!--end::Title-->
             <!--begin::Controls-->
@@ -176,6 +181,7 @@
                 </label>
               </div>
             </div>
+
             <!-- 페이징 -->
             <div class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end">
               <div class="dataTables_paginate paging_simple_numbers">
@@ -183,7 +189,7 @@
                   <li class="paginate_button page-item" :class="{ 'disabled': currentPage === 1 }">
                     <a href="#" @click.prevent="changePage(currentPage - 1)" class="page-link">이전</a>
                   </li>
-                  <li class="paginate_button page-item" v-for="page in totalPages" :key="page"
+                  <li v-for="page in visiblePages" :key="page" class="paginate_button page-item"
                     :class="{ 'active': currentPage === page }">
                     <a href="#" @click.prevent="changePage(page)" class="page-link">{{ page }}</a>
                   </li>
@@ -202,6 +208,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { ref, computed, watch, onMounted } from 'vue';
+import Banner from "@/components/common/Banner.vue";
 
 const router = useRouter();
 
@@ -224,6 +231,7 @@ const selectedPeriod = ref('전체');
 const selectedInttype = ref('전체');
 const selectedMember = ref(["제한없음", "제한있음"]);
 const selectedJoinWay = ref(["전체", "영업점", "인터넷", "스마트폰", "모집인", "전화(텔레뱅킹)"]);
+
 
 // 페이지네이션 상태
 const itemsPerPage = ref(10);
@@ -296,22 +304,45 @@ watch(selectedJoinWay, (newVal) => {
   }
 });
 
+// 체크박스 동작 처리
+const toggleAllJoinWays = () => {
+  selectedJoinWay.value = selectedJoinWay.value.includes('전체') ? [] : ["전체", "영업점", "인터넷", "스마트폰", "모집인", "전화(텔레뱅킹)"];
+};
+
+// 검색 버튼
+const selectEnter = () =>{
+  if (searchInstallment.value) {
+    alert(`검색어: ${searchInstallment.value}`);
+  } else {
+    alert('검색어를 입력해주세요.');
+  }
+};
+
 // 데이터 총 개수 계산
 const totalInstallmentSavings = computed(() => filteredDataList.value.length);
 
 // 총 페이지 수 계산
 const totalPages = computed(() => Math.ceil(filteredDataList.value.length / itemsPerPage.value));
 
-// 체크박스 동작 처리
-const toggleAllJoinWays = () => {
-  selectedJoinWay.value = selectedJoinWay.value.includes('전체') ? [] : ["전체", "영업점", "인터넷", "스마트폰", "모집인", "전화(텔레뱅킹)"];
-};
 
 // 페이지 변경
 const changePage = (page) => {
   if (page < 1 || page > totalPages.value) return;
   currentPage.value = page;
 };
+
+// 현재 페이지 기준으로 이전 2페이지, 이후 2페이지를 계산하는 computed 속성
+const visiblePages = computed(() => {
+  let pages = [];
+  let startPage = Math.max(currentPage.value - 2, 1);
+  let endPage = Math.min(currentPage.value + 2, totalPages.value);
+
+  for (let i = startPage; i <= endPage; i++) {
+    pages.push(i);
+  }
+
+  return pages;
+});
 
 // 상세 정보로 이동
 const gotoInstallmentDetail = (item) => {

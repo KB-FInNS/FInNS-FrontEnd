@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Banner titleText="카드 상품" descriptionText="내게 꼭 맞는 카드를 찾아보세요" />
         <!-- 탭 -->
         <div class="m-5">
             <ul class="nav nav-tabs nav-line-tabs mb-5 fs-6">
@@ -27,23 +28,23 @@
         <div class="tab-content" id="myTabContent">
             <!-- 카드 탭 내용 -->
             <div class="m-5 mb-1">
+                <!-- 검색어 필터링 -->
                 <div class="card mb-10">
                     <div class="d-flex align-items-center">
-                        <!-- 검색 입력 -->
                         <div class="card-body">
-                            <div class="col-lg-6">
-                                <label class="fs-6 form-label fw-bold text-gray-900">검색</label>
-                                <div class="d-flex align-items-center">
-                                    <div class="position-relative w-md-550px me-md-2">
-                                        <i
-                                            class="ki-duotone ki-magnifier fs-3 text-gray-500 position-absolute top-50 translate-middle ms-6">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                        <input v-model="searchInstallment" type="text"
-                                            class="form-control form-control-solid ps-10"
-                                            placeholder="은행명, 카드 상품명을 입력해주세요.">
-                                    </div>
+                            <label class="fs-6 form-label fw-bold text-gray-900 me-3">검색</label>
+                            <div class="d-flex align-items-center">
+                                <div class="position-relative w-md-600px me-2">
+                                    <i class="ki-duotone ki-magnifier fs-3 text-gray-500 position-absolute top-50 translate-middle ms-6">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    <input v-model="searchCard" type="text"
+                                        class="form-control form-control-solid ps-10"
+                                        placeholder="은행명, 카드명을 입력해주세요.">
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary px-4" @click="searchFunction">검색</button>
                                 </div>
                             </div>
                         </div>
@@ -93,8 +94,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="d-flex mb-4">
-                                                    <a @click="gotoCardDetail(item)" href="#" class="btn btn-sm btn-primary me-3"
-                                                        data-bs-toggle="modal" data-bs-target="#kt_modal_new_target">자세히
+                                                    <a @click="gotoCardDetail(item)" href="#"
+                                                        class="btn btn-sm btn-primary me-3" data-bs-toggle="modal"
+                                                        data-bs-target="#kt_modal_new_target">자세히
                                                         보기</a>
                                                 </div>
                                             </div>
@@ -157,19 +159,16 @@
                             class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end">
                             <div class="dataTables_paginate paging_simple_numbers">
                                 <ul class="pagination">
-                                    <!-- 이전 버튼 -->
                                     <li class="paginate_button page-item" :class="{ 'disabled': currentPage === 1 }">
                                         <a href="#" @click.prevent="changePage(currentPage - 1)"
                                             class="page-link">이전</a>
                                     </li>
 
-                                    <!-- 페이지 번호 출력 (이전 2페이지, 현재 페이지, 이후 2페이지) -->
                                     <li v-for="page in visiblePages" :key="page" class="paginate_button page-item"
                                         :class="{ 'active': currentPage === page }">
                                         <a href="#" @click.prevent="changePage(page)" class="page-link">{{ page }}</a>
                                     </li>
 
-                                    <!-- 다음 버튼 -->
                                     <li class="paginate_button page-item"
                                         :class="{ 'disabled': currentPage === totalPages }">
                                         <a href="#" @click.prevent="changePage(currentPage + 1)"
@@ -188,6 +187,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { ref, computed, onMounted } from 'vue';
+import Banner from "@/components/common/Banner.vue";
 
 const router = useRouter();
 
@@ -245,25 +245,25 @@ const selectTab = (tab) => {
 
 // 현재 페이지 기준으로 이전 2페이지, 이후 2페이지를 계산하는 computed 속성
 const visiblePages = computed(() => {
-  let pages = [];
-  let startPage = Math.max(currentPage.value - 2, 1);
-  let endPage = Math.min(currentPage.value + 2, totalPages.value);
+    let pages = [];
+    let startPage = Math.max(currentPage.value - 2, 1);
+    let endPage = Math.min(currentPage.value + 2, totalPages.value);
 
-  for (let i = startPage; i <= endPage; i++) {
-    pages.push(i);
-  }
+    for (let i = startPage; i <= endPage; i++) {
+        pages.push(i);
+    }
 
-  return pages;
+    return pages;
 });
 
 // 상세 페이지로 이동
 const gotoCardDetail = (item) => {
-  router.push({
-    path: `/Card/${item.card_no}`,
-    query: {
-      item: JSON.stringify(item),
-    },
-  });
+    router.push({
+        path: `/Card/${item.card_no}`,
+        query: {
+            item: JSON.stringify(item),
+        },
+    });
 };
 </script>
 
