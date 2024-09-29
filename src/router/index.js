@@ -4,9 +4,9 @@ import AuthLayout from '@/components/common/AuthLayout.vue'; // 사이드바가 
 import Main from '@/pages/Main.vue';
 import Search from '@/pages/Search.vue';
 import Profile from '@/pages/profile/Profile.vue';
-import Deposit from '@/pages/Deposit.vue';
-import InstallmentSavings from '@/pages/InstallmentSavings.vue';
-import Card from '@/pages/Card.vue';
+import Deposit from '@/pages/FinanceProduct/Deposit.vue';
+import InstallmentSavings from '@/pages/FinanceProduct/InstallmentSavings.vue';
+import Card from '@/pages/FinanceProduct/Card.vue';
 import Message from '@/pages/Message.vue';
 import Spending from '@/pages/profile/Spending.vue';
 import Analysis from '@/pages/profile/Analysis.vue';
@@ -20,9 +20,9 @@ import Login from '@/pages/auth/LoginPage.vue';
 import Join from '@/pages/auth/JoinPage.vue';
 import { isAuthenticated } from '@/util/guards';
 import PostDetails from '@/pages/PostDetails.vue';
-import ProductDetail from '@/pages/ProductDetail.vue';
-// import DepositDetail from '@/pages/DepositDetail.vue';
-// import installmentSavingsDetail from '@/pages/installmentSavingsDetail.vue';
+import ProductDetail from '@/pages/FinanceProduct/ProductDetail.vue';
+import CardDetail from '@/pages/FinanceProduct/CardDetail.vue';
+
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -126,6 +126,12 @@ const router = createRouter({
           name: 'installmentSavingsDetail',
           // component: installmentSavingsDetail,
           component: ProductDetail,
+        },
+        {
+          path: '/Card/:card_no', // 적금 상품 상세 페이지
+          name: 'CardDetail',
+          // component: CardDetail,
+          component: CardDetail,
         },
       ],
     },
