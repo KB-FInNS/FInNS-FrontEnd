@@ -1,20 +1,18 @@
 <template>
   <div class="Head">
     <Banner
-      titleText="소비 상세"
-      descriptionText="소비 내역을 상세하게 확인 및 수정할 수 있습니다"
+      titleText="게시물 상세 "
+      descriptionText="게시물을 상세하게 확인 및 수정할 수 있습니다"
     />
   </div>
 
   <div class="container post-edit mt-5 p-4 rounded">
-    <!-- 게시물 수정 제목 -->
-    <h1>게시물 수정</h1>
-
     <!-- 공개 범위 선택 -->
     <div class="form-group mb-4 public-scope">
       <label for="public-range" class="form-label font-weight-bold"
         >공개 범위</label
       >
+
       <div class="d-flex align-items-center">
         <div class="form-check me-3">
           <input
@@ -77,29 +75,73 @@
       </select>
     </div>
 
-    <!-- 저장 버튼 -->
-    <div class="d-flex justify-content-between mt-4">
-      <button class="btn btn-secondary" @click="cancel">취소</button>
-      <button class="btn btn-primary" @click="confirm">확인</button>
+    <br />
+    <br />
+    <br />
+    <div>
+      <!--begin:: 게시물 사진-->
+      <Carousel>
+        <Slide v-for="(image, index) in images" :key="index">
+          <img :src="image" alt="Image Slide" class="carousel-image" />
+        </Slide>
+
+        <template #addons>
+          <Navigation />
+          <Pagination />
+        </template>
+      </Carousel>
+
+      <!-- 사진 추가 -->
+
+      <br />
+      <br />
+      <br />
+      <!--begin::Form-->
+      <form class="form" action="#" method="post">
+        <!--begin::Input group-->
+        <div class="fv-row">
+          <!--begin::Dropzone-->
+          <div class="dropzone" id="kt_dropzonejs_example_1">
+            <!--begin::Message-->
+            <div class="dz-message needsclick">
+              <i class="ki-duotone ki-file-up fs-3x text-primary"
+                ><span class="path1"></span><span class="path2"></span
+              ></i>
+
+              <!--begin::Info-->
+              <div class="ms-4">
+                <h3 class="fs-5 fw-bold text-gray-900 mb-1">
+                  여기에 파일을 놓거나 클릭하여 업로드하세요.
+                </h3>
+                <span class="fs-7 fw-semibold text-gray-500"
+                  >최대 10개의 파일을 업로드 할 수 있습니다</span
+                >
+              </div>
+              <!--end::Info-->
+            </div>
+          </div>
+          <!--end::Dropzone-->
+        </div>
+        <!--end::Input group-->
+      </form>
+      <!--end::Form 사진추가 -->
+
+      <br /><br /><br />
+
+      <!-- 저장 버튼 -->
+      <div class="d-flex justify-content-between mt-4">
+        <button class="btn btn-secondary" @click="cancel">취소</button>
+        <button class="btn btn-primary" @click="confirm">확인</button>
+      </div>
     </div>
-
-    <!--begin:: 게시물 사진-->
-    <Carousel>
-      <Slide v-for="(image, index) in images" :key="index">
-        <img :src="image" alt="Image Slide" class="carousel-image" />
-      </Slide>
-
-      <template #addons>
-        <Navigation />
-        <Pagination />
-      </template>
-    </Carousel>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import Dropzone from 'dropzone';
+import 'dropzone/dist/dropzone.css';
 import Banner from '@/components/common/Banner.vue';
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
 
@@ -127,6 +169,24 @@ const images = ref([
   'src/assets/media/food/samgeob2.jpg',
   'src/assets/media/food/samgeob3.jpg',
 ]);
+
+// Dropzone 초기화
+onMounted(() => {
+  var myDropzone = new Dropzone('#kt_dropzonejs_example_1', {
+    url: 'https://keenthemes.com/scripts/void.php', // 업로드 스크립트 URL
+    paramName: 'file', // 전송될 파일 이름
+    maxFiles: 10,
+    maxFilesize: 10, // 최대 파일 크기 (MB)
+    addRemoveLinks: true,
+    accept: function (file, done) {
+      if (file.name === 'wow.jpg') {
+        done("Naha, you don't.");
+      } else {
+        done();
+      }
+    },
+  });
+});
 </script>
 
 <style scoped>
@@ -141,14 +201,14 @@ const images = ref([
 .form-label {
   font-size: 21px;
   color: #444;
+  font-weight: bold;
   margin-top: 20px;
 }
 
 .amount-text {
   font-size: 17px;
-  padding: 10px;
   background-color: #ffffff;
-  border-radius: 4px;
+  margin-left: 5px;
 }
 
 .gray-input {
@@ -169,7 +229,11 @@ const images = ref([
 }
 
 button {
-  width: 46%;
+  width: 40%;
+  height: 50px;
+}
+p {
+  color: #757575;
 }
 
 .carousel-image {
@@ -178,5 +242,19 @@ button {
   height: 500px;
   /* contain : 사진 크기에 맞게, cover : carousel 에 맞게(이미지 잘림) */
   object-fit: contain;
+}
+
+/* Dropzone 테두리 제거 */
+.dropzone {
+  border: none; /* 테두리 제거 */
+  padding: 20px; /* 필요한 경우 내부 간격 추가 */
+}
+
+.dz-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* 부모의 높이에 맞춰 중앙 정렬 */
 }
 </style>

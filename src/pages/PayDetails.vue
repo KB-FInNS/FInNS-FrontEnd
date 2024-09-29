@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <div class="Head">
-      <Banner
-        titleText="소비 상세"
-        descriptionText="소비 내역을 상세하게 확인 및 수정할 수 있습니다"
-      />
-    </div>
+  <div class="Head">
+    <Banner
+      titleText="소비 상세"
+      descriptionText="소비 내역을 상세하게 확인 및 수정할 수 있습니다"
+    />
 
     <div class="container consumption-detail mt-5 p-4 rounded">
       <!-- 수정된 타이틀 컴포넌트 사용 -->
