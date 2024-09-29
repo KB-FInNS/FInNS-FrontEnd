@@ -74,7 +74,7 @@ const updatePublic = (item) => {
 };
 
 const goToPostDetail = (id) => {
-  router.push(`/postDetails/${id}`); // 해당 id에 맞는 PayDetails 페이지로 이동
+  router.push('/postDetails'); // 해당 id에 맞는 PayDetails 페이지로 이동
 };
 
 const goToPayDetail = (id) => {
