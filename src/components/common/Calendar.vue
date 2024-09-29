@@ -39,7 +39,7 @@ const initializeCalendar = () => {
     showNonCurrentDates: false,
     fixedWeekCount: false,
     eventTextColor: '#0A6DA6',
-    height: '500px',
+    height: '410px',
     eventDidMount: function(info) {
       info.el.style.display = 'flex';
       info.el.style.alignItems = 'center';
