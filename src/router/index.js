@@ -118,7 +118,7 @@ const router = createRouter({
           component: CardWorldCup,
         },
         {
-          path: '/Deposit/:financial_product_no', // 예금 상품 상세 페이지
+          path: '/deposit/:financial_product_no', // 예금 상품 상세 페이지
           name: 'DepositDetail',
           // component: DepositDetail,
           component: ProductDetail,
