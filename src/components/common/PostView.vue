@@ -48,7 +48,7 @@
                         <!--장소-->
                         <span class="fs-6 fw-bold text-gray-700 mb-5 ms-2">상구네 솥뚜껑 삼겹살</span>
                     </div>
-                    <div class="pt-2">
+                    <div class="pt-2 pb-3">
                         <!--카드 아이콘-->
                         <span class="svg-icon svg-icon-dark svg-icon-2hx"><svg width="24" height="24"
                                 viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,40 +63,17 @@
                     </div>
                     <!--end::Post content-->
                     <!--begin:: 게시물 사진-->
-                    <div class="tns" id="slider" style="direction: ltr">
-                        <div data-tns="true" data-tns-nav-position="bottom" data-tns-mouse-drag="true"
-                            data-tns-controls="false">
-                            <!--begin::Item-->
+                    <Carousel>
+                        <Slide v-for="(image, index) in images" :key="index">
+                            <img :src="image" alt="Image Slide" class="carousel-image" />
+                        </Slide>
 
-                            <div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-                                <img src="@/assets/media/stock/600x400/img-1.jpg" class="card-rounded shadow mw-100"
-                                    alt="" />
-                            </div>
-                            <div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-                                <img src="@/assets/media/stock/600x400/img-2.jpg" class="card-rounded shadow mw-100"
-                                    alt="" />
-                            </div>
-                            <div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-                                <img src="@/assets/media/stock/600x400/img-3.jpg" class="card-rounded shadow mw-100"
-                                    alt="" />
-                            </div>
-                            <div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-                                <img src="@/assets/media/stock/600x400/img-4.jpg" class="card-rounded shadow mw-100"
-                                    alt="" />
-                            </div>
-                            <div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-                                <img src="@/assets/media/stock/600x400/img-5.jpg" class="card-rounded shadow mw-100"
-                                    alt="" />
-                            </div>
-                            <div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-                                <img src="@/assets/media/stock/600x400/img-6.jpg" class="card-rounded shadow mw-100"
-                                    alt="" />
-                            </div>
-                            <!--end::Item-->
-
-                        </div>
-                    </div>
-                    <div class="pt-2">
+                        <template #addons>
+                            <Navigation />
+                            <Pagination />
+                        </template>
+                    </Carousel>
+                    <div class="pt-2 pb-4">
 
                         <!--가격 카테고리-->
                         <span class="fw-bold p-3" style="background-color: #F1F7FF; border-radius: 5px;">
@@ -105,10 +82,6 @@
                         <span class="fs-6 fw-bold text-gray-700 mb-5 ms-2">에 소비했어요</span>
                     </div>
                     <!--end:: 게시물-->
-                </div>
-                <!--end::Card body-->
-                <!--begin::Card footer-->
-                <div class="card-footer pt-0">
                     <!--begin::Info-->
                     <div class="mb-6">
                         <!--begin::Separator-->
@@ -116,7 +89,7 @@
                         <!--end::Separator-->
                         <!--begin::Nav-->
                         <ul class="nav py-3">
-                            
+
                             <!--댓글보기 버튼-->
                             <li class="nav-item">
                                 <a class="nav-link btn btn-sm btn-color-gray-600 btn-active-light-muted fw-bold px-4 me-1 collapsible active"
@@ -127,30 +100,32 @@
                                         <span class="path3"></span>
                                     </i>댓글보기</a>
                             </li>
-                            
-                            
+
+
                             <!--좋은소비 버튼-->
                             <li class="nav-item">
-                                <a href="#"
-                                    class="nav-link btn btn-sm  btn-active-color-primary btn-active-light-primary fw-bold px-4 me-1">
+                                <button class="btn btn-sm"
+                                    :style="{ backgroundColor: goodisActive ? '#F1F7FF' : '#FFFFFF' }"
+                                    @click="goodtoggleActive(), badisActive = false" style="height : 32px;">
                                     <i class="ki-duotone ki-like text-primary fs-2 me-1">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                     </i>
-                                    <span class="text-primary">좋은소비</span>
-                                    </a>
+                                    <span class="text-primary fw-bold">좋은소비</span>
+                                </button>
                             </li>
-                            
+
                             <!--이돈이면 버튼-->
                             <li class="nav-item">
-                                <a href="#"
-                                    class="nav-link btn btn-sm btn-color-gray-600 btn-active-color-danger btn-active-light-danger fw-bold px-4">
+                                <button class="btn btn-sm"
+                                    :style="{ backgroundColor: badisActive ? '#FFEFEF' : '#FFFFFF' }"
+                                    @click="badtoggleActive(), goodisActive = false" style="height : 32px;">
                                     <i class="ki-duotone ki-dislike text-danger fs-2 me-1">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                     </i>
-                                    <span class="text-danger">이 돈이면...</span>
-                                </a>
+                                    <span class="text-danger fw-bold">이돈이면...</span>
+                                </button>
                             </li>
                         </ul>
                         <!--end::Nav-->
@@ -174,17 +149,18 @@
                                         <a href="#" class="text-gray-800 text-hover-primary fw-bold me-6">Mr.
                                             Anderson</a>
                                         <!--end::Name-->
-                    
+
                                     </div>
                                     <!--end::Info-->
                                     <!--begin::Text-->
-                                    <span class="text-gray-800 fs-7 fw-normal pt-1">맛있는 삼겹살을 드셨네요! 근데 과소비 하신건 아닌지....</span>
+                                    <span class="text-gray-800 fs-7 fw-normal pt-1">맛있는 삼겹살을 드셨네요! 근데 과소비 하신건
+                                        아닌지....</span>
                                     <!--end::Text-->
                                 </div>
                                 <!--end::Wrapper-->
                             </div>
                             <!--end::Comment-->
-                            
+
                         </div>
                         <!--end::Collapse-->
                     </div>
@@ -200,15 +176,11 @@
                         <div class="position-relative w-100">
                             <!--댓글 작성-->
                             <textarea type="text" class="form-control form-control-solid border ps-5" rows="1"
-                                name="search" value="" data-kt-autosize="true"
-                                placeholder="댓글을 작성하세요."></textarea>
-                            
+                                name="search" value="" data-kt-autosize="true" placeholder="댓글을 작성하세요."></textarea>
+
                         </div>
-                        
                     </div>
-                    
                 </div>
-                <!--end::Card footer-->
             </div>
             <!--end::Card-->
             <!--end::Post 1-->
@@ -216,42 +188,50 @@
     </div>
 </template>
 <script setup>
-import { onMounted, nextTick } from 'vue';
-import { tns } from 'tiny-slider/src/tiny-slider.js'; // Tiny Slider 가져오기
+import { ref } from 'vue';
+import "vue3-carousel/dist/carousel.css";
+import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
 
 
-onMounted(async () => {
-    // nextTick을 사용하여 DOM이 업데이트된 후 슬라이더 초기화
-    await nextTick();
-    console.log('mounted');
-    // 슬라이더 초기화
-    tns({
-        container: '#slider',  // 슬라이더를 감싸는 컨테이너의 ID
-        items: 1,              // 한 번에 표시할 아이템 수
-        slideBy: 'page',       // 페이지 단위로 슬라이드
-        mouseDrag: true,       // 마우스 드래그 활성화
-        swipeAngle: false,     // 스와이프 각도 비활성화
-        speed: 400,            // 슬라이드 전환 속도
-        autoplay: true,        // 자동 슬라이드 활성화
-        autoplayTimeout: 3000  // 자동 슬라이드 전환 시간 (밀리초)
-    });
-});
+const goodisActive = ref(false)
+const badisActive = ref(false)
+
+const goodtoggleActive = () => {
+    goodisActive.value = !goodisActive.value
+}
+const badtoggleActive = () => {
+    badisActive.value = !badisActive.value
+}
 
 const category = [
-    {name :'식비&카페', icon: 'src/assets/media/category/meal.png'},
-    {name :'쇼핑', icon: './assets/media/category/shopping.png'},
-    {name :'미용', icon: './assets/media/category/alcohol.png'},
-    {name :'의료', icon: './assets/media/category/alcohol.png'},
-    {name :'통신', icon: './assets/media/category/alcohol.png'},
-    {name :'교통', icon: './assets/media/category/alcohol.png'},
-    {name :'문화&여행', icon: './assets/media/category/alcohol.png'},
-    {name :'교육', icon: './assets/media/category/alcohol.png'},
-    {name :'술&유흥', icon: './assets/media/category/alcohol.png'},
-    {name :'기타', icon: './assets/media/category/alcohol.png'}
+    { name: '식비&카페', icon: 'src/assets/media/category/meal.png' },
+    { name: '쇼핑', icon: './assets/media/category/shopping.png' },
+    { name: '미용', icon: './assets/media/category/alcohol.png' },
+    { name: '의료', icon: './assets/media/category/alcohol.png' },
+    { name: '통신', icon: './assets/media/category/alcohol.png' },
+    { name: '교통', icon: './assets/media/category/alcohol.png' },
+    { name: '문화&여행', icon: './assets/media/category/alcohol.png' },
+    { name: '교육', icon: './assets/media/category/alcohol.png' },
+    { name: '술&유흥', icon: './assets/media/category/alcohol.png' },
+    { name: '기타', icon: './assets/media/category/alcohol.png' }
 ];
+
+// 이미지 목록
+const images = ref([
+    'src/assets/media/food/samgeob1.jpg',
+    'src/assets/media/food/samgeob2.jpg',
+    'src/assets/media/food/samgeob3.jpg',
+])
 
 </script>
 
-<style lang="">
+<style scoped>
+.carousel-image {
+    width: 100%;
+    /* 이미지가 Carousel의 너비에 맞춰짐 */
+    height: 500px;
+    /* contain : 사진 크기에 맞게, cover : carousel 에 맞게(이미지 잘림) */
+    object-fit: contain;
 
+}
 </style>

@@ -8,18 +8,21 @@ import Deposit from '@/pages/Deposit.vue';
 import InstallmentSavings from '@/pages/InstallmentSavings.vue';
 import Card from '@/pages/Card.vue';
 import Message from '@/pages/Message.vue';
-import CreditHistory from '@/pages/profile/CreditHistory.vue';
+import Spending from '@/pages/profile/Spending.vue';
 import Analysis from '@/pages/profile/Analysis.vue';
 import Follower from '@/components/common/Follower.vue';
 import Following from '@/components/common/Following.vue';
 import PayDetails from '@/pages/PayDetails.vue';
 import CardWorldCup from '@/pages/CardWorldCup.vue';
-import Mbti from '@/pages/Mbtidiagnosis.vue';
+import Mbti from '@/pages/FinanceMbti.vue';
 import Update from '@/pages/auth/ProfilePage.vue';
 import Login from '@/pages/auth/LoginPage.vue';
 import Join from '@/pages/auth/JoinPage.vue';
 import { isAuthenticated } from '@/util/guards';
-
+import PostDetails from '@/pages/PostDetails.vue';
+import ProductDetail from '@/pages/ProductDetail.vue';
+// import DepositDetail from '@/pages/DepositDetail.vue';
+// import installmentSavingsDetail from '@/pages/installmentSavingsDetail.vue';
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -46,12 +49,12 @@ const router = createRouter({
           path: 'profile',
           name: 'Profile',
           component: Profile,
-          redirect: '/profile/creditHistory',
+          redirect: '/profile/spending',
           // beforeEnter: isAuthenticated,,
           children: [
             {
-              path: 'creditHistory',
-              component: CreditHistory,
+              path: 'spending',
+              component: Spending,
             },
             {
               path: 'analysis',
@@ -65,11 +68,6 @@ const router = createRouter({
             {
               path: 'following',
               component: Following,
-            },
-            {
-              path: 'payDetails/:id', // 소비 상세 페이지
-              name: 'PayDetails',
-              component: PayDetails,
             },
           ],
         },
@@ -98,6 +96,16 @@ const router = createRouter({
           // beforeEnter: isAuthenticated,,
         },
         {
+          path: '/payDetails/:id', // 소비 상세 페이지
+          name: 'PayDetails',
+          component: PayDetails,
+        },
+        {
+          path: '/postDetails', // 게시물 상세 페이지
+          name: 'PostDetails',
+          component: PostDetails,
+        },
+        {
           path: '/auth/update',
           name: 'Update',
           component: Update,
@@ -106,6 +114,18 @@ const router = createRouter({
         {
           path: 'cardworldcup',
           component: CardWorldCup,
+        },
+        {
+          path: '/Deposit/:financial_product_no', // 예금 상품 상세 페이지
+          name: 'DepositDetail',
+          // component: DepositDetail,
+          component: ProductDetail,
+        },
+        {
+          path: '/installmentSavings/:financial_product_no', // 적금 상품 상세 페이지
+          name: 'installmentSavingsDetail',
+          // component: installmentSavingsDetail,
+          component: ProductDetail,
         },
       ],
     },

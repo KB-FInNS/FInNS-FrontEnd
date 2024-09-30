@@ -1,46 +1,46 @@
 <template>
-    <div>
-        <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold justify-content-center">
-          <!--begin::Nav item-->
-          <li class="nav-item">
-            <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/profile/creditHistory" exact-active-class="active">소비 내역</router-link>
-          </li>
-          <!--end::Nav item-->
-          <!--begin::Nav item-->
-          <li class="nav-item" style="margin-left: 300px">
-            <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/profile/analysis" exact-active-class="active">분석</router-link>
-          </li>
-          <!--end::Nav item-->
-        </ul>
-    </div>
+  <div>
+      <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold justify-content-center">
+        <!--begin::Nav item-->
+        <li class="nav-item">
+          <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/profile/spending" exact-active-class="active">소비 내역</router-link>
+        </li>
+        <!--end::Nav item-->
+        <!--begin::Nav item-->
+        <li class="nav-item" style="margin-left: 300px">
+          <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/profile/analysis" exact-active-class="active">분석</router-link>
+        </li>
+        <!--end::Nav item-->
+      </ul>
+  </div>
 
-    <div class="d-flex align-items-center">
-        <div id="kt_docs_google_chart_pie"></div>
+  <div class="d-flex align-items-center">
+      <div id="kt_docs_google_chart_pie"></div>
 
-        <div v-if="categorys.length === 0">
-          <h4 id="nolist">소비 내역이 없습니다!</h4>
+      <div v-if="categorys.length === 0">
+        <h4 id="nolist">소비 내역이 없습니다!</h4>
+      </div>
+      <div v-else v-if="isTableVisible">
+        <div class="table-responsive" style="height: 450px; width: 700px; overflow-y: auto;">
+          <table
+            id="kt_datatable_vertical_scroll"
+            class="table table-row-bordered gy-7 gs-10">
+            <tbody>
+              <tr
+                v-for="(item, index) in sortedCategorys"
+                :key="index"
+              >
+                <td class="src">
+                  <img :src="item.src" style="width: 40px; height: 40px" />
+                  <span class="ms-8 fs-3 fw-semibold">{{ item.category }}</span>
+                </td>
+                <td class="percentage fs-3 fw-semibold">{{ item.percentage }}%</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div v-else>
-          <div class="table-responsive" style="height: 450px; width: 700px; overflow-y: auto;">
-            <table
-              id="kt_datatable_vertical_scroll"
-              class="table table-row-bordered gy-7 gs-10">
-              <tbody>
-                <tr
-                  v-for="(item, index) in sortedCategorys"
-                  :key="index"
-                >
-                  <td class="src">
-                    <img :src="item.src" style="width: 40px; height: 40px" />
-                    <span class="ms-8 fs-3 fw-semibold">{{ item.category }}</span>
-                  </td>
-                  <td class="percentage fs-3 fw-semibold">{{ item.percentage }}%</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-    </div>
+      </div>
+  </div>
 </template>
 
 <script setup>
@@ -54,41 +54,50 @@ const loadGoogleCharts = () => {
   document.head.appendChild(script);
 };
 
-let categorys = ref([]);
+let categorys = ref();
+let isTableVisible = ref(false); // 테이블 표시 여부
+
+const props = defineProps({
+  categorys: {
+    type: Array,
+    required: true,
+  },
+});
+
 categorys.value = [
   {
     category: '식비 & 카페',
-    src: './../../src/assets/media/category/meal.png',
+    src: '/src/assets/media/category/meal.png',
     amount: 50000,
     percentage: null
   },
   {
     category: '술 & 유흥',
-    src: './../../src/assets/media/category/alcohol.png',
+    src: '/src/assets/media/category/alcohol.png',
     amount: 30000,
     percentage: null
   },
   {
     category: '쇼핑',
-    src: './../../src/assets/media/category/shopping.png',
+    src: '/src/assets/media/category/shopping.png',
     amount: 120000,
     percentage: null
   },
   {
     category: '식비 & 카페',
-    src: './../../src/assets/media/category/meal.png',
+    src: '/src/assets/media/category/meal.png',
     amount: 50000,
     percentage: null
   },
   {
     category: '술 & 유흥',
-    src: './../../src/assets/media/category/alcohol.png',
+    src: '/src/assets/media/category/alcohol.png',
     amount: 30000,
     percentage: null
   },
   {
     category: '쇼핑',
-    src: './../../src/assets/media/category/shopping.png',
+    src: '/src/assets/media/category/shopping.png',
     amount: 120000,
     percentage: null
   },
@@ -146,15 +155,10 @@ const drawChart = () => {
     // 차트 그리기
     const chart = new google.visualization.PieChart(document.getElementById('kt_docs_google_chart_pie'));
     chart.draw(data, options);
+
+    isTableVisible.value = true; // 테이블 표시
   });
 };
-
-const props = defineProps({
-  categorys: {
-    type: Array,
-    required: true,
-  },
-});
 
 onMounted(() => {
   loadGoogleCharts();

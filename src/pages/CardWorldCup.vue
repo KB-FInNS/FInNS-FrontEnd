@@ -1,7 +1,7 @@
 <template>
     <div class="card-worldcup">
       <h2 class="title">카드 월드컵</h2>
-      <p class="subtitle">더 마음에 드는 카드를 골라주세요</p></div>
+      <p class="subtitle">더 마음에 드는 카드를 골라주세요.</p></div>
       <div class="card-container">
         <CardComponent
           v-for="(card, index) in cards"

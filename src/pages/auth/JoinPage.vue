@@ -2,10 +2,10 @@
   <div class="join-container d-flex">
     <!-- Left Section: Image/Branding -->
     <div class="login-left">
-      <div class="branding">
+      <div class="branding mt-4">
         <div>
           <img src="@/assets/media/avatars/login_logo.png" class="logo" />
-          <i class="logo">FInNS</i>
+          <span class="logo">FInNS</span>
         </div>
         <img
           src="@/assets/media/avatars/loginpage.png"
@@ -18,11 +18,23 @@
     <!-- Right Section: Join Form -->
     <div class="right-section d-flex flex-column justify-content-center">
       <div class="form-container">
-        <h1 class="form-title" style="color: white">회원 가입</h1>
+        <h1 class="form-title" style="color: white; margin-bottom: 10px">
+          회원 가입
+        </h1>
+        <p
+          style="
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #ffffff;
+            text-align: center;
+          "
+        >
+          계정 생성을 위해 회원가입을 해주세요.
+        </p>
         <form @submit.prevent="join">
           <div class="mb-3 mt-3">
-            <label for="username" class="form-label">
-              사용자 ID *
+            <label for="user_id" class="form-label">
+              아이디 *
               <button
                 type="button"
                 class="btn btn-success btn-sm py-0 me-2"
@@ -30,19 +42,22 @@
               >
                 중복 확인
               </button>
-              <span
-                :class="disableSubmit.value ? 'text-primary' : 'text-danger'"
-              >
+
+              <!-- <span :class="disableSubmit ? 'text-danger' : 'text-danger'" style=" font-size: 12px;">
+                {{ checkError }}
+              </span> -->
+
+              <span style="font-size: 12px; color: red">
                 {{ checkError }}
               </span>
             </label>
             <input
               type="text"
               class="form-control"
-              placeholder="아이디를 입력하세요..."
-              id="username"
+              placeholder="아이디를 입력하세요."
+              id="user_id"
               @input="changeUsername"
-              v-model="member.username"
+              v-model="member.user_id"
             />
           </div>
 
@@ -51,7 +66,7 @@
             <input
               type="password"
               class="form-control"
-              placeholder="비밀번호를 입력하세요..."
+              placeholder="비밀번호를 입력하세요."
               id="password"
               v-model="member.password"
             />
@@ -62,39 +77,29 @@
             <input
               type="password"
               class="form-control"
-              placeholder="비밀번호를 다시 입력하세요..."
+              placeholder="비밀번호를 다시 입력하세요."
               id="password2"
               v-model="member.password2"
             />
           </div>
-
           <div class="mb-3">
-            <label for="email" class="form-label"> 이메일 * </label>
+            <label for="birthdate" class="form-label"> 생년월일 * </label>
             <input
-              type="email"
-              class="form-control"
-              placeholder="이메일을 입력하세요..."
-              id="email"
-              v-model="member.email"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="birth" class="form-label"> 생년월일 * </label>
-            <input
-              type="date"
+              type="text"
               class="form-control"
               placeholder="생년월일을 입력하세요..."
-              id="birth"
-              v-model="member.birth"
+              id="birthdate"
+              v-model="member.birthdate"
             />
           </div>
 
           <button
             type="submit"
-            class="btn btn-primary w-100"
+            class="btn btn-primary w-100 mt-4"
             :disabled="disableSubmit"
+            style="border-radius: 13px; height: 50px"
           >
-            회원가입
+            <div style="font-weight: 550; font-size: 17px">회원가입</div>
           </button>
         </form>
       </div>
@@ -111,20 +116,21 @@ const router = useRouter();
 const avatar = ref(null);
 const checkError = ref('');
 const member = reactive({
-  username: '',
-  email: '',
+  user_id: '',
   password: '',
   password2: '',
-  mbti: '',
-  avatar: null,
+  birthdate: '',
 });
+
+const email = ref({ email: '' });
+
 const disableSubmit = ref(true);
 
 const checkUsername = async () => {
-  if (!member.username) {
+  if (!member.user_id) {
     return alert('사용자 ID를 입력하세요.');
   }
-  disableSubmit.value = await authApi.checkUsername(member.username);
+  disableSubmit.value = await authApi.checkUsername(member.user_id);
   checkError.value = disableSubmit.value
     ? '이미 사용중인 ID입니다.'
     : '사용가능한 ID입니다.';
@@ -132,15 +138,12 @@ const checkUsername = async () => {
 
 const changeUsername = () => {
   disableSubmit.value = true;
-  checkError.value = member.username ? 'ID 중복 체크를 하셔야 합니다.' : '';
+  checkError.value = member.user_id ? 'ID 중복 체크를 하셔야 합니다.' : '';
 };
 
 const join = async () => {
   if (member.password !== member.password2) {
     return alert('비밀번호가 일치하지 않습니다.');
-  }
-  if (avatar.value?.files.length > 0) {
-    member.avatar = avatar.value.files[0];
   }
   try {
     await authApi.create(member);
@@ -149,6 +152,16 @@ const join = async () => {
     console.error(e);
   }
 };
+
+// const user_email_rule = (v) => {
+//   const emailRegex =
+//     /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+//   return emailRegex.test(v) ? '' : '이메일 주소를 정확히 입력해주세요.';
+// };
+
+// const validateEmail = () => {
+//   emailError.value = user_email_rule(email.value.email);
+// };
 </script>
 
 <style scoped>
@@ -166,8 +179,6 @@ const join = async () => {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 100px;
-  margin: 40px;
   color: rgb(0, 0, 0);
 }
 
@@ -182,7 +193,7 @@ const join = async () => {
 }
 
 .login-image {
-  max-width: 100%;
+  width: 600px;
   height: auto;
 }
 
@@ -193,6 +204,7 @@ const join = async () => {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 .form-container {
@@ -207,21 +219,26 @@ const join = async () => {
 .form-title {
   text-align: center;
   margin-bottom: 30px;
-  font-size: 24px;
+  font-size: 35px;
   color: #333;
 }
 
 .form-label {
   font-weight: bold;
-  font-size: 14px;
-  margin-bottom: 8px;
+  font-size: 18px;
+  /* margin-bottom: 8px; */
+  text-align: right;
   color: white;
 }
 
 .form-control {
-  border-radius: 4px;
-  border: 1px solid #ffffff;
   padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ffffff;
+  border-radius: 13px;
+  margin-top: 5px;
+  margin-bottom: 16px;
+  height: 50px;
 }
 
 .form-text {
