@@ -23,9 +23,6 @@ let calendar;
 
 const initializeCalendar = () => {
   const calendarEl = document.getElementById('kt_calendar_app');
-
-  const todayDate = new Date().toISOString().slice(0, 10);
-  emitter.emit('day_click', todayDate);
   
   calendar = new Calendar(calendarEl, {
     plugins: [dayGridPlugin, interactionPlugin],
@@ -64,7 +61,7 @@ const initializeCalendar = () => {
     buttonText: {
       today: '오늘'
     },
-    select: (info) => {             
+    select: (info) => {
       emitter.emit('day_click', info.startStr);
 
       window.scrollTo({
@@ -76,20 +73,27 @@ const initializeCalendar = () => {
       calendar.select(info.event.startStr);
     },
     events: [
-      { title: '-50,000원', start: '2024-09-01' },
-      { title: '-40,000원', start: '2024-09-07' },
-      { title: '-30,000원', start: '2024-09-11' },
-      { title: '-20,000원', start: '2024-09-12' },
-      { title: '-10,000원', start: '2024-09-13' },
-      { title: '-6,000원', start: '2024-09-14' },
-      { title: '-7,000원', start: '2024-09-15' },
-      { title: '-8,000원', start: '2024-09-16' },
-      { title: '-9,000원', start: '2024-09-17' },
-      { title: '-9,000원', start: '2024-09-27' },
+      { title: (-50000).toLocaleString() + '원', start: '2024-09-01' },
+      { title: (-9020).toLocaleString() + '원', start: '2024-09-02' },
+      { title: (-4500).toLocaleString() + '원', start: '2024-09-03' },
+      { title: (-56700).toLocaleString() + '원', start: '2024-09-04' },
+      { title: (-900).toLocaleString() + '원', start: '2024-09-05' },
+      { title: (-68000).toLocaleString() + '원', start: '2024-09-07' },
+      { title: (-190000).toLocaleString() + '원', start: '2024-09-08' },
+      { title: (-2400).toLocaleString() + '원', start: '2024-09-09' },
+      { title: (-33000).toLocaleString() + '원', start: '2024-09-11' },
+      { title: (-12000).toLocaleString() + '원', start: '2024-09-12' },
+      { title: (-17500).toLocaleString() + '원', start: '2024-09-13' },
+      { title: (-9900).toLocaleString() + '원', start: '2024-09-14' },
+      { title: (-7900).toLocaleString() + '원', start: '2024-09-16' },
+      { title: (-21000).toLocaleString() + '원', start: '2024-09-17' },
+      { title: (-1600).toLocaleString() + '원', start: '2024-09-19' },
     ],
   });
 
   calendar.render();
+  // 캘린더가 펼쳐지면 디폴트로 오늘 날짜를 emit
+  emitter.emit('day_click', new Date().toISOString().slice(0, 10));
 };
 
 onMounted(() => {

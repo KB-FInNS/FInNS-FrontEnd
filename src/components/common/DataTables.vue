@@ -42,7 +42,7 @@
             </td>
             <td></td>
             <td class="category">
-              <img :src="item.category" style="width: 40px; height: 40px" />
+              <img :src="item.categoryImg" style="width: 40px; height: 40px" />
             </td>
             <td></td>
 

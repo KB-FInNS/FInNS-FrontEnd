@@ -14,37 +14,47 @@
       </ul>
   </div>
 
-  <div class="d-flex align-items-center">
-      <div id="kt_docs_google_chart_pie"></div>
+  <div>
+    <div class="d-flex align-items-center">
+        <div id="kt_docs_google_chart_pie"></div>
 
-      <div v-if="categorys.length === 0">
-        <h4 id="nolist">소비 내역이 없습니다!</h4>
-      </div>
-      <div v-else v-if="isTableVisible">
-        <div class="table-responsive" style="height: 450px; width: 700px; overflow-y: auto;">
-          <table
-            id="kt_datatable_vertical_scroll"
-            class="table table-row-bordered gy-7 gs-10">
-            <tbody>
-              <tr
-                v-for="(item, index) in sortedCategorys"
-                :key="index"
-              >
-                <td class="src">
-                  <img :src="item.src" style="width: 40px; height: 40px" />
-                  <span class="ms-8 fs-3 fw-semibold">{{ item.category }}</span>
-                </td>
-                <td class="percentage fs-3 fw-semibold">{{ item.percentage }}%</td>
-              </tr>
-            </tbody>
-          </table>
+        <div v-if="categorys.length === 0">
+          <h4 id="nolist">소비 내역이 없습니다!</h4>
         </div>
-      </div>
+        <div v-else v-if="isTableVisible">
+          <div class="table-responsive" style="height: 450px; width: 700px; overflow-y: auto;">
+            <table
+              id="kt_datatable_vertical_scroll"
+              class="table table-row-bordered gy-7 gs-10"
+              style="border-collapse: separate; border-spacing: 0 15px;">
+              <tbody>
+                <tr
+                  v-for="(item, index) in sortedCategorys"
+                  :key="index"
+                  :style="{ backgroundColor: bgColors[index] }"
+                  @click="showCategoryList(item.category)"
+                  style="cursor: pointer;"
+                >
+                  <td class="src" style="border-radius: 30px 0px 0px 30px;">
+                    <img :src="item.src" style="width: 40px; height: 40px; margin-left: 40px" />
+                    <span class="ms-8 fs-3 fw-semibold" style="color: #4A4A4A">{{ item.category }}</span>
+                  </td>
+                  <td class="percentage fs-3 fw-semibold text-center" style="color: #4A4A4A; border-radius: 0px 30px 30px 0px;">
+                    {{ item.percentage }}%
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+    <DataTables class="mt-4" :data="totalList"/>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import DataTables from '@/components/common/DataTables.vue'
+import { getCurrentInstance, ref, onMounted, computed } from 'vue';
 
 const loadGoogleCharts = () => {
   // Google Charts API를 동적으로 로드
@@ -56,6 +66,7 @@ const loadGoogleCharts = () => {
 
 let categorys = ref();
 let isTableVisible = ref(false); // 테이블 표시 여부
+const bgColors = ['#8DC3FF', '#FF949D', '#E1BEE7', '#FFE57F', '#88E793', '#FFB74D', '#80CBC4', '#90CAF9', '#FFAB91', '#DCE775'];
 
 const props = defineProps({
   categorys: {
@@ -75,6 +86,30 @@ categorys.value = [
     category: '술 & 유흥',
     src: '/src/assets/media/category/alcohol.png',
     amount: 30000,
+    percentage: null
+  },
+  {
+    category: '쇼핑',
+    src: '/src/assets/media/category/shopping.png',
+    amount: 120000,
+    percentage: null
+  },
+  {
+    category: '식비 & 카페',
+    src: '/src/assets/media/category/meal.png',
+    amount: 50000,
+    percentage: null
+  },
+  {
+    category: '술 & 유흥',
+    src: '/src/assets/media/category/alcohol.png',
+    amount: 30000,
+    percentage: null
+  },
+  {
+    category: '쇼핑',
+    src: '/src/assets/media/category/shopping.png',
+    amount: 120000,
     percentage: null
   },
   {
@@ -129,7 +164,7 @@ const drawChart = () => {
 
     // 차트 옵션 설정
     const options = {
-      title: '카테고리별 소비 분석',
+      title: '이번 달 카테고리별 소비 분석',
       legend: { position: 'none' },  // 범례를 숨김
       tooltip: { trigger: 'none' }, // hover나 click시 tooltip을 표시하지 않음
       width: 600,
@@ -138,18 +173,13 @@ const drawChart = () => {
           fontSize: 24, // 타이틀 글씨 크기 설정
           color: '#005E92', // 글씨 색상 설정
       },
-      slices: {
-        0: { offset: 0.02 }, // 첫 번째 슬라이스 간격 추가
-        1: { offset: 0.02 }, // 두 번째 슬라이스 간격 추가
-        2: { offset: 0.02 }, // 세 번째 슬라이스 간격 추가
-        3: { offset: 0.02 }, // 네 번째 슬라이스 간격 추가
-        4: { offset: 0.02 },
-        5: { offset: 0.02 },
-        6: { offset: 0.02 },
-        7: { offset: 0.02 },
-        8: { offset: 0.02 },
-        9: { offset: 0.02 },
-      }
+      slices: bgColors.reduce((acc, color, idx) => {
+        acc[idx] = { offset: 0.02, color: color };
+        return acc;
+      }, {}),
+      pieSliceTextStyle: {
+        color: 'black', // 글씨 색상 설정
+      },
     };
 
     // 차트 그리기
@@ -160,7 +190,67 @@ const drawChart = () => {
   });
 };
 
+const internalInstance = getCurrentInstance(); 
+const emitter = internalInstance.appContext.config.globalProperties.emitter;
+const totalList = ref([]);
+const categoryClick = async (category) => {
+  // category를 기준으로 서버에서 데이터 가져와서 totalList.value 바꿔야함
+  try {
+    totalList.value = [
+        {
+            categoryImg: '/src/assets/media/category/meal.png',
+            place: '미친피자',
+            amount: 46000,
+            date: '2024-09-24 13:01',
+            checked: true,
+        },
+        {
+            categoryImg: '/src/assets/media/category/meal.png',
+            place: '한사바리',
+            amount: 60000,
+            date: '2024-09-23 20:43',
+            checked: true,
+        },
+        {
+            categoryImg: '/src/assets/media/category/meal.png',
+            place: 'Apple',
+            amount: 1600000,
+            date: '2024-09-22 23:11',
+            checked: true,
+        },
+        {
+            categoryImg: '/src/assets/media/category/meal.png',
+            place: '매머드커피',
+            amount: 3000,
+            date: '2024-09-25 09:54',
+            checked: true,
+        },
+        {
+            categoryImg: '/src/assets/media/category/meal.png',
+            place: 'GS25',
+            amount: 2400,
+            date: '2024-09-21 11:02',
+            checked: true,
+        },
+    ];
+  }
+   catch (error) {
+    totalList.value = [];
+  }
+};
+emitter.on('category_click', categoryClick);
+
+const showCategoryList = (category) => {
+  emitter.emit('category_click', category);
+  
+  window.scrollTo({
+    top: 1000, // 스크롤할 y축 위치
+    behavior: 'smooth' // 부드러운 스크롤 효과
+  });
+}
+
 onMounted(() => {
+  categoryClick();
   loadGoogleCharts();
 });
 
