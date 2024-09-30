@@ -14,42 +14,40 @@
       </ul>
   </div>
 
-  <div>
-    <div class="d-flex align-items-center">
-        <div id="kt_docs_google_chart_pie"></div>
+  <div class="d-flex align-items-center">
+      <div id="kt_docs_google_chart_pie"></div>
 
-        <div v-if="categorys.length === 0">
-          <h4 id="nolist">소비 내역이 없습니다!</h4>
+      <div v-if="categorys.length === 0">
+        <h4 id="nolist">소비 내역이 없습니다!</h4>
+      </div>
+      <div v-else v-if="isTableVisible">
+        <div class="table-responsive" style="height: 450px; width: 700px; overflow-y: auto;">
+          <table
+            id="kt_datatable_vertical_scroll"
+            class="table table-row-bordered gy-7 gs-10"
+            style="border-collapse: separate; border-spacing: 0 15px;">
+            <tbody>
+              <tr
+                v-for="(item, index) in sortedCategorys"
+                :key="index"
+                :style="{ backgroundColor: bgColors[index] }"
+                @click="showCategoryList(item.category)"
+                style="cursor: pointer;"
+              >
+                <td class="src" style="border-radius: 30px 0px 0px 30px;">
+                  <img :src="item.src" style="width: 40px; height: 40px; margin-left: 40px" />
+                  <span class="ms-8 fs-3 fw-semibold" style="color: #4A4A4A">{{ item.category }}</span>
+                </td>
+                <td class="percentage fs-3 fw-semibold text-center" style="color: #4A4A4A; border-radius: 0px 30px 30px 0px;">
+                  {{ item.percentage }}%
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div v-else v-if="isTableVisible">
-          <div class="table-responsive" style="height: 450px; width: 700px; overflow-y: auto;">
-            <table
-              id="kt_datatable_vertical_scroll"
-              class="table table-row-bordered gy-7 gs-10"
-              style="border-collapse: separate; border-spacing: 0 15px;">
-              <tbody>
-                <tr
-                  v-for="(item, index) in sortedCategorys"
-                  :key="index"
-                  :style="{ backgroundColor: bgColors[index] }"
-                  @click="showCategoryList(item.category)"
-                  style="cursor: pointer;"
-                >
-                  <td class="src" style="border-radius: 30px 0px 0px 30px;">
-                    <img :src="item.src" style="width: 40px; height: 40px; margin-left: 40px" />
-                    <span class="ms-8 fs-3 fw-semibold" style="color: #4A4A4A">{{ item.category }}</span>
-                  </td>
-                  <td class="percentage fs-3 fw-semibold text-center" style="color: #4A4A4A; border-radius: 0px 30px 30px 0px;">
-                    {{ item.percentage }}%
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-    </div>
-    <DataTables class="mt-4" :data="totalList"/>
+      </div>
   </div>
+  <DataTables :data="totalList"/>
 </template>
 
 <script setup>
@@ -250,8 +248,8 @@ const showCategoryList = (category) => {
 }
 
 onMounted(() => {
-  categoryClick();
   loadGoogleCharts();
+  categoryClick();
 });
 
 </script>

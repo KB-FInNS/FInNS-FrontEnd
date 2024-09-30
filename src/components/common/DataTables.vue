@@ -3,7 +3,7 @@
     <h4 id="nolist">소비 내역이 없습니다!</h4>
   </div>
   <div v-else>
-    <div class="table-responsive">
+    <div class="table-responsive" style="height: 610px; overflow-y: auto;">
       <table
         id="kt_datatable_vertical_scroll"
         class="table table-row-bordered gy-5 gs-7 text-center"
