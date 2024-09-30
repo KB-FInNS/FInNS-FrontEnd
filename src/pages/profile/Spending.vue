@@ -15,7 +15,7 @@
     </div>
 
     <Calendar />
-    <DataTables class="mt-4" :data="totallist"/>
+    <DataTables class="mt-4" :data="totalList"/>
 </template>
 
 <script setup>
@@ -25,52 +25,52 @@ import { getCurrentInstance, ref } from 'vue';
 
 const internalInstance = getCurrentInstance(); 
 const emitter = internalInstance.appContext.config.globalProperties.emitter;
-const totallist = ref([]);
-
+const totalList = ref([]);
 const dayClick = async (date) => {
+  // date를 기준으로 서버에서 데이터 가져와서 totalList.value 바꿔야함
   try {
-    totallist.value = [
+    totalList.value = [
         {
-            category: '/src/assets/media/category/meal.png',
+           categoryImg: '/src/assets/media/category/meal.png',
             place: '미친피자',
             amount: 46000,
-            date: '2024-09-24 13:01',
+            date: '2024-09-23 13:01',
             checked: true,
         },
         {
-            category: '/src/assets/media/category/alcohol.png',
+            categoryImg: '/src/assets/media/category/alcohol.png',
             place: '한사바리',
             amount: 60000,
             date: '2024-09-23 20:43',
             checked: true,
         },
         {
-            category: '/src/assets/media/category/shopping.png',
+           categoryImg: '/src/assets/media/category/shopping.png',
             place: 'Apple',
             amount: 1600000,
-            date: '2024-09-22 23:11',
+            date: '2024-09-23 23:11',
             checked: true,
         },
         {
-            category: '/src/assets/media/category/meal.png',
+            categoryImg: '/src/assets/media/category/meal.png',
             place: '매머드커피',
             amount: 3000,
-            date: '2024-09-25 09:54',
+            date: '2024-09-23 09:54',
             checked: true,
         },
         {
-            category: '/src/assets/media/category/convenienceStore.png',
+            categoryImg: '/src/assets/media/category/convenienceStore.png',
             place: 'GS25',
             amount: 2400,
-            date: '2024-09-21 11:02',
+            date: '2024-09-23 11:02',
             checked: true,
         },
     ];
-  } catch (error) {
-    totallist.value = [];
+  }
+   catch (error) {
+    totalList.value = [];
   }
 }
-
 emitter.on('day_click', dayClick);
 
 </script>

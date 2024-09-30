@@ -113,16 +113,10 @@
               <!--begin::Stats-->
               <div class="d-flex flex-wrap">
                 <!--begin::Stat-->
-                <div
-                  class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3"
-                >
+                <router-link to="/profile/spending" class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
                   <!--begin::Label-->
-                  <div class="fw-semibold fs-5 text-gray-500 text-center">
-                    <router-link
-                      class="text-gray-900 text-hover-primary fw-bold"
-                      to="/profile/spending"
-                      >소비 내역 수</router-link
-                    >
+                  <div class="fs-5 text-center">
+                    <span class="text-gray-900 text-hover-primary fw-bold">소비 내역 수</span>
                   </div>
                   <!--end::Label-->
                   <!--begin::Number-->
@@ -149,25 +143,16 @@
                       </svg>
                     </span>
 
-                    <count-up
-                      class="fs-2 fw-bold mt-2"
-                      :end-val="67"
-                    ></count-up>
+                    <count-up class="fs-2 text-gray-900 text-hover-primary fw-bold mt-2" :end-val="67"></count-up>
                   </div>
                   <!--end::Number-->
-                </div>
+                </router-link>
                 <!--end::Stat-->
                 <!--begin::Stat-->
-                <div
-                  class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3"
-                >
+                <router-link to="/profile/follower" class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
                   <!--begin::Label-->
-                  <div class="fw-semibold fs-5 text-gray-500 text-center">
-                    <router-link
-                      class="text-gray-900 text-hover-primary fw-bold"
-                      to="/profile/follower"
-                      >팔로워</router-link
-                    >
+                  <div class="fs-5 text-center">
+                    <span class="text-gray-900 text-hover-primary fw-bold">팔로워</span>
                   </div>
                   <!--end::Label-->
                   <!--begin::Number-->
@@ -182,25 +167,17 @@
                       />
                     </span>
 
-                    <count-up
-                      class="fs-2 fw-bold mt-2"
-                      :end-val="91"
-                    ></count-up>
+                    <count-up class="fs-2 text-gray-900 text-hover-primary fw-bold mt-2" :end-val="91"></count-up>
                   </div>
                   <!--end::Number-->
-                </div>
+                </router-link>
                 <!--end::Stat-->
                 <!--begin::Stat-->
-                <div
-                  class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3"
-                >
+
+                <router-link to="/profile/following" class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
                   <!--begin::Label-->
-                  <div class="fw-semibold fs-5 text-gray-500 text-center">
-                    <router-link
-                      class="text-gray-900 text-hover-primary fw-bold"
-                      to="/profile/following"
-                      >팔로잉</router-link
-                    >
+                  <div class="fs-5 text-center">
+                    <span class="text-gray-900 text-hover-primary fw-bold">팔로잉</span>
                   </div>
                   <!--end::Label-->
                   <!--begin::Number-->
@@ -214,13 +191,11 @@
                         height="29"
                       />
                     </span>
-                    <count-up
-                      class="fs-2 fw-bold mt-2"
-                      :end-val="113"
-                    ></count-up>
+
+                    <count-up class="fs-2 text-gray-900 text-hover-primary fw-bold mt-2" :end-val="113"></count-up>
                   </div>
                   <!--end::Number-->
-                </div>
+                </router-link>
 
                 <div style="position: absolute; bottom: 10px; right: 20px">
                   <i
