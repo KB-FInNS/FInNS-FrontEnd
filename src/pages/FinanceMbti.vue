@@ -29,26 +29,26 @@
   <!--end::Toolbar-->
   <div class="parent-container pt-5 pb-5 fs-1">
     <div class="custom-style">
-      <i class="">나의 MBTI</i>
+      나의 MBTI
     </div>
   </div>
 
   <!--begin::Container-->
   <div class="container-xxl">
     <!--begin::Navbar-->
-    <div class="card mb-6">
+    <!-- <div class="card mb-6"> -->
       <!-- 나의 MBTI 태그 시작 -->
       <div v-if="isLoading" class="text-center">로딩 중...</div>
       <div v-else class="card-body pt-9 pb-0">
         <!--begin::Details-->
         <div class="d-flex flex-wrap flex-sm-nowrap">
           <!--begin: Pic-->
-          <div class="me-7 mb-4">
-            <div
-              class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative"
-            >
+          <div class="me-7 mb-4 ms-">
+            <!-- <div
+              class="symbol symbol-100px symbol-lg-160px position-relative pt-3"
+            > -->
               <img :src="mbtiData.avatarUrl" alt="MBTI Profile Picture" />
-            </div>
+            <!-- </div> -->
           </div>
           <!--end::Pic-->
 
@@ -61,7 +61,7 @@
               <!--begin::User-->
               <div class="d-flex flex-column">
                 <!--begin::Name-->
-                <div class="d-flex align-items-center mb-2">
+                <div class="d-flex align-items-center mb-2 pt-5">
                   <p class="text-gray-900 fs-1 fw-bold me-1">
                     {{ mbtiData.mbtiType }}
                   </p>
@@ -92,12 +92,12 @@
         </div>
         <!--end::Details-->
       </div>
-    </div>
+    <!-- </div> -->
     <!-- 나의 MBTI 태그 끝 -->
 
     <div class="parent-container pt-5 fs-1">
       <div class="custom-style">
-        <i class="">다른 MBTI</i>
+        다른 MBTI
       </div>
     </div>
     <!--begin::Row-->
@@ -106,11 +106,11 @@
       <div class="col-md-6 col-xl-4">
         <!--begin::Card-->
         <div class="card-container rounded-top">
-          <div class="card border-hover-primary">
+          <div class="card card-hover">
             <!-- Card Front -->
             <div class="card-front text-center bg-One">
               <!--begin::Card header-->
-              <div class="fs-1 fw-bold border-0 pt-5 text-center">
+              <div class="fs-1 fw-bold border-0 pt-7 text-center">
                 먹는게제일좋아형
               </div>
               <!--end:: Card header-->
@@ -128,12 +128,12 @@
             <div class="card-back bg-One">
               <div class="card-body p-3">
                 <!--begin::Info-->
-                <div class="fs-1 fw-bold text-gray-900 text-center">
+                <div class="fs-1 fw-bold border-0 pt-4 text-center">
                   먹는게제일좋아형
                 </div>
                 <p class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 text-center">
-                  음식에 대한 사랑은 곧 소비로 이어지는 타입!<br />
-                  맛집 탐방, 고급 요리, 신상 메뉴라면 지출도 아깝지 않다!!
+                  음식에 대한 사랑은 곧 <br />소비로 이어지는 타입! <br />
+                  맛집 탐방, 고급 요리, <br />신상 메뉴라면 지출도 <br />아깝지 않다!!
                 </p>
               </div>
             </div>
@@ -146,11 +146,11 @@
       <div class="col-md-6 col-xl-4">
         <!--begin::Card-->
         <div class="card-container">
-          <div class="card border-hover-primary">
+          <div class="card">
             <!-- Card Front -->
             <div class="card-front text-center bg-Two">
               <!--begin::Card header-->
-              <div class="fs-1 fw-bold border-0 pt-5 text-center">
+              <div class="fs-1 fw-bold border-0 pt-7 text-center">
                 이것도저것도내꺼형
               </div>
               <!--end:: Card header-->
@@ -168,14 +168,14 @@
             <div class="card-back bg-Two">
               <div class="card-body p-3">
                 <!--begin::Info-->
-                <div class="fs-1 fw-bold text-gray-900 text-center">
+                <div class="fs-1 fw-bold border-0 pt-4 text-center">
                   이것도저것도내꺼형
                 </div>
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
-                  쇼핑몰에 가면 눈에 보이는 건 전부 내 꺼! 최신 유행 아이템부터
-                  희귀템까지<br />
+                  쇼핑몰에 가면 눈에<br /> 보이는 건 전부 내 꺼!<br /> 최신 유행 아이템부터
+                  <br />희귀템까지
                   쇼핑 카트는 언제나 가득 차 있다!
                 </p>
               </div>
@@ -189,11 +189,11 @@
       <div class="col-md-6 col-xl-4">
         <!--begin::Card-->
         <div class="card-container">
-          <div class="card border-hover-primary">
+          <div class="card">
             <!-- Card Front -->
             <div class="card-front text-center bg-Three">
               <!--begin::Card header-->
-              <div class="fs-1 fw-bold border-0 pt-5 text-center">
+              <div class="fs-1 fw-bold border-0 pt-7 text-center">
                 자기관리마니아형
               </div>
               <!--end:: Card header-->
@@ -211,15 +211,15 @@
             <div class="card-back bg-Three">
               <div class="card-body p-3">
                 <!--begin::Info-->
-                <div class="fs-1 fw-bold text-gray-900 text-center">
+                <div class="fs-1 fw-bold border-0 pt-4 text-center">
                   자기관리마니아형
                 </div>
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
                   외모와 건강 관리를 최우선으로 생각하는 사람!<br />
-                  최신 뷰티 제품과 고급 서비스를 위해선 아낌없이 투자하는
-                  유형이다!!
+                  최신 뷰티 제품과 고급 <br />서비스를 위해선 <br />아낌없이 투자하는
+                  <br />유형이다!!
                 </p>
               </div>
             </div>
@@ -232,11 +232,11 @@
       <div class="col-md-6 col-xl-4">
         <!--begin::Card-->
         <div class="card-container">
-          <div class="card border-hover-primary">
+          <div class="card">
             <!-- Card Front -->
             <div class="card-front text-center bg-four">
               <!--begin::Card header-->
-              <div class="fs-1 fw-bold border-0 pt-5 text-center">
+              <div class="fs-1 fw-bold border-0 pt-7 text-center">
                 마이아파형
               </div>
               <!--end:: Card header-->
@@ -254,7 +254,7 @@
             <div class="card-back bg-four">
               <div class="card-body p-3">
                 <!--begin::Info-->
-                <div class="fs-1 fw-bold text-gray-900 text-center">
+                <div class="fs-1 fw-bold border-0 pt-4 text-center">
                   마이아파형
                 </div>
                 <p
@@ -262,7 +262,7 @@
                 >
                   건강이 최우선! 병원비와 의료비 지출이 큰 비중을 차지하는
                   유형이다!!<br />
-                  정기적인 건강 관리와 치료를 위해 병원과 늘 가까운 사이.
+                  정기적인 건강 관리와 <br />치료를 위해 병원과 늘 <br />가까운 사이.
                 </p>
               </div>
             </div>
@@ -275,11 +275,11 @@
       <div class="col-md-6 col-xl-4">
         <!--begin::Card-->
         <div class="card-container">
-          <div class="card border-hover-primary">
+          <div class="card">
             <!-- Card Front -->
             <div class="card-front text-center bg-five">
               <!--begin::Card header-->
-              <div class="fs-1 fw-bold border-0 pt-5 text-center">
+              <div class="fs-1 fw-bold border-0 pt-7 text-center">
                 통신보안형
               </div>
               <!--end:: Card header-->
@@ -297,14 +297,14 @@
             <div class="card-back bg-five">
               <div class="card-body p-3">
                 <!--begin::Info-->
-                <div class="fs-1 fw-bold text-gray-900 text-center">
+                <div class="fs-1 fw-bold border-0 pt-4 text-center">
                   통신보안형
                 </div>
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
-                  최신 휴대폰과 초고속 인터넷 없인 못 사는 유형<br />
-                  데이터와 통신비를 아껴보자!
+                최신 휴대폰과 초고속 <br />인터넷 없인 못 사는 <br />유형! 
+                데이터와 통신비 <br />절약을 위힌 소비 습관을 길러보자!!
                 </p>
               </div>
             </div>
@@ -317,11 +317,11 @@
       <div class="col-md-6 col-xl-4">
         <!--begin::Card-->
         <div class="card-container">
-          <div class="card border-hover-primary">
+          <div class="card">
             <!-- Card Front -->
             <div class="card-front text-center bg-six">
               <!--begin::Card header-->
-              <div class="fs-1 fw-bold border-0 pt-5 text-center">뚜벅초형</div>
+              <div class="fs-1 fw-bold border-0 pt-7 text-center">뚜벅초형</div>
               <!--end:: Card header-->
               <!--begin::Card body-->
               <div class="card-body">
@@ -337,15 +337,15 @@
             <div class="card-back bg-six">
               <div class="card-body p-3">
                 <!--begin::Info-->
-                <div class="fs-1 fw-bold text-gray-900 text-center">
+                <div class="fs-1 fw-bold border-0 pt-4 text-center">
                   뚜벅초형
                 </div>
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
-                  대중교통을 애용하는 뚜벅초형<br />
-                  지하철, 버스, 택시 등 교통비가 주된 지출이며, 경제적이고 빠른
-                  이동을 추구하는 실속파.
+                  대중교통을 애용하는 <br />뚜벅초형!!
+                  지하철, 버스, 택시 등 교통비가 주된 <br />지출이며, 경제적이고 <br />빠른
+                  이동을 추구하는 <br />실속파.
                 </p>
               </div>
             </div>
@@ -358,11 +358,11 @@
       <div class="col-md-6 col-xl-4">
         <!--begin::Card-->
         <div class="card-container">
-          <div class="card border-hover-primary">
+          <div class="card">
             <!-- Card Front -->
             <div class="card-front text-center bg-seven">
               <!--begin::Card header-->
-              <div class="fs-1 fw-bold border-0 pt-5 text-center">
+              <div class="fs-1 fw-bold border-0 pt-7 text-center">
                 배낭을매고형
               </div>
               <!--end:: Card header-->
@@ -380,15 +380,15 @@
             <div class="card-back bg-seven">
               <div class="card-body p-3">
                 <!--begin::Info-->
-                <div class="fs-1 fw-bold text-gray-900 text-center">
+                <div class="fs-1 fw-bold border-0 pt-4 text-center">
                   배낭을매고형
                 </div>
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
                   여행을 위해 사는 당신!!<br />
-                  비행기 표, 숙소, 맛집 탐방까지 여행에 아낌없이 투자하며,
-                  새로운 모험을 즐기는 여행 마니아.
+                  비행기 표, 숙소, <br />맛집 탐방까지 여행에  <br />아낌없이 투자하며,
+                  <br />새로운 모험을 즐기는  <br />여행 마니아.
                 </p>
               </div>
             </div>
@@ -401,11 +401,11 @@
       <div class="col-md-6 col-xl-4">
         <!--begin::Card-->
         <div class="card-container">
-          <div class="card border-hover-primary">
+          <div class="card">
             <!-- Card Front -->
             <div class="card-front text-center bg-eight">
               <!--begin::Card header-->
-              <div class="fs-1 fw-bold border-0 pt-5 text-center">
+              <div class="fs-1 fw-bold border-0 pt-7 text-center">
                 아인슈타인형
               </div>
               <!--end:: Card header-->
@@ -423,7 +423,7 @@
             <div class="card-back bg-eight">
               <div class="card-body p-3">
                 <!--begin::Info-->
-                <div class="fs-1 fw-bold text-gray-900 text-center">
+                <div class="fs-1 fw-bold border-0 pt-4 text-center">
                   아인슈타인형
                 </div>
                 <p
@@ -431,7 +431,7 @@
                 >
                   교육과 학습에 아낌없이 투자하는 당신!!<br />
                   강의, 학원, 도서, 온라인 강좌 등 지식 습득을 위한 교육비가
-                  가장 큰 지출 항목.
+                  가장 큰 <br />지출 항목.
                 </p>
               </div>
             </div>
@@ -444,11 +444,11 @@
       <div class="col-md-6 col-xl-4">
         <!--begin::Card-->
         <div class="card-container">
-          <div class="card border-hover-primary">
+          <div class="card ">
             <!-- Card Front -->
             <div class="card-front text-center bg-nine">
               <!--begin::Card header-->
-              <div class="fs-1 fw-bold border-0 pt-5 text-center">
+              <div class="fs-1 fw-bold border-0 pt-7 text-center">
                 술술들어간다형
               </div>
               <!--end:: Card header-->
@@ -466,15 +466,15 @@
             <div class="card-back bg-nine">
               <div class="card-body p-3">
                 <!--begin::Info-->
-                <div class="fs-1 fw-bold text-gray-900 text-center">
+                <div class="fs-1 fw-bold border-0 pt-4 text-center">
                   술술들어간다형
                 </div>
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
-                  술과 유흥을 즐기는 당신!!<br />
-                  술자리와 유흥비가 가장 큰 지출이며, 언제나 즐거운 시간을
-                  추구하는 캐릭터.
+                  술과 유흥을 즐기는 <br />당신!!
+                  술자리와 유흥비가 가장 큰 지출이며, <br />언제나 즐거운 시간을
+                  <br />추구하는 캐릭터.
                 </p>
               </div>
             </div>
@@ -497,9 +497,9 @@ import axios from 'axios';
 
 // State for storing data and loading status
 const mbtiData = ref({
-  avatarUrl: '../assets/media/avatars/kb_sul.png',
-  mbtiType: '',
-  mbtiDescription: '',
+  avatarUrl: 'src/assets/media/avatars/kb_rabbit.png',
+  mbtiType: '자기관리마니아형',
+  mbtiDescription: '외모와 건강 관리를 최우선으로 생각하는 사람! 최신 뷰티 제품과 고급서비스를 위해선 아낌없이 투자하는유형이다!!',
 });
 const isLoading = ref(true);
 
@@ -528,7 +528,6 @@ onMounted(fetchData);
 .card {
   width: 100%;
   height: 300px;
-
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s;
@@ -541,6 +540,8 @@ onMounted(fetchData);
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 .card-front {
@@ -591,16 +592,17 @@ onMounted(fetchData);
 }
 
 .custom-style {
-  background-color: #d4d9ff; /* 파란색 배경 */
-  border: 2px solid black; /* 검정색 테두리 */
-  border-radius: 20px; /* 양끝을 둥글게 */
-  padding: 14px; /* 내부 여백 */
-  color: white; /* 텍스트 색상 */
-  width: 200px; /* 고정 너비 */
-  text-align: center; /* 텍스트 가운데 정렬 */
+  color: black;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: skyblue;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
 }
+
 .bg-title {
   background-color: #f0f6f9; /* Powder Blue 색상 */
   height: 200px;
 }
+
 </style>
