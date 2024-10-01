@@ -20,6 +20,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: '../Board_Backend/src/main/webapp/resources',
+    outDir:
+      'C:/Users/student/Desktop/kbpj/backend/FinNS_Backend/src/main/webapp/resources',
   },
 });

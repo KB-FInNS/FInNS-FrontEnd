@@ -7,20 +7,39 @@
           <img src="@/assets/media/avatars/login_logo.png" class="logo" />
           <span class="logo">FInNS</span>
         </div>
-        <img src="@/assets/media/avatars/loginpage.png" alt="Illustration" class="login-image" />
+        <img
+          src="@/assets/media/avatars/loginpage.png"
+          alt="Illustration"
+          class="login-image"
+        />
       </div>
     </div>
 
     <!-- Right Section: Join Form -->
     <div class="right-section d-flex flex-column justify-content-center">
       <div class="form-container">
-        <h1 class="form-title" style="color: white; margin-bottom: 10px;">회원 가입</h1>
-        <p style="font-size: 18px; margin-bottom: 30px; color: #ffffff; text-align: center;">계정 생성을 위해 회원가입을 해주세요.</p>
+        <h1 class="form-title" style="color: white; margin-bottom: 10px">
+          회원 가입
+        </h1>
+        <p
+          style="
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #ffffff;
+            text-align: center;
+          "
+        >
+          계정 생성을 위해 회원가입을 해주세요.
+        </p>
         <form @submit.prevent="join">
           <div class="mb-3 mt-3">
-            <label for="username" class="form-label">
+            <label for="user_id" class="form-label">
               아이디 *
-              <button type="button" class="btn btn-success btn-sm py-0 me-2 " @click="checkUsername">
+              <button
+                type="button"
+                class="btn btn-success btn-sm py-0 me-2"
+                @click="checkUsername"
+              >
                 중복 확인
               </button>
 
@@ -28,42 +47,59 @@
                 {{ checkError }}
               </span> -->
 
-               <span style=" font-size: 12px; color: red;">
+              <span style="font-size: 12px; color: red">
                 {{ checkError }}
-              </span> 
+              </span>
             </label>
-            <input type="text" class="form-control" placeholder="아이디를 입력하세요." id="username" @input="changeUsername"
-              v-model="member.username" />
-
+            <input
+              type="text"
+              class="form-control"
+              placeholder="아이디를 입력하세요."
+              id="user_id"
+              @input="changeUsername"
+              v-model="member.user_id"
+            />
           </div>
 
           <div class="mb-3">
             <label for="password" class="form-label"> 비밀번호 * </label>
-            <input type="password" class="form-control" placeholder="비밀번호를 입력하세요." id="password"
-              v-model="member.password" />
+            <input
+              type="password"
+              class="form-control"
+              placeholder="비밀번호를 입력하세요."
+              id="password"
+              v-model="member.password"
+            />
           </div>
 
           <div class="mb-3">
             <label for="password" class="form-label"> 비밀번호 확인 * </label>
-            <input type="password" class="form-control" placeholder="비밀번호를 다시 입력하세요." id="password2"
-              v-model="member.password2" />
-          </div>
-
-          <div class="mb-3">
-            <label for="email" class="form-label"> 이메일 * </label>
-            <span v-if="emailError" style="color: red; font-size: 12px; font-weight: bold; " class="ms-2">{{ emailError }}</span>
-            <input type="email" class="form-control" placeholder="abc@naver.com" id="email" v-model="email.email"
-              @input="validateEmail" />
-
+            <input
+              type="password"
+              class="form-control"
+              placeholder="비밀번호를 다시 입력하세요."
+              id="password2"
+              v-model="member.password2"
+            />
           </div>
           <div class="mb-3">
-            <label for="birth" class="form-label"> 생년월일 * </label>
-            <input type="text" class="form-control" placeholder="1999-09-09" id="birth" v-model="member.birth" />
+            <label for="birthdate" class="form-label"> 생년월일 * </label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="생년월일을 입력하세요..."
+              id="birthdate"
+              v-model="member.birthdate"
+            />
           </div>
 
-          <button type="submit" class="btn btn-primary w-100 mt-4" :disabled="disableSubmit"
-            style="border-radius: 13px; height: 50px;">
-            <div style=" font-weight:550; font-size: 17px;">회원가입</div>
+          <button
+            type="submit"
+            class="btn btn-primary w-100 mt-4"
+            :disabled="disableSubmit"
+            style="border-radius: 13px; height: 50px"
+          >
+            <div style="font-weight: 550; font-size: 17px">회원가입</div>
           </button>
         </form>
       </div>
@@ -80,24 +116,21 @@ const router = useRouter();
 const avatar = ref(null);
 const checkError = ref('');
 const member = reactive({
-  username: '',
+  user_id: '',
   password: '',
-  email: '',
   password2: '',
-  mbti: '',
-  avatar: null,
+  birthdate: '',
 });
 
-const email = ref({ email: ''});
-
+const email = ref({ email: '' });
 
 const disableSubmit = ref(true);
 
 const checkUsername = async () => {
-  if (!member.username) {
+  if (!member.user_id) {
     return alert('사용자 ID를 입력하세요.');
   }
-  disableSubmit.value = await authApi.checkUsername(member.username);
+  disableSubmit.value = await authApi.checkUsername(member.user_id);
   checkError.value = disableSubmit.value
     ? '이미 사용중인 ID입니다.'
     : '사용가능한 ID입니다.';
@@ -105,33 +138,30 @@ const checkUsername = async () => {
 
 const changeUsername = () => {
   disableSubmit.value = true;
-  checkError.value = member.username ? 'ID 중복 체크를 하셔야 합니다.' : '';
+  checkError.value = member.user_id ? 'ID 중복 체크를 하셔야 합니다.' : '';
 };
 
 const join = async () => {
   if (member.password !== member.password2) {
     return alert('비밀번호가 일치하지 않습니다.');
   }
-  if (avatar.value?.files.length > 0) {
-    member.avatar = avatar.value.files[0];
-  }
   try {
     await authApi.create(member);
-    router.push({ name: 'home' });
+    router.push({ name: 'Main' });
   } catch (e) {
     console.error(e);
   }
 };
-const emailError = ref('');
 
-const user_email_rule = v => {
-  const emailRegex = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-  return emailRegex.test(v) ? '' : '이메일 주소를 정확히 입력해주세요.';
-};
+// const user_email_rule = (v) => {
+//   const emailRegex =
+//     /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+//   return emailRegex.test(v) ? '' : '이메일 주소를 정확히 입력해주세요.';
+// };
 
-const validateEmail = () => {
-  emailError.value = user_email_rule(email.value.email);
-};
+// const validateEmail = () => {
+//   emailError.value = user_email_rule(email.value.email);
+// };
 </script>
 
 <style scoped>

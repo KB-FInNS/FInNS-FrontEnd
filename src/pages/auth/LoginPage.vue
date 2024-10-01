@@ -7,7 +7,11 @@
           <img src="@/assets/media/avatars/login_logo.png" class="logo" />
           <span class="logo">FInNS</span>
         </div>
-        <img src="@/assets/media/avatars/loginpage.png" alt="Illustration" class="login-image" />
+        <img
+          src="@/assets/media/avatars/loginpage.png"
+          alt="Illustration"
+          class="login-image"
+        />
       </div>
     </div>
 
@@ -17,44 +21,73 @@
         <h2 style="color: white; font-size: 35px">환영합니다!</h2>
         <p>FInNS 를 계속 이용하시려면 로그인을 해주세요</p>
         <form @submit.prevent="login">
-          <div class="mb-3 mt-3" style="text-align: left;">
-            <label for="username" class="form-label">
-              아이디
-            </label>
-            <input type="text" class="form-control" placeholder="아이디를 입력하세요." v-model="member.username" />
+          <div class="mb-3 mt-3" style="text-align: left">
+            <label for="user_id" class="form-label"> 아이디 </label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="아이디를 입력하세요."
+              v-model="member.user_id"
+            />
           </div>
 
-          <div class="mb-3" style="text-align: left; margin-top: 30px;">
+          <div class="mb-3" style="text-align: left; margin-top: 30px">
             <div class="form-inline">
-              <label style="display: block; position: relative;">
+              <label style="display: block; position: relative">
                 <span class="form-label">비밀번호</span>
-                <input :type="passwordHidden ? 'password' : 'text'" class="password-field form-control d-inline"
-                  v-model="member.password" placeholder="비밀번호를 입력하세요."
-                  style="width: 100%; padding-right: 35px; box-sizing: border-box;" />
-                <span class="display-eye fa" :class="passwordHidden ? 'fa-eye-slash' : 'fa-eye'"
-                  @click="togglePasswordVisibility" style="position: absolute; top: 70%; right: 20px; font-size: 1.5em;
-        transform: translateY(-50%); cursor: pointer; color: #757575;"></span>
+                <input
+                  :type="passwordHidden ? 'password' : 'text'"
+                  class="password-field form-control d-inline"
+                  v-model="member.password"
+                  placeholder="비밀번호를 입력하세요."
+                  style="
+                    width: 100%;
+                    padding-right: 35px;
+                    box-sizing: border-box;
+                  "
+                />
+                <span
+                  class="display-eye fa"
+                  :class="passwordHidden ? 'fa-eye-slash' : 'fa-eye'"
+                  @click="togglePasswordVisibility"
+                  style="
+                    position: absolute;
+                    top: 70%;
+                    right: 20px;
+                    font-size: 1.5em;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                    color: #757575;
+                  "
+                ></span>
               </label>
             </div>
           </div>
 
           <div v-if="error" class="text-danger">{{ error }}</div>
-          <button type="submit" class="btn btn-primary mt-9" style="border-radius: 13px; height: 50px;"
-            :disabled="disableSubmit">
-            <div style=" font-weight:550; font-size: 17px;">로그인</div>
+          <button
+            type="submit"
+            class="btn btn-primary mt-4"
+            :disabled="disableSubmit"
+          >
+            로그인
           </button>
-          <!-- <div class="divider">
-            <span>OR</span>
-          </div> -->
-          <!-- <button class="btn mt-2 w-100 naver-login-btn"
-            style="border-radius: 13px; height: 50px; border: 1px solid #fff; /* 버튼의 테두리 추가 */">
-            <img src="../../assets/media/avatars/login_naver.png" class="naver-logo" />
-            <div style=" font-weight: 550; font-size: 16px; color: white;">네이버 아이디로 로그인</div>
-          </button> -->
+          <div class="text-center">또는</div>
+          <button class="btn btn-success mt-2 w-100 naver-login-btn">
+            <img
+              src="../../assets/media/avatars/login_naver.png"
+              class="naver-logo"
+            />
+            네이버 아이디로 로그인
+          </button>
 
           <div class="text-center pt-6">
-            <router-link to="/auth/join" class="link-text" style="color: white; font-size: 15px;">회원이 아니신가요?
-              가입하기</router-link>
+            <router-link
+              to="/auth/join"
+              class="link-text"
+              style="color: white; font-size: 15px"
+              >회원이 아니신가요? 가입하기</router-link
+            >
           </div>
         </form>
       </div>
@@ -71,19 +104,20 @@ const cr = useRoute();
 const router = useRouter();
 const auth = useAuthStore();
 const member = reactive({
-  username: '',
-  password: '',
+  user_id: 'asd',
+  password: '1234',
 });
 const error = ref('');
-const disableSubmit = computed(() => !(member.username && member.password));
+const disableSubmit = computed(() => !(member.user_id && member.password));
 
 const login = async () => {
   try {
     await auth.login(member);
     router.push('/');
   } catch (e) {
-    // 로그인 에러
-    error.value = e.response.data;
+    // 로그인 에러가 발생하는 경우 처리
+    error.value =
+      e.response?.data || '로그인에 실패하였습니다. 다시 시도해주세요.';
   }
 };
 
@@ -231,9 +265,9 @@ p {
   align-items: center;
   justify-content: center;
   gap: 8px; */
-  /* 이미지와 텍스트 사이 간격 */
- /* adding: 10px; p */
-  /* 버튼의 패딩 */
+/* 이미지와 텍스트 사이 간격 */
+/* adding: 10px; p */
+/* 버튼의 패딩 */
 /* } */
 
 /* 네이버 로고의 크기 조정 */
@@ -302,7 +336,6 @@ div.pwform {
 }
 
 .form-control input {
-
   width: 400px;
   height: 30px;
   background-color: rgb(255, 255, 255);

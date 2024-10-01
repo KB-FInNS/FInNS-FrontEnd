@@ -1,21 +1,39 @@
 <template>
   <!--begin::Main wrapper-->
-  <div id="kt_docs_search_handler_basic" data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="true" data-kt-search-layout="inline">
+  <div
+    id="kt_docs_search_handler_basic"
+    data-kt-search-keypress="true"
+    data-kt-search-min-length="2"
+    data-kt-search-enter="true"
+    data-kt-search-layout="inline"
+  >
     <!--begin::Input Form-->
-    <form data-kt-search-element="form" class="w-100 position-relative mb-5" autocomplete="off">
+    <form
+      data-kt-search-element="form"
+      class="w-100 position-relative mb-5"
+      autocomplete="off"
+    >
       <input type="hidden" />
       <input
         type="text"
         class="form-control form-control-lg form-control-solid px-15"
         name="search"
-        placeholder="Search by username, full name or email..."
+        placeholder="Search by user_id, full name or email..."
         data-kt-search-element="input"
         @keydown.enter.prevent
       />
-      <span class="position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-5" data-kt-search-element="spinner">
-        <span class="spinner-border h-15px w-15px align-middle text-gray-500"></span>
+      <span
+        class="position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-5"
+        data-kt-search-element="spinner"
+      >
+        <span
+          class="spinner-border h-15px w-15px align-middle text-gray-500"
+        ></span>
       </span>
-      <span class="btn btn-flush btn-active-color-primary position-absolute top-50 end-0 translate-middle-y lh-0 me-5 d-none" data-kt-search-element="clear">
+      <span
+        class="btn btn-flush btn-active-color-primary position-absolute top-50 end-0 translate-middle-y lh-0 me-5 d-none"
+        data-kt-search-element="clear"
+      >
         <!--begin::Svg Icon | path: cross-->
       </span>
     </form>
@@ -77,7 +95,9 @@ const clear = (search) => {
 
 // Input handler
 const handleInput = () => {
-  const inputField = element.value.querySelector("[data-kt-search-element='input']");
+  const inputField = element.value.querySelector(
+    "[data-kt-search-element='input']"
+  );
   inputField.addEventListener('keydown', (e) => {
     // Only apply action to Enter key press
     if (e.key === 'Enter') {
@@ -94,9 +114,15 @@ onMounted(() => {
     return;
   }
 
-  suggestionsElement.value = element.value.querySelector("[data-kt-search-element='suggestions']");
-  resultsElement.value = element.value.querySelector("[data-kt-search-element='results']");
-  emptyElement.value = element.value.querySelector("[data-kt-search-element='empty']");
+  suggestionsElement.value = element.value.querySelector(
+    "[data-kt-search-element='suggestions']"
+  );
+  resultsElement.value = element.value.querySelector(
+    "[data-kt-search-element='results']"
+  );
+  emptyElement.value = element.value.querySelector(
+    "[data-kt-search-element='empty']"
+  );
 
   // Initialize search handler
   searchObject = new KTSearch(element.value);

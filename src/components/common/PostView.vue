@@ -24,8 +24,32 @@
                             <!--end::Date-->
                         </div>
                         <!--end::Info-->
+
                     </div>
                     <!--end::Author-->
+                    <div class="m-0">
+                        <!--begin::Menu toggle-->
+                        <button class="btn btn-icon btn-color-gray-500 btn-active-color-primary me-n4"
+                            data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end"
+                            data-kt-menu-overflow="true">
+                            <i class="ki-duotone ki-dots-square fs-1">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                                <span class="path3"></span>
+                                <span class="path4"></span>
+                            </i>
+                        </button>
+
+                        <!--수정하기 버튼-->
+                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px"
+                            data-kt-menu="true">
+                            <div class="separator mb-3 opacity-75"></div>
+                            <div class="menu-item px-3">
+                                <a @click="goToPostViewPage" class="menu-link px-3">수정하기</a>
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
                 <!--end::Card header-->
@@ -191,7 +215,13 @@
 import { ref } from 'vue';
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
+
+const goToPostViewPage = () => {
+  router.push('/postDetails'); // PostViewPage로 이동
+};
 
 const goodisActive = ref(false)
 const badisActive = ref(false)
