@@ -35,13 +35,13 @@
                             <label class="fs-6 form-label fw-bold text-gray-900 me-3">검색</label>
                             <div class="d-flex align-items-center">
                                 <div class="position-relative w-md-600px me-2">
-                                    <i class="ki-duotone ki-magnifier fs-3 text-gray-500 position-absolute top-50 translate-middle ms-6">
+                                    <i
+                                        class="ki-duotone ki-magnifier fs-3 text-gray-500 position-absolute top-50 translate-middle ms-6">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                     </i>
                                     <input v-model="searchCard" type="text"
-                                        class="form-control form-control-solid ps-10"
-                                        placeholder="은행명, 카드명을 입력해주세요.">
+                                        class="form-control form-control-solid ps-10" placeholder="은행명, 카드명을 입력해주세요.">
                                 </div>
                                 <div>
                                     <button class="btn btn-primary px-4" @click="searchFunction">검색</button>
@@ -80,8 +80,9 @@
                             <td>
                                 <div class="card card-flush shadow-sm m-5">
                                     <div class="card-side d-flex justify-content-between m-7 align-items-center">
-                                        <div class="left ms-5">
-                                            <img :src="item.card_img_url" alt="" width="300" height="180">
+                                        <div class="text-center ms-5" style="width: 200px;">
+                                            <img :src="item.card_img_url" ref="image"
+                                            @load="onImageLoad($event)" style="width: 100px;">
                                         </div>
                                         <div class="flex-grow-1 ms-10 ">
                                             <div
@@ -193,7 +194,9 @@ const router = useRouter();
 
 // 탭 리스트 및 카드 데이터
 const tabList = ['전체', '식비', '여가', '교통', '의료', '통신', '교육'];
-const cards = ref([]);
+
+const image = ref(null);
+const cards = ref([]); // 카드 데이터를 담을 ref
 
 // 컴포넌트가 마운트될 때 데이터를 가져오기
 onMounted(async () => {
@@ -204,6 +207,21 @@ onMounted(async () => {
         alert('Error fetching data:', error);
     }
 });
+
+// 이미지 로드 시 호출되는 함수
+// const onImageLoad = (event) => {
+//   const img = event.target;
+//   const width = img.naturalWidth;
+//   const height = img.naturalHeight;
+
+//   // 세로가 가로보다 크면 90도 회전
+//   if (height > width) {
+//     img.style.transform = 'rotate(90deg)';
+//     // img.style.height = '300px'; // 세로 길이를 180px로 설정
+//     // img.style.width = '285px'; // 가로는 자동으로 설정
+//     // img.style.objectFit = 'contain';
+//   }
+// };
 
 // 선택된 탭과 검색어 관리
 const selectedTab = ref('전체');
