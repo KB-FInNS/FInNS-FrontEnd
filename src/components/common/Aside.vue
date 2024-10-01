@@ -37,7 +37,7 @@
                     fill="currentColor" />
                 </svg>
               </span>
-              <span class="menu-title mx-5 text-primary">홈</span>
+              <span class="menu-title mx-5">홈</span>
             </router-link>
             <!--end:Menu link-->
           </div>

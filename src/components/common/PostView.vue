@@ -44,7 +44,7 @@
                             <div class="menu-item px-3">
                                 <!-- 프로필 수정 버튼 -->
                                 <router-link to="/postDetails" class="menu-link px-3">
-                                    게시물 수정
+                                    게시물 상세
                                 </router-link>
                             </div>
                         </div>
