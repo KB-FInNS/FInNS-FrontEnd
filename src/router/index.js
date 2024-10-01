@@ -22,7 +22,6 @@ import { isAuthenticated } from '@/util/guards';
 import PostDetails from '@/pages/PostDetails.vue';
 import ProductDetail from '@/pages/ProductDetail.vue';
 import PostViewPage from '@/pages/PostViewPage.vue';
-import PostView from '@/components/common/PostView.vue';
 // import DepositDetail from '@/pages/DepositDetail.vue';
 // import installmentSavingsDetail from '@/pages/installmentSavingsDetail.vue';
 const router = createRouter({
