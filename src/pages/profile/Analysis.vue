@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-10">
       <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold justify-content-center">
         <!--begin::Nav item-->
         <li class="nav-item">
@@ -14,7 +14,7 @@
       </ul>
   </div>
 
-  <div class="d-flex align-items-center">
+  <div class="d-flex align-items-center" style="margin-top: -20px;">
       <div id="kt_docs_google_chart_pie"></div>
 
       <div v-if="categorys.length === 0">

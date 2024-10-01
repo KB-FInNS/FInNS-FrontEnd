@@ -1,5 +1,5 @@
 <template>
-    <div class="mb-8">
+    <div class="mb-8 mt-10">
         <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold justify-content-center">
           <!--begin::Nav item-->
           <li class="nav-item">

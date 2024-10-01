@@ -223,9 +223,9 @@
     <!--end::Navbar-->
 
     <!-- 가입한 예적금 -->
-    <div class="text-center fs-1 fw-bold">가입한 금융상품</div>
-    <div class="d-flex justify-content-between">
-      <table id="kt_datatable_column_rendering" class="table table-row-bordered gy-5 gs-7 text-center" style="width: 50%;">
+    <div class="text-center fs-1 fw-bold mt-10">가입한 금융상품</div>
+    <div class="d-flex justify-content-between mt-10">
+      <table id="kt_datatable_column_rendering" class="table table-row-bordered gy-5 text-center" style="width: 50%;">
         <tbody>
           <tr v-for="(item, index) in dataList" :key="index" @click="gotoDepositDetail(item)" style="cursor: pointer;">
             <td>
@@ -237,10 +237,12 @@
         </tbody>
       </table>
 
-      <Carousel class="ms-10" style="width: 50%;">
+      <Carousel style="width: 50%;">
         <Slide v-for="(item, index) in cards" :key="index">
-            <img :src="item.img" class="carousel-image"/>
-            <div>{{ item.name }}</div>
+          <router-link :to="'/card/' + item.financial_product_no"> 
+            <img :src="item.img" style="height: 180px; object-fit: contain;"/>
+            <div class="mt-3 fs-1 fw-bold hover-text-primary">{{ item.name }}</div>
+          </router-link>
         </Slide>
 
         <template #addons>
@@ -363,11 +365,17 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.carousel-image {
-    width: 100%;
-    /* 이미지가 Carousel의 너비에 맞춰짐 */
-    height: 200px;
-    /* contain : 사진 크기에 맞게, cover : carousel 에 맞게(이미지 잘림) */
-    object-fit: contain;
+table#kt_datatable_column_rendering tr {
+  border-bottom: none !important; /* 구분선 제거 */
 }
+
+.hover-text-primary {
+  color: black; /* 기본 글자색을 검정으로 설정 */
+  transition: color 0.2s ease; /* 색상 전환을 부드럽게 */
+}
+
+.hover-text-primary:hover {
+  color: var(--bs-primary); /* Bootstrap primary 색상으로 변경 */
+}
+
 </style>
