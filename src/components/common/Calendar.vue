@@ -1,8 +1,5 @@
 <template>
-  <div class="m-10">
-    <div id="kt_calendar_app" class="fc fc-direction-ltr fc-theme-standard"></div>
-  </div>
-  
+  <div id="kt_calendar_app" class="fc fc-direction-ltr fc-theme-standard"></div>
 </template>
 
 <script setup>

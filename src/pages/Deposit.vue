@@ -363,7 +363,7 @@ const changePage = (page) => {
 // 해당 item 전체를 문자열로 변환하여 넘김
 const gotoDepositDetail = (item) => {
   router.push({
-    path: `/Deposit/${item.financial_product_no}`,
+    path: `/deposit/${item.financial_product_no}`,
     query: {
       item: JSON.stringify(item)
     }
