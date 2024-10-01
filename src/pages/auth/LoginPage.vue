@@ -69,17 +69,18 @@
             type="submit"
             class="btn btn-primary mt-4"
             :disabled="disableSubmit"
+            style="border-radius: 13px; height: 50px"
           >
-            로그인
+          <div style="font-weight: 550; font-size: 17px">로그인</div>
           </button>
-          <div class="text-center">또는</div>
+          <!-- <div class="text-center">또는</div>
           <button class="btn btn-success mt-2 w-100 naver-login-btn">
             <img
               src="../../assets/media/avatars/login_naver.png"
               class="naver-logo"
             />
             네이버 아이디로 로그인
-          </button>
+          </button> -->
 
           <div class="text-center pt-6">
             <router-link
