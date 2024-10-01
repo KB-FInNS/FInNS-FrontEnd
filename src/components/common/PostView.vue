@@ -25,32 +25,32 @@
                         </div>
                         <!--end::Info-->
 
-                    </div>
-                    <!--end::Author-->
-                    <!-- 모달 트리거 버튼 (display: none; - JS를 통해 제어) -->
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal"
+                        <!-- 모달 트리거 버튼 (display: none; - JS를 통해 제어) -->
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal"
                         style="display: none" ref="modalTrigger"></button>
 
-                    <!--begin::Menu-->
-                    <div class="me-0">
-                        <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
-                            data-kt-menu-trigger="click" ref="menuButton">
-                            <i class="ki-solid ki-dots-horizontal fs-2x me-1"></i>
-                        </button>
-                        <!--begin::Menu 3-->
-                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3"
-                            data-kt-menu="true">
-                            <!-- 메뉴 항목들 -->
-                            <div class="menu-item px-3">
-                                <!-- 프로필 수정 버튼 -->
-                                <router-link to="/postDetails" class="menu-link px-3">
-                                    게시물 상세
-                                </router-link>
+                        <!--begin::Menu-->
+                        <div class="me-0">
+                            <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
+                                data-kt-menu-trigger="click" ref="menuButton">
+                                <i class="ki-solid ki-dots-horizontal fs-2x me-1"></i>
+                            </button>
+                            <!--begin::Menu 3-->
+                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3"
+                                data-kt-menu="true">
+                                <!-- 메뉴 항목들 -->
+                                <div class="menu-item px-3">
+                                    <!-- 프로필 수정 버튼 -->
+                                    <router-link to="/postDetails" class="menu-link px-3">
+                                        게시물 상세
+                                    </router-link>
+                                </div>
                             </div>
+                            <!--end::Menu 3-->
                         </div>
-                        <!--end::Menu 3-->
+                        <!--end::Menu-->
                     </div>
-                    <!--end::Menu-->
+                    <!--end::Author-->
                 </div>
                 <!--end::Card header-->
                 <!--begin::Card body-->
