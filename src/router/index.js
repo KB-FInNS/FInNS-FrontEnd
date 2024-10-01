@@ -25,7 +25,6 @@ import CardDetail from '@/pages/FinanceProduct/CardDetail.vue';
 
 
 import PostViewPage from '@/pages/PostViewPage.vue';
-import PostView from '@/components/common/PostView.vue';
 // import DepositDetail from '@/pages/DepositDetail.vue';
 // import installmentSavingsDetail from '@/pages/installmentSavingsDetail.vue';
 const router = createRouter({
@@ -141,7 +140,7 @@ const router = createRouter({
         {
           path : '/postView',
           name : 'PostViewPage',
-          component : PostView,
+          component : PostViewPage,
         },
       ],
     },

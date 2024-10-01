@@ -8,7 +8,7 @@
   <!--begin::Toolbar-->
   <!--begin::Title-->
   <div class="justify-content-center align-items-center text-center bg-title">
-    <h1 class="text-gray-900 fw-bold pt-8 mt-14 my-1 fs-1">금융 MBTI</h1>
+    <h1 class="text-gray-900 fw-bold pt-8 mt-14 my-1" style="font-size: xx-large;">금융 MBTI</h1>
     <h2 class="text-gray-700 fw-bold p-4 fs-2">
       소비 내역 분석을 바탕으로 한 나의 MBTI를 확인해 보세요.
     </h2>
@@ -43,7 +43,7 @@
         <!--begin::Details-->
         <div class="d-flex flex-wrap flex-sm-nowrap">
           <!--begin: Pic-->
-          <div class="me-7 mb-4 ms-">
+          <div class="me-7 mb-4" style="margin-left: 110px;">
             <!-- <div
               class="symbol symbol-100px symbol-lg-160px position-relative pt-3"
             > -->
@@ -243,7 +243,7 @@
               <!--begin::Card body-->
               <div class="card-body">
                 <!-- 이미지 추가 -->
-                <div class="image-container mt-4">
+                <div class="image-container mt-4" style="margin-left: -10px;">
                   <img src="../assets/media/avatars/kb_sick.png" />
                 </div>
               </div>
@@ -412,8 +412,8 @@
               <!--begin::Card body-->
               <div class="card-body">
                 <!-- 이미지 추가 -->
-                <div class="image-container">
-                  <img src="../assets/media/avatars/kb_insyu.png" height="220px"/>
+                <div class="image-container" style="margin-top: -18px; margin-left: -8px;">
+                  <img src="../assets/media/avatars/study.png" height="220px"/>
                 </div>
               </div>
             </div>

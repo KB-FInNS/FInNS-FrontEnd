@@ -27,30 +27,30 @@
 
                     </div>
                     <!--end::Author-->
-                    <div class="m-0">
-                        <!--begin::Menu toggle-->
-                        <button class="btn btn-icon btn-color-gray-500 btn-active-color-primary me-n4"
-                            data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end"
-                            data-kt-menu-overflow="true">
-                            <i class="ki-duotone ki-dots-square fs-1">
-                                <span class="path1"></span>
-                                <span class="path2"></span>
-                                <span class="path3"></span>
-                                <span class="path4"></span>
-                            </i>
-                        </button>
+                    <!-- 모달 트리거 버튼 (display: none; - JS를 통해 제어) -->
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal"
+                        style="display: none" ref="modalTrigger"></button>
 
-                        <!--수정하기 버튼-->
-                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px"
+                    <!--begin::Menu-->
+                    <div class="me-0">
+                        <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
+                            data-kt-menu-trigger="click" ref="menuButton">
+                            <i class="ki-solid ki-dots-horizontal fs-2x me-1"></i>
+                        </button>
+                        <!--begin::Menu 3-->
+                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3"
                             data-kt-menu="true">
-                            <div class="separator mb-3 opacity-75"></div>
+                            <!-- 메뉴 항목들 -->
                             <div class="menu-item px-3">
-                                <a @click="goToPostViewPage" class="menu-link px-3">수정하기</a>
+                                <!-- 프로필 수정 버튼 -->
+                                <router-link to="/postDetails" class="menu-link px-3">
+                                    게시물 상세
+                                </router-link>
                             </div>
                         </div>
-
+                        <!--end::Menu 3-->
                     </div>
-
+                    <!--end::Menu-->
                 </div>
                 <!--end::Card header-->
                 <!--begin::Card body-->
@@ -212,15 +212,35 @@
     </div>
 </template>
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
 import { useRouter } from 'vue-router';
+// 모달 트리거를 위한 ref
+const modalTrigger = ref(null);
+// 메뉴를 위한 ref
+const menuButton = ref(null);
+onMounted(async () => {
+    // DOM이 렌더링된 후 초기화
+    await nextTick();
+
+    // 모달 트리거
+    if (modalTrigger.value) {
+        modalTrigger.value.click();
+    }
+
+    // 메뉴 초기화 (만약 `KTMenu`를 사용 중이라면)
+    if (window.KTMenu && menuButton.value) {
+        window.KTMenu.createInstances();
+    }
+
+    setDataList();
+});
 
 const router = useRouter();
 
 const goToPostViewPage = () => {
-  router.push('/postDetails'); // PostViewPage로 이동
+    router.push('/postView'); // PostViewPage로 이동
 };
 
 const goodisActive = ref(false)

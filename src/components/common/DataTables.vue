@@ -27,7 +27,7 @@
             :key="index"
             :class="{ 'bg-gray-200': !item.checked }"
             class="fs-5 text-gray-600 fw-bold"
-            @click="goToPostDetail(item.id)"
+            @click="goToPostView(item.id)"
             style="cursor: pointer;"
           >
             <td class="form-check form-check-solid form-check-custom form-switch justify-content-center mt-2" style="border: none;">
@@ -73,12 +73,14 @@ const updatePublic = (item) => {
   // 공개 범위 바꾸는 코드 작성!
 };
 
-const goToPostDetail = (id) => {
-  router.push('/postDetails'); // 해당 id에 맞는 PayDetails 페이지로 이동
+const goToPostView = (id) => {
+  router.push('/postView'); // 해당 id에 맞는 PayDetails 페이지로 이동
+  window.scrollTo(0, 0); 
 };
 
 const goToPayDetail = (id) => {
   router.push(`/payDetails/${id}`); // 해당 id에 맞는 PayDetails 페이지로 이동
+  window.scrollTo(0, 0); 
 };
 
 const props = defineProps({

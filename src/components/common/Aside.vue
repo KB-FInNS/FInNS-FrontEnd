@@ -2,7 +2,7 @@
   <div id="kt_aside" class="aside aside-default aside-hoverable" data-kt-drawer="true" data-kt-drawer-name="aside"
     data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"
     data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start"
-    data-kt-drawer-toggle="#kt_aside_toggle">
+    data-kt-drawer-toggle="#kt_aside_toggle" style="overflow-y: auto;">
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto px-10 pt-9 pb-5" id="kt_aside_logo">
       <!--begin::Logo-->
@@ -37,7 +37,7 @@
                     fill="currentColor" />
                 </svg>
               </span>
-              <span class="menu-title mx-5 text-primary">홈</span>
+              <span class="menu-title mx-5">홈</span>
             </router-link>
             <!--end:Menu link-->
           </div>
