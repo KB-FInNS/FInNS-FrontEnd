@@ -15,16 +15,21 @@
   </div>
 
   <div class="d-flex align-items-center" style="margin-top: -20px;">
+    <!-- Left side (Pie Chart) -->
+    <div class="w-50 d-flex justify-content-center">
       <div id="kt_docs_google_chart_pie"></div>
-
+    </div>
+  
+    <!-- Right side (Table) -->
+    <div class="w-50">
       <div v-if="categorys.length === 0">
         <h4 id="nolist">소비 내역이 없습니다!</h4>
       </div>
       <div v-else v-if="isTableVisible">
-        <div class="table-responsive" style="height: 450px; width: 700px; overflow-y: auto;">
+        <div class="table-responsive" style="height: 380px; overflow-y: auto;">
           <table
             id="kt_datatable_vertical_scroll"
-            class="table table-row-bordered gy-7 gs-10"
+            class="table table-row-bordered"
             style="border-collapse: separate; border-spacing: 0 15px;">
             <tbody>
               <tr
@@ -32,13 +37,12 @@
                 :key="index"
                 :style="{ backgroundColor: bgColors[index] }"
                 @click="showCategoryList(item.category)"
-                style="cursor: pointer;"
-              >
-                <td class="src" style="border-radius: 30px 0px 0px 30px;">
-                  <img :src="item.src" style="width: 40px; height: 40px; margin-left: 40px" />
-                  <span class="ms-8 fs-3 fw-semibold" style="color: #4A4A4A">{{ item.category }}</span>
+                style="cursor: pointer; line-height: 2.5;">
+                <td class="src" style="border-radius: 30px 0px 0px 30px; padding: 10px 20px;">
+                  <img :src="item.src" style="width: 40px; height: 40px; margin-left: 40px; margin-top: -5px" />
+                  <span class="ms-8 fs-2 fw-bold" style="color: #4A4A4A">{{ item.category }}</span>
                 </td>
-                <td class="percentage fs-3 fw-semibold text-center" style="color: #4A4A4A; border-radius: 0px 30px 30px 0px;">
+                <td class="percentage fs-2 fw-bold text-center" style="color: #4A4A4A; border-radius: 0px 30px 30px 0px; padding: 10px 20px;">
                   {{ item.percentage }}%
                 </td>
               </tr>
@@ -46,8 +50,10 @@
           </table>
         </div>
       </div>
+    </div>
   </div>
-  <DataTables :data="totalList"/>
+  
+  <DataTables style="margin-top: -20px;" :data="totalList"/>
 </template>
 
 <script setup>

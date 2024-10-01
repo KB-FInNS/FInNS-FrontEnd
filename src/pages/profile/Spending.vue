@@ -15,7 +15,7 @@
     </div>
 
     <Calendar />
-    <DataTables class="mt-4" :data="totalList"/>
+    <DataTables style="margin-top: 50px;" :data="totalList"/>
 </template>
 
 <script setup>

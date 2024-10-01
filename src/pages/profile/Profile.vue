@@ -24,6 +24,9 @@
                 <!--begin::Name-->
                 <div class="d-flex align-items-center mb-2">
                   <span class="text-gray-900 fs-2 fw-bold me-1">Yujin_1219</span>
+                  <button class="btn btn-sm ms-10" :class="isFollow ? 'btn-light' : 'btn-primary'" @click="toggleFollow()">
+                    <span>{{ isFollow ? '팔로잉' : '팔로우' }}</span>
+                  </button>
                 </div>
                 <!--end::Name-->
 
@@ -225,23 +228,25 @@
     <!-- 가입한 예적금 -->
     <div class="text-center fs-1 fw-bold mt-10">가입한 금융상품</div>
     <div class="d-flex justify-content-between mt-10">
-      <table id="kt_datatable_column_rendering" class="table table-row-bordered gy-5 text-center" style="width: 50%;">
+      <table id="kt_datatable_column_rendering" class="table table-row-bordered gy-5" style="width: 50%; margin-left: 100px">
         <tbody>
-          <tr v-for="(item, index) in dataList" :key="index" @click="gotoDepositDetail(item)" style="cursor: pointer;">
+          <tr v-for="(item, index) in dataList" :key="index" @click="gotoDepositDetail(item)" class="fs-4 text-gray-600 fw-bold" style="cursor: pointer;">
             <td>
               <img :src="item.img_url" alt="depositkor_co_nm" width="28" height="24" loading="eager" />
-              {{ item.kor_co_nm }}
+              <span class="ms-3 text-hover-primary" style="color: black;">{{ item.kor_co_nm }}</span>
             </td>
-            <td>{{ item.fin_prdt_nm }}</td>
+            <td>
+              <span class="text-hover-primary">{{ item.fin_prdt_nm }}</span>
+            </td>
           </tr>
         </tbody>
       </table>
-
-      <Carousel style="width: 50%;">
+      
+      <Carousel style="width: 50%; margin-left: -30px">
         <Slide v-for="(item, index) in cards" :key="index">
-          <router-link :to="'/card/' + item.financial_product_no"> 
-            <img :src="item.img" style="height: 180px; object-fit: contain;"/>
-            <div class="mt-3 fs-1 fw-bold hover-text-primary">{{ item.name }}</div>
+          <router-link :to="'/card/' + item.card_no"> 
+            <img :src="item.img" style="height: 200px; object-fit: contain;"/>
+            <div class="mt-3 fs-1 fw-bold text-hover-primary" style="color: black;">{{ item.name }}</div>
           </router-link>
         </Slide>
 
@@ -251,6 +256,7 @@
         </template>
       </Carousel>
     </div>
+    <hr class="mt-10">
 
     <router-view></router-view>
   </div>
@@ -285,6 +291,14 @@ const router = useRouter();
 //     console.error('데이터 가져오는 중 오류 발생:', error);
 //   }
 // };
+
+const isFollow = ref(false);
+
+const toggleFollow = () => {
+  isFollow.value = !isFollow.value; // 선택한 사용자의 팔로우 상태 전환
+
+  // true, false 값에 따라 디비에 수정돼야함
+};
 
 // 일시적인 데이터set
 const dataList = ref([]);
@@ -332,10 +346,12 @@ const gotoDepositDetail = (item) => {
 
 const cards = ref([
   {
+    card_no: 1,
     img: '/src/assets/media/avatars/American Express Blue Card.png',
     name: '[KB]Our WE_SH 카드',
   },
   {
+    card_no: 2,
     img: '/src/assets/media/avatars/American Express Blue Card.png',
     name: '[KB]Our WE_SH 카드',
   },
@@ -368,14 +384,4 @@ onMounted(async () => {
 table#kt_datatable_column_rendering tr {
   border-bottom: none !important; /* 구분선 제거 */
 }
-
-.hover-text-primary {
-  color: black; /* 기본 글자색을 검정으로 설정 */
-  transition: color 0.2s ease; /* 색상 전환을 부드럽게 */
-}
-
-.hover-text-primary:hover {
-  color: var(--bs-primary); /* Bootstrap primary 색상으로 변경 */
-}
-
 </style>
