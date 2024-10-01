@@ -132,7 +132,7 @@ const router = createRouter({
         {
           path : '/postView',
           name : 'PostViewPage',
-          component : PostView,
+          component : PostViewPage,
         },
       ],
     },
