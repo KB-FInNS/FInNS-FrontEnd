@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="card m-10 pb-10">
+        <div class=" m-10 pb-10">
             <!-- 카드 정보 -->
             <div class="card-header">
                 <h4 class="corp-name">{{ productData.corp_name }}</h4>
@@ -9,10 +9,14 @@
             <div class="img-wrapper">
                 <img :src="productData.card_img_url" alt="카드 이미지" class="card-img">
             </div>
+            <div style="display: flex; justify-content: center; padding-left: 20px; padding-top: 20px;">
+                <hr style="border-top: 8px solid #C1C1C1; width: 70%;">
+            </div>
         </div>
-        <div class="card m-10 p-10">
+
+        <div class="ms-10 ps-10 ">
             <!-- 전월실적 & 연회비 -->
-            <div class="card-details">
+            <div class="card-details" style="margin-left: 280px;">
                 <div class="info-block">
                     <h3>전월실적</h3>
                     <p>최소 50만원</p>
@@ -26,7 +30,7 @@
             </div>
 
             <!-- 혜택 -->
-            <div class="card-benefits">
+            <div class="card-benefits" style="margin-left: 280px;">
                 <h3>혜택</h3>
                 <ul>
                     <li>
@@ -39,7 +43,7 @@
             </div>
             <!-- 해당 카드 더 자세한 정보 사이트 -->
             <div class="product-footer">
-                <button class="btn btn-sm btn-primary me-3" @click="viewProductDetails">상품 자세히 보기</button>
+                <button class="btn btn-sm btn-primary mt-13" style="margin-left: -50px;" @click="viewProductDetails">상품 자세히 보기</button>
             </div>
         </div>
     </div>
@@ -77,7 +81,7 @@ const viewProductDetails = () => {
 
 /* 은행명 */
 .corp-name {
-    font-size: 18px;
+    font-size: 22px;
     color: #216DBE;
     text-align: center;
     margin-bottom: 5px;
@@ -85,9 +89,10 @@ const viewProductDetails = () => {
 
 /* 카드명 */
 .card_name {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-top: 5px;
+    margin-bottom: 28px;
     text-align: center;
 }
 
@@ -99,7 +104,7 @@ const viewProductDetails = () => {
 }
 
 .card-img {
-    width: 300px;
+    width: 280px;
     height: auto;
 }
 
