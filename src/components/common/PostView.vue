@@ -17,7 +17,7 @@
                         <!--begin::Info-->
                         <div class="flex-grow-1">
                             <!--begin::Name-->
-                            <a href="#" class="text-gray-800 text-hover-primary fs-4 fw-bold">Yujin_1219</a>
+                            <a href="profile/spending" class="text-gray-800 text-hover-primary fs-4 fw-bold">Yujin_1219</a>
                             <!--end::Name-->
                             <!--begin::Date-->
                             <span class="text-gray-500 fw-semibold d-block">09월 24일 15:30</span>
