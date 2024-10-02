@@ -7,7 +7,7 @@
     <div class="aside-logo flex-column-auto px-10 pt-9 pb-5" id="kt_aside_logo">
       <!--begin::Logo-->
       <router-link to="/">
-        <img alt="Logo" src="@/assets/media/logos/logo-FInNS.png" width="150px" style="margin-left: -5px;"/>
+        <img alt="Logo" src="@/assets/media/logos/logo-FInNS.png" width="120px" style="margin-left: 1px;"/>
       </router-link>
       <!--end::Logo-->
     </div>
