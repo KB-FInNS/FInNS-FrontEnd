@@ -34,7 +34,7 @@
                                             <img :src="`${item.profileImage}`" class="h-50 align-self-center" alt="" />
                                         </div>
                                         <div class="flex-grow-1 me-6">
-                                            <a class="text-gray-800 text-hover-primary fs-6 fw-bold">
+                                            <a href="profile/spending" class="text-gray-800 text-hover-primary fs-6 fw-bold">
                                                 {{ item.name }}
                                             </a>
                                         </div>
@@ -76,7 +76,7 @@
                                 </div>
                                 <!-- 유저 이름 및 회사 정보 -->
                                 <div class="flex-grow-1 me-5">
-                                    <a :href="user.profileLink" class="text-gray-800 text-hover-primary fs-6 fw-bold">
+                                    <a href="profile/spending" class="text-gray-800 text-hover-primary fs-6 fw-bold">
                                         {{ user.name }}
                                     </a>
                                 </div>

@@ -1,22 +1,25 @@
 <template>
     <div class="m-10">
-        <div class="card mb-10">
+        <div class="ms-20 mb-10">
             <!-- 금융상품 정보 -->
             <div class="card-body">
                 <div class="d-flex align-items-center mb-4">
                     <img :src="productData.img_url" alt="bank logo" class="bank-logo" width="50px" height="50px" />
-                    <p style="margin-left: 10px; font-size: 18px;">{{ productData.kor_co_nm }}</p>
+                    <p style="margin-left: 10px; font-size: 22px; font-weight: 800 ; margin-top: 10px; color: #717272;">{{ productData.kor_co_nm }}</p>
                 </div>
-                <h1 style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">{{ productData.fin_prdt_nm }}</h1>
+                <h1 style="font-size: 30px; font-weight: bold; margin-left: 10px;">{{ productData.fin_prdt_nm }}</h1>
             </div>
         </div>
-
-        <div class="card mb-10">
-            <div class="card-body">
+        <div style="display: flex; padding-left: 65px;">
+            <hr style="border-top: 8px solid #C1C1C1; width: 90%;">
+        </div>
+        <div class="ms-20 mt-10 mb-10">
+            <div class="card-body ms-5" style=" line-height: 1.5; /* 글자의 높이를 1.5배로 설정 */">
                 <!-- 자세한 정보 -->
                 <div class="product-details">
                     <div class="d-flex" style="gap: 50px;">
-                        <p><strong>최고 금리:</strong> <strong style="color: #216DBE;">{{ productData.intr_rate2 }}</strong></p>
+                        <p><strong>최고 금리:</strong> <strong style="color: #216DBE;">{{ productData.intr_rate2 }}</strong>
+                        </p>
                         <p><strong>기본 금리:</strong> {{ productData.intr_rate }}</p>
                     </div>
                     <p><strong>가입 대상:</strong> {{ productData.join_member }}</p>
@@ -87,7 +90,9 @@ const viewProductDetails = () => {
     font-size: 16px;
 }
 
-.product-details p, .advantages p, .post-interest p {
+.product-details p,
+.advantages p,
+.post-interest p {
     font-size: 16px;
 }
 
