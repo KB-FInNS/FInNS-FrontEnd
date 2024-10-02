@@ -23,8 +23,8 @@ import PostDetails from '@/pages/PostDetails.vue';
 import ProductDetail from '@/pages/FinanceProduct/ProductDetail.vue';
 import CardDetail from '@/pages/FinanceProduct/CardDetail.vue';
 
-
 import PostViewPage from '@/pages/PostViewPage.vue';
+import WinnerCard from '@/pages/WinnerCard.vue';
 // import DepositDetail from '@/pages/DepositDetail.vue';
 // import installmentSavingsDetail from '@/pages/installmentSavingsDetail.vue';
 const router = createRouter({
@@ -120,6 +120,10 @@ const router = createRouter({
           component: CardWorldCup,
         },
         {
+          path: '/cardworldcup/winnercard',
+          component: WinnerCard,
+        },
+        {
           path: '/deposit/:financial_product_no', // 예금 상품 상세 페이지
           name: 'DepositDetail',
           // component: DepositDetail,
@@ -138,9 +142,9 @@ const router = createRouter({
           component: CardDetail,
         },
         {
-          path : '/postView',
-          name : 'PostViewPage',
-          component : PostViewPage,
+          path: '/postView',
+          name: 'PostViewPage',
+          component: PostViewPage,
         },
       ],
     },
