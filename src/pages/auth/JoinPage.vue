@@ -33,7 +33,7 @@
         </p>
         <form @submit.prevent="join">
           <div class="mb-3 mt-3">
-            <label for="user_id" class="form-label">
+            <label for="userId" class="form-label">
               아이디 *
               <button
                 type="button"
@@ -55,9 +55,9 @@
               type="text"
               class="form-control"
               placeholder="아이디를 입력하세요."
-              id="user_id"
+              id="userId"
               @input="changeUsername"
-              v-model="member.user_id"
+              v-model="member.userId"
             />
           </div>
 
@@ -116,10 +116,10 @@ const router = useRouter();
 const avatar = ref(null);
 const checkError = ref('');
 const member = reactive({
-  user_id: '',
-  password: '',
-  password2: '',
-  birthdate: '',
+  userId: 'asd123',
+  password: '1234',
+  password2: '1234',
+  birthdate: '1999-12-12',
 });
 
 const email = ref({ email: '' });
@@ -127,10 +127,10 @@ const email = ref({ email: '' });
 const disableSubmit = ref(true);
 
 const checkUsername = async () => {
-  if (!member.user_id) {
+  if (!member.userId) {
     return alert('사용자 ID를 입력하세요.');
   }
-  disableSubmit.value = await authApi.checkUsername(member.user_id);
+  disableSubmit.value = await authApi.checkUsername(member.userId);
   checkError.value = disableSubmit.value
     ? '이미 사용중인 ID입니다.'
     : '사용가능한 ID입니다.';
@@ -138,7 +138,7 @@ const checkUsername = async () => {
 
 const changeUsername = () => {
   disableSubmit.value = true;
-  checkError.value = member.user_id ? 'ID 중복 체크를 하셔야 합니다.' : '';
+  checkError.value = member.userId ? 'ID 중복 체크를 하셔야 합니다.' : '';
 };
 
 const join = async () => {

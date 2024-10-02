@@ -5,19 +5,19 @@ import axios from 'axios';
 const initState = {
   token: '', // 접근 토큰(JWT)
   user: {
-    user_id: '', // 사용자 ID
+    user_no: '',
+    userId: '', // 사용자 ID
     mbti: '', // 추가된 필드
-    birth: '', // 추가된 필드
+    birthdate: '', // 추가된 필드
   },
 };
 
 export const useAuthStore = defineStore('auth', () => {
   const state = ref({ ...initState });
-  const isLogin = computed(() => !!state.value.user.user_id); // 로그인 여부
-  const user_id = computed(() => state.value.user.user_id); // 로그인 사용자 ID
-  const email = computed(() => state.value.user.email); // 로그인 사용자 email
+  const isLogin = computed(() => !!state.value.user.userId); // 로그인 여부
+  const userId = computed(() => state.value.user.userId); // 로그인 사용자 ID
   const mbti = computed(() => state.value.user.mbti); // mbti
-  const birth = computed(() => state.value.user.birth); // 생년월일
+  const birthdate = computed(() => state.value.user.birthdate); // 생년월일
 
   const login = async (member) => {
     const { data } = await axios.post('/api/auth/login', member);
@@ -42,9 +42,9 @@ export const useAuthStore = defineStore('auth', () => {
   };
 
   const changeProfile = (member) => {
-    state.value.user.user_id = member.user_id; // user_id 업데이트
+    state.value.user.userId = member.userId; // userId 업데이트
     state.value.user.email = member.email; // email 업데이트
-    state.value.user.birth = member.birth; // birth 업데이트
+    state.value.user.birthdate = member.birthdate; // birth 업데이트
     state.value.user.mbti = member.mbti; // mbti 업데이트
     localStorage.setItem('auth', JSON.stringify(state.value));
   };
@@ -53,9 +53,8 @@ export const useAuthStore = defineStore('auth', () => {
 
   return {
     state,
-    user_id,
-    email,
-    birth,
+    userId,
+    birthdate,
     mbti,
     isLogin,
     changeProfile,

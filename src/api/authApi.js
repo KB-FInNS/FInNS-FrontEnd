@@ -5,10 +5,10 @@ const BASE_URL = '/api/member';
 const headers = { 'Content-Type': 'multipart/form-data' };
 
 export default {
-  // user_id 중복 체크, true: 중복(사용불가), false: 사용 가능
-  async checkUsername(user_id) {
+  // userId 중복 체크, true: 중복(사용불가), false: 사용 가능
+  async checkUsername(userId) {
     try {
-      const { data } = await api.get(`${BASE_URL}/checkusername/${user_id}`);
+      const { data } = await api.get(`${BASE_URL}/checkusername/${userId}`);
       console.log('AUTH GET CHECKUSERNAME', data);
       return data;
     } catch (error) {
@@ -19,9 +19,8 @@ export default {
   async create(member) {
     // 아바타 파일 업로드 – multipart 인코딩 필요 → FormData 객체 사용
     const formData = new FormData();
-    formData.append('user_id', member.user_id);
+    formData.append('userId', member.userId);
     formData.append('password', member.password);
-    formData.append('password', member.password2);
     formData.append('birthdate', member.birthdate);
 
     if (member.avatar) {
@@ -38,9 +37,9 @@ export default {
     }
   },
   async update(member) {
-    console.log('업데이트 요청 user_id:', member.user_id); // 로그에서 정확한 필드명 사용
+    console.log('업데이트 요청 userId:', member.userId); // 로그에서 정확한 필드명 사용
     const formData = new FormData();
-    formData.append('user_id', member.user_id);
+    formData.append('userId', member.userId);
     formData.append('password', member.password);
 
     // `birth` 형식 변환
@@ -56,13 +55,9 @@ export default {
     }
 
     try {
-      const { data } = await api.put(
-        `${BASE_URL}/${member.user_id}`,
-        formData,
-        {
-          headers,
-        }
-      );
+      const { data } = await api.put(`${BASE_URL}/${member.userId}`, formData, {
+        headers,
+      });
       console.log('AUTH PUT: ', data);
       return data;
     } catch (error) {
@@ -73,7 +68,7 @@ export default {
   // async changePassword(formData) {
   //   try {
   //     const { data } = await api.put(
-  //       `${BASE_URL}/${formData.user_id}/changepassword`,
+  //       `${BASE_URL}/${formData.userId}/changepassword`,
   //       formData,
   //       { headers }
   //     );

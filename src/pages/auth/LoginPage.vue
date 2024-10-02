@@ -104,7 +104,7 @@ const cr = useRoute();
 const router = useRouter();
 const auth = useAuthStore();
 const member = reactive({
-  user_id: 'asd',
+  user_id: '12341234',
   password: '1234',
 });
 const error = ref('');
