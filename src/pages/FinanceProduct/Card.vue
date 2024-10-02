@@ -82,7 +82,7 @@
                                     <div class="card-side d-flex justify-content-between m-7 align-items-center">
                                         <div class="text-center ms-5" style="width: 200px;">
                                             <img :src="item.card_img_url" ref="image"
-                                            @load="onImageLoad($event)" style="width: 100px;">
+                                            @load="onImageLoad($event)" style="width: 100px; ">
                                         </div>
                                         <div class="flex-grow-1 ms-10 ">
                                             <div
