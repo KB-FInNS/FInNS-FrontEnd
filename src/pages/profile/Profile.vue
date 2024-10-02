@@ -205,10 +205,12 @@
       </table>
 
       <Carousel style="width: 50%; margin-left: -30px">
-        <Slide v-for="(item, index) in cards" :key="index">
-          <router-link :to="'/card/' + item.card_no">
-            <img :src="item.card_img_url" ref="image" style="width: 100px; ">
-            <div class="mt-3 fs-1 fw-bold text-hover-primary" style="color: black;">{{ item.card_name }}</div>
+        <Slide v-for="(item, index) in cards" :key="index" @click="gotoCardDetail(item)">
+          <router-link>
+            <img :src="item.card_img_url" ref="image" style="width: 100px;">
+            <div class="mt-3 fs-1 fw-bold text-hover-primary" style="color: black;">
+              {{ item.card_name }}
+            </div>
           </router-link>
         </Slide>
 
@@ -329,7 +331,15 @@ const gotoDepositDetail = (item) => {
     }
   });
 }
-
+// 카드 상세 페이지로 이동
+const gotoCardDetail = (item) => {
+    router.push({
+        path: `/Card/${item.card_no}`,
+        query: {
+            item: JSON.stringify(item),
+        },
+    });
+};
 const cards = ref([
   {
     card_no: 1,
