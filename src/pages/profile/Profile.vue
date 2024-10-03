@@ -206,12 +206,10 @@
 
       <Carousel style="width: 50%; margin-left: -30px">
         <Slide v-for="(item, index) in cards" :key="index" @click="gotoCardDetail(item)">
-          <router-link>
             <img :src="item.card_img_url" ref="image" style="width: 100px;">
             <div class="mt-3 fs-1 fw-bold text-hover-primary" style="color: black;">
               {{ item.card_name }}
             </div>
-          </router-link>
         </Slide>
 
         <template #addons>
