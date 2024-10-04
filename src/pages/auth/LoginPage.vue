@@ -22,12 +22,12 @@
         <p>FInNS 를 계속 이용하시려면 로그인을 해주세요</p>
         <form @submit.prevent="login">
           <div class="mb-3 mt-3" style="text-align: left">
-            <label for="user_id" class="form-label"> 아이디 </label>
+            <label for="username" class="form-label"> 아이디 </label>
             <input
               type="text"
               class="form-control"
               placeholder="아이디를 입력하세요."
-              v-model="member.user_id"
+              v-model="member.username"
             />
           </div>
 
@@ -105,22 +105,28 @@ const cr = useRoute();
 const router = useRouter();
 const auth = useAuthStore();
 const member = reactive({
-  user_id: 'asd',
-  password: '1234',
+  username: 'asd1',
+  password: '123',
 });
 const error = ref('');
-const disableSubmit = computed(() => !(member.user_id && member.password));
+const disableSubmit = computed(() => !(member.username && member.password));
 
 const login = async () => {
   try {
+    console.log('로그인 요청 데이터:', member); // 데이터가 보내지기 전에 콘솔 출력
+
     await auth.login(member);
+    
+    console.log('로그인 성공'); // 로그인 성공 시 메시지 출력
     router.push('/');
   } catch (e) {
     // 로그인 에러가 발생하는 경우 처리
     error.value =
       e.response?.data || '로그인에 실패하였습니다. 다시 시도해주세요.';
+    console.error('로그인 에러:', error.value); // 에러 메시지 출력
   }
 };
+
 
 const passwordText = ref('');
 const passwordHidden = ref(true);

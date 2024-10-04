@@ -5,7 +5,7 @@ import axios from 'axios';
 const initState = {
   token: '', // 접근 토큰(JWT)
   user: {
-    user_id: '', // 사용자 ID
+    username: '', // 사용자 ID
     mbti: '', // 추가된 필드
     birth: '', // 추가된 필드
   },
@@ -13,8 +13,8 @@ const initState = {
 
 export const useAuthStore = defineStore('auth', () => {
   const state = ref({ ...initState });
-  const isLogin = computed(() => !!state.value.user.user_id); // 로그인 여부
-  const user_id = computed(() => state.value.user.user_id); // 로그인 사용자 ID
+  const isLogin = computed(() => !!state.value.user.username); // 로그인 여부
+  const username = computed(() => state.value.user.username); // 로그인 사용자 ID
   const email = computed(() => state.value.user.email); // 로그인 사용자 email
   const mbti = computed(() => state.value.user.mbti); // mbti
   const birth = computed(() => state.value.user.birth); // 생년월일
@@ -42,7 +42,7 @@ export const useAuthStore = defineStore('auth', () => {
   };
 
   const changeProfile = (member) => {
-    state.value.user.user_id = member.user_id; // user_id 업데이트
+    state.value.user.username = member.username; // username 업데이트
     state.value.user.email = member.email; // email 업데이트
     state.value.user.birth = member.birth; // birth 업데이트
     state.value.user.mbti = member.mbti; // mbti 업데이트
@@ -53,7 +53,7 @@ export const useAuthStore = defineStore('auth', () => {
 
   return {
     state,
-    user_id,
+    username,
     email,
     birth,
     mbti,
