@@ -23,7 +23,7 @@
     <!-- Right side (Table) -->
     <div class="w-50">
       <div v-if="categorys.length === 0">
-        <h4 id="nolist">소비 내역이 없습니다!</h4>
+        <h4 class="text-center">소비 내역이 없습니다!</h4>
       </div>
       <div v-else v-if="isTableVisible">
         <div class="table-responsive" style="height: 380px; overflow-y: auto;">
@@ -191,6 +191,7 @@ const drawChart = () => {
     chart.draw(data, options);
 
     isTableVisible.value = true; // 테이블 표시
+    categoryClick();
   });
 };
 
@@ -255,7 +256,6 @@ const showCategoryList = (category) => {
 
 onMounted(() => {
   loadGoogleCharts();
-  categoryClick();
 });
 
 </script>
