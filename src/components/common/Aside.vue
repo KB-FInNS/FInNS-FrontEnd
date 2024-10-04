@@ -7,7 +7,7 @@
     <div class="aside-logo flex-column-auto px-10 pt-9 pb-5" id="kt_aside_logo">
       <!--begin::Logo-->
       <router-link to="/">
-        <img alt="Logo" src="@/assets/media/logos/logo-FInNS.png" width="120px" style="margin-left: 1px;"/>
+        <img alt="Logo" src="/assets/media/logos/logo-FInNS.png" width="120px" style="margin-left: 1px;"/>
       </router-link>
       <!--end::Logo-->
     </div>
@@ -219,7 +219,7 @@ import { ref } from 'vue';
 
 const products = ref([
 {
-    icon: '/src/assets/media/icons/sug1.jpg', // 아이콘 링크
+    icon: '/assets/media/icons/sug1.jpg', // 아이콘 링크
     title: '금리가 가장 높은 상품',
     link1: { name: 'Deposit' }, 
     link2: { name: 'InstallmentSavings' }, 
@@ -227,7 +227,7 @@ const products = ref([
     linkText2: '적금 상품', 
   },
   {
-    icon: '/src/assets/media/icons/sug2.jpg', // 아이콘 링크
+    icon: '/assets/media/icons/sug2.jpg', // 아이콘 링크
     title: '최다 가입 상품',
     link1: { name: 'Deposit' }, 
     link2: { name: 'InstallmentSavings' }, // 라우트 이름

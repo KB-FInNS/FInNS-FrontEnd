@@ -201,7 +201,7 @@ const cards = ref([]); // 카드 데이터를 담을 ref
 // 컴포넌트가 마운트될 때 데이터를 가져오기
 onMounted(async () => {
     try {
-        const response = await fetch('/src/assets/cardList.json');
+        const response = await fetch('/assets/cardList.json');
         cards.value = await response.json();
     } catch (error) {
         alert('Error fetching data:', error);
