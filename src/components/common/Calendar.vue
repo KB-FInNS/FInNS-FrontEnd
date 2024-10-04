@@ -1,17 +1,15 @@
 <template>
+  <link rel="stylesheet" href="/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css">
+  
   <div id="kt_calendar_app" class="fc fc-direction-ltr fc-theme-standard"></div>
 </template>
 
 <script setup>
-import "@/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css";
-import "@/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"
-
 import { Calendar } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 
 import { getCurrentInstance, onMounted } from 'vue';
-
 
 const internalInstance = getCurrentInstance(); 
 const emitter = internalInstance.appContext.config.globalProperties.emitter;

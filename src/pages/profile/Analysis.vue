@@ -82,61 +82,61 @@ const props = defineProps({
 categorys.value = [
   {
     category: '식비 & 카페',
-    src: '/src/assets/media/category/meal.png',
+    src: '/assets/media/category/meal.png',
     amount: 50000,
     percentage: null
   },
   {
     category: '술 & 유흥',
-    src: '/src/assets/media/category/alcohol.png',
+    src: '/assets/media/category/alcohol.png',
     amount: 30000,
     percentage: null
   },
   {
     category: '쇼핑',
-    src: '/src/assets/media/category/shopping.png',
+    src: '/assets/media/category/shopping.png',
     amount: 120000,
     percentage: null
   },
   {
     category: '식비 & 카페',
-    src: '/src/assets/media/category/meal.png',
+    src: '/assets/media/category/meal.png',
     amount: 50000,
     percentage: null
   },
   {
     category: '술 & 유흥',
-    src: '/src/assets/media/category/alcohol.png',
+    src: '/assets/media/category/alcohol.png',
     amount: 30000,
     percentage: null
   },
   {
     category: '쇼핑',
-    src: '/src/assets/media/category/shopping.png',
+    src: '/assets/media/category/shopping.png',
     amount: 120000,
     percentage: null
   },
   {
     category: '쇼핑',
-    src: '/src/assets/media/category/shopping.png',
+    src: '/assets/media/category/shopping.png',
     amount: 120000,
     percentage: null
   },
   {
     category: '식비 & 카페',
-    src: '/src/assets/media/category/meal.png',
+    src: '/assets/media/category/meal.png',
     amount: 50000,
     percentage: null
   },
   {
     category: '술 & 유흥',
-    src: '/src/assets/media/category/alcohol.png',
+    src: '/assets/media/category/alcohol.png',
     amount: 30000,
     percentage: null
   },
   {
     category: '쇼핑',
-    src: '/src/assets/media/category/shopping.png',
+    src: '/assets/media/category/shopping.png',
     amount: 120000,
     percentage: null
   },
@@ -202,35 +202,35 @@ const categoryClick = async (category) => {
   try {
     totalList.value = [
         {
-            categoryImg: '/src/assets/media/category/meal.png',
+            categoryImg: '/assets/media/category/meal.png',
             place: '미친피자',
             amount: 46000,
             date: '2024-09-24 13:01',
             checked: true,
         },
         {
-            categoryImg: '/src/assets/media/category/meal.png',
+            categoryImg: '/assets/media/category/meal.png',
             place: '한사바리',
             amount: 60000,
             date: '2024-09-23 20:43',
             checked: true,
         },
         {
-            categoryImg: '/src/assets/media/category/meal.png',
+            categoryImg: '/assets/media/category/meal.png',
             place: 'Apple',
             amount: 1600000,
             date: '2024-09-22 23:11',
             checked: true,
         },
         {
-            categoryImg: '/src/assets/media/category/meal.png',
+            categoryImg: '/assets/media/category/meal.png',
             place: '매머드커피',
             amount: 3000,
             date: '2024-09-25 09:54',
             checked: true,
         },
         {
-            categoryImg: '/src/assets/media/category/meal.png',
+            categoryImg: '/assets/media/category/meal.png',
             place: 'GS25',
             amount: 2400,
             date: '2024-09-21 11:02',

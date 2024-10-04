@@ -7,7 +7,7 @@
           <!--begin: Pic-->
           <div class="me-7 mb-4">
             <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-              <img src="@/assets/media/avatars/300-1.jpg" alt="image" />
+              <img src="/assets/media/avatars/300-1.jpg" alt="image" />
             </div>
           </div>
           <!--end::Pic-->
@@ -136,7 +136,7 @@
                     <!--begin::Number-->
                     <div class="d-flex align-items-center justify-content-center">
                       <span class="svg-icon svg-icon-primary svg-icon-2x me-3 mt-2">
-                        <img src="@/assets/media/follow/follower.png" width="31" height="32" />
+                        <img src="/assets/media/follow/follower.png" width="31" height="32" />
                       </span>
 
                       <count-up class="fs-2 text-gray-900 text-hover-primary fw-bold mt-2" :end-val="91"></count-up>
@@ -156,7 +156,7 @@
                     <!--begin::Number-->
                     <div class="d-flex align-items-center justify-content-center">
                       <span class="svg-icon svg-icon-primary svg-icon-2x me-3 mt-2">
-                        <img src="@/assets/media/follow/following.png" width="30" height="29" />
+                        <img src="/assets/media/follow/following.png" width="30" height="29" />
                       </span>
 
                       <count-up class="fs-2 text-gray-900 text-hover-primary fw-bold mt-2" :end-val="113"></count-up>
@@ -225,7 +225,6 @@
 </template>
 
 <script setup>
-import '@/assets/js/custom/pages/user-profile/general.js';
 import "vue3-carousel/dist/carousel.css";
 import CountUp from 'vue-countup-v3';
 import { ref, onMounted, nextTick } from 'vue';
