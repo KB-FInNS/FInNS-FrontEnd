@@ -1,6 +1,9 @@
 <template>
+    <div class="header ms-20">
+        <SearchComponent/> 
+    </div>
     <div class="container">
-        <div class="row mt-10">
+        <div class="row ">
             <!--게시글 피드-->
             <PostView />
 
@@ -99,6 +102,7 @@
 
 <script setup>
 import PostView from '@/components/common/PostView.vue';
+import SearchComponent from '@/components/common/SearchComponent.vue'
 import { ref } from 'vue';
 
 const rankings = ref([
