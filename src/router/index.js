@@ -7,7 +7,6 @@ import Profile from '@/pages/profile/Profile.vue';
 import Deposit from '@/pages/FinanceProduct/Deposit.vue';
 import InstallmentSavings from '@/pages/FinanceProduct/InstallmentSavings.vue';
 import Card from '@/pages/FinanceProduct/Card.vue';
-import Message from '@/pages/Message.vue';
 import Spending from '@/pages/profile/Spending.vue';
 import Analysis from '@/pages/profile/Analysis.vue';
 import Follower from '@/components/common/Follower.vue';
@@ -22,7 +21,6 @@ import { isAuthenticated } from '@/util/guards';
 import PostDetails from '@/pages/PostDetails.vue';
 import ProductDetail from '@/pages/FinanceProduct/ProductDetail.vue';
 import CardDetail from '@/pages/FinanceProduct/CardDetail.vue';
-
 import PostViewPage from '@/pages/PostViewPage.vue';
 import WinnerCard from '@/pages/WinnerCard.vue';
 // import DepositDetail from '@/pages/DepositDetail.vue';
@@ -91,12 +89,6 @@ const router = createRouter({
           path: '/card',
           name: 'Card',
           component: Card,
-          // beforeEnter: isAuthenticated,,
-        },
-        {
-          path: '/message',
-          name: 'Message',
-          component: Message,
           // beforeEnter: isAuthenticated,,
         },
         {

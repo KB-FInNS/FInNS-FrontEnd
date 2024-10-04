@@ -11,7 +11,7 @@
                     <div class="d-flex align-items-center">
                         <!--begin::Avatar-->
                         <div class="symbol symbol-50px me-5">
-                            <img src="@/assets/media/avatars/300-4.jpg" class="" alt="" />
+                            <img src="/assets/media/avatars/300-4.jpg" class="" alt="" />
                         </div>
                         <!--end::Avatar-->
                         <!--begin::Info-->
@@ -162,7 +162,7 @@
                             <div class="d-flex pt-6">
                                 <!--begin::Avatar-->
                                 <div class="symbol symbol-45px me-5">
-                                    <img src="@/assets/media/avatars/300-13.jpg" alt="" />
+                                    <img src="/assets/media/avatars/300-13.jpg" alt="" />
                                 </div>
                                 <!--end::Avatar-->
                                 <!--begin::Wrapper-->
@@ -193,7 +193,7 @@
                     <div class="d-flex align-items-center">
                         <!--begin::Author-->
                         <div class="symbol symbol-35px me-3">
-                            <img src="@/assets/media/avatars/300-3.jpg" alt="" />
+                            <img src="/assets/media/avatars/300-3.jpg" alt="" />
                         </div>
                         <!--end::Author-->
                         <!--begin::Input group-->
@@ -254,23 +254,23 @@ const badtoggleActive = () => {
 }
 
 const category = [
-    { name: '식비&카페', icon: 'src/assets/media/category/meal.png' },
-    { name: '쇼핑', icon: './assets/media/category/shopping.png' },
-    { name: '미용', icon: './assets/media/category/alcohol.png' },
-    { name: '의료', icon: './assets/media/category/alcohol.png' },
-    { name: '통신', icon: './assets/media/category/alcohol.png' },
-    { name: '교통', icon: './assets/media/category/alcohol.png' },
-    { name: '문화&여행', icon: './assets/media/category/alcohol.png' },
-    { name: '교육', icon: './assets/media/category/alcohol.png' },
-    { name: '술&유흥', icon: './assets/media/category/alcohol.png' },
-    { name: '기타', icon: './assets/media/category/alcohol.png' }
+    { name: '식비&카페', icon: '/assets/media/category/meal.png' },
+    { name: '쇼핑', icon: '/assets/media/category/shopping.png' },
+    { name: '미용', icon: '/assets/media/category/alcohol.png' },
+    { name: '의료', icon: '/assets/media/category/alcohol.png' },
+    { name: '통신', icon: '/assets/media/category/alcohol.png' },
+    { name: '교통', icon: '/assets/media/category/alcohol.png' },
+    { name: '문화&여행', icon: '/assets/media/category/alcohol.png' },
+    { name: '교육', icon: '/assets/media/category/alcohol.png' },
+    { name: '술&유흥', icon: '/assets/media/category/alcohol.png' },
+    { name: '기타', icon: '/assets/media/category/alcohol.png' }
 ];
 
 // 이미지 목록
 const images = ref([
-    'src/assets/media/food/samgeob1.jpg',
-    'src/assets/media/food/samgeob2.jpg',
-    'src/assets/media/food/samgeob3.jpg',
+    '/assets/media/food/samgeob1.jpg',
+    '/assets/media/food/samgeob2.jpg',
+    '/assets/media/food/samgeob3.jpg',
 ])
 
 </script>

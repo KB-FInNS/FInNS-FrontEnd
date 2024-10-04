@@ -10,7 +10,7 @@ const router = useRouter();
 
 // 아바타 처리를 위한 Ref
 const avatar = ref(null); // 아바타 파일 입력 참조
-const avatarPath = ref('/src/assets/media/avatars/default_avatar.png'); // 기본 아바타 이미지 경로
+const avatarPath = ref('/assets/media/avatars/default_avatar.png'); // 기본 아바타 이미지 경로
 
 // 회원 정보를 담고 있는 reactive 상태
 const member = reactive({
@@ -109,7 +109,7 @@ const onAvatarChange = (event) => {
 
 // 아바타 삭제 핸들러 (기본 이미지로 재설정)
 const onDeleteAvatar = () => {
-  avatarPath.value = '/src/assets/media/avatars/default_avatar.png'; // 기본 아바타 이미지로 설정
+  avatarPath.value = '/assets/media/avatars/default_avatar.png'; // 기본 아바타 이미지로 설정
   alert('프로필 사진이 삭제되었습니다.');
 };
 </script>

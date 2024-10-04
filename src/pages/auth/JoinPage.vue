@@ -4,11 +4,11 @@
     <div class="login-left">
       <div class="branding mt-4">
         <div>
-          <img src="@/assets/media/avatars/login_logo.png" class="logo" />
+          <img src="/assets/media/avatars/login_logo.png" class="logo" />
           <span class="logo">FInNS</span>
         </div>
         <img
-          src="@/assets/media/avatars/loginpage.png"
+          src="/assets/media/avatars/loginpage.png"
           alt="Illustration"
           class="login-image"
         />

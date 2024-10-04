@@ -4,11 +4,11 @@
     <div class="login-left">
       <div class="branding mt-4">
         <div>
-          <img src="@/assets/media/avatars/login_logo.png" class="logo" />
+          <img src="/assets/media/avatars/login_logo.png" class="logo" />
           <span class="logo">FInNS</span>
         </div>
         <img
-          src="@/assets/media/avatars/loginpage.png"
+          src="/assets/media/avatars/loginpage.png"
           alt="Illustration"
           class="login-image"
         />
@@ -76,7 +76,7 @@
           <!-- <div class="text-center">또는</div>
           <button class="btn btn-success mt-2 w-100 naver-login-btn">
             <img
-              src="../../assets/media/avatars/login_naver.png"
+              src="/assets/media/avatars/login_naver.png"
               class="naver-logo"
             />
             네이버 아이디로 로그인

@@ -105,17 +105,17 @@ const rankings = ref([
     {
         title: '소비 TOP 3',
         items: [
-            { name: 'Yujin_1219', amount: '1,000,000원', profileImage: 'src/assets/media/avatars/300-11.jpg' },
-            { name: 'Yujin_1219', amount: '900,000원', profileImage: 'src/assets/media/avatars/300-12.jpg' },
-            { name: 'Yujin_1219', amount: '600,000원', profileImage: 'src/assets/media/avatars/300-16.jpg' },
+            { name: 'Yujin_1219', amount: '1,000,000원', profileImage: '/assets/media/avatars/300-11.jpg' },
+            { name: 'Yujin_1219', amount: '900,000원', profileImage: '/assets/media/avatars/300-12.jpg' },
+            { name: 'Yujin_1219', amount: '600,000원', profileImage: '/assets/media/avatars/300-16.jpg' },
         ],
     },
     {
         title: '좋은소비 TOP 3',
         items: [
-            { name: 'Yujin_1219', amount: '1,000,000회', profileImage: 'src/assets/media/avatars/300-4.jpg' },
-            { name: 'Yujin_1219', amount: '900,000회', profileImage: 'src/assets/media/avatars/300-2.jpg' },
-            { name: 'Yujin_1219', amount: '100,000회', profileImage: 'src/assets/media/avatars/300-6.jpg' },
+            { name: 'Yujin_1219', amount: '1,000,000회', profileImage: '/assets/media/avatars/300-4.jpg' },
+            { name: 'Yujin_1219', amount: '900,000회', profileImage: '/assets/media/avatars/300-2.jpg' },
+            { name: 'Yujin_1219', amount: '100,000회', profileImage: '/assets/media/avatars/300-6.jpg' },
         ],
     },
 ]);
@@ -123,31 +123,31 @@ const rankings = ref([
 const users = ref([
     {
         name: "Jacob Jones",
-        avatar: 'src/assets/media/avatars/300-11.jpg',
+        avatar: '/assets/media/avatars/300-11.jpg',
         profileLink: "pages/user-profile/overview.html",
         isFollowing: true
     },
     {
         name: "Annette Black",
-        avatar: "src/assets/media/avatars/300-2.jpg",
+        avatar: "/assets/media/avatars/300-2.jpg",
         profileLink: "pages/user-profile/overview.html",
         isFollowing: true
     },
     {
         name: "Devon Lane",
-        avatar: "src/assets/media/avatars/300-7.jpg",
+        avatar: "/assets/media/avatars/300-7.jpg",
         profileLink: "pages/user-profile/overview.html",
         isFollowing: true
     },
     {
         name: "Kristin Watson",
-        avatar: "src/assets/media/avatars/300-9.jpg",
+        avatar: "/assets/media/avatars/300-9.jpg",
         profileLink: "pages/user-profile/overview.html",
         isFollowing: true
     },
     {
         name: "Eleanor Pena",
-        avatar: "src/assets/media/avatars/300-12.jpg",
+        avatar: "/assets/media/avatars/300-12.jpg",
         profileLink: "pages/user-profile/overview.html",
         isFollowing: true
     }

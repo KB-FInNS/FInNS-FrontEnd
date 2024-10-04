@@ -198,7 +198,8 @@ function confirm() {
 }
 
 button {
-  width: 48%;
+  width: 40%;
+  height: 50px;
 }
 
 /* 사용금액 , 사용처 , 결제일시 결제수단  */
