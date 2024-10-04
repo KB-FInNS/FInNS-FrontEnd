@@ -1,4 +1,6 @@
 <template>
+  <!-- <link rel="stylesheet" href="/assets/plugins/custom/datatables/datatables.bundle.css"> -->
+
   <div v-if="data.length === 0">
     <h4 id="nolist">소비 내역이 없습니다!</h4>
   </div>
@@ -63,8 +65,6 @@
 </template>
 
 <script setup>
-import '@/assets/plugins/custom/datatables/datatables.bundle.css';
-// import "@/assets/plugins/custom/datatables/datatables.bundle.js";
 import { useRouter } from 'vue-router';
 
 const router = useRouter();

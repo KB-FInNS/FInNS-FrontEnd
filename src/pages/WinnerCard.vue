@@ -39,7 +39,7 @@ import { ref } from 'vue';
 const cards = ref([
   {
     title: '[KB] K-패스 경기교통카드',
-    image: '/src/assets/media/avatars/American Express Blue Card.png',
+    image: '/assets/media/avatars/American Express Blue Card.png',
     description: ['대중교통 10% 할인', '생활서비스 5% 할인', 'KB Pay 이용 시 생활서비스 5% 추가 할인'],
     url: '#',
   },
@@ -49,26 +49,26 @@ const cards = ref([
 const smallCards = ref([
   {
     title: '[KB] 골드 올림 카드',
-    image: '/src/assets/media/avatars/American Express Blue Card.png',
+    image: '/assets/media/avatars/American Express Blue Card.png',
     description: ['병원 or 마트 5% 청구할인', '6대 영역 1~2% 포인트리 적립', '3대 영역 5~10% 청구할인'],
     url: '#',
   },
   // 다른 카드 데이터 추가
   {
     title: '[KB] EV 카드',
-    image: '/src/assets/media/avatars/American Express Blue Card.png',
+    image: '/assets/media/avatars/American Express Blue Card.png',
     description: ['전기/수소차 충전', '주차, 세차', '20% 청구할인'],
     url: '#',
   },
   {
     title: '[KB] 사장님 카드',
-    image: '/src/assets/media/avatars/American Express Blue Card.png',
+    image: '/assets/media/avatars/American Express Blue Card.png',
     description: ['보안, 운영, 세무기기, 점수 적립', '온라인 쇼핑 5% 적립', '외식, 커피 등 5% 적립'],
     url: '#',
   },
   {
     title: '[KB] 갤러리아 카드',
-    image: '/src/assets/media/avatars/American Express Blue Card.png',
+    image: '/assets/media/avatars/American Express Blue Card.png',
     description: ['갤러리아 백화점 5% 청구할인', '멤버십 혜택', '1천원당 1점'],
     url: '#',
   },

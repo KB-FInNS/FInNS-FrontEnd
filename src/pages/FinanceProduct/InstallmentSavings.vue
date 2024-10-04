@@ -218,7 +218,7 @@ const dataList = ref([]);
 // 컴포넌트가 마운트될 때 데이터를 가져오기
 onMounted(async () => {
   try {
-    const response = await fetch('/src/assets/dataList.json');
+    const response = await fetch('/assets/dataList.json');
     dataList.value = await response.json();
   } catch (error) {
     alert('Error fetching data:', error);
