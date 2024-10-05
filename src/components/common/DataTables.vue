@@ -2,7 +2,7 @@
   <!-- <link rel="stylesheet" href="/assets/plugins/custom/datatables/datatables.bundle.css"> -->
 
   <div v-if="data.length === 0">
-    <h4 id="nolist">소비 내역이 없습니다!</h4>
+    <h1 class="text-center" style="margin-top: 20px;">소비 내역이 없습니다!</h1>
   </div>
   <div v-else>
     <div class="table-responsive" style="height: 610px; overflow-y: auto;">

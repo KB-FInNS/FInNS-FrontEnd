@@ -23,7 +23,7 @@
     <!-- Right side (Table) -->
     <div class="w-50">
       <div v-if="categorys.length === 0">
-        <h4 id="nolist">소비 내역이 없습니다!</h4>
+        <h4 class="text-center">소비 내역이 없습니다!</h4>
       </div>
       <div v-else v-if="isTableVisible">
         <div class="table-responsive" style="height: 380px; overflow-y: auto;">
@@ -53,7 +53,7 @@
     </div>
   </div>
   
-  <DataTables style="margin-top: -20px;" :data="totalList"/>
+  <DataTables v-if="isListVisible" style="margin-top: -20px;" :data="totalList"/>
 </template>
 
 <script setup>
@@ -70,6 +70,7 @@ const loadGoogleCharts = () => {
 
 let categorys = ref();
 let isTableVisible = ref(false); // 테이블 표시 여부
+let isListVisible = ref(false); // 테이블 표시 여부
 const bgColors = ['#8DC3FF', '#FF949D', '#E1BEE7', '#FFE57F', '#88E793', '#FFB74D', '#80CBC4', '#90CAF9', '#FFAB91', '#DCE775'];
 
 const props = defineProps({
@@ -189,8 +190,6 @@ const drawChart = () => {
     // 차트 그리기
     const chart = new google.visualization.PieChart(document.getElementById('kt_docs_google_chart_pie'));
     chart.draw(data, options);
-
-    isTableVisible.value = true; // 테이블 표시
   });
 };
 
@@ -255,7 +254,11 @@ const showCategoryList = (category) => {
 
 onMounted(() => {
   loadGoogleCharts();
+
+  // 차트가 보이고 나서 리스트들이 보이기 위함
   categoryClick();
+  isTableVisible.value = true;
+  isListVisible.value = true;
 });
 
 </script>
