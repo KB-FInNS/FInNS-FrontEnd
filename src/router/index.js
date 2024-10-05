@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router';
 import DefaultLayout from '@/components/common/DefaultLayout.vue'; // 사이드바가 있는 기본 레이아웃
 import AuthLayout from '@/components/common/AuthLayout.vue'; // 사이드바가 없는 로그인, 회원가입 레이아웃
 import Main from '@/pages/Main.vue';
-import Search from '@/pages/Search.vue';
 import Profile from '@/pages/profile/Profile.vue';
 import Deposit from '@/pages/FinanceProduct/Deposit.vue';
 import InstallmentSavings from '@/pages/FinanceProduct/InstallmentSavings.vue';
@@ -34,13 +33,6 @@ const router = createRouter({
       component: DefaultLayout, // 사이드바가 있는 기본 레이아웃
       children: [
         { path: '', name: 'Main', component: Main },
-
-        {
-          path: 'search',
-          name: 'Search',
-          component: Search,
-          // beforeEnter: isAuthenticated,,
-        },
         {
           path: 'mbti',
           name: 'Mbti',
