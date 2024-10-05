@@ -1,5 +1,8 @@
 <template>
-  <div class="m-10">
+  <div class="header ms-10">
+        <SearchComponent/> 
+    </div>
+  <div class="ms-10">
     <div class="card mb-5">
       <div class="card-body pt-9 pb-0">
         <!--begin::Details-->
@@ -230,6 +233,7 @@ import CountUp from 'vue-countup-v3';
 import { ref, onMounted, nextTick } from 'vue';
 import { useRouter } from 'vue-router';
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
+import SearchComponent from "@/components/common/SearchComponent.vue";
 
 const router = useRouter();
 
