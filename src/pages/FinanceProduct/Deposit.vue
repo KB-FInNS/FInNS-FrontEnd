@@ -1,6 +1,11 @@
 <template>
-  <div>
-    <Banner titleText="예금 상품" descriptionText="안정적인 수익을 목적으로 하는 사랑 받는 예금 상품입니다." />
+  <div class="justify-content-center align-items-center text-center bg-title">
+    <h1 class="text-gray-900 fw-bold pt-8 mt-9 my-1" style="font-size: xx-large;">예금 상품</h1>
+    <h2 class="text-gray-700 fw-bold p-4 fs-2">
+      자신에게 맞는 조건을 선택하여 맞춤 예금 상품을 확인해보세요.
+    </h2>
+  </div>
+    <!-- <Banner titleText="예금 상품" descriptionText="안정적인 수익을 목적으로 하는 사랑 받는 예금 상품입니다." /> -->
     <!-- 탭 -->
     <div class="m-5">
       <ul class="nav nav-tabs nav-line-tabs mb-5 fs-6">
@@ -25,7 +30,7 @@
       </ul>
     </div>
 
-    <div class="tab-content" id="myTabContent">
+    <div class="tab-content" id="myTabContent" style="margin-top: -30px;">
       <!-- 예금 탭 내용-->
       <div class="m-5 mb-1">
         <!-- 검색어 필터링 -->
@@ -144,7 +149,7 @@
           <!-- 데이터 테이블 -->
           <table id="kt_datatable_column_rendering" class="table table-striped table-row-bordered gy-5 gs-7">
             <thead>
-              <tr class="fw-semibold fs-6 text-gray-800">
+              <tr class="fw-bold fs-6 text-gray-800">
                 <th>은행</th>
                 <th>상품명</th>
                 <th>기본 금리</th>
@@ -153,7 +158,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(item, index) in sortedDataList" :key="index">
+              <tr v-for="(item, index) in sortedDataList" :key="index" style="font-weight: 500; font-size: 14px;">
                 <td>
                   <img :src="item.img_url" alt="depositkor_co_nm" width="28" height="24" loading="eager" />
                   {{ item.kor_co_nm }}
@@ -206,7 +211,7 @@
         </div>
       </div>
     </div>
-  </div>
+
 </template>
 
 <script setup>
@@ -363,5 +368,11 @@ const gotoDepositDetail = (item) => {
 
 .default-color {
   color: #98A1B7;
+}
+
+.bg-title {
+  background-color: #f0f6f9; /* Powder Blue 색상 */
+  height: 180px;
+
 }
 </style>

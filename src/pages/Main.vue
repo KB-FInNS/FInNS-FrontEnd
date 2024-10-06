@@ -1,8 +1,8 @@
 <template>
-    <div class="header ms-20">
+    <div class="header ms-10">
         <SearchComponent/> 
     </div>
-    <div class="container">
+    <div class="maincontainer">
         <div class="row ">
             <!--게시글 피드-->
             <PostView />
@@ -162,7 +162,9 @@ const toggleFollow = (user) => {
 </script>
 
 <style scoped>
-.container {
+.maincontainer {
+    margin-left: 33px;
+    margin-right : 33px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
