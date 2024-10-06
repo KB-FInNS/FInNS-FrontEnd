@@ -1,6 +1,9 @@
 <template>
-  <div class="card-worldcup">
-    <h2 class="title">카드 월드컵 우승</h2>
+   <div class="justify-content-center align-items-center text-center bg-title">
+    <h1 class="text-gray-900 fw-bold pt-8 mt-14 my-1" style="font-size: xx-large;">카드 월드컵 우승</h1>
+    <h2 class="text-gray-700 fw-bold p-4 fs-2">
+      최종 선택된 우승 카드 입니다.
+    </h2>
   </div>
 
   <!-- 큰 카드 영역 -->
@@ -77,12 +80,11 @@ const smallCards = ref([
 
 <style scoped>
 /* 큰 카드 스타일 */
-.card-worldcup {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #eff6f9;
+
+.bg-title {
+  background-color: #f0f6f9; /* Powder Blue 색상 */
   height: 200px;
+  margin-bottom: 40px;
 }
 
 .title {

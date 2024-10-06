@@ -1,188 +1,189 @@
 <template>
-    <div>
-        <Banner titleText="카드 상품" descriptionText="내게 꼭 맞는 카드를 찾아보세요" />
-        <!-- 탭 -->
-        <div class="m-5">
-            <ul class="nav nav-tabs nav-line-tabs mb-5 fs-6">
-                <li class="nav-item">
-                    <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/Deposit"
-                        exact-active-class="active" style="font-size: 20px;">
-                        예금
-                    </router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/InstallmentSavings"
-                        exact-active-class="active" style="font-size: 20px; ">
-                        적금
-                    </router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/Card"
-                        exact-active-class="active" style="font-size: 20px; font-weight: bold; color: #216DBE;">
-                        카드
-                    </router-link>
-                </li>
-            </ul>
-        </div>
+    <div class="justify-content-center align-items-center text-center bg-title">
+    <h1 class="text-gray-900 fw-bold pt-8 mt-9 my-1" style="font-size: xx-large;">카드 상품</h1>
+    <h2 class="text-gray-700 fw-bold p-4 fs-2">
+      자신에게 맞는 조건을 선택하여 맞춤 카드 상품을 확인해보세요.
+    </h2>
+  </div>
+    <!-- 탭 -->
+    <div class="m-5">
+        <ul class="nav nav-tabs nav-line-tabs mb-5 fs-6">
+            <li class="nav-item">
+                <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/Deposit"
+                    exact-active-class="active" style="font-size: 20px;">
+                    예금
+                </router-link>
+            </li>
+            <li class="nav-item">
+                <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/InstallmentSavings"
+                    exact-active-class="active" style="font-size: 20px; ">
+                    적금
+                </router-link>
+            </li>
+            <li class="nav-item">
+                <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/Card" exact-active-class="active"
+                    style="font-size: 20px; font-weight: bold; color: #216DBE;">
+                    카드
+                </router-link>
+            </li>
+        </ul>
+    </div>
 
-        <div class="tab-content" id="myTabContent">
-            <!-- 카드 탭 내용 -->
-            <div class="m-5 mb-1">
-                <!-- 검색어 필터링 -->
-                <div class="card mb-10">
-                    <div class="d-flex align-items-center">
-                        <div class="card-body">
-                            <label class="fs-6 form-label fw-bold text-gray-900 me-3">검색</label>
-                            <div class="d-flex align-items-center">
-                                <div class="position-relative w-md-600px me-2">
-                                    <i
-                                        class="ki-duotone ki-magnifier fs-3 text-gray-500 position-absolute top-50 translate-middle ms-6">
-                                        <span class="path1"></span>
-                                        <span class="path2"></span>
-                                    </i>
-                                    <input v-model="searchCard" type="text"
-                                        class="form-control form-control-solid ps-10" placeholder="은행명, 카드명을 입력해주세요.">
-                                </div>
-                                <div>
-                                    <button class="btn btn-primary px-4" @click="searchFunction">검색</button>
-                                </div>
+    <div class="tab-content" id="myTabContent" style="margin-top: -30px;">
+        <!-- 카드 탭 내용 -->
+        <div class="m-5 mb-1">
+            <!-- 검색어 필터링 -->
+            <div class="card mb-10">
+                <div class="d-flex align-items-center">
+                    <div class="card-body">
+                        <label class="fs-6 form-label fw-bold text-gray-900 me-3">검색</label>
+                        <div class="d-flex align-items-center">
+                            <div class="position-relative w-md-600px me-2">
+                                <i
+                                    class="ki-duotone ki-magnifier fs-3 text-gray-500 position-absolute top-50 translate-middle ms-6">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                                <input v-model="searchCard" type="text" class="form-control form-control-solid ps-10"
+                                    placeholder="은행명, 카드명을 입력해주세요.">
+                            </div>
+                            <div>
+                                <button class="btn btn-primary px-4" @click="searchFunction">검색</button>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- 카드 카테고리 탭 -->
-                <div class="m-5">
-                    <ul class="nav nav-tabs nav-line-tabs mb-5 fs-6">
-                        <li v-for="(item, index) in tabList" :key="index" class="nav-item">
-                            <a href="#" :class="['nav-link', { 'active': selectedTab === item }]"
-                                @click.prevent="selectTab(item)">
-                                <h3 class="tab-title">{{ item }}</h3>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            <!-- 카드 카테고리 탭 -->
+            <div class="m-5">
+                <ul class="nav nav-tabs nav-line-tabs mb-5 fs-6">
+                    <li v-for="(item, index) in tabList" :key="index" class="nav-item">
+                        <a href="#" :class="['nav-link', { 'active': selectedTab === item }]"
+                            @click.prevent="selectTab(item)">
+                            <h3 class="tab-title">{{ item }}</h3>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-                <!-- 카드 상품 리스트 -->
-                <div class="mt-5">
-                    <div class="d-flex flex-wrap flex-stack">
-                        <!--begin::Title-->
-                        <div class="d-flex flex-wrap align-items-center my-1">
-                            <h3 class="fw-bold me-5 my-1 ms-5">{{ filteredCards.length }}
-                                <span class="text-gray-500 fs-6">카드 상품 개수</span>
-                            </h3>
-                        </div>
-                        <!--end::Title-->
+            <!-- 카드 상품 리스트 -->
+            <div class="mt-5">
+                <div class="d-flex flex-wrap flex-stack">
+                    <!--begin::Title-->
+                    <div class="d-flex flex-wrap align-items-center my-1">
+                        <h3 class="fw-bold me-5 my-1 ms-5">{{ filteredCards.length }}
+                            <span class="text-gray-500 fs-6">카드 상품 개수</span>
+                        </h3>
                     </div>
-                    <!-- 데이터 테이블 -->
-                    <table id="kt_datatable_column_rendering" class="table table-striped table-row-bordered gy-5 gs-7">
-                        <tr v-for="(item, index) in paginatedCards" :key="index">
-                            <td>
-                                <div class="card card-flush shadow-sm m-5">
-                                    <div class="card-side d-flex justify-content-between m-7 align-items-center">
-                                        <div class="text-center ms-5" style="width: 200px;">
-                                            <img :src="item.card_img_url" ref="image"
-                                            @load="onImageLoad($event)" style="width: 100px; ">
-                                        </div>
-                                        <div class="flex-grow-1 ms-10 ">
-                                            <div
-                                                class="d-flex justify-content-between align-items-start flex-wrap mb-2">
-                                                <div class="d-flex flex-column">
-                                                    <div class="d-flex align-items-center mb-1">
-                                                        <a href="#"
-                                                            class="text-gray-800 text-hover-primary fs-2 fw-bold me-3">{{
-                                                                item.copr_name }} {{ item.card_name }}</a>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex mb-4">
-                                                    <a @click="gotoCardDetail(item)" href="#"
-                                                        class="btn btn-sm btn-primary me-3" data-bs-toggle="modal"
-                                                        data-bs-target="#kt_modal_new_target">자세히
-                                                        보기</a>
+                    <!--end::Title-->
+                </div>
+                <!-- 데이터 테이블 -->
+                <table id="kt_datatable_column_rendering" class="table table-striped table-row-bordered gy-5 gs-7">
+                    <tr v-for="(item, index) in paginatedCards" :key="index">
+                        <td>
+                            <div class="card card-flush shadow-sm m-5">
+                                <div class="card-side d-flex justify-content-between m-7 align-items-center">
+                                    <div class="text-center ms-5" style="width: 200px;">
+                                        <img :src="item.card_img_url" ref="image" @load="onImageLoad($event)"
+                                            style="width: 100px; ">
+                                    </div>
+                                    <div class="flex-grow-1 ms-10 ">
+                                        <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                                            <div class="d-flex flex-column">
+                                                <div class="d-flex align-items-center mb-1">
+                                                    <a href="#"
+                                                        class="text-gray-800 text-hover-primary fs-2 fw-bold me-3">{{
+                                                            item.copr_name }} {{ item.card_name }}</a>
                                                 </div>
                                             </div>
-                                            <div class="d-flex flex-wrap justify-content-start">
-                                                <!--begin::Stats-->
-                                                <div class="d-flex flex-wrap">
-                                                    <div
-                                                        class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="fs-4 fw-bold">전기/수소차 충전</div>
-                                                        </div>
-                                                        <div class="fw-semibold fs-6 text-gray-500">
-                                                            20% 청구 할인</div>
-                                                    </div>
-                                                    <div
-                                                        class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="fs-4 fw-bold">주차, 세차</div>
-                                                        </div>
-                                                        <div class="fw-semibold fs-6 text-gray-500">
-                                                            20% 청구 할인</div>
-                                                    </div>
-                                                    <div
-                                                        class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="fs-4 fw-bold">OTT</div>
-                                                        </div>
-                                                        <div class="fw-semibold fs-6 text-gray-500">20% 청구 할인</div>
-                                                    </div>
-                                                </div>
-                                                <!--end::Stats-->
+                                            <div class="d-flex mb-4">
+                                                <a @click="gotoCardDetail(item)" href="#"
+                                                    class="btn btn-sm btn-primary me-3" data-bs-toggle="modal"
+                                                    data-bs-target="#kt_modal_new_target">자세히
+                                                    보기</a>
                                             </div>
-                                            <!--end::Info-->
                                         </div>
+                                        <div class="d-flex flex-wrap justify-content-start">
+                                            <!--begin::Stats-->
+                                            <div class="d-flex flex-wrap">
+                                                <div
+                                                    class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="fs-4 fw-bold">전기/수소차 충전</div>
+                                                    </div>
+                                                    <div class="fw-semibold fs-6 text-gray-500">
+                                                        20% 청구 할인</div>
+                                                </div>
+                                                <div
+                                                    class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="fs-4 fw-bold">주차, 세차</div>
+                                                    </div>
+                                                    <div class="fw-semibold fs-6 text-gray-500">
+                                                        20% 청구 할인</div>
+                                                </div>
+                                                <div
+                                                    class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="fs-4 fw-bold">OTT</div>
+                                                    </div>
+                                                    <div class="fw-semibold fs-6 text-gray-500">20% 청구 할인</div>
+                                                </div>
+                                            </div>
+                                            <!--end::Stats-->
+                                        </div>
+                                        <!--end::Info-->
                                     </div>
                                 </div>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- 페이지네이션 -->
-                    <div id="" class="row">
-                        <!-- 페이지 개수 -->
-                        <div id=""
-                            class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start">
-                            <div class="dataTables_length" id="">
-                                <label>
-                                    <select v-model="itemsPerPage" @change="currentPage = 1"
-                                        class="form-select form-select-sm form-select-solid">
-                                        <option value="5">5</option>
-                                        <option value="10">10</option>
-                                        <option value="20">20</option>
-                                        <option value="50">50</option>
-                                    </select>
-                                </label>
                             </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- 페이지네이션 -->
+                <div id="" class="row">
+                    <!-- 페이지 개수 -->
+                    <div id=""
+                        class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start">
+                        <div class="dataTables_length" id="">
+                            <label>
+                                <select v-model="itemsPerPage" @change="currentPage = 1"
+                                    class="form-select form-select-sm form-select-solid">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                </select>
+                            </label>
                         </div>
-                        <!-- 페이징 -->
-                        <div
-                            class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end">
-                            <div class="dataTables_paginate paging_simple_numbers">
-                                <ul class="pagination">
-                                    <li class="paginate_button page-item" :class="{ 'disabled': currentPage === 1 }">
-                                        <a href="#" @click.prevent="changePage(currentPage - 1)"
-                                            class="page-link">이전</a>
-                                    </li>
+                    </div>
+                    <!-- 페이징 -->
+                    <div
+                        class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end">
+                        <div class="dataTables_paginate paging_simple_numbers">
+                            <ul class="pagination">
+                                <li class="paginate_button page-item" :class="{ 'disabled': currentPage === 1 }">
+                                    <a href="#" @click.prevent="changePage(currentPage - 1)" class="page-link">이전</a>
+                                </li>
 
-                                    <li v-for="page in visiblePages" :key="page" class="paginate_button page-item"
-                                        :class="{ 'active': currentPage === page }">
-                                        <a href="#" @click.prevent="changePage(page)" class="page-link">{{ page }}</a>
-                                    </li>
+                                <li v-for="page in visiblePages" :key="page" class="paginate_button page-item"
+                                    :class="{ 'active': currentPage === page }">
+                                    <a href="#" @click.prevent="changePage(page)" class="page-link">{{ page }}</a>
+                                </li>
 
-                                    <li class="paginate_button page-item"
-                                        :class="{ 'disabled': currentPage === totalPages }">
-                                        <a href="#" @click.prevent="changePage(currentPage + 1)"
-                                            class="page-link">다음</a>
-                                    </li>
-                                </ul>
-                            </div>
+                                <li class="paginate_button page-item"
+                                    :class="{ 'disabled': currentPage === totalPages }">
+                                    <a href="#" @click.prevent="changePage(currentPage + 1)" class="page-link">다음</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </template>
 
 <script setup>
@@ -290,5 +291,10 @@ const gotoCardDetail = (item) => {
     color: #216DBE;
     font-weight: bold;
     border-bottom: 2px solid #216DBE;
+}
+.bg-title {
+  background-color: #f0f6f9; /* Powder Blue 색상 */
+  height: 180px;
+
 }
 </style>
