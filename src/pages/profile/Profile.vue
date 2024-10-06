@@ -19,7 +19,7 @@
               <div class="d-flex flex-column">
                 <!--begin::Name-->
                 <div class="d-flex align-items-center mb-2">
-                  <span class="text-gray-900 fs-2 fw-bold me-1">Yujin_1219</span>
+                  <span class="text-gray-900 fs-2 fw-bold me-1">{{username}}</span>
                   <button class="btn btn-sm ms-10" :class="isFollow ? 'btn-light' : 'btn-primary'"
                     @click="toggleFollow()">
                     <span>{{ isFollow ? '팔로잉' : '팔로우' }}</span>
@@ -36,7 +36,7 @@
                       <span class="path2"></span>
                       <span class="path3"></span>
                     </i>
-                    먹는게제일좋아형
+                    {{auth.mbti_no}}
                   </router-link>
                 </div>
                 <!--end::Info-->
@@ -230,6 +230,11 @@ import CountUp from 'vue-countup-v3';
 import { ref, onMounted, nextTick } from 'vue';
 import { useRouter } from 'vue-router';
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
+import { useAuthStore } from '@/stores/auth';
+
+const auth = useAuthStore();
+
+const username = auth.username;
 
 const router = useRouter();
 

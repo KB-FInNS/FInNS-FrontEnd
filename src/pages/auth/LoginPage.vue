@@ -106,7 +106,7 @@ const router = useRouter();
 const auth = useAuthStore();
 const member = reactive({
   username: 'asd1',
-  password: '123',
+  password: '1234',
 });
 const error = ref('');
 const disableSubmit = computed(() => !(member.username && member.password));
