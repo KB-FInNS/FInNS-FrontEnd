@@ -1,6 +1,11 @@
 <template>
-  <div>
-    <Banner titleText="적금 상품" descriptionText="안정적인 수익을 목적으로 하는 사랑 받는 적금 상품입니다." />
+  <div class="justify-content-center align-items-center text-center bg-title">
+    <h1 class="text-gray-900 fw-bold pt-8 mt-9 my-1" style="font-size: xx-large;">적금 상품</h1>
+    <h2 class="text-gray-700 fw-bold p-4 fs-2">
+      자신에게 맞는 조건을 선택하여 맞춤 적금 상품을 확인해보세요.
+    </h2>
+  </div>
+    <!-- <Banner titleText="적금 상품" descriptionText="안정적인 수익을 목적으로 하는 사랑 받는 적금 상품입니다." /> -->
     <!-- 탭 -->
     <div class="m-5">
       <ul class="nav nav-tabs nav-line-tabs mb-5 fs-6">
@@ -25,7 +30,7 @@
       </ul>
     </div>
 
-    <div class="tab-content" id="myTabContent">
+    <div class="tab-content" id="myTabContent" style="margin-top: -30px;">
       <!-- 적금 탭 내용 -->
       <div class="m-5 mb-1">
         <!-- 검색어 필터링 -->
@@ -203,7 +208,7 @@
         </div>
       </div>
     </div>
-  </div>
+  <
 </template>
 <script setup>
 import { useRouter } from 'vue-router';
@@ -362,5 +367,10 @@ const gotoInstallmentDetail = (item) => {
 
 .default-color {
   color: #98A1B7;
+}
+.bg-title {
+  background-color: #f0f6f9; /* Powder Blue 색상 */
+  height: 180px;
+
 }
 </style>

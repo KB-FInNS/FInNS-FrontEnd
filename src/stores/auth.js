@@ -5,18 +5,19 @@ import axios from 'axios';
 const initState = {
   token: '', // 접근 토큰(JWT)
   user: {
-    user_id: '', // 사용자 ID
-    mbti: '', // 추가된 필드
+    user_no: '', // 사용자 no
+    username: '', // 사용자 ID
+    mbti_no: '', // 추가된 필드
     birth: '', // 추가된 필드
   },
 };
 
 export const useAuthStore = defineStore('auth', () => {
   const state = ref({ ...initState });
-  const isLogin = computed(() => !!state.value.user.user_id); // 로그인 여부
-  const user_id = computed(() => state.value.user.user_id); // 로그인 사용자 ID
+  const isLogin = computed(() => !!state.value.user.username); // 로그인 여부
+  const username = computed(() => state.value.user.username); // 로그인 사용자 ID
   const email = computed(() => state.value.user.email); // 로그인 사용자 email
-  const mbti = computed(() => state.value.user.mbti); // mbti
+  const mbti_no = computed(() => state.value.user.mbti_no); // mbti
   const birth = computed(() => state.value.user.birth); // 생년월일
 
   const login = async (member) => {
@@ -33,6 +34,7 @@ export const useAuthStore = defineStore('auth', () => {
 
   const getToken = () => state.value.token;
 
+
   const load = () => {
     const auth = localStorage.getItem('auth');
     if (auth != null) {
@@ -40,12 +42,11 @@ export const useAuthStore = defineStore('auth', () => {
       console.log('스토어 로드된 state:', state.value); // 확인 로그
     }
   };
-
   const changeProfile = (member) => {
-    state.value.user.user_id = member.user_id; // user_id 업데이트
+    state.value.user.username = member.username; // username 업데이트
     state.value.user.email = member.email; // email 업데이트
     state.value.user.birth = member.birth; // birth 업데이트
-    state.value.user.mbti = member.mbti; // mbti 업데이트
+    state.value.user.mbti_no = member.mbti_no; // mbti 업데이트
     localStorage.setItem('auth', JSON.stringify(state.value));
   };
 
@@ -53,10 +54,10 @@ export const useAuthStore = defineStore('auth', () => {
 
   return {
     state,
-    user_id,
+    username,
     email,
     birth,
-    mbti,
+    mbti_no,
     isLogin,
     changeProfile,
     login,

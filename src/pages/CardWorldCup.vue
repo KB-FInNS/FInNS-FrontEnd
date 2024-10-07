@@ -15,6 +15,9 @@
       <a @click.prevent="goToCard(card.url)" href="#" class="more-info">자세한 정보 알아보기</a>
     </div>
   </div>
+  <div class="card-container">
+    <CardComponent v-for="(card, index) in cards" :key="index" :title="card.title" :image="card.image" :description="card.description" :url="card.url" />
+  </div>
 </template>
 
 <script setup>
@@ -81,7 +84,7 @@ const goToCard = (url) => {
 };
 </script>
 
-<style scoped>
+< scoped>
 .card {
   background-color: #f1f7ff;
   border-radius: 10px;
@@ -137,7 +140,13 @@ const goToCard = (url) => {
   padding: 36px;
   background-color: #eff6f9;
   margin-bottom: 40px;
+
+.bg-title {
+  background-color: #f0f6f9; /* Powder Blue 색상 */
+  height: 180px;
+  margin-bottom: 65px;
 }
+
 
 .title {
   font-size: 36px;

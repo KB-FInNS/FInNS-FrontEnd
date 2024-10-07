@@ -17,7 +17,8 @@
                         <!--begin::Info-->
                         <div class="flex-grow-1">
                             <!--begin::Name-->
-                            <a href="profile/spending" class="text-gray-800 text-hover-primary fs-4 fw-bold">Yujin_1219</a>
+                            <a href="profile/spending"
+                                class="text-gray-800 text-hover-primary fs-4 fw-bold">Yujin_1219</a>
                             <!--end::Name-->
                             <!--begin::Date-->
                             <span class="text-gray-500 fw-semibold d-block">09월 24일 15:30</span>
@@ -27,7 +28,7 @@
 
                         <!-- 모달 트리거 버튼 (display: none; - JS를 통해 제어) -->
                         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal"
-                        style="display: none" ref="modalTrigger"></button>
+                            style="display: none" ref="modalTrigger"></button>
 
                         <!--begin::Menu-->
                         <div class="me-0">
@@ -87,7 +88,7 @@
                     </div>
                     <!--end::Post content-->
                     <!--begin:: 게시물 사진-->
-                    <Carousel>
+                    <Carousel v-if="images.length > 0">
                         <Slide v-for="(image, index) in images" :key="index">
                             <img :src="image" alt="Image Slide" class="carousel-image" />
                         </Slide>
