@@ -1,6 +1,9 @@
 <template>
-    <div class="container">
-        <div class="row mt-10">
+    <div class="header ms-10">
+        <SearchComponent/> 
+    </div>
+    <div class="maincontainer">
+        <div class="row ">
             <!--게시글 피드-->
             <PostView />
 
@@ -99,6 +102,7 @@
 
 <script setup>
 import PostView from '@/components/common/PostView.vue';
+import SearchComponent from '@/components/common/SearchComponent.vue'
 import { ref } from 'vue';
 
 const rankings = ref([
@@ -158,7 +162,9 @@ const toggleFollow = (user) => {
 </script>
 
 <style scoped>
-.container {
+.maincontainer {
+    margin-left: 33px;
+    margin-right : 33px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

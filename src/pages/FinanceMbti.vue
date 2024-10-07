@@ -8,7 +8,7 @@
   <!--begin::Toolbar-->
   <!--begin::Title-->
   <div class="justify-content-center align-items-center text-center bg-title">
-    <h1 class="text-gray-900 fw-bold pt-8 mt-14 my-1" style="font-size: xx-large;">금융 MBTI</h1>
+    <h1 class="text-gray-900 fw-bold pt-8 mt-9 my-1" style="font-size: xx-large;">금융 MBTI</h1>
     <h2 class="text-gray-700 fw-bold p-4 fs-2">
       소비 내역 분석을 바탕으로 한 나의 MBTI를 확인해 보세요.
     </h2>
@@ -697,7 +697,7 @@ const getMbtiAvatar = (mbtiType) => {
 
 .bg-title {
   background-color: #f0f6f9; /* Powder Blue 색상 */
-  height: 200px;
+  height: 180px;
 }
 
 </style>
