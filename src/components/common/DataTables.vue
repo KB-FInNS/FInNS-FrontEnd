@@ -2,7 +2,7 @@
   <!-- <link rel="stylesheet" href="/assets/plugins/custom/datatables/datatables.bundle.css"> -->
 
   <div v-if="data.length === 0">
-    <h1 class="text-center" style="margin-top: 20px;">소비 내역이 없습니다!</h1>
+    <h1 class="text-center" style="margin-top: 20px; margin-bottom: 150px">소비 내역이 없습니다!</h1>
   </div>
   <div v-else>
     <div class="table-responsive" style="height: 610px; overflow-y: auto;">
@@ -27,7 +27,7 @@
           <tr
             v-for="(item, index) in data"
             :key="index"
-            :class="{ 'bg-gray-200': !item.checked }"
+            :class="{ 'bg-gray-200': !item.publicStatus }"
             class="fs-5 text-gray-600 fw-bold"
             @click="goToPostView(item.id)"
             style="cursor: pointer;"
@@ -37,8 +37,8 @@
                   class="form-check-input"
                   type="checkbox"
                   id="googleswitch"
-                  v-model="item.checked"
-                  @change="updatePublic(item)"
+                  v-model="item.publicStatus"
+                  @change="togglePublicStatus(item.postNo)"
                   @click.stop
                 />
             </td>
@@ -53,7 +53,7 @@
             <td class="amount">
               {{ item.amount.toLocaleString() }}원
             </td>
-            <td class="date">{{ item.date }}</td>
+            <td class="date">{{ item.transactionDate }}</td>
             <td class="">
               <a @click.stop="goToPayDetail" class="btn btn-sm btn-primary hover-scale fw-bold">소비 상세</a>
             </td>
@@ -69,8 +69,14 @@ import { useRouter } from 'vue-router';
 
 const router = useRouter();
 
-const updatePublic = (item) => {
-  // 공개 범위 바꾸는 코드 작성!
+const togglePublicStatus = async (postNo) => {
+  // 디비에 공개 범위 바꾸는 코드
+  try {
+    const response = await axios.put(`http://localhost:8080/posts/${postNo}/togglePublicStatus`);
+
+  } catch (error) {
+    console.error('Error toggling public status:', error);
+  }
 };
 
 const goToPostView = (id) => {
