@@ -243,17 +243,19 @@ const fetchPost = async () => {
         console.error('Error fetching post data:', error);
     }
 };
-
-// 좋아요 카운트를 증가시키는 함수
+// 좋은소비 카운트를 증가 또는 감소시키는 함수
 const incrementGreatCount = async () => {
     try {
-        if (badisActive.value) {
-            // '이돈이면'이 활성화된 경우 비활성화하고 카운트를 감소시킴
-            post.value.stupidCount -= 1;
-            badisActive.value = false;
-        }
-
-        if (!goodisActive.value) {
+        if (goodisActive.value) {
+            // '좋은소비'가 이미 활성화된 상태에서 다시 누르면 비활성화하고 카운트를 감소시킴
+            post.value.greatCount -= 1;
+            goodisActive.value = false;
+        } else {
+            if (badisActive.value) {
+                // '이돈이면'이 활성화된 경우 비활성화하고 카운트를 감소시킴
+                post.value.stupidCount -= 1;
+                badisActive.value = false;
+            }
             // '좋은소비'가 비활성화된 상태에서 활성화함
             post.value.greatCount += 1;
             goodisActive.value = true;
@@ -268,15 +270,20 @@ const incrementGreatCount = async () => {
         console.error('Error updating counts:', error);
     }
 };
+
+// 이돈이면 카운트를 증가 또는 감소시키는 함수
 const incrementStupidCount = async () => {
     try {
-        if (goodisActive.value) {
-            // '좋은소비'가 활성화된 경우 비활성화하고 카운트를 감소시킴
-            post.value.greatCount -= 1;
-            goodisActive.value = false;
-        }
-
-        if (!badisActive.value) {
+        if (badisActive.value) {
+            // '이돈이면'이 이미 활성화된 상태에서 다시 누르면 비활성화하고 카운트를 감소시킴
+            post.value.stupidCount -= 1;
+            badisActive.value = false;
+        } else {
+            if (goodisActive.value) {
+                // '좋은소비'가 활성화된 경우 비활성화하고 카운트를 감소시킴
+                post.value.greatCount -= 1;
+                goodisActive.value = false;
+            }
             // '이돈이면'이 비활성화된 상태에서 활성화함
             post.value.stupidCount += 1;
             badisActive.value = true;
