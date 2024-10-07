@@ -23,6 +23,7 @@ export default {
     formData.append('password', member.password);
     formData.append('password2', member.password2);
     formData.append('birth', member.birth);
+    formData.append('renew_date', member.renew_date);
 
     try {
       const { data } = await api.post(BASE_URL, formData, { headers });

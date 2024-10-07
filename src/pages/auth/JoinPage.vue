@@ -89,7 +89,7 @@
               class="form-control"
               placeholder="생년월일을 입력하세요..."
               id="birthdate"
-              v-model="member.birthdate"
+              v-model="member.birth"
             />
           </div>
 
@@ -119,7 +119,8 @@ const member = reactive({
   username: '',
   password: '',
   password2: '',
-  birthdate: '',
+  birth: '',
+  renew_time: '',
 });
 
 const email = ref({ email: '' });

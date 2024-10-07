@@ -1,5 +1,6 @@
 <script setup>
 import authApi from '@/api/authApi';
+import followApi from '@/api/buttonApi';
 import { useAuthStore } from '@/stores/auth';
 import { computed, reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
@@ -20,7 +21,7 @@ const member = reactive({
   newPassword: '',
   newPassword2: '',
   avatar: null,
-  mbti: auth.mbti_no, // 추가: MBTI
+  mbti_no: auth.mbti_no, // 추가: MBTI
 });
 
 // 비밀번호 변경 상태
@@ -42,7 +43,6 @@ const disableSubmit = computed(
     !changePassword.newPassword ||
     !changePassword.newPassword2
 );
-
 
 const logout = (e) => {
   // 로그아웃 처리
@@ -73,7 +73,7 @@ const onSubmit = async () => {
   const formData = new FormData();
   formData.append('user_id', member.user_id);
   formData.append('birthdate', member.birthdate);
-  formData.append('mbti', member.mbti);
+  formData.append('mbti_no', member.mbti_no);
   formData.append('oldPassword', member.oldPassword);
   formData.append('newPassword', member.newPassword);
 
@@ -117,6 +117,12 @@ const onDeleteAvatar = () => {
 </script>
 
 <template>
+  <!-- 팔로우/언팔로우 버튼 -->
+  <div class="d-flex justify-content-end mt-3">
+    <button @click="handleFollow" class="btn btn-info btn-lg me-2">
+      {{ followStatus ? '언팔로우' : '팔로우' }}
+    </button>
+  </div>
   <div class="justify-content-center align-items-center text-center bg-title">
     <h1 class="text-gray-900 fw-bold pt-8 mt-14 my-1 fs-1">마이페이지</h1>
     <h2 class="text-gray-700 fw-bold p-4 fs-2">개인정보를 수정해주세요.</h2>
@@ -174,7 +180,7 @@ const onDeleteAvatar = () => {
               />
             </div>
           </div>
-          
+
           <div class="mb-6 row">
             <label for="birthdate" class="col-sm-4 col-form-label fw-bold"
               >생년월일</label
@@ -231,15 +237,15 @@ const onDeleteAvatar = () => {
             </div>
           </div>
           <div class="mb-6 row">
-            <label for="mbti" class="col-sm-4 col-form-label fw-bold"
+            <label for="mbti_no" class="col-sm-4 col-form-label fw-bold"
               >MBTI</label
             >
             <div class="col-sm-8">
               <input
                 type="text"
                 class="form-control"
-                id="mbti"
-                v-model="member.mbti"
+                id="mbti_no"
+                v-model="member.mbti_no"
                 readonly
               />
             </div>

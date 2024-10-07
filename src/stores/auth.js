@@ -9,6 +9,7 @@ const initState = {
     username: '', // 사용자 ID
     mbti_no: '', // 추가된 필드
     birth: '', // 추가된 필드
+    renew_date: '',
   },
 };
 
@@ -19,6 +20,7 @@ export const useAuthStore = defineStore('auth', () => {
   const email = computed(() => state.value.user.email); // 로그인 사용자 email
   const mbti_no = computed(() => state.value.user.mbti_no); // mbti
   const birth = computed(() => state.value.user.birth); // 생년월일
+  const renew_date = computed(() => state.value.user.renew_date);
 
   const login = async (member) => {
     const { data } = await axios.post('/api/auth/login', member);
@@ -58,6 +60,7 @@ export const useAuthStore = defineStore('auth', () => {
     birth,
     mbti_no,
     isLogin,
+    renew_date,
     changeProfile,
     login,
     logout,

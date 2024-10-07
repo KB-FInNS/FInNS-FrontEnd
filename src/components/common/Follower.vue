@@ -1,17 +1,27 @@
 <template>
   <div class="box">
     <div><h1>팔로워 목록</h1></div>
-    <div v-for="user in users" :key="user.id" class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
+    <div
+      v-for="user in users"
+      :key="user.id"
+      class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed"
+    >
       <!--begin::Details-->
       <div class="d-flex align-items-center">
         <!--begin::Avatar-->
         <div class="symbol symbol-35px symbol-circle">
-          <span class="symbol-label bg-light-danger text-danger fw-semibold">{{ user.initial }}</span>
+          <span class="symbol-label bg-light-danger text-danger fw-semibold">{{
+            user.initial
+          }}</span>
         </div>
         <!--end::Avatar-->
         <!--begin::Details-->
         <div class="ms-5">
-          <a href="#" class="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">{{ user.name }}</a>
+          <a
+            href="#"
+            class="fs-5 fw-bold text-gray-900 text-hover-primary mb-2"
+            >{{ user.name }}</a
+          >
           <div class="fw-semibold text-muted">{{ user.email }}</div>
         </div>
         <!--end::Details-->
@@ -19,7 +29,11 @@
       <!--end::Details-->
       <!--begin::Follow/Following button-->
       <div class="ms-2">
-        <button class="btn btn-sm" :class="user.isFollowing ? 'btn-primary' : 'btn-light'" @click="toggleFollow(user)">
+        <button
+          class="btn btn-sm"
+          :class="user.isFollowing ? 'btn-primary' : 'btn-light'"
+          @click="toggleFollow(user)"
+        >
           <span>{{ user.isFollowing ? '팔로잉' : '팔로우' }}</span>
         </button>
       </div>
@@ -32,7 +46,7 @@
 import { ref } from 'vue';
 
 const users = ref([
-  { id: 1, name: 'Melody Macy', initial: 'M', isFollowing: true },
+  { id: 1, name: 'Melody Macy', initial: 'M', isFollowing: 1 },
   { id: 2, name: 'John Doe', initial: 'J', isFollowing: true },
   { id: 3, name: 'Alice Smith', initial: 'A', isFollowing: true },
   { id: 4, name: 'Bob Johnson', initial: 'B', isFollowing: true },
