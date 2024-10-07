@@ -45,9 +45,9 @@ const initializeCalendar = () => {
     selectable: true,
     locale: "ko",
     headerToolbar: {
-      left: 'prev,next today',
+      left: '',
       center: 'title',
-      right: 'today prev,next',
+      right: '',
     },
     showNonCurrentDates: false,
     fixedWeekCount: false,
