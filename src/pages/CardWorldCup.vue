@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <h1>카드 월드컵</h1>
-    <p>더 마음에 드는 카드를 골라주세요</p>
+  <div class="justify-content-center align-items-center text-center bg-title">
+    <h1 class="text-gray-900 fw-bold pt-8 mt-9 my-1" style="font-size: xx-large;">카드 월드컵</h1>
+    <h2 class="text-gray-700 fw-bold p-4 fs-2">
+      더 마음에 드는 카드를 골라주세요.
+    </h2>
   </div>
 
   <div class="card-container" v-if="MatchCard.length === 2">
@@ -84,7 +86,7 @@ const goToCard = (url) => {
 };
 </script>
 
-< scoped>
+<style scoped>
 .card {
   background-color: #f1f7ff;
   border-radius: 10px;
@@ -140,13 +142,13 @@ const goToCard = (url) => {
   padding: 36px;
   background-color: #eff6f9;
   margin-bottom: 40px;
+}
 
 .bg-title {
   background-color: #f0f6f9; /* Powder Blue 색상 */
   height: 180px;
   margin-bottom: 65px;
 }
-
 
 .title {
   font-size: 36px;
