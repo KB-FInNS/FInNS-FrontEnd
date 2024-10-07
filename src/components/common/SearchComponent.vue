@@ -96,7 +96,6 @@ const isDropdownVisible = ref(false);
 // 검색 실행 함수
 const searchUsers = () => {
   const query = searchQuery.value.toLowerCase();
-  console.log('열림');
   if (!searchQuery.value.trim()) {
     filteredUsers.value = [];
     return;
@@ -109,7 +108,6 @@ const searchUsers = () => {
 const handleClickOutside = (event) => {
   const input = document.querySelector('.dropbtn');
   const dropdown = document.querySelector('.dropdown-content');
-  console.log('닫침');
   if (input && !input.contains(event.target) && dropdown && !dropdown.contains(event.target)) {
     isDropdownVisible.value = false;
   }
