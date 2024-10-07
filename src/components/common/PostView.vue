@@ -154,48 +154,43 @@
                     <div class="separator separator-solid mb-1"></div>
                     <!--end::Separator-->
                     <!--begin::댓글-->
-                    <div class="collapse show" id="kt_social_feeds_comments_1">
-                        <!--begin::Comment-->
-                        <div class="d-flex pt-6">
-                            <!--begin::Avatar-->
-                            <div class="symbol symbol-45px me-5">
-                                <img src="/assets/media/avatars/300-13.jpg" alt="" />
-                            </div>
-                            <!--end::Avatar-->
-                            <!--begin::Wrapper-->
-                            <div class="d-flex flex-column flex-row-fluid">
-                                <!--begin::Info-->
-                                <div class="d-flex align-items-center flex-wrap mb-0">
-                                    <!--begin::Name-->
-                                    <a href="#" class="text-gray-800 text-hover-primary fw-bold me-6">Mr.
-                                        Anderson</a>
-                                    <!--end::Name-->
+                    <div>
+                        <!-- 댓글 리스트 -->
+                        <div class="collapse show" id="kt_social_feeds_comments_1">
+                            <!-- 댓글을 반복해서 출력 -->
+                            <div class="d-flex pt-6" v-for="(comment, index) in comments" :key="index">
+                                <!-- 아바타 -->
+                                <div class="symbol symbol-45px me-5">
+                                    <img src="/assets/media/avatars/300-13.jpg" alt="" />
                                 </div>
-                                <!--end::Info-->
-                                <!--begin::Text-->
-                                <span class="text-gray-800 fs-7 fw-normal pt-1">맛있는 삼겹살을 드셨네요! 근데 과소비 하신건
-                                    아닌지....</span>
-                                <!--end::Text-->
+
+                                <!-- 댓글 내용 -->
+                                <div class="d-flex flex-column flex-row-fluid">
+                                    <div class="d-flex align-items-center flex-wrap mb-0">
+                                        <!-- 댓글 작성자 -->
+                                        <a href="#" class="text-gray-800 text-hover-primary fw-bold me-6">{{
+                                            comment.name }}</a>
+                                    </div>
+                                    <!-- 댓글 텍스트 -->
+                                    <span class="text-gray-800 fs-7 fw-normal pt-1">{{ comment.text }}</span>
+                                </div>
                             </div>
-                            <!--end::Wrapper-->
                         </div>
-                        <!--end::Comment-->
                     </div>
-                    <!--end::Collapse-->
                 </div>
                 <!--end::Info-->
                 <!--begin::Comment form-->
                 <div class="d-flex align-items-center">
-                    <!--begin::Author-->
-                    <div class="symbol symbol-35px me-3">
-                        <img src="/assets/media/avatars/300-3.jpg" alt="" />
-                    </div>
-                    <!--end::Author-->
-                    <!--begin::Input group-->
-                    <div class="position-relative w-100">
-                        <!--댓글 작성-->
-                        <textarea type="text" class="form-control form-control-solid border ps-5" rows="1" name="search"
-                            value="" data-kt-autosize="true" placeholder="댓글을 작성하세요."></textarea>
+                    <!-- Input and Button Wrapper -->
+                    <div class="d-flex w-100">
+                        <!-- Comment Input -->
+                        <input v-model="newComment" type="text" class="form-control form-control-solid border ps-5 me-2"
+                            name="search" placeholder="댓글을 작성하세요." />
+                        <!-- Submit Button -->
+                        <button @click="addComment" class="btn btn-primary"
+                            style="height: 38px; padding: 0 12px; font-size: small; white-space: nowrap;">
+                            등록
+                        </button>
                     </div>
                 </div>
             </div>
@@ -252,49 +247,49 @@ const fetchPost = async () => {
 // 좋아요 카운트를 증가시키는 함수
 const incrementGreatCount = async () => {
     try {
-    if (badisActive.value) {
-      // '이돈이면'이 활성화된 경우 비활성화하고 카운트를 감소시킴
-      post.value.stupidCount -= 1;
-      badisActive.value = false;
-    }
+        if (badisActive.value) {
+            // '이돈이면'이 활성화된 경우 비활성화하고 카운트를 감소시킴
+            post.value.stupidCount -= 1;
+            badisActive.value = false;
+        }
 
-    if (!goodisActive.value) {
-      // '좋은소비'가 비활성화된 상태에서 활성화함
-      post.value.greatCount += 1;
-      goodisActive.value = true;
-    }
+        if (!goodisActive.value) {
+            // '좋은소비'가 비활성화된 상태에서 활성화함
+            post.value.greatCount += 1;
+            goodisActive.value = true;
+        }
 
-    // 서버로 좋아요 및 싫어요 상태를 업데이트
-    await axios.put(`http://localhost:8080/posts/${post.value.postNo}/updateCounts`, {
-      greatCount: post.value.greatCount,
-      stupidCount: post.value.stupidCount,
-    });
-  } catch (error) {
-    console.error('Error updating counts:', error);
-  }
+        // 서버로 좋아요 및 싫어요 상태를 업데이트
+        await axios.put(`http://localhost:8080/posts/${post.value.postNo}/updateCounts`, {
+            greatCount: post.value.greatCount,
+            stupidCount: post.value.stupidCount,
+        });
+    } catch (error) {
+        console.error('Error updating counts:', error);
+    }
 };
 const incrementStupidCount = async () => {
     try {
-    if (goodisActive.value) {
-      // '좋은소비'가 활성화된 경우 비활성화하고 카운트를 감소시킴
-      post.value.greatCount -= 1;
-      goodisActive.value = false;
-    }
+        if (goodisActive.value) {
+            // '좋은소비'가 활성화된 경우 비활성화하고 카운트를 감소시킴
+            post.value.greatCount -= 1;
+            goodisActive.value = false;
+        }
 
-    if (!badisActive.value) {
-      // '이돈이면'이 비활성화된 상태에서 활성화함
-      post.value.stupidCount += 1;
-      badisActive.value = true;
-    }
+        if (!badisActive.value) {
+            // '이돈이면'이 비활성화된 상태에서 활성화함
+            post.value.stupidCount += 1;
+            badisActive.value = true;
+        }
 
-    // 서버로 좋아요 및 싫어요 상태를 업데이트
-    await axios.put(`http://localhost:8080/posts/${post.value.postNo}/updateCounts`, {
-      greatCount: post.value.greatCount,
-      stupidCount: post.value.stupidCount,
-    });
-  } catch (error) {
-    console.error('Error updating counts:', error);
-  }
+        // 서버로 좋아요 및 싫어요 상태를 업데이트
+        await axios.put(`http://localhost:8080/posts/${post.value.postNo}/updateCounts`, {
+            greatCount: post.value.greatCount,
+            stupidCount: post.value.stupidCount,
+        });
+    } catch (error) {
+        console.error('Error updating counts:', error);
+    }
 };
 // 날짜 형식을 변환하는 함수
 const formatDate = (dateString) => {
@@ -361,6 +356,21 @@ const images = ref([
     '/assets/media/food/samgeob2.jpg',
     '/assets/media/food/samgeob3.jpg',
 ]);
+
+
+// 새로운 댓글을 입력할 변수
+const newComment = ref('');
+// 댓글 목록을 저장할 배열
+const comments = ref([
+    { name: 'Mr. Anderson', text: '맛있는 삼겹살을 드셨네요! 근데 과소비 하신건 아닌지....' }
+]);
+// 댓글을 추가하는 함수
+const addComment = () => {
+    if (newComment.value.trim() !== '') {
+        comments.value.push({ name: 'Yujin_1219', text: newComment.value });
+        newComment.value = ''; // 입력 필드 초기화
+    }
+};
 </script>
 
 <style scoped>
@@ -370,6 +380,5 @@ const images = ref([
     height: 500px;
     /* contain : 사진 크기에 맞게, cover : carousel 에 맞게(이미지 잘림) */
     object-fit: contain;
-
 }
 </style>
