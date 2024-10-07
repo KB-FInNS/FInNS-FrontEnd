@@ -200,7 +200,7 @@
               <div class="card-body">
                 <!-- 이미지 추가 -->
                 <div class="image-container">
-                  <img src="../../assets/media/avatars/kb_eat.png" />
+                  <img src="/assets/media/avatars/kb_eat.png" />
                 </div>
               </div>
             </div>
@@ -240,7 +240,7 @@
               <div class="card-body">
                 <!-- 이미지 추가 -->
                 <div class="image-container mt-4 text-center">
-                  <img src="../../assets/media/avatars/kb_2my.png" />
+                  <img src="/assets/media/avatars/kb_2my.png" />
                 </div>
               </div>
             </div>
@@ -283,7 +283,7 @@
               <div class="card-body">
                 <!-- 이미지 추가 -->
                 <div class="image-container mt-4">
-                  <img src="../../assets/media/avatars/kb_rabbit.png" />
+                  <img src="/assets/media/avatars/kb_rabbit.png" />
                 </div>
               </div>
             </div>
@@ -326,7 +326,7 @@
               <div class="card-body">
                 <!-- 이미지 추가 -->
                 <div class="image-container mt-4" style="margin-left: -10px;">
-                  <img src="../../assets/media/avatars/kb_sick.png" />
+                  <img src="/assets/media/avatars/kb_sick.png" />
                 </div>
               </div>
             </div>
@@ -369,7 +369,7 @@
               <div class="card-body">
                 <!-- 이미지 추가 -->
                 <div class="image-container mt-4">
-                  <img src="../../assets/media/avatars/kb_phone.png" />
+                  <img src="/assets/media/avatars/kb_phone.png" />
                 </div>
               </div>
             </div>
@@ -409,7 +409,7 @@
               <div class="card-body">
                 <!-- 이미지 추가 -->
                 <div class="image-container mt-4">
-                  <img src="../../assets/media/avatars/kb_ddubeok.png" />
+                  <img src="/assets/media/avatars/kb_ddubeok.png" />
                 </div>
               </div>
             </div>
@@ -452,7 +452,7 @@
               <div class="card-body">
                 <!-- 이미지 추가 -->
                 <div class="image-container mt-4">
-                  <img src="../../assets/media/avatars/kb_back.png" />
+                  <img src="/assets/media/avatars/kb_back.png" />
                 </div>
               </div>
             </div>
@@ -495,7 +495,7 @@
               <div class="card-body">
                 <!-- 이미지 추가 -->
                 <div class="image-container" style="margin-top: -18px; margin-left: -8px;">
-                  <img src="../../assets/media/avatars/study.png" height="220px"/>
+                  <img src="/assets/media/avatars/study.png" height="220px"/>
                 </div>
               </div>
             </div>
@@ -538,7 +538,7 @@
               <div class="card-body">
                 <!-- 이미지 추가 -->
                 <div class="image-container mt-4">
-                  <img src="../../assets/media/avatars/kb_sul.png" />
+                  <img src="/assets/media/avatars/kb_sul.png" />
                 </div>
               </div>
             </div>

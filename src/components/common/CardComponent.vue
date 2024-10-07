@@ -5,9 +5,7 @@
     <ul class="card-description">
       <li v-for="(item, index) in description" :key="index">{{ item }}</li>
     </ul>
-    <router-link to="/cardworldcup/winnercard">
-      <button class="select-button">선택{{ item }}</button>
-    </router-link>
+    <button class="select-button">선택{{ item }}</button>
     <a @click.prevent="goToCard" href="#" class="more-info">자세한 정보 알아보기</a>
   </div>
 </template>
