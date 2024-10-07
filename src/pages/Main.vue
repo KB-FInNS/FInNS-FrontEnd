@@ -3,7 +3,7 @@
         <SearchComponent />
     </div>
     <!-- <div class="maincontainer"> -->
-        <div class="row ms-10 me-10">
+        <div class="row ms-7 me-7">
             <!--게시글 피드-->
             <div class="col-lg-8">
             <div @scroll="handleScroll" style="overflow-y: auto; ">
