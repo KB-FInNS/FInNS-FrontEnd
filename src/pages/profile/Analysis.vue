@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-10">
       <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold justify-content-center">
         <!--begin::Nav item-->
         <li class="nav-item">
@@ -14,42 +14,46 @@
       </ul>
   </div>
 
-  <div>
-    <div class="d-flex align-items-center">
-        <div id="kt_docs_google_chart_pie"></div>
-
-        <div v-if="categorys.length === 0">
-          <h4 id="nolist">소비 내역이 없습니다!</h4>
-        </div>
-        <div v-else v-if="isTableVisible">
-          <div class="table-responsive" style="height: 450px; width: 700px; overflow-y: auto;">
-            <table
-              id="kt_datatable_vertical_scroll"
-              class="table table-row-bordered gy-7 gs-10"
-              style="border-collapse: separate; border-spacing: 0 15px;">
-              <tbody>
-                <tr
-                  v-for="(item, index) in sortedCategorys"
-                  :key="index"
-                  :style="{ backgroundColor: bgColors[index] }"
-                  @click="showCategoryList(item.category)"
-                  style="cursor: pointer;"
-                >
-                  <td class="src" style="border-radius: 30px 0px 0px 30px;">
-                    <img :src="item.src" style="width: 40px; height: 40px; margin-left: 40px" />
-                    <span class="ms-8 fs-3 fw-semibold" style="color: #4A4A4A">{{ item.category }}</span>
-                  </td>
-                  <td class="percentage fs-3 fw-semibold text-center" style="color: #4A4A4A; border-radius: 0px 30px 30px 0px;">
-                    {{ item.percentage }}%
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+  <div class="d-flex align-items-center" style="margin-top: -20px;">
+    <!-- Left side (Pie Chart) -->
+    <div class="w-50 d-flex justify-content-center">
+      <div id="kt_docs_google_chart_pie"></div>
     </div>
-    <DataTables class="mt-4" :data="totalList"/>
+  
+    <!-- Right side (Table) -->
+    <div class="w-50">
+      <div v-if="categorys.length === 0">
+        <h4 id="nolist">소비 내역이 없습니다!</h4>
+      </div>
+      <div v-else v-if="isTableVisible">
+        <div class="table-responsive" style="height: 380px; overflow-y: auto;">
+          <table
+            id="kt_datatable_vertical_scroll"
+            class="table table-row-bordered"
+            style="border-collapse: separate; border-spacing: 0 15px;">
+            <tbody>
+              <tr
+                v-for="(item, index) in sortedCategorys"
+                :key="index"
+                :style="{ backgroundColor: bgColors[index] }"
+                @click="showCategoryList(item.category)"
+                style="cursor: pointer; line-height: 2.5;">
+                <td class="src" style="border-radius: 30px 0px 0px 30px; padding: 10px 20px;">
+                  <img :src="item.src" style="width: 40px; height: 40px; margin-left: 40px; margin-top: -5px" />
+                  <span class="ms-8 fs-2 fw-bold" style="color: #4A4A4A">{{ item.category }}</span>
+                </td>
+                <td class="percentage fs-2 fw-bold text-center" style="color: #4A4A4A; border-radius: 0px 30px 30px 0px; padding: 10px 20px;">
+                  {{ item.percentage }}%
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
+  
+  <DataTables style="margin-top: -20px;" :data="totalList"/>
 </template>
 
 <script setup>
@@ -78,61 +82,61 @@ const props = defineProps({
 categorys.value = [
   {
     category: '식비 & 카페',
-    src: '/src/assets/media/category/meal.png',
+    src: '/assets/media/category/meal.png',
     amount: 50000,
     percentage: null
   },
   {
     category: '술 & 유흥',
-    src: '/src/assets/media/category/alcohol.png',
+    src: '/assets/media/category/alcohol.png',
     amount: 30000,
     percentage: null
   },
   {
     category: '쇼핑',
-    src: '/src/assets/media/category/shopping.png',
+    src: '/assets/media/category/shopping.png',
     amount: 120000,
     percentage: null
   },
   {
     category: '식비 & 카페',
-    src: '/src/assets/media/category/meal.png',
+    src: '/assets/media/category/meal.png',
     amount: 50000,
     percentage: null
   },
   {
     category: '술 & 유흥',
-    src: '/src/assets/media/category/alcohol.png',
+    src: '/assets/media/category/alcohol.png',
     amount: 30000,
     percentage: null
   },
   {
     category: '쇼핑',
-    src: '/src/assets/media/category/shopping.png',
+    src: '/assets/media/category/shopping.png',
     amount: 120000,
     percentage: null
   },
   {
     category: '쇼핑',
-    src: '/src/assets/media/category/shopping.png',
+    src: '/assets/media/category/shopping.png',
     amount: 120000,
     percentage: null
   },
   {
     category: '식비 & 카페',
-    src: '/src/assets/media/category/meal.png',
+    src: '/assets/media/category/meal.png',
     amount: 50000,
     percentage: null
   },
   {
     category: '술 & 유흥',
-    src: '/src/assets/media/category/alcohol.png',
+    src: '/assets/media/category/alcohol.png',
     amount: 30000,
     percentage: null
   },
   {
     category: '쇼핑',
-    src: '/src/assets/media/category/shopping.png',
+    src: '/assets/media/category/shopping.png',
     amount: 120000,
     percentage: null
   },
@@ -198,35 +202,35 @@ const categoryClick = async (category) => {
   try {
     totalList.value = [
         {
-            categoryImg: '/src/assets/media/category/meal.png',
+            categoryImg: '/assets/media/category/meal.png',
             place: '미친피자',
             amount: 46000,
             date: '2024-09-24 13:01',
             checked: true,
         },
         {
-            categoryImg: '/src/assets/media/category/meal.png',
+            categoryImg: '/assets/media/category/meal.png',
             place: '한사바리',
             amount: 60000,
             date: '2024-09-23 20:43',
             checked: true,
         },
         {
-            categoryImg: '/src/assets/media/category/meal.png',
+            categoryImg: '/assets/media/category/meal.png',
             place: 'Apple',
             amount: 1600000,
             date: '2024-09-22 23:11',
             checked: true,
         },
         {
-            categoryImg: '/src/assets/media/category/meal.png',
+            categoryImg: '/assets/media/category/meal.png',
             place: '매머드커피',
             amount: 3000,
             date: '2024-09-25 09:54',
             checked: true,
         },
         {
-            categoryImg: '/src/assets/media/category/meal.png',
+            categoryImg: '/assets/media/category/meal.png',
             place: 'GS25',
             amount: 2400,
             date: '2024-09-21 11:02',
@@ -250,8 +254,8 @@ const showCategoryList = (category) => {
 }
 
 onMounted(() => {
-  categoryClick();
   loadGoogleCharts();
+  categoryClick();
 });
 
 </script>

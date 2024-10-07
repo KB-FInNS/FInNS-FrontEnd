@@ -2,12 +2,12 @@
   <div id="kt_aside" class="aside aside-default aside-hoverable" data-kt-drawer="true" data-kt-drawer-name="aside"
     data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"
     data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start"
-    data-kt-drawer-toggle="#kt_aside_toggle">
+    data-kt-drawer-toggle="#kt_aside_toggle" style="overflow-y: auto;">
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto px-10 pt-9 pb-5" id="kt_aside_logo">
       <!--begin::Logo-->
       <router-link to="/">
-        <img alt="Logo" src="@/assets/media/logos/logo-default.svg" class="max-h-50px logo-default theme-light-show" />
+        <img alt="Logo" src="/assets/media/logos/logo-FInNS.png" width="120px" style="margin-left: 1px;"/>
       </router-link>
       <!--end::Logo-->
     </div>
@@ -37,7 +37,7 @@
                     fill="currentColor" />
                 </svg>
               </span>
-              <span class="menu-title mx-5 text-primary">홈</span>
+              <span class="menu-title mx-5">홈</span>
             </router-link>
             <!--end:Menu link-->
           </div>
@@ -187,25 +187,6 @@
           </div>
           <!--end:Menu item-->
 
-          <!--begin:Menu item-->
-          <div class="menu-item mt-5">
-            <!--begin:Menu link-->
-            <router-link class="menu-link" to="/postDetails" exact-active-class="active">
-              <span class="menu-icon svg-icon svg-icon-muted svg-icon-2hx" style="color: violet">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M15.43 8.56949L10.744 15.1395C10.6422 15.282 10.5804 15.4492 10.5651 15.6236C10.5498 15.7981 10.5815 15.9734 10.657 16.1315L13.194 21.4425C13.2737 21.6097 13.3991 21.751 13.5557 21.8499C13.7123 21.9488 13.8938 22.0014 14.079 22.0015H14.117C14.3087 21.9941 14.4941 21.9307 14.6502 21.8191C14.8062 21.7075 14.9261 21.5526 14.995 21.3735L21.933 3.33649C22.0011 3.15918 22.0164 2.96594 21.977 2.78013C21.9376 2.59432 21.8452 2.4239 21.711 2.28949L15.43 8.56949Z"
-                    fill="currentColor" />
-                  <path opacity="0.3"
-                    d="M20.664 2.06648L2.62602 9.00148C2.44768 9.07085 2.29348 9.19082 2.1824 9.34663C2.07131 9.50244 2.00818 9.68731 2.00074 9.87853C1.99331 10.0697 2.04189 10.259 2.14054 10.4229C2.23919 10.5869 2.38359 10.7185 2.55601 10.8015L7.86601 13.3365C8.02383 13.4126 8.19925 13.4448 8.37382 13.4297C8.54839 13.4145 8.71565 13.3526 8.85801 13.2505L15.43 8.56548L21.711 2.28448C21.5762 2.15096 21.4055 2.05932 21.2198 2.02064C21.034 1.98196 20.8409 1.99788 20.664 2.06648Z"
-                    fill="currentColor" />
-                </svg>
-              </span>
-              <span class="menu-title mx-5">게시물 수정</span>
-            </router-link>
-            <!--end:Menu link-->
-          </div>
-          <!--end:Menu item-->
           <!--금융상품추천-->
           <div class="recommendation-container">
             <div class="card-container">
@@ -238,7 +219,7 @@ import { ref } from 'vue';
 
 const products = ref([
 {
-    icon: '/src/assets/media/icons/sug1.jpg', // 아이콘 링크
+    icon: '/assets/media/icons/sug1.jpg', // 아이콘 링크
     title: '금리가 가장 높은 상품',
     link1: { name: 'Deposit' }, 
     link2: { name: 'InstallmentSavings' }, 
@@ -246,7 +227,7 @@ const products = ref([
     linkText2: '적금 상품', 
   },
   {
-    icon: '/src/assets/media/icons/sug2.jpg', // 아이콘 링크
+    icon: '/assets/media/icons/sug2.jpg', // 아이콘 링크
     title: '최다 가입 상품',
     link1: { name: 'Deposit' }, 
     link2: { name: 'InstallmentSavings' }, // 라우트 이름

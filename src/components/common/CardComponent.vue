@@ -5,7 +5,9 @@
     <ul class="card-description">
       <li v-for="(item, index) in description" :key="index">{{ item }}</li>
     </ul>
-    <button class="select-button">선택</button>
+    <router-link to="/cardworldcup/winnercard">
+      <button class="select-button">선택{{ item }}</button>
+    </router-link>
     <a @click.prevent="goToCard" href="#" class="more-info">자세한 정보 알아보기</a>
   </div>
 </template>
@@ -23,10 +25,7 @@ const goToCard = () => {
 .card {
   background-color: #f1f7ff;
   border-radius: 10px;
-  padding-top: 30px;
-  padding-right: 30px;
-  padding-left: 30px;
-  padding-bottom: 20px;
+  padding: 30px;
   width: 320px;
   text-align: center;
 }
@@ -49,11 +48,10 @@ const goToCard = () => {
   font-weight: normal;
   font-size: 16px;
   line-height: 2;
-  /* 원하는 줄 간격으로 조정하세요 */
 }
 
 .select-button {
-  background-color: #00A3FF;
+  background-color: #00a3ff;
   color: white;
   border: none;
   padding: 8px 10px;
@@ -63,8 +61,6 @@ const goToCard = () => {
   font-weight: bold;
   font-size: 15px;
   width: 70px;
-  margin: 0 auto;
-  /* 버튼을 가운데 정렬 */
 }
 
 .more-info {
@@ -72,9 +68,7 @@ const goToCard = () => {
   color: #6c757d;
   text-decoration: none;
   display: block;
-  /* 블록 요소로 설정 */
   text-align: right;
-  /* 왼쪽 정렬 */
   margin-top: 20px;
 }
 </style>

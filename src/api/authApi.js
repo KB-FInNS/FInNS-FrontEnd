@@ -5,10 +5,10 @@ const BASE_URL = '/api/member';
 const headers = { 'Content-Type': 'multipart/form-data' };
 
 export default {
-  // userId 중복 체크, true: 중복(사용불가), false: 사용 가능
-  async checkUsername(userId) {
+  // username 중복 체크, true: 중복(사용불가), false: 사용 가능
+  async checkUsername(username) {
     try {
-      const { data } = await api.get(`${BASE_URL}/checkusername/${userId}`);
+      const { data } = await api.get(`${BASE_URL}/checkusername/${username}`);
       console.log('AUTH GET CHECKUSERNAME', data);
       return data;
     } catch (error) {
@@ -19,13 +19,10 @@ export default {
   async create(member) {
     // 아바타 파일 업로드 – multipart 인코딩 필요 → FormData 객체 사용
     const formData = new FormData();
-    formData.append('userId', member.userId);
+    formData.append('username', member.username);
     formData.append('password', member.password);
-    formData.append('birthdate', member.birthdate);
-
-    if (member.avatar) {
-      formData.append('avatar', member.avatar);
-    }
+    formData.append('password2', member.password2);
+    formData.append('birth', member.birth);
 
     try {
       const { data } = await api.post(BASE_URL, formData, { headers });
@@ -37,17 +34,17 @@ export default {
     }
   },
   async update(member) {
-    console.log('업데이트 요청 userId:', member.userId); // 로그에서 정확한 필드명 사용
+    console.log('업데이트 요청 username:', member.username); // 로그에서 정확한 필드명 사용
     const formData = new FormData();
-    formData.append('userId', member.userId);
+    formData.append('username', member.username);
     formData.append('password', member.password);
 
     // `birth` 형식 변환
     formData.append(
-      'birthdate',
-      member.birthdate instanceof Date
-        ? member.birthdate.toISOString().split('T')[0] // ISO 형식에서 날짜 부분만 사용
-        : member.birthdate
+      'birth',
+      member.birth instanceof Date
+        ? member.birth.toISOString().split('T')[0] // ISO 형식에서 날짜 부분만 사용
+        : member.birth
     );
 
     if (member.avatar) {
@@ -55,9 +52,13 @@ export default {
     }
 
     try {
-      const { data } = await api.put(`${BASE_URL}/${member.userId}`, formData, {
-        headers,
-      });
+      const { data } = await api.put(
+        `${BASE_URL}/${member.username}`,
+        formData,
+        {
+          headers,
+        }
+      );
       console.log('AUTH PUT: ', data);
       return data;
     } catch (error) {
@@ -68,7 +69,7 @@ export default {
   // async changePassword(formData) {
   //   try {
   //     const { data } = await api.put(
-  //       `${BASE_URL}/${formData.userId}/changepassword`,
+  //       `${BASE_URL}/${formData.username}/changepassword`,
   //       formData,
   //       { headers }
   //     );

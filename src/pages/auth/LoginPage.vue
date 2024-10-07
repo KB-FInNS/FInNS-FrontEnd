@@ -4,11 +4,11 @@
     <div class="login-left">
       <div class="branding mt-4">
         <div>
-          <img src="@/assets/media/avatars/login_logo.png" class="logo" />
+          <img src="/assets/media/avatars/login_logo.png" class="logo" />
           <span class="logo">FInNS</span>
         </div>
         <img
-          src="@/assets/media/avatars/loginpage.png"
+          src="/assets/media/avatars/loginpage.png"
           alt="Illustration"
           class="login-image"
         />
@@ -22,12 +22,12 @@
         <p>FInNS 를 계속 이용하시려면 로그인을 해주세요</p>
         <form @submit.prevent="login">
           <div class="mb-3 mt-3" style="text-align: left">
-            <label for="user_id" class="form-label"> 아이디 </label>
+            <label for="username" class="form-label"> 아이디 </label>
             <input
               type="text"
               class="form-control"
               placeholder="아이디를 입력하세요."
-              v-model="member.user_id"
+              v-model="member.username"
             />
           </div>
 
@@ -69,17 +69,18 @@
             type="submit"
             class="btn btn-primary mt-4"
             :disabled="disableSubmit"
+            style="border-radius: 13px; height: 50px"
           >
-            로그인
+            <div style="font-weight: 550; font-size: 17px">로그인</div>
           </button>
-          <div class="text-center">또는</div>
+          <!-- <div class="text-center">또는</div>
           <button class="btn btn-success mt-2 w-100 naver-login-btn">
             <img
-              src="../../assets/media/avatars/login_naver.png"
+              src="/assets/media/avatars/login_naver.png"
               class="naver-logo"
             />
             네이버 아이디로 로그인
-          </button>
+          </button> -->
 
           <div class="text-center pt-6">
             <router-link
@@ -104,20 +105,25 @@ const cr = useRoute();
 const router = useRouter();
 const auth = useAuthStore();
 const member = reactive({
-  user_id: '12341234',
+  username: 'asd1',
   password: '1234',
 });
 const error = ref('');
-const disableSubmit = computed(() => !(member.user_id && member.password));
+const disableSubmit = computed(() => !(member.username && member.password));
 
 const login = async () => {
   try {
+    console.log('로그인 요청 데이터:', member); // 데이터가 보내지기 전에 콘솔 출력
+
     await auth.login(member);
+
+    console.log('로그인 성공'); // 로그인 성공 시 메시지 출력
     router.push('/');
   } catch (e) {
     // 로그인 에러가 발생하는 경우 처리
     error.value =
       e.response?.data || '로그인에 실패하였습니다. 다시 시도해주세요.';
+    console.error('로그인 에러:', error.value); // 에러 메시지 출력
   }
 };
 

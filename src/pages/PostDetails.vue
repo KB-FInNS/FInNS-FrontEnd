@@ -6,7 +6,7 @@
     />
   </div>
 
-  <div class="container post-edit mt-5 p-4 rounded">
+  <div class="container post-edit mt-0 p-4 rounded">
     <!-- 공개 범위 선택 -->
     <div class="form-group mb-4 public-scope">
       <label for="public-range" class="form-label font-weight-bold"
@@ -165,9 +165,9 @@ function confirm() {
 
 // 이미지 목록
 const images = ref([
-  'src/assets/media/food/samgeob1.jpg',
-  'src/assets/media/food/samgeob2.jpg',
-  'src/assets/media/food/samgeob3.jpg',
+  '/assets/media/food/samgeob1.jpg',
+  '/assets/media/food/samgeob2.jpg',
+  '/assets/media/food/samgeob3.jpg',
 ]);
 
 // Dropzone 초기화

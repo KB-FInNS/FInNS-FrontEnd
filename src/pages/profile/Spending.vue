@@ -1,5 +1,5 @@
 <template>
-    <div class="mb-8">
+    <div class="mb-8 mt-10">
         <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold justify-content-center">
           <!--begin::Nav item-->
           <li class="nav-item">
@@ -15,7 +15,7 @@
     </div>
 
     <Calendar />
-    <DataTables class="mt-4" :data="totalList"/>
+    <DataTables style="margin-top: 50px;" :data="totalList"/>
 </template>
 
 <script setup>
@@ -31,35 +31,35 @@ const dayClick = async (date) => {
   try {
     totalList.value = [
         {
-           categoryImg: '/src/assets/media/category/meal.png',
+           categoryImg: '/assets/media/category/meal.png',
             place: '미친피자',
             amount: 46000,
             date: '2024-09-23 13:01',
             checked: true,
         },
         {
-            categoryImg: '/src/assets/media/category/alcohol.png',
+            categoryImg: '/assets/media/category/alcohol.png',
             place: '한사바리',
             amount: 60000,
             date: '2024-09-23 20:43',
             checked: true,
         },
         {
-           categoryImg: '/src/assets/media/category/shopping.png',
+           categoryImg: '/assets/media/category/shopping.png',
             place: 'Apple',
             amount: 1600000,
             date: '2024-09-23 23:11',
             checked: true,
         },
         {
-            categoryImg: '/src/assets/media/category/meal.png',
+            categoryImg: '/assets/media/category/meal.png',
             place: '매머드커피',
             amount: 3000,
             date: '2024-09-23 09:54',
             checked: true,
         },
         {
-            categoryImg: '/src/assets/media/category/convenienceStore.png',
+            categoryImg: '/assets/media/category/convenienceStore.png',
             place: 'GS25',
             amount: 2400,
             date: '2024-09-23 11:02',

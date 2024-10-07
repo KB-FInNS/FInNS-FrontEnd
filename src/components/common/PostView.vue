@@ -11,22 +11,46 @@
                     <div class="d-flex align-items-center">
                         <!--begin::Avatar-->
                         <div class="symbol symbol-50px me-5">
-                            <img src="@/assets/media/avatars/300-4.jpg" class="" alt="" />
+                            <img src="/assets/media/avatars/300-4.jpg" class="" alt="" />
                         </div>
                         <!--end::Avatar-->
                         <!--begin::Info-->
                         <div class="flex-grow-1">
                             <!--begin::Name-->
-                            <a href="#" class="text-gray-800 text-hover-primary fs-4 fw-bold">Yujin_1219</a>
+                            <a href="profile/spending" class="text-gray-800 text-hover-primary fs-4 fw-bold">Yujin_1219</a>
                             <!--end::Name-->
                             <!--begin::Date-->
                             <span class="text-gray-500 fw-semibold d-block">09월 24일 15:30</span>
                             <!--end::Date-->
                         </div>
                         <!--end::Info-->
+
+                        <!-- 모달 트리거 버튼 (display: none; - JS를 통해 제어) -->
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal"
+                        style="display: none" ref="modalTrigger"></button>
+
+                        <!--begin::Menu-->
+                        <div class="me-0">
+                            <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
+                                data-kt-menu-trigger="click" ref="menuButton">
+                                <i class="ki-solid ki-dots-horizontal fs-2x me-1"></i>
+                            </button>
+                            <!--begin::Menu 3-->
+                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3"
+                                data-kt-menu="true">
+                                <!-- 메뉴 항목들 -->
+                                <div class="menu-item px-3">
+                                    <!-- 프로필 수정 버튼 -->
+                                    <router-link to="/postDetails" class="menu-link px-3">
+                                        게시물 상세
+                                    </router-link>
+                                </div>
+                            </div>
+                            <!--end::Menu 3-->
+                        </div>
+                        <!--end::Menu-->
                     </div>
                     <!--end::Author-->
-
                 </div>
                 <!--end::Card header-->
                 <!--begin::Card body-->
@@ -138,7 +162,7 @@
                             <div class="d-flex pt-6">
                                 <!--begin::Avatar-->
                                 <div class="symbol symbol-45px me-5">
-                                    <img src="@/assets/media/avatars/300-13.jpg" alt="" />
+                                    <img src="/assets/media/avatars/300-13.jpg" alt="" />
                                 </div>
                                 <!--end::Avatar-->
                                 <!--begin::Wrapper-->
@@ -169,7 +193,7 @@
                     <div class="d-flex align-items-center">
                         <!--begin::Author-->
                         <div class="symbol symbol-35px me-3">
-                            <img src="@/assets/media/avatars/300-3.jpg" alt="" />
+                            <img src="/assets/media/avatars/300-3.jpg" alt="" />
                         </div>
                         <!--end::Author-->
                         <!--begin::Input group-->
@@ -188,10 +212,36 @@
     </div>
 </template>
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
+import { useRouter } from 'vue-router';
+// 모달 트리거를 위한 ref
+const modalTrigger = ref(null);
+// 메뉴를 위한 ref
+const menuButton = ref(null);
+onMounted(async () => {
+    // DOM이 렌더링된 후 초기화
+    await nextTick();
 
+    // 모달 트리거
+    if (modalTrigger.value) {
+        modalTrigger.value.click();
+    }
+
+    // 메뉴 초기화 (만약 `KTMenu`를 사용 중이라면)
+    if (window.KTMenu && menuButton.value) {
+        window.KTMenu.createInstances();
+    }
+
+    setDataList();
+});
+
+const router = useRouter();
+
+const goToPostViewPage = () => {
+    router.push('/postView'); // PostViewPage로 이동
+};
 
 const goodisActive = ref(false)
 const badisActive = ref(false)
@@ -204,23 +254,23 @@ const badtoggleActive = () => {
 }
 
 const category = [
-    { name: '식비&카페', icon: 'src/assets/media/category/meal.png' },
-    { name: '쇼핑', icon: './assets/media/category/shopping.png' },
-    { name: '미용', icon: './assets/media/category/alcohol.png' },
-    { name: '의료', icon: './assets/media/category/alcohol.png' },
-    { name: '통신', icon: './assets/media/category/alcohol.png' },
-    { name: '교통', icon: './assets/media/category/alcohol.png' },
-    { name: '문화&여행', icon: './assets/media/category/alcohol.png' },
-    { name: '교육', icon: './assets/media/category/alcohol.png' },
-    { name: '술&유흥', icon: './assets/media/category/alcohol.png' },
-    { name: '기타', icon: './assets/media/category/alcohol.png' }
+    { name: '식비&카페', icon: '/assets/media/category/meal.png' },
+    { name: '쇼핑', icon: '/assets/media/category/shopping.png' },
+    { name: '미용', icon: '/assets/media/category/alcohol.png' },
+    { name: '의료', icon: '/assets/media/category/alcohol.png' },
+    { name: '통신', icon: '/assets/media/category/alcohol.png' },
+    { name: '교통', icon: '/assets/media/category/alcohol.png' },
+    { name: '문화&여행', icon: '/assets/media/category/alcohol.png' },
+    { name: '교육', icon: '/assets/media/category/alcohol.png' },
+    { name: '술&유흥', icon: '/assets/media/category/alcohol.png' },
+    { name: '기타', icon: '/assets/media/category/alcohol.png' }
 ];
 
 // 이미지 목록
 const images = ref([
-    'src/assets/media/food/samgeob1.jpg',
-    'src/assets/media/food/samgeob2.jpg',
-    'src/assets/media/food/samgeob3.jpg',
+    '/assets/media/food/samgeob1.jpg',
+    '/assets/media/food/samgeob2.jpg',
+    '/assets/media/food/samgeob3.jpg',
 ])
 
 </script>

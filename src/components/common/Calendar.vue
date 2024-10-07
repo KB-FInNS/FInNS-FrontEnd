@@ -1,20 +1,15 @@
 <template>
-  <div class="m-10">
-    <div id="kt_calendar_app" class="fc fc-direction-ltr fc-theme-standard"></div>
-  </div>
+  <link rel="stylesheet" href="/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css">
   
+  <div id="kt_calendar_app" class="fc fc-direction-ltr fc-theme-standard"></div>
 </template>
 
 <script setup>
-import "@/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css";
-import "@/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"
-
 import { Calendar } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 
 import { getCurrentInstance, onMounted } from 'vue';
-
 
 const internalInstance = getCurrentInstance(); 
 const emitter = internalInstance.appContext.config.globalProperties.emitter;
@@ -73,21 +68,21 @@ const initializeCalendar = () => {
       calendar.select(info.event.startStr);
     },
     events: [
-      { title: (-50000).toLocaleString() + '원', start: '2024-09-01' },
-      { title: (-9020).toLocaleString() + '원', start: '2024-09-02' },
-      { title: (-4500).toLocaleString() + '원', start: '2024-09-03' },
-      { title: (-56700).toLocaleString() + '원', start: '2024-09-04' },
-      { title: (-900).toLocaleString() + '원', start: '2024-09-05' },
-      { title: (-68000).toLocaleString() + '원', start: '2024-09-07' },
-      { title: (-190000).toLocaleString() + '원', start: '2024-09-08' },
-      { title: (-2400).toLocaleString() + '원', start: '2024-09-09' },
-      { title: (-33000).toLocaleString() + '원', start: '2024-09-11' },
-      { title: (-12000).toLocaleString() + '원', start: '2024-09-12' },
-      { title: (-17500).toLocaleString() + '원', start: '2024-09-13' },
-      { title: (-9900).toLocaleString() + '원', start: '2024-09-14' },
-      { title: (-7900).toLocaleString() + '원', start: '2024-09-16' },
-      { title: (-21000).toLocaleString() + '원', start: '2024-09-17' },
-      { title: (-1600).toLocaleString() + '원', start: '2024-09-19' },
+      { title: (-50000).toLocaleString() + '원', start: '2024-10-01' },
+      { title: (-9020).toLocaleString() + '원', start: '2024-10-02' },
+      { title: (-4500).toLocaleString() + '원', start: '2024-10-03' },
+      { title: (-56700).toLocaleString() + '원', start: '2024-10-04' },
+      { title: (-900).toLocaleString() + '원', start: '2024-10-05' },
+      { title: (-68000).toLocaleString() + '원', start: '2024-10-07' },
+      { title: (-190000).toLocaleString() + '원', start: '2024-10-08' },
+      { title: (-2400).toLocaleString() + '원', start: '2024-10-10' },
+      { title: (-33000).toLocaleString() + '원', start: '2024-10-11' },
+      { title: (-12000).toLocaleString() + '원', start: '2024-10-12' },
+      { title: (-17500).toLocaleString() + '원', start: '2024-10-13' },
+      { title: (-9900).toLocaleString() + '원', start: '2024-10-14' },
+      { title: (-7900).toLocaleString() + '원', start: '2024-10-16' },
+      { title: (-21000).toLocaleString() + '원', start: '2024-10-17' },
+      { title: (-1600).toLocaleString() + '원', start: '2024-10-19' },
     ],
   });
 

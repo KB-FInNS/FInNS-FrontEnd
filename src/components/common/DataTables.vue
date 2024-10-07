@@ -1,9 +1,11 @@
 <template>
+  <!-- <link rel="stylesheet" href="/assets/plugins/custom/datatables/datatables.bundle.css"> -->
+
   <div v-if="data.length === 0">
     <h4 id="nolist">소비 내역이 없습니다!</h4>
   </div>
   <div v-else>
-    <div class="table-responsive">
+    <div class="table-responsive" style="height: 610px; overflow-y: auto;">
       <table
         id="kt_datatable_vertical_scroll"
         class="table table-row-bordered gy-5 gs-7 text-center"
@@ -27,7 +29,7 @@
             :key="index"
             :class="{ 'bg-gray-200': !item.checked }"
             class="fs-5 text-gray-600 fw-bold"
-            @click="goToPostDetail(item.id)"
+            @click="goToPostView(item.id)"
             style="cursor: pointer;"
           >
             <td class="form-check form-check-solid form-check-custom form-switch justify-content-center mt-2" style="border: none;">
@@ -63,8 +65,6 @@
 </template>
 
 <script setup>
-import '@/assets/plugins/custom/datatables/datatables.bundle.css';
-// import "@/assets/plugins/custom/datatables/datatables.bundle.js";
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
@@ -73,12 +73,14 @@ const updatePublic = (item) => {
   // 공개 범위 바꾸는 코드 작성!
 };
 
-const goToPostDetail = (id) => {
-  router.push('/postDetails'); // 해당 id에 맞는 PayDetails 페이지로 이동
+const goToPostView = (id) => {
+  router.push('/postView'); // 해당 id에 맞는 PayDetails 페이지로 이동
+  window.scrollTo(0, 0); 
 };
 
 const goToPayDetail = (id) => {
   router.push(`/payDetails/${id}`); // 해당 id에 맞는 PayDetails 페이지로 이동
+  window.scrollTo(0, 0); 
 };
 
 const props = defineProps({
