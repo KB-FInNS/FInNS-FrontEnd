@@ -7,7 +7,7 @@ const initState = {
   user: {
     user_no: '', // 사용자 no
     username: '', // 사용자 ID
-    mbti_no: '', // 추가된 필드
+    mbti_name: '', // 추가된 필드
     birth: '', // 추가된 필드
     renew_date: '',
   },
@@ -18,7 +18,7 @@ export const useAuthStore = defineStore('auth', () => {
   const isLogin = computed(() => !!state.value.user.username); // 로그인 여부
   const username = computed(() => state.value.user.username); // 로그인 사용자 ID
   const email = computed(() => state.value.user.email); // 로그인 사용자 email
-  const mbti_no = computed(() => state.value.user.mbti_no); // mbti
+  const mbti_name = computed(() => state.value.user.mbti_name); // mbti
   const birth = computed(() => state.value.user.birth); // 생년월일
   const renew_date = computed(() => state.value.user.renew_date);
 
@@ -47,7 +47,7 @@ export const useAuthStore = defineStore('auth', () => {
     state.value.user.username = member.username; // username 업데이트
     state.value.user.email = member.email; // email 업데이트
     state.value.user.birth = member.birth; // birth 업데이트
-    state.value.user.mbti_no = member.mbti_no; // mbti 업데이트
+    state.value.user.mbti_name = member.mbti_name; // mbti 업데이트
     localStorage.setItem('auth', JSON.stringify(state.value));
   };
 
@@ -58,7 +58,7 @@ export const useAuthStore = defineStore('auth', () => {
     username,
     email,
     birth,
-    mbti_no,
+    mbti_name,
     isLogin,
     renew_date,
     changeProfile,

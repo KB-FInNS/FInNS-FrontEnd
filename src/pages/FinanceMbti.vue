@@ -65,17 +65,15 @@
               <!--begin::Name-->
               <div class="d-flex align-items-center mb-2 pt-5">
                 <!-- mbti_no 사용 -->
-                <p class="text-gray-900 fs-1 fw-bold me-1">
+                <div class="text-gray-900 fs-1 fw-bold me-1">
                   {{ member.mbtiType }}
-                </p>
+
+                  {{ member.mbtiDescription }}
+                </div>
               </div>
               <!--end::Name-->
               <!--begin::Info-->
-              <div class="d-flex flex-wrap fw-semibold fs-3 mb-4 pe-2">
-                <p class="align-items-center text-gray-800 me-5 mb-2">
-                  {{ member.mbtiDescription }}
-                </p>
-              </div>
+              <div class="d-flex flex-wrap fw-semibold fs-3 mb-4 pe-2"></div>
               <!--end::Info-->
             </div>
             <!--end::User-->
@@ -597,7 +595,7 @@ const auth = useAuthStore();
 
 const member = reactive({
   username: auth.username,
-  mbtiType: auth.mbti_no, // mbtiType으로 바로 할당
+  mbtiType: auth.mbti_name, // mbtiType으로 바로 할당
 });
 const isLoading = ref(true);
 

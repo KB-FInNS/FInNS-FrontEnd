@@ -30,13 +30,8 @@
                     member.username
                   }}</span>
                   <!-- Follow/Unfollow Button -->
-                  <button
-                    class="btn btn-sm ms-10"
-                    :class="isFollow ? 'btn-light' : 'btn-primary'"
-                    @click="toggleFollow"
-                  >
-                    <span>{{ isFollow ? '팔로잉' : '팔로우' }}</span>
-                  </button>
+
+                  <FollowButton />
                 </div>
                 <!--end::Name-->
 
@@ -51,7 +46,7 @@
                       <span class="path2"></span>
                       <span class="path3"></span>
                     </i>
-                    {{ member.mbti_no }}
+                    {{ member.mbti_name }}
                   </router-link>
                 </div>
                 <!--end::Info-->
@@ -334,6 +329,8 @@
 </template>
 
 <script setup>
+import FollowButton from '@/components/common/FollowButton.vue';
+
 import SearchComponent from '@/components/common/SearchComponent.vue';
 import 'vue3-carousel/dist/carousel.css';
 import CountUp from 'vue-countup-v3';
@@ -346,7 +343,7 @@ const auth = useAuthStore();
 
 const member = ref({
   username: auth.username,
-  mbti_no: auth.mbti_no,
+  mbti_name: auth.mbti_name,
 });
 
 const router = useRouter();
@@ -370,14 +367,6 @@ const router = useRouter();
 //     console.error('데이터 가져오는 중 오류 발생:', error);
 //   }
 // };
-
-const isFollow = ref(false);
-
-const toggleFollow = () => {
-  isFollow.value = !isFollow.value; // 선택한 사용자의 팔로우 상태 전환
-
-  // true, false 값에 따라 디비에 수정돼야함
-};
 
 // 일시적인 데이터set
 const dataList = ref([]);

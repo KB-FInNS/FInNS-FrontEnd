@@ -1,6 +1,7 @@
 <script setup>
 import authApi from '@/api/authApi';
-import followApi from '@/api/buttonApi';
+import followApi from '@/api/followApi';
+
 import { useAuthStore } from '@/stores/auth';
 import { computed, reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
@@ -21,7 +22,7 @@ const member = reactive({
   newPassword: '',
   newPassword2: '',
   avatar: null,
-  mbti_no: auth.mbti_no, // 추가: MBTI
+  mbti_name: auth.mbti_name, // 추가: MBTI
 });
 
 // 비밀번호 변경 상태
@@ -73,7 +74,7 @@ const onSubmit = async () => {
   const formData = new FormData();
   formData.append('user_id', member.user_id);
   formData.append('birthdate', member.birthdate);
-  formData.append('mbti_no', member.mbti_no);
+  formData.append('mbti_name', member.mbti_name);
   formData.append('oldPassword', member.oldPassword);
   formData.append('newPassword', member.newPassword);
 
@@ -114,14 +115,16 @@ const onDeleteAvatar = () => {
   avatarPath.value = '/src/assets/media/avatars/black.png'; // 기본 아바타 이미지로 설정
   alert('프로필 사진이 삭제되었습니다.');
 };
+
+// const
 </script>
 
 <template>
   <!-- 팔로우/언팔로우 버튼 -->
   <div class="d-flex justify-content-end mt-3">
-    <button @click="handleFollow" class="btn btn-info btn-lg me-2">
+    <!-- <button @click="handleFollow" class="btn btn-info btn-lg me-2">
       {{ followStatus ? '언팔로우' : '팔로우' }}
-    </button>
+    </button> -->
   </div>
   <div class="justify-content-center align-items-center text-center bg-title">
     <h1 class="text-gray-900 fw-bold pt-8 mt-14 my-1 fs-1">마이페이지</h1>
@@ -237,15 +240,15 @@ const onDeleteAvatar = () => {
             </div>
           </div>
           <div class="mb-6 row">
-            <label for="mbti_no" class="col-sm-4 col-form-label fw-bold"
+            <label for="mbti_name" class="col-sm-4 col-form-label fw-bold"
               >MBTI</label
             >
             <div class="col-sm-8">
               <input
                 type="text"
                 class="form-control"
-                id="mbti_no"
-                v-model="member.mbti_no"
+                id="mbti_name"
+                v-model="member.mbti_name"
                 readonly
               />
             </div>

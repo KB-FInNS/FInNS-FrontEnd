@@ -83,12 +83,12 @@
             />
           </div>
           <div class="mb-3">
-            <label for="birthdate" class="form-label"> 생년월일 * </label>
+            <label for="birth" class="form-label"> 생년월일 * </label>
             <input
-              type="text"
+              type="date"
               class="form-control"
               placeholder="생년월일을 입력하세요..."
-              id="birthdate"
+              id="birth"
               v-model="member.birth"
             />
           </div>
