@@ -123,7 +123,7 @@
                         </svg>
                       </span>
 
-                      <count-up class="fs-2 text-gray-900 text-hover-primary fw-bold mt-2" :end-val="67"></count-up>
+                      <count-up class="fs-2 text-gray-900 text-hover-primary fw-bold mt-2" :end-val="spendingCounts"></count-up>
                     </div>
                     <!--end::Number-->
                   </router-link>
@@ -209,7 +209,7 @@
 
       <Carousel style="width: 50%; margin-left: -30px">
         <Slide v-for="(item, index) in cards" :key="index" @click="gotoCardDetail(item)">
-          <div style="text-align: center;">
+          <div style="text-align: center; cursor: pointer;">
             <img :src="item.card_img_url" ref="image" style="width: 100px; display: block; margin: 0 auto;">
             <div class="mt-3 fs-1 fw-bold text-hover-primary" style="color: black;">
               {{ item.card_name }}
@@ -246,6 +246,16 @@ const username = auth.username;
 
 const router = useRouter();
 
+let spendingCounts = ref(0);
+const getSpendingCounts = async (userNo) => {
+  try {
+    const response = await axios.get(`http://localhost:8080/users/${userNo}/posts/count`);
+    spendingCounts.value = response.data;
+
+  } catch (error) {
+    console.error('Error renewing posts:', error);
+  }
+};
 
 const renew = async (userNo) => {
   try {
@@ -365,6 +375,8 @@ const modalTrigger = ref(null);
 const menuButton = ref(null);
 
 onMounted(async () => {
+  getSpendingCounts(1);
+
   // DOM이 렌더링된 후 초기화
   await nextTick();
 

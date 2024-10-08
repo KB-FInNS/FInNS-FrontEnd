@@ -17,7 +17,7 @@
                     <!--begin::Info-->
                     <div class="flex-grow-1">
                         <a href="profile/spending" class="text-gray-800 text-hover-primary fs-4 fw-bold">
-                            {{ post?.author || 'Unknown' }}
+                            {{ post?.userName || 'Unknown' }}
                         </a>
                         <span class="text-gray-500 fw-semibold d-block">
                             {{ post?.transactionDate ? formatDate(post.transactionDate) : 'Unknown Date' }}
@@ -102,7 +102,7 @@
                 <div class="pt-2 pb-4">
                     <!--가격 카테고리-->
                     <span class="fw-bold p-3" style="background-color: #F1F7FF; border-radius: 5px;">
-                        <img :src="getCategoryIcon(post?.category)" alt="icon" style="height: 26px; width: 26px;" />
+                        <img :src="getCategoryIcon(post.category)" alt="icon" style="height: 26px; width: 26px;" />
                         {{ post?.category || 'Unknown Category' }}
                     </span>
                     <span class="fs-6 fw-bold text-gray-700 mb-5 ms-2">에 소비했어요</span>

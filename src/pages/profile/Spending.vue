@@ -15,7 +15,7 @@
     </div>
 
     <Calendar />
-    <DataTables style="margin-top: 50px;" :data="totalList"/>
+    <DataTables style="margin-top: 50px;" :posts="totalList"/>
 </template>
 
 <script setup>
@@ -34,14 +34,14 @@ const dayClick = async (date) => {
     totalList.value = [];
 
     // 서버로 요청 보낼 데이터 구조
-    const postRequestDTO = {
+    const postRequestByDateDTO = {
       userNo: 1, // 사용자 번호 등 추가 필요한 정보
       date: date, // 필요한 형식으로 날짜를 전달
       isPublic: true // 공개 여부 등 추가 필요한 정보
     };
 
     // 서버에 요청 보내기
-    const response = await axios.post('http://localhost:8080/posts', postRequestDTO);
+    const response = await axios.post('http://localhost:8080/posts/byDate', postRequestByDateDTO);
 
     // 요청에 성공하면 totalList를 서버에서 받은 데이터로 업데이트
     totalList.value = response.data;
