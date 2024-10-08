@@ -10,11 +10,30 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 
 import { getCurrentInstance, onMounted } from 'vue';
+import axios from 'axios';
+
 
 const internalInstance = getCurrentInstance(); 
 const emitter = internalInstance.appContext.config.globalProperties.emitter;
 
 let calendar;
+
+const addCalendarEvent = async () => {
+  try {
+    const response = await axios.get(`http://localhost:8080/users/1/amountByDate`);
+
+    let events = response.data.map(item => ({
+      title: `${item.amount.toLocaleString()}원`, // amount 값을 포맷하여 title로 사용
+      start: item.transactionDate, // transaction_date를 start로 사용
+    }));
+
+    // 이벤트를 캘린더에 추가
+    events.forEach(event => calendar.addEvent(event));
+
+  } catch (error) {
+    console.error('Error geting posts:', error);
+  }
+};
 
 const initializeCalendar = () => {
   const calendarEl = document.getElementById('kt_calendar_app');
@@ -24,9 +43,9 @@ const initializeCalendar = () => {
     selectable: true,
     locale: "ko",
     headerToolbar: {
-      left: 'prev,next today',
+      left: '',
       center: 'title',
-      right: 'today prev,next',
+      right: '',
     },
     showNonCurrentDates: false,
     fixedWeekCount: false,
@@ -60,7 +79,7 @@ const initializeCalendar = () => {
       emitter.emit('day_click', info.startStr);
 
       window.scrollTo({
-        top: 800, // 스크롤할 y축 위치
+        top: document.body.scrollHeight, // 페이지의 전체 높이로 스크롤
         behavior: 'smooth' // 부드러운 스크롤 효과
       });
     },
@@ -68,27 +87,14 @@ const initializeCalendar = () => {
       calendar.select(info.event.startStr);
     },
     events: [
-      { title: (-50000).toLocaleString() + '원', start: '2024-10-01' },
-      { title: (-9020).toLocaleString() + '원', start: '2024-10-02' },
-      { title: (-4500).toLocaleString() + '원', start: '2024-10-03' },
-      { title: (-56700).toLocaleString() + '원', start: '2024-10-04' },
-      { title: (-900).toLocaleString() + '원', start: '2024-10-05' },
-      { title: (-68000).toLocaleString() + '원', start: '2024-10-07' },
-      { title: (-190000).toLocaleString() + '원', start: '2024-10-08' },
-      { title: (-2400).toLocaleString() + '원', start: '2024-10-10' },
-      { title: (-33000).toLocaleString() + '원', start: '2024-10-11' },
-      { title: (-12000).toLocaleString() + '원', start: '2024-10-12' },
-      { title: (-17500).toLocaleString() + '원', start: '2024-10-13' },
-      { title: (-9900).toLocaleString() + '원', start: '2024-10-14' },
-      { title: (-7900).toLocaleString() + '원', start: '2024-10-16' },
-      { title: (-21000).toLocaleString() + '원', start: '2024-10-17' },
-      { title: (-1600).toLocaleString() + '원', start: '2024-10-19' },
     ],
   });
 
+  addCalendarEvent();
   calendar.render();
   // 캘린더가 펼쳐지면 디폴트로 오늘 날짜를 emit
   emitter.emit('day_click', new Date().toISOString().slice(0, 10));
+
 };
 
 onMounted(() => {

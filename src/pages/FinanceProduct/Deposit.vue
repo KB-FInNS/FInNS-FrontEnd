@@ -44,11 +44,11 @@
                   <span class="path1"></span>
                   <span class="path2"></span>
                 </i>
-                <input v-model="searchDeposit" type="text" class="form-control form-control-solid ps-10"
+                <input v-model="searchDeposit" @keyup.enter="searchEnter" type="text" class="form-control form-control-solid ps-10"
                   placeholder="은행명, 예금 상품명을 입력해주세요.">
               </div>
               <div>
-                <button class="btn btn-primary px-4" @click="searchFunction">검색</button>
+                <button class="btn btn-primary px-4" @click="searchEnter">검색</button>
               </div>
             </div>
           </div>

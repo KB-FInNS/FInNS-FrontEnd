@@ -159,10 +159,14 @@
                         </svg>
                       </span>
 
+<<<<<<< HEAD
                       <count-up
                         class="fs-2 text-gray-900 text-hover-primary fw-bold mt-2"
                         :end-val="67"
                       ></count-up>
+=======
+                      <count-up class="fs-2 text-gray-900 text-hover-primary fw-bold mt-2" :end-val="spendingCounts"></count-up>
+>>>>>>> bf204a281f0020e54d7ed106ffc7bd640669b37a
                     </div>
                     <!--end::Number-->
                   </router-link>
@@ -237,10 +241,14 @@
                   </router-link>
 
                   <div style="position: absolute; bottom: 10px; right: 20px">
+<<<<<<< HEAD
                     <i
                       class="ki-duotone ki-arrows-circle text-primary fs-3x"
                       @click="updateHistory"
                     >
+=======
+                    <i class="ki-duotone ki-arrows-circle text-primary fs-3x" style="cursor: pointer;" @click="renew(1)">
+>>>>>>> bf204a281f0020e54d7ed106ffc7bd640669b37a
                       <span class="path1"></span>
                       <span class="path2"></span>
                     </i>
@@ -296,6 +304,7 @@
       </table>
 
       <Carousel style="width: 50%; margin-left: -30px">
+<<<<<<< HEAD
         <Slide
           v-for="(item, index) in cards"
           :key="index"
@@ -311,6 +320,12 @@
               class="mt-3 fs-1 fw-bold text-hover-primary"
               style="color: black"
             >
+=======
+        <Slide v-for="(item, index) in cards" :key="index" @click="gotoCardDetail(item)">
+          <div style="text-align: center; cursor: pointer;">
+            <img :src="item.card_img_url" ref="image" style="width: 100px; display: block; margin: 0 auto;">
+            <div class="mt-3 fs-1 fw-bold text-hover-primary" style="color: black;">
+>>>>>>> bf204a281f0020e54d7ed106ffc7bd640669b37a
               {{ item.card_name }}
             </div>
           </div>
@@ -338,6 +353,7 @@ import { ref, onMounted, nextTick } from 'vue';
 import { useRouter } from 'vue-router';
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
 import { useAuthStore } from '@/stores/auth';
+import axios from 'axios';
 
 const auth = useAuthStore();
 
@@ -348,25 +364,25 @@ const member = ref({
 
 const router = useRouter();
 
-// 갱신 버튼 클릭 시 사용
-// import { ref } from 'vue';
+let spendingCounts = ref(0);
+const getSpendingCounts = async (userNo) => {
+  try {
+    const response = await axios.get(`http://localhost:8080/users/${userNo}/posts/count`);
+    spendingCounts.value = response.data;
 
-// const data = ref(null); // 가져온 데이터를 저장할 반응형 변수
+  } catch (error) {
+    console.error('Error renewing posts:', error);
+  }
+};
 
-// const updateHistory = async () => {
-//   console.log('데이터를 가져오는 중...');
-
-//   try {
-//     const response = await fetch('https://api.example.com/data');
-//     if (!response.ok) {
-//       throw new Error('네트워크 응답에 문제가 있습니다.');
-//     }
-//     data.value = await response.json(); // 데이터를 반응형 변수에 저장
-//     console.log('가져온 데이터:', data.value);
-//   } catch (error) {
-//     console.error('데이터 가져오는 중 오류 발생:', error);
-//   }
-// };
+const renew = async (userNo) => {
+  try {
+    const response = await axios.put(`http://localhost:8080/users/${userNo}/renew`);
+    location.reload();
+  } catch (error) {
+    console.error('Error renewing posts:', error);
+  }
+};
 
 // 일시적인 데이터set
 const dataList = ref([]);
@@ -475,6 +491,8 @@ const modalTrigger = ref(null);
 const menuButton = ref(null);
 
 onMounted(async () => {
+  getSpendingCounts(1);
+
   // DOM이 렌더링된 후 초기화
   await nextTick();
 

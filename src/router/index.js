@@ -126,7 +126,7 @@ const router = createRouter({
           component: CardDetail,
         },
         {
-          path: '/postView',
+          path: `/postView/:postNo`,
           name: 'PostViewPage',
           component: PostViewPage,
         },

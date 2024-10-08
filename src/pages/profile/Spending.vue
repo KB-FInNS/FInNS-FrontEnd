@@ -15,62 +15,42 @@
     </div>
 
     <Calendar />
-    <DataTables style="margin-top: 50px;" :data="totalList"/>
+    <DataTables style="margin-top: 50px;" :posts="totalList"/>
 </template>
 
 <script setup>
 import Calendar from '@/components/common/Calendar.vue'
 import DataTables from '@/components/common/DataTables.vue'
 import { getCurrentInstance, ref } from 'vue';
+import axios from 'axios';
 
 const internalInstance = getCurrentInstance(); 
 const emitter = internalInstance.appContext.config.globalProperties.emitter;
 const totalList = ref([]);
+
 const dayClick = async (date) => {
-  // date를 기준으로 서버에서 데이터 가져와서 totalList.value 바꿔야함
   try {
-    totalList.value = [
-        {
-           categoryImg: '/assets/media/category/meal.png',
-            place: '미친피자',
-            amount: 46000,
-            date: '2024-09-23 13:01',
-            checked: true,
-        },
-        {
-            categoryImg: '/assets/media/category/alcohol.png',
-            place: '한사바리',
-            amount: 60000,
-            date: '2024-09-23 20:43',
-            checked: true,
-        },
-        {
-           categoryImg: '/assets/media/category/shopping.png',
-            place: 'Apple',
-            amount: 1600000,
-            date: '2024-09-23 23:11',
-            checked: true,
-        },
-        {
-            categoryImg: '/assets/media/category/meal.png',
-            place: '매머드커피',
-            amount: 3000,
-            date: '2024-09-23 09:54',
-            checked: true,
-        },
-        {
-            categoryImg: '/assets/media/category/convenienceStore.png',
-            place: 'GS25',
-            amount: 2400,
-            date: '2024-09-23 11:02',
-            checked: true,
-        },
-    ];
-  }
-   catch (error) {
+    // 요청 전에 totalList를 빈 배열로 초기화
+    totalList.value = [];
+
+    // 서버로 요청 보낼 데이터 구조
+    const postRequestByDateDTO = {
+      userNo: 1, // 사용자 번호 등 추가 필요한 정보
+      date: date, // 필요한 형식으로 날짜를 전달
+      isPublic: true // 공개 여부 등 추가 필요한 정보
+    };
+
+    // 서버에 요청 보내기
+    const response = await axios.post('http://localhost:8080/posts/byDate', postRequestByDateDTO);
+
+    // 요청에 성공하면 totalList를 서버에서 받은 데이터로 업데이트
+    totalList.value = response.data;
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    // 에러 발생 시 totalList를 빈 배열로 설정
     totalList.value = [];
   }
-}
+};
 emitter.on('day_click', dayClick);
 
 </script>
