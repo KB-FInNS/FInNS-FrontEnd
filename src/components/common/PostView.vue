@@ -17,10 +17,10 @@
                     <!--begin::Info-->
                     <div class="flex-grow-1">
                         <a href="profile/spending" class="text-gray-800 text-hover-primary fs-4 fw-bold">
-                            {{ post?.author || 'Unknown' }}
+                            {{ post.author || 'Unknown' }}
                         </a>
                         <span class="text-gray-500 fw-semibold d-block">
-                            {{ post?.transactionDate ? formatDate(post.transactionDate) : 'Unknown Date' }}
+                            {{ post.transactionDate ? formatDate(post.transactionDate) : 'Unknown Date' }}
                         </span>
                     </div>
 
@@ -69,7 +69,7 @@
                     </span>
                     <!--장소-->
                     <span class="fs-6 fw-bold text-gray-700 mb-5 ms-2">
-                        {{ post?.place || 'Unknown Place' }}
+                        {{ post.place || 'Unknown Place' }}
                     </span>
                 </div>
                 <div class="pt-2 pb-3">
@@ -84,7 +84,7 @@
                     </span>
                     <!--가격-->
                     <span class="fs-6 fw-bold text-gray-700 mb-5 ms-2">
-                        {{ post?.amount ? `${post.amount.toLocaleString()}원` : 'Unknown Amount' }}
+                        {{ post.amount ? `${post.amount.toLocaleString()}원` : 'Unknown Amount' }}
                     </span>
                 </div>
                 <!--end::Post content-->
@@ -102,8 +102,8 @@
                 <div class="pt-2 pb-4">
                     <!--가격 카테고리-->
                     <span class="fw-bold p-3" style="background-color: #F1F7FF; border-radius: 5px;">
-                        <img :src="getCategoryIcon(post?.category)" alt="icon" style="height: 26px; width: 26px;" />
-                        {{ post?.category || 'Unknown Category' }}
+                        <img :src="getCategoryIcon(post.category)" alt="icon" style="height: 26px; width: 26px;" />
+                        {{ post.category || 'Unknown Category' }}
                     </span>
                     <span class="fs-6 fw-bold text-gray-700 mb-5 ms-2">에 소비했어요</span>
                 </div>
@@ -214,17 +214,14 @@ const props = defineProps({
         type: Number,
         required: true,
     },
-    post: {
-        type: Object,
-        required: false,
-    },
+    
 });
 const getCategoryIcon = (categoryName) => {
     const categoryItem = category.find(item => item.name === categoryName);
     return categoryItem ? categoryItem.icon : '/assets/media/category/default.png';
 };
 
-const post = ref(props.post || null); // 전달된 post가 있으면 사용하고, 없으면 null로 초기화
+const post = ref(null); // 전달된 post가 있으면 사용하고, 없으면 null로 초기화
 const goodisActive = ref(false);
 const badisActive = ref(false);
 
