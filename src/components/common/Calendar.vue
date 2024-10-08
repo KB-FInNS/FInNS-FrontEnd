@@ -27,8 +27,6 @@ const addCalendarEvent = async () => {
       start: item.transactionDate, // transaction_date를 start로 사용
     }));
 
-    console.log(events);
-
     // 이벤트를 캘린더에 추가
     events.forEach(event => calendar.addEvent(event));
 

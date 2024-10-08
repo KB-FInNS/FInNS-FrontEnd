@@ -137,7 +137,7 @@ const fetchPostNos = async (loadSize) => {
       limit: loadSize // 가져올 데이터 수
     };
 
-    const response = await axios.post('http://localhost:8080/posts', postRequestDTO);
+    const response = await axios.post('http://localhost:8080/posts/byDate', postRequestDTO);
     console.log('Fetched Post Nos:', response.data);
 
     // 응답 데이터가 유효한지 확인하고, postNo를 포함한 객체를 배열에 추가
