@@ -22,7 +22,7 @@
               <div class="d-flex flex-column">
                 <!--begin::Name-->
                 <div class="d-flex align-items-center mb-2">
-                  <span class="text-gray-900 fs-2 fw-bold me-1">Yujin_1219</span>
+                  <span class="text-gray-900 fs-2 fw-bold me-1">{{username}}</span>
                   <button class="btn btn-sm ms-10" :class="isFollow ? 'btn-light' : 'btn-primary'"
                     @click="toggleFollow()">
                     <span>{{ isFollow ? '팔로잉' : '팔로우' }}</span>
@@ -39,7 +39,7 @@
                       <span class="path2"></span>
                       <span class="path3"></span>
                     </i>
-                    먹는게제일좋아형
+                    {{auth.mbti_no}}
                   </router-link>
                 </div>
                 <!--end::Info-->
@@ -168,7 +168,7 @@
                   </router-link>
 
                   <div style="position: absolute; bottom: 10px; right: 20px">
-                    <i class="ki-duotone ki-arrows-circle text-primary fs-3x" @click="updateHistory">
+                    <i class="ki-duotone ki-arrows-circle text-primary fs-3x" style="cursor: pointer;" @click="renew(1)">
                       <span class="path1"></span>
                       <span class="path2"></span>
                     </i>
@@ -230,34 +230,31 @@
 </template>
 
 <script setup>
+import SearchComponent from "@/components/common/SearchComponent.vue";
 import "vue3-carousel/dist/carousel.css";
 import CountUp from 'vue-countup-v3';
 import { ref, onMounted, nextTick } from 'vue';
 import { useRouter } from 'vue-router';
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
-import SearchComponent from "@/components/common/SearchComponent.vue";
+import { useAuthStore } from '@/stores/auth';
+import axios from 'axios';
+
+
+const auth = useAuthStore();
+
+const username = auth.username;
 
 const router = useRouter();
 
-// 갱신 버튼 클릭 시 사용
-// import { ref } from 'vue';
 
-// const data = ref(null); // 가져온 데이터를 저장할 반응형 변수
-
-// const updateHistory = async () => {
-//   console.log('데이터를 가져오는 중...');
-
-//   try {
-//     const response = await fetch('https://api.example.com/data');
-//     if (!response.ok) {
-//       throw new Error('네트워크 응답에 문제가 있습니다.');
-//     }
-//     data.value = await response.json(); // 데이터를 반응형 변수에 저장
-//     console.log('가져온 데이터:', data.value);
-//   } catch (error) {
-//     console.error('데이터 가져오는 중 오류 발생:', error);
-//   }
-// };
+const renew = async (userNo) => {
+  try {
+    const response = await axios.put(`http://localhost:8080/users/${userNo}/renew`);
+    location.reload();
+  } catch (error) {
+    console.error('Error renewing posts:', error);
+  }
+};
 
 const isFollow = ref(false);
 

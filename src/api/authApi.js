@@ -21,12 +21,8 @@ export default {
     const formData = new FormData();
     formData.append('username', member.username);
     formData.append('password', member.password);
-    formData.append('password', member.password2);
-    formData.append('birthdate', member.birthdate);
-
-    if (member.avatar) {
-      formData.append('avatar', member.avatar);
-    }
+    formData.append('password2', member.password2);
+    formData.append('birth', member.birth);
 
     try {
       const { data } = await api.post(BASE_URL, formData, { headers });
@@ -45,10 +41,10 @@ export default {
 
     // `birth` 형식 변환
     formData.append(
-      'birthdate',
-      member.birthdate instanceof Date
-        ? member.birthdate.toISOString().split('T')[0] // ISO 형식에서 날짜 부분만 사용
-        : member.birthdate
+      'birth',
+      member.birth instanceof Date
+        ? member.birth.toISOString().split('T')[0] // ISO 형식에서 날짜 부분만 사용
+        : member.birth
     );
 
     if (member.avatar) {

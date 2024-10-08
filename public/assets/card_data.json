@@ -1,0 +1,5459 @@
+[
+  {
+    "card_no": 1,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/13/card_img/28201/13card.png",
+    "card_name": "신한카드 Mr.Life",
+    "corp_name": "신한카드",
+    "categories": ["식비", "의료", "교통"],
+    "new_card": "최대 10만원 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/13",
+    "sale_stores": [
+      {
+        "store": "공과금",
+        "num": "10% 할인"
+      },
+      {
+        "store": "마트,편의점",
+        "num": "10% 할인"
+      },
+      {
+        "store": "식음료",
+        "num": "10% 할인"
+      }
+    ],
+    "ex_in_for": "해외겸용 15,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": "온라인발급 전용 카드",
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/35/logo_img/754/ico_bill.png",
+        "category": "공과금",
+        "description": "월납요금(공과금) 10% 할인서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/77/logo_img/932/ico_convenienceStore.png",
+        "category": "편의점",
+        "description": "편의점 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/13/logo_img/851/ico_hospital%28%EB%B3%91%EC%9B%90%EC%95%BD%EA%B5%AD%29.png",
+        "category": "병원/약국",
+        "description": "병원/약국업종 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "세탁소 업종 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "온라인 쇼핑 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/53/logo_img/768/ico_taxi.png",
+        "category": "택시",
+        "description": "택시 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "식음료 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/75/logo_img/930/ico_mart.png",
+        "category": "대형마트",
+        "description": "3대 마트 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/122/logo_img/986/ico_oil.png",
+        "category": "주유소",
+        "description": "4대 정유사 리터당 60원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "인테이크몰 20% 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 2,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2669/card_img/32807/2669card.png",
+    "card_name": "현대카드 M",
+    "corp_name": "현대카드",
+    "categories": [],
+    "new_card": "최대 14만원 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/2669",
+    "sale_stores": [
+      {
+        "store": "국내외 가맹점",
+        "num": "1.5% 적립"
+      },
+      {
+        "store": "온라인 쇼핑몰・일반음식점",
+        "num": "5% 적립"
+      },
+      {
+        "store": "해외 가맹점",
+        "num": "5% 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 30,000원 / 해외겸용 30,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "[기본 혜택] 국내외 가맹점 1.5% M포인트 적립\n전월 이용 금액 50만원 이상 이용 시"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "[추가 혜택] 온라인 쇼핑몰・외식・해외 가맹점 5% M포인트 적립(월 1만 M포인트 한도)\n전월 이용 금액 100만원 이상 이용 시"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "M 긴급적립(선지급 포인트 서비스)"
+      }
+    ]
+  },
+  {
+    "card_no": 3,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2441/card_img/37123/2441card_3.png",
+    "card_name": "KB국민 My WE:SH 카드",
+    "corp_name": "KB국민카드",
+    "categories": ["식비", "통신"],
+    "new_card": "KB국민카드 최대 11만원 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/2441",
+    "sale_stores": [
+      {
+        "store": "KB Pay",
+        "num": "10% 할인"
+      },
+      {
+        "store": "음식점",
+        "num": "10% 할인"
+      },
+      {
+        "store": "서비스팩 3개 중",
+        "num": "1개 선택할인"
+      }
+    ],
+    "ex_in_for": "국내전용 15,000원 / 해외겸용 15,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/1/logo_img/747/ico_pay.png",
+        "category": "간편결제",
+        "description": "[나한테 진심 서비스] KB Pay 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "[나한테 진심 서비스] 음식점, 편의점 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "[나한테 진심 서비스] 이동통신요금 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/169/logo_img/8178/ico_subscribe.png",
+        "category": "디지털구독",
+        "description": "[나한테 진심 서비스] OTT 30% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "[더욱 진심 서비스] 먹는데 진심-배달/커피 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "[더욱 진심 서비스] 노는데 진심-택시/커피 5%, 영화관 30% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "[더욱 진심 서비스] 관리에 진심-미용실, 스포츠, 온라인서점, 올리브영 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/7/logo_img/912/ico_etc.png",
+        "category": "기타",
+        "description": "WE:SH 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "카드 플레이트 선택 가능"
+      }
+    ]
+  },
+  {
+    "card_no": 4,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2694/card_img/33709/2694card_1.png",
+    "card_name": "신한카드 처음",
+    "corp_name": "신한카드",
+    "categories": [],
+    "new_card": "최대 10만원 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/2694",
+    "sale_stores": [
+      {
+        "store": "음식점·카페·편의점·온라인쇼핑",
+        "num": "5% 적립"
+      },
+      {
+        "store": "생활·여행·패션",
+        "num": "5% 적립"
+      },
+      {
+        "store": "정기결제",
+        "num": "최대 20% 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 15,000원 / 해외겸용 18,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "[오늘도 5% 적립 서비스] 음식점·카페·편의점·온라인쇼핑 5% 마이신한포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "[일상 속 5% 적립 서비스] 생활·여행·패션 5% 마이신한포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/169/logo_img/8178/ico_subscribe.png",
+        "category": "디지털구독",
+        "description": "[정기결제 최대 20% 적립 서비스] 통신 10% , OTT 15%, 멤버십 20% 마이신한포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "소비관리 보너스 적립 서비스 소개"
+      }
+    ]
+  },
+  {
+    "card_no": 5,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2655/card_img/32217/2655card.png",
+    "card_name": "DA카드의정석Ⅱ",
+    "corp_name": "우리카드",
+    "categories": [],
+    "new_card": "5만원 캐시백 이벤트!",
+    "detail_link": "https://www.card-gorilla.com/card/detail/2655",
+    "sale_stores": [
+      {
+        "store": "모든가맹점",
+        "num": "0.8% 할인"
+      },
+      {
+        "store": "생활업종",
+        "num": "1.3% 할인"
+      },
+      {
+        "store": "국내 공항라운지",
+        "num": "무료 이용"
+      }
+    ],
+    "ex_in_for": "국내전용 12,000원 / 해외겸용 12,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/11/logo_img/916/ico_allStore.png",
+        "category": "모든가맹점",
+        "description": "기본 Discount - 0.8% 기본 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "추가 Discount - 0.5% 추가 청구할인\n(기본 0.8% + 추가 0.5% = 1.3% 청구할인)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/39/logo_img/759/ico_lounge.png",
+        "category": "공항라운지",
+        "description": "국내 공항라운지 무료 이용 서비스 안내"
+      }
+    ]
+  },
+  {
+    "card_no": 6,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2699/card_img/34252/2699card.png",
+    "card_name": "카드의정석 TEN",
+    "corp_name": "우리카드",
+    "categories": [],
+    "new_card": "5만원 캐시백 이벤트!",
+    "detail_link": "https://www.card-gorilla.com/card/detail/2699",
+    "sale_stores": [
+      {
+        "store": "커피",
+        "num": "10% 할인"
+      },
+      {
+        "store": "편의점",
+        "num": "10% 할인"
+      },
+      {
+        "store": "음식점/주점",
+        "num": "1% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 12,000원 / 해외겸용 12,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "[TEN Discount] 5대 일상영역 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "[ONE Discount] 음식점/주점 및 온라인 간편결제 1% 청구할인"
+      }
+    ]
+  },
+  {
+    "card_no": 7,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/666/card_img/21431/666card.png",
+    "card_name": "올바른 FLEX 카드",
+    "corp_name": "NH농협카드",
+    "categories": ["여가"],
+    "new_card": "8만원 혜택 이벤트",
+    "detail_link": "https://www.card-gorilla.com/card/detail/666",
+    "sale_stores": [
+      {
+        "store": "커피",
+        "num": "50% 할인"
+      },
+      {
+        "store": "스트리밍",
+        "num": "20% 할인"
+      },
+      {
+        "store": "영화",
+        "num": "30% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 10,000원 / 해외겸용 12,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/127/logo_img/991/ico_cafe.png",
+        "category": "카페",
+        "description": "스타벅스(사이렌오더 포함) 50% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "유튜브프리미엄, 넷플릭스, 멜론 정기결제 20% 청구할인\n배달의민족, 요기요 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "CGV, 롯데시네마 30% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/7/logo_img/912/ico_etc.png",
+        "category": "기타",
+        "description": "지하철, 버스 7% 청구할인\nSKT, KT, LGU+ 7% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "쿠팡, G마켓, 11번가, 티몬, 농협몰 5% 청구할인\nCU, GS25 5% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/1/logo_img/747/ico_pay.png",
+        "category": "간편결제",
+        "description": "올원페이(NH앱카드)로 결제 시 건당 1천원 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/39/logo_img/759/ico_lounge.png",
+        "category": "공항라운지",
+        "description": "국제공항 라운지 무료이용 연 1회 제공"
+      }
+    ]
+  },
+  {
+    "card_no": 8,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2346/card_img/32523/2346card.png",
+    "card_name": "BC 바로 클리어 플러스",
+    "corp_name": "BC 바로카드",
+    "categories": ["교통", "식비", "통신"],
+    "new_card": "최대 12만원 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/2346",
+    "sale_stores": [
+      {
+        "store": "점심식사/배달앱",
+        "num": "7% 할인"
+      },
+      {
+        "store": "온라인쇼핑",
+        "num": "10% 할인"
+      },
+      {
+        "store": "휴대폰요금/스트리밍",
+        "num": "10% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 5,000원 / 해외겸용 5,000원",
+    "ex_l_mth": "전월실적 15만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/137/logo_img/1000/ico_food.png",
+        "category": "점심",
+        "description": "점심식사 7% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/139/logo_img/1002/ico_foodApp.png",
+        "category": "배달앱",
+        "description": "배달앱 7% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/52/logo_img/767/ico_traffic.png",
+        "category": "대중교통",
+        "description": "대중교통 7% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/77/logo_img/932/ico_convenienceStore.png",
+        "category": "편의점",
+        "description": "편의점 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "온라인쇼핑 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/90/logo_img/954/ico_cosmetic.png",
+        "category": "드럭스토어",
+        "description": "뷰티 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "통신 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/169/logo_img/8178/ico_subscribe.png",
+        "category": "디지털구독",
+        "description": "스트리밍 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/65/logo_img/792/ico_monthlyInstallment.png",
+        "category": "무이자할부",
+        "description": "전국 모든 가맹점 2~3개월 상시 무이자할부"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "MasterCard Platinum/ VISA Platinum 기본 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 9,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2330/card_img/24131/2330card.png",
+    "card_name": "LOCA 365 카드",
+    "corp_name": "롯데카드",
+    "categories": ["교통", "통신"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2330",
+    "sale_stores": [
+      {
+        "store": "아파트관리비, 공과금",
+        "num": "10% 할인"
+      },
+      {
+        "store": "교통, 통신, 배달앱",
+        "num": "10% 할인"
+      },
+      {
+        "store": "스트리밍",
+        "num": "1,500원 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 20,000원 / 해외겸용 20,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/35/logo_img/754/ico_bill.png",
+        "category": "공과금",
+        "description": "[생활업종]아파트관리비 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/35/logo_img/754/ico_bill.png",
+        "category": "공과금",
+        "description": "[생활업종]공과금(도시가스비, 전기료) 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/52/logo_img/767/ico_traffic.png",
+        "category": "대중교통",
+        "description": "[생활업종]대중교통 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "[생활업종]SKT, KT, LG U+ 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/139/logo_img/1002/ico_foodApp.png",
+        "category": "배달앱",
+        "description": "[생활업종]배달의 민족, 요기요, 쿠팡이츠 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/55/logo_img/783/ico_finance.png",
+        "category": "보험사",
+        "description": "[생활업종]생명보험, 손해보험 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/47/logo_img/906/ico_edu.png",
+        "category": "학습지",
+        "description": "[생활업종]학습지 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/169/logo_img/8178/ico_subscribe.png",
+        "category": "디지털구독",
+        "description": "[생활업종]넷플릭스, 유튜브, 왓챠, 멜론, 지니뮤직, 디즈니 플러스 1,500원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/65/logo_img/792/ico_monthlyInstallment.png",
+        "category": "무이자할부",
+        "description": "국내 가맹점 2~3개월 무이자 할부"
+      }
+    ]
+  },
+  {
+    "card_no": 10,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/115/card_img/20273/115card.png",
+    "card_name": "굿데이올림카드",
+    "corp_name": "KB국민카드",
+    "categories": ["통신", "교육"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/115",
+    "sale_stores": [
+      {
+        "store": "주유",
+        "num": "60원/L 할인"
+      },
+      {
+        "store": "통신요금",
+        "num": "10% 할인"
+      },
+      {
+        "store": "대형마트",
+        "num": "10% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 15,000원 / 해외겸용 20,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/21/logo_img/859/ico_oil%28%EC%A3%BC%EC%9C%A0%29.png",
+        "category": "주유",
+        "description": "주유소, 충전소 업종 리터당 60원 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/75/logo_img/930/ico_mart.png",
+        "category": "대형마트",
+        "description": "대형마트 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "전화요금, 인터넷이용료, 케이블TV 업종 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/5/logo_img/910/ico_traffic.png",
+        "category": "교통",
+        "description": "버스, 지하철, 택시 업종 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/27/logo_img/865/ico_foregin%28%ED%95%B4%EC%99%B8%29.png",
+        "category": "해외",
+        "description": "해외이용(해외직구) 5% 할인 캐시백"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "음식점, 커피전문점, 편의점, 약국 업종 10% 추가 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/4/logo_img/909/ico_edu.png",
+        "category": "교육/육아",
+        "description": "학원, 휘트니스센터 업종 10% 추가 청구할인"
+      }
+    ]
+  },
+  {
+    "card_no": 11,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/45/card_img/27703/45card.png",
+    "card_name": "American Express Blue",
+    "corp_name": "삼성카드",
+    "categories": ["여가", "통신"],
+    "new_card": "최대 15.3만원 혜택",
+    "detail_link": "https://www.card-gorilla.com/card/detail/45",
+    "sale_stores": [
+      {
+        "store": "해외",
+        "num": "5% 적립"
+      },
+      {
+        "store": "교통·통신",
+        "num": "5% 적립"
+      },
+      {
+        "store": "편의점·배달앱",
+        "num": "7% 적립"
+      }
+    ],
+    "ex_in_for": "해외겸용 15,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "편의점·배달앱 7% 멤버십리워즈 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/169/logo_img/8178/ico_subscribe.png",
+        "category": "디지털구독",
+        "description": "스트리밍서비스 20% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/127/logo_img/991/ico_cafe.png",
+        "category": "카페",
+        "description": "스타벅스·이디야 20% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "교통·통신 5% 멤버십리워즈 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "쇼핑 1.5% 멤버십리워즈 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/150/logo_img/1015/ico_foregincard.png",
+        "category": "해외이용",
+        "description": "해외 5% 멤버십리워즈 적립"
+      }
+    ]
+  },
+  {
+    "card_no": 12,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/634/card_img/21400/634card.png",
+    "card_name": "Easy all 티타늄카드",
+    "corp_name": "KB국민카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/634",
+    "sale_stores": [
+      {
+        "store": "20개 영역 중",
+        "num": "선택형 할인"
+      },
+      {
+        "store": "택시",
+        "num": "10% 할인"
+      },
+      {
+        "store": "온라인쇼핑",
+        "num": "5% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 30,000원 / 해외겸용 30,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "Easy all 선택 서비스(택1)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "1. Auto 모드 (많이 쓴 영역에서 자동 캐시백)\n2. DIY 모드 (원하는 영역에서 자유롭게 청구할인)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/25/logo_img/863/ico_premium%28%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%29.png",
+        "category": "프리미엄",
+        "description": "티타늄 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 13,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2666/card_img/32452/2666card.png",
+    "card_name": "신한카드 Point Plan",
+    "corp_name": "신한카드",
+    "categories": [],
+    "new_card": "최대 10만원 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/2666",
+    "sale_stores": [
+      {
+        "store": "국내 가맹점",
+        "num": "최대 3% 적립"
+      },
+      {
+        "store": "주말 외식비",
+        "num": "1천 포인트 적립"
+      },
+      {
+        "store": "도시가스/전기요금",
+        "num": "1천 포인트 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 20,000원 / 해외겸용 23,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "[일상 생활비 적립 서비스] 국내 건당 결제금액별 0.5~3% 포인트 적립·해외 결제금액 1% 포인트 적립\n가족행사월(5월,12월) 적립 한도 1만 포인트 추가 제공"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "[필수 생활비 적립 서비스] 주말 외식비 포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "[필수 생활비 적립 서비스] 정기결제 자동납부 포인트 적립"
+      }
+    ]
+  },
+  {
+    "card_no": 14,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/121/card_img/20353/121card.png",
+    "card_name": "다담카드",
+    "corp_name": "KB국민카드",
+    "categories": ["교통", "통신", "여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/121",
+    "sale_stores": [
+      {
+        "store": "교통/통신",
+        "num": "10% 할인"
+      },
+      {
+        "store": "주유소/충전소",
+        "num": "60원/L 할인"
+      },
+      {
+        "store": "생활/교육/쇼핑 등",
+        "num": "적립팩 선택"
+      }
+    ],
+    "ex_in_for": "해외겸용 15,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/52/logo_img/767/ico_traffic.png",
+        "category": "대중교통",
+        "description": "버스, 지하철 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "SKT, KT Olleh, LG U+ 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/122/logo_img/986/ico_oil.png",
+        "category": "주유소",
+        "description": "SK주유소(충전소) 리터당 60원 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "CGV/메가박스 온라인 영화예매시 승인건당 3,500원 청구 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/71/logo_img/926/ico_themePark.png",
+        "category": "테마파크",
+        "description": "롯데월드, 에버랜드, 캐리비안베이 30~50% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/27/logo_img/865/ico_foregin%28%ED%95%B4%EC%99%B8%29.png",
+        "category": "해외",
+        "description": "해외가맹점 5% 할인캐시백"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/27/logo_img/865/ico_foregin%28%ED%95%B4%EC%99%B8%29.png",
+        "category": "해외",
+        "description": "KB투어할인 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "선택 적립 서비스팩 - 생활/교육/쇼핑/직장인/레저팩 중 택 1"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/7/logo_img/912/ico_etc.png",
+        "category": "기타",
+        "description": "연간 이용에 따른 다담리워드 서비스,\n함께하는 기부 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 15,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2690/card_img/33494/2690card.png",
+    "card_name": "K-패스 신한카드",
+    "corp_name": "신한카드",
+    "categories": ["교통"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2690",
+    "sale_stores": [
+      {
+        "store": "대중교통",
+        "num": "10% 할인"
+      },
+      {
+        "store": "간편결제",
+        "num": "5% 할인"
+      },
+      {
+        "store": "생활 부문",
+        "num": "5% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 7,000원 / 해외겸용 10,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/52/logo_img/767/ico_traffic.png",
+        "category": "대중교통",
+        "description": "대중교통(버스, 지하철) 이용 시 10% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/1/logo_img/747/ico_pay.png",
+        "category": "간편결제",
+        "description": "간편결제로 결제 시 5% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "생활서비스 5% 결제일 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 16,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/635/card_img/28872/635card.png",
+    "card_name": "올바른 NEW HAVE카드",
+    "corp_name": "NH농협카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/635",
+    "sale_stores": [
+      {
+        "store": "국내외가맹점",
+        "num": "0.7% 적립"
+      },
+      {
+        "store": "이용금액 1위",
+        "num": "3배 적립"
+      },
+      {
+        "store": "공항라운지",
+        "num": "무료 이용"
+      }
+    ],
+    "ex_in_for": "국내전용 12,000원 / 해외겸용 12,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "국내/외 이용가맹점 0.7% NH포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "6개 영역 중 당월(1일~말일) 이용금액 1위/2위 영역은 기본적립의 3배/2배 자동적용"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/39/logo_img/759/ico_lounge.png",
+        "category": "공항라운지",
+        "description": "국제공항 라운지 무료이용"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/6/logo_img/911/ico_finance.png",
+        "category": "금융",
+        "description": "농협 인터넷·모바일·스마트·텔레뱅킹 이체수수료 통합 월 10회"
+      }
+    ]
+  },
+  {
+    "card_no": 17,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2654/card_img/32266/2654card.png",
+    "card_name": "원더카드 (원더 Life)",
+    "corp_name": "하나카드",
+    "categories": ["교통", "여가", "식비"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2654",
+    "sale_stores": [
+      {
+        "store": "넷플릭스・디즈니플러스 등",
+        "num": "40% 할인"
+      },
+      {
+        "store": "아파트관리비・전기세・가스비",
+        "num": "10% 할인"
+      },
+      {
+        "store": "대중교통",
+        "num": "10% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 19,900원 / 해외겸용 19,900원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "[자동이체] 영상 스트리밍 40% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "[자동이체] 생활요금 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/139/logo_img/1002/ico_foodApp.png",
+        "category": "배달앱",
+        "description": "딜리버리 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/52/logo_img/767/ico_traffic.png",
+        "category": "대중교통",
+        "description": "대중교통 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/127/logo_img/991/ico_cafe.png",
+        "category": "카페",
+        "description": "커피 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/77/logo_img/932/ico_convenienceStore.png",
+        "category": "편의점",
+        "description": "편의점 10% 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 18,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2235/card_img/28314/2235card.png",
+    "card_name": "삼성 iD ON 카드",
+    "corp_name": "삼성카드",
+    "categories": [],
+    "new_card": "온라인 신규회원 연회비 100% 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/2235",
+    "sale_stores": [
+      {
+        "store": "많이쓰는 영역 자동맞춤",
+        "num": "30% 할인"
+      },
+      {
+        "store": "교통/이동통신/스트리밍",
+        "num": "10% 할인"
+      },
+      {
+        "store": "온라인간편결제/해외",
+        "num": "3%·1% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 20,000원 / 해외겸용 20,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "많이 쓰는 영역 30% 자동 맞춤 할인\n(커피전문점·배달앱·델리 영역)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "교통·이동통신·스트리밍 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "온라인 간편결제·해외 3%·1% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "내 마음대로 고르는 디자인-\n다양한 스타일로 새롭게 선보이는 삼성 iD 카드를 소개합니다."
+      }
+    ]
+  },
+  {
+    "card_no": 19,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/258/card_img/33952/258card.png",
+    "card_name": "Oil & Life카드(Oil카드)",
+    "corp_name": "IBK기업은행",
+    "categories": ["통신", "여가"],
+    "new_card": "온라인 신규회원 연회비 100% 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/258",
+    "sale_stores": [
+      {
+        "store": "GS칼텍스(LPG포함)",
+        "num": "120원/L 할인"
+      },
+      {
+        "store": "CGV, 롯데시네마",
+        "num": "2,000원 현장할인"
+      },
+      {
+        "store": "주요 놀이공원",
+        "num": "50% 할인"
+      }
+    ],
+    "ex_in_for": "해외겸용 5,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "[기본서비스] 휴대폰 이용금액의 3% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/21/logo_img/859/ico_oil%28%EC%A3%BC%EC%9C%A0%29.png",
+        "category": "주유",
+        "description": "[특화서비스] GS칼텍스 리터당 120원 청구할인(LPG 포함)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "[기본서비스] CGV, 롯데시네마 2천원 현장할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/71/logo_img/926/ico_themePark.png",
+        "category": "테마파크",
+        "description": "[기본서비스] 주요 놀이공원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/56/logo_img/784/ico_finance.png",
+        "category": "은행사",
+        "description": "[기본서비스] 금융수수료 면제"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/84/logo_img/947/ico_membership.png",
+        "category": "기타",
+        "description": "[기본서비스] GS&POINT 포인트 적립 및 다양한 혜택 제공"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "Life Prime/Oil Prime 서비스 중 한가지 선택가능"
+      }
+    ]
+  },
+  {
+    "card_no": 20,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/227/card_img/20453/227card.png",
+    "card_name": "CLUB SK 카드",
+    "corp_name": "하나카드",
+    "categories": ["교통"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/227",
+    "sale_stores": [
+      {
+        "store": "SK텔레콤 요금 최대",
+        "num": "15,000원 청구할인"
+      },
+      {
+        "store": "SK주유소 최대",
+        "num": "150원/L 청구할인"
+      },
+      {
+        "store": "마트/학원",
+        "num": "5~10% 청구할인"
+      }
+    ],
+    "ex_in_for": "국내전용 6,000원 / 해외겸용 7,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/131/logo_img/994/ico_mobile.png",
+        "category": "SKT",
+        "description": "SK텔레콤 이동통신 요금 최대 15,000원 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/122/logo_img/986/ico_oil.png",
+        "category": "주유소",
+        "description": "SK주유소 리터당 최대 150원 청구할인\nSK충전소 리터당 최대 70원 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "교통, 영화, 외식, 커피 등 최대 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/75/logo_img/930/ico_mart.png",
+        "category": "대형마트",
+        "description": "이마트, 홈플러스, 롯데마트 최대 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/48/logo_img/907/ico_edu.png",
+        "category": "학원",
+        "description": "학원 업종 최대 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/10/logo_img/915/ico_membership.png",
+        "category": "멤버십포인트",
+        "description": "SK멤버십 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "브랜드 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/7/logo_img/912/ico_etc.png",
+        "category": "기타",
+        "description": "면세점/여행 관련 서비스,\n하나은행 결제 계좌 고객 우대 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 21,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/129/card_img/20358/129card.png",
+    "card_name": "청춘대로 톡톡카드",
+    "corp_name": "KB국민카드",
+    "categories": ["여가", "식비"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/129",
+    "sale_stores": [
+      {
+        "store": "스타벅스",
+        "num": "50% 할인"
+      },
+      {
+        "store": "버거/패스트푸드",
+        "num": "20% 할인"
+      },
+      {
+        "store": "간편결제Pay",
+        "num": "10% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 10,000원 / 해외겸용 12,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/22/logo_img/860/ico_cafe%28%EC%B9%B4%ED%8E%98%EB%94%94%EC%A0%80%ED%8A%B8%29.png",
+        "category": "카페/디저트",
+        "description": "[Great 서비스] 스타벅스 50% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/136/logo_img/999/ico_food.png",
+        "category": "패스트푸드",
+        "description": "[Enjoy 서비스] 버거/패스트푸드 업종 20% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/1/logo_img/747/ico_pay.png",
+        "category": "간편결제",
+        "description": "[Check 서비스] 간편결제(Pay) 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "[Basic 서비스] 대중교통, 택시/이동통신요금 10% 청구할인"
+      }
+    ]
+  },
+  {
+    "card_no": 22,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2559/card_img/33437/2690card.png",
+    "card_name": "K-패스 (신용)",
+    "corp_name": "IBK기업은행",
+    "categories": ["교통", "통신", "여가"],
+    "new_card": "온라인 신규회원 연회비 100% 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/2559",
+    "sale_stores": [
+      {
+        "store": "대중교통 최대",
+        "num": "300원 할인"
+      },
+      {
+        "store": "주유",
+        "num": "40원/L 할인"
+      },
+      {
+        "store": "통신",
+        "num": "3% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 2,000원 / 해외겸용 4,000원",
+    "ex_l_mth": "전월실적 20만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/52/logo_img/767/ico_traffic.png",
+        "category": "대중교통",
+        "description": "[교통특화 서비스] 대중교통 최대 300원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/5/logo_img/910/ico_traffic.png",
+        "category": "교통",
+        "description": "[교통특화 서비스] 일반교통 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/122/logo_img/986/ico_oil.png",
+        "category": "주유소",
+        "description": "[생활 서비스] 주유 리터당 40원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "[생활 서비스] 통신 3% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/135/logo_img/998/ico_food.png",
+        "category": "패밀리레스토랑",
+        "description": "[생활 서비스] 외식 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "[생활 서비스] 영화 2천원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/65/logo_img/792/ico_monthlyInstallment.png",
+        "category": "무이자할부",
+        "description": "[생활 서비스] 무이자 할부 2~3개월"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/71/logo_img/926/ico_themePark.png",
+        "category": "테마파크",
+        "description": "[생활 서비스] 놀이공원 본인 무료입장 또는 자유이용권 최대 50% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/149/logo_img/1014/ico_commission.png",
+        "category": "수수료우대",
+        "description": "[특별우대 서비스] 환전 우대 환율 50% 우대"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/55/logo_img/783/ico_finance.png",
+        "category": "보험사",
+        "description": "[특별우대 서비스] 보험 1천만원 대중교통 상해보험 무료가입"
+      }
+    ]
+  },
+  {
+    "card_no": 23,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2305/card_img/23590/2305card.png",
+    "card_name": "별다줄카드",
+    "corp_name": "NH농협카드",
+    "categories": ["여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2305",
+    "sale_stores": [
+      {
+        "store": "쇼핑 최대",
+        "num": "14% 할인"
+      },
+      {
+        "store": "통신",
+        "num": "5% 할인"
+      },
+      {
+        "store": "커피",
+        "num": "5% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 12,000원 / 해외겸용 14,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "[기본할인] 국내 온라인 전 가맹점 7% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "[더블할인] FLEX, RE-SELL, FUN 가맹점 14% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "[생활할인] 6대 생활업종 5% 청구 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/39/logo_img/759/ico_lounge.png",
+        "category": "공항라운지",
+        "description": "국제공항 라운지 무료이용 연2회 제공"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/71/logo_img/926/ico_themePark.png",
+        "category": "테마파크",
+        "description": "전국 주요 놀이공원 현장할인 최대 50%"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "원하는 플레이트 디자인 선택 가능"
+      }
+    ]
+  },
+  {
+    "card_no": 24,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/769/card_img/22243/769card.png",
+    "card_name": "가온올림카드(실속형)",
+    "corp_name": "KB국민카드",
+    "categories": ["식비", "통신", "여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/769",
+    "sale_stores": [
+      {
+        "store": "국내가맹점",
+        "num": "0.7% 적립"
+      },
+      {
+        "store": "주말/공휴일",
+        "num": "0.5% 추가적립"
+      },
+      {
+        "store": "음식·교통",
+        "num": "0.5% 추가적립"
+      }
+    ],
+    "ex_in_for": "해외겸용 15,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "[기본적립] 국내 가맹점 0.7% 기본적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "[추가 적립] 주말/공휴일 국내 가맹점 0.5% 추가적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "[추가 적립] 음식점, 커피 전문점 업종 0.5% 추가적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/5/logo_img/910/ico_traffic.png",
+        "category": "교통",
+        "description": "[추가 적립] 버스/지하철, 택시 0.5% 추가적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "[추가 적립] 이동통신요금 0.5% 추가적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "해외이용금액 1.7% 할인 캐시백"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "CGV/메가박스 온라인 영화 예매 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/71/logo_img/926/ico_themePark.png",
+        "category": "테마파크",
+        "description": "롯데월드/에버랜드/캐리비안베이 현장할인"
+      }
+    ]
+  },
+  {
+    "card_no": 25,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/41/card_img/20122/41card.png",
+    "card_name": "신한카드 Deep On Platinum+",
+    "corp_name": "신한카드",
+    "categories": [],
+    "new_card": "최대 3.3만원 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/41",
+    "sale_stores": [
+      {
+        "store": "국내 온라인",
+        "num": "10% 할인"
+      },
+      {
+        "store": "4대 편의점",
+        "num": "20% 할인"
+      },
+      {
+        "store": "항공권",
+        "num": "10% 할인"
+      }
+    ],
+    "ex_in_for": "해외겸용 30,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/1/logo_img/747/ico_pay.png",
+        "category": "간편결제",
+        "description": "국내 온라인 이용 건, 온라인 배달/온라인 슈퍼 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "4대 편의점, 생활/잡화, 커피, 월납 20% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "제주항공, 에어부산 10% 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 26,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2349/card_img/28096/2349card.png",
+    "card_name": "모니모카드",
+    "corp_name": "삼성카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2349",
+    "sale_stores": [
+      {
+        "store": "스타벅스",
+        "num": "50% 할인"
+      },
+      {
+        "store": "온라인쇼핑몰",
+        "num": "7% 할인"
+      },
+      {
+        "store": "이동통신요금",
+        "num": "10% 결제일 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 10,000원 / 해외겸용 10,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": "온라인발급 전용 카드",
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "[맞춤혜택] 옵션 서비스 1(Needs & Identity Option)\n온라인패션·오늘의집 30% 할인 / 스타벅스 50%, 교보문고·스트리밍 30% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "[맞춤혜택] 옵션 서비스 2(My Shopping Otion)\n온라인쇼핑몰 / 편의점·다이소·올리브영 / 해외 7% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "이동통신요금·아파트 관리비 10% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/5/logo_img/910/ico_traffic.png",
+        "category": "교통",
+        "description": "대중교통·택시 10% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/139/logo_img/1002/ico_foodApp.png",
+        "category": "배달앱",
+        "description": "배달앱 10% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "내 마음대로 고르는 디자인"
+      }
+    ]
+  },
+  {
+    "card_no": 27,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2731/card_img/36308/2731card.png",
+    "card_name": "신한카드 Point Plan+",
+    "corp_name": "신한카드",
+    "categories": [],
+    "new_card": "최대 10만원 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/2731",
+    "sale_stores": [
+      {
+        "store": "국내 결제금액",
+        "num": "최대 3% 적립"
+      },
+      {
+        "store": "주말 외식비",
+        "num": "1천 포인트 적립"
+      },
+      {
+        "store": "OTT",
+        "num": "최대 2천 포인트 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 30,000원 / 해외겸용 33,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "일상 생활비 적립 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "필수 생활비 적립 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/169/logo_img/8178/ico_subscribe.png",
+        "category": "디지털구독",
+        "description": "여가 생활비 적립 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 28,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2418/card_img/28128/2418card.png",
+    "card_name": "始發(시발)카드",
+    "corp_name": "BC 바로카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2418",
+    "sale_stores": [
+      {
+        "store": "배달앱 최대",
+        "num": "1,800원 할인"
+      },
+      {
+        "store": "편의점 최대",
+        "num": "1,800원 할인"
+      },
+      {
+        "store": "실적/한도없이",
+        "num": "0.7% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 5,000원 / 해외겸용 8,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "[선 넘는 특별 할인] 주요 始發(시발)비용 사용처 최대 1,800원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/12/logo_img/850/ico_norecord%28%EB%AC%B4%EC%8B%A4%EC%A0%81%29.png",
+        "category": "무실적",
+        "description": "실적/한도 조건없이 0.7% 청구할인"
+      }
+    ]
+  },
+  {
+    "card_no": 29,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/458/card_img/28058/458card.png",
+    "card_name": "네이버페이 taptap",
+    "corp_name": "삼성카드",
+    "categories": ["여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/458",
+    "sale_stores": [
+      {
+        "store": "네이버페이",
+        "num": "10% 적립"
+      },
+      {
+        "store": "커피전문점",
+        "num": "5% 적립"
+      },
+      {
+        "store": "전가맹점",
+        "num": "0.5% 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 15,000원 / 해외겸용 15,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "라이프스타일 옵션 패키지"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/29/logo_img/748/ico_pay.png",
+        "category": "네이버페이",
+        "description": "[일상팩] 네이버페이 온라인 간편결제 시 10% 네이버페이 포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/127/logo_img/991/ico_cafe.png",
+        "category": "카페",
+        "description": "[일상팩] 커피전문점·편의점·배달앱 5% 네이버페이 포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/29/logo_img/748/ico_pay.png",
+        "category": "네이버페이",
+        "description": "[온라인팩] 네이버페이 온라인 간편결제 시 10% 네이버페이 포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/29/logo_img/748/ico_pay.png",
+        "category": "네이버페이",
+        "description": "[온라인팩] 네이버페이 온라인 간편결제 시 3,000 네이버페이 포인트 추가적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "국내외 온오프라인 가맹점 기본 0.5% 네이버페이 포인트 적립"
+      }
+    ]
+  },
+  {
+    "card_no": 30,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2262/card_img/20704/2262card.png",
+    "card_name": "LOCA LIKIT Eat",
+    "corp_name": "롯데카드",
+    "categories": ["식비", "여가"],
+    "new_card": "신규회원 연회비 100% 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/2262",
+    "sale_stores": [
+      {
+        "store": "음식점",
+        "num": "60% 할인"
+      },
+      {
+        "store": "배달앱",
+        "num": "60% 할인"
+      },
+      {
+        "store": "커피",
+        "num": "60% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 10,000원 / 해외겸용 10,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/133/logo_img/996/ico_food.png",
+        "category": "일반음식점",
+        "description": "음식점 60% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/139/logo_img/1002/ico_foodApp.png",
+        "category": "배달앱",
+        "description": "배달의 민족, 쿠팡이츠, 요기요 60% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/127/logo_img/991/ico_cafe.png",
+        "category": "카페",
+        "description": "스타벅스, 투썸플레이스, 할리스커피, 폴바셋 60% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/169/logo_img/8178/ico_subscribe.png",
+        "category": "디지털구독",
+        "description": "쿠팡 로켓와우, 네이버플러스 멤버십 60% 결제일 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 31,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/654/card_img/21417/654card.png",
+    "card_name": "올바른 MYPICK 카드",
+    "corp_name": "NH농협카드",
+    "categories": ["식비", "의료"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/654",
+    "sale_stores": [
+      {
+        "store": "전세계음식점(푸드팩)",
+        "num": "5% 할인"
+      },
+      {
+        "store": "쇼핑(쇼핑팩)",
+        "num": "5% 할인"
+      },
+      {
+        "store": "주유소/충전소(트레블팩)",
+        "num": "5% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 13,000원 / 해외겸용 13,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "기본서비스(PACK 선택과 상관없이 공통 제공)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "[선택형1] FOOD PACK"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "[선택형2] SHOPPING PACK"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/18/logo_img/856/ico_travel%28%EC%97%AC%ED%96%89%EC%88%99%EB%B0%95%29.png",
+        "category": "여행/숙박",
+        "description": "[선택형3] TRAVEL PACK"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/13/logo_img/851/ico_hospital%28%EB%B3%91%EC%9B%90%EC%95%BD%EA%B5%AD%29.png",
+        "category": "병원/약국",
+        "description": "[선택형4] MEDI PACK"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/14/logo_img/852/ico_beauty%28%EB%B7%B0%ED%8B%B0%ED%94%BC%ED%8A%B8%EB%8B%88%EC%8A%A4%29.png",
+        "category": "뷰티/피트니스",
+        "description": "[선택형5] HEALTH & BEAUTY PACK"
+      }
+    ]
+  },
+  {
+    "card_no": 32,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/181/card_img/20398/181card.png",
+    "card_name": "NH올원 파이카드",
+    "corp_name": "NH농협카드",
+    "categories": ["여가", "교통", "식비"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/181",
+    "sale_stores": [
+      {
+        "store": "온라인쇼핑",
+        "num": "7~20% 할인"
+      },
+      {
+        "store": "주유/통신/해외 등",
+        "num": "선택업종 할인"
+      },
+      {
+        "store": "생활영역",
+        "num": "5~20% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용10,000원 / 해외겸용 12,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "[파이서비스] 온라인쇼핑+선택업종 7~20% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/127/logo_img/991/ico_cafe.png",
+        "category": "카페",
+        "description": "[라이프서비스] 커피전문점 20% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/52/logo_img/767/ico_traffic.png",
+        "category": "대중교통",
+        "description": "[라이프서비스] 대중교통(버스/지하철) 5% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/77/logo_img/932/ico_convenienceStore.png",
+        "category": "편의점",
+        "description": "[라이프서비스] 편의점 및 잡화 5% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/139/logo_img/1002/ico_foodApp.png",
+        "category": "배달앱",
+        "description": "[라이프서비스] 배달앱 5% 청구할인"
+      }
+    ]
+  },
+  {
+    "card_no": 33,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2624/card_img/31557/2624card.png",
+    "card_name": "American Express Blue KB Kookmin Card",
+    "corp_name": "KB국민카드",
+    "categories": ["통신", "여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2624",
+    "sale_stores": [
+      {
+        "store": "온라인 쇼핑",
+        "num": "10% 할인"
+      },
+      {
+        "store": "주유",
+        "num": "100원/L 할인"
+      },
+      {
+        "store": "패밀리레스토랑",
+        "num": "30% 할인"
+      }
+    ],
+    "ex_in_for": "해외겸용 19,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "온라인 쇼핑 10% 할인 (KB Pay 결제 시)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/21/logo_img/859/ico_oil%28%EC%A3%BC%EC%9C%A0%29.png",
+        "category": "주유",
+        "description": "주유 100원/L, 편의점 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "이동통신 10%, OTT 30% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/135/logo_img/998/ico_food.png",
+        "category": "패밀리레스토랑",
+        "description": "패밀리레스토랑 30% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/150/logo_img/1015/ico_foregincard.png",
+        "category": "해외이용",
+        "description": "해외 가맹점 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/71/logo_img/926/ico_themePark.png",
+        "category": "테마파크",
+        "description": "놀이공원 현장 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "Amex Selects(셀렉츠) 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 34,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/580/card_img/21321/580card.png",
+    "card_name": "Easy pick 티타늄 카드",
+    "corp_name": "KB국민카드",
+    "categories": ["교통", "통신"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/580",
+    "sale_stores": [
+      {
+        "store": "피트니스",
+        "num": "5% 적립"
+      },
+      {
+        "store": "학원",
+        "num": "5% 적립"
+      },
+      {
+        "store": "골프",
+        "num": "5% 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 30,000원 / 해외겸용 30,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "[Easy 서비스] 인터넷쇼핑몰 5% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/139/logo_img/1002/ico_foodApp.png",
+        "category": "배달앱",
+        "description": "[Easy 서비스] 배달앱 5% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/75/logo_img/930/ico_mart.png",
+        "category": "대형마트",
+        "description": "[Easy 서비스] 대형마트 5% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/21/logo_img/859/ico_oil%28%EC%A3%BC%EC%9C%A0%29.png",
+        "category": "주유",
+        "description": "[Easy 서비스] 주유소/충전소 5% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/91/logo_img/956/ico_fitness.png",
+        "category": "피트니스",
+        "description": "[Easy 서비스] 피트니스 5% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/52/logo_img/767/ico_traffic.png",
+        "category": "대중교통",
+        "description": "[Basic 서비스] 대중교통 5% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "[Basic 서비스] 이동통신 5% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/33/logo_img/898/ico_app.png",
+        "category": "APP",
+        "description": "[Basic 서비스] 인터넷 쇼핑몰 앱카드 결제 5% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/36/logo_img/755/ico_rental.png",
+        "category": "렌탈",
+        "description": "[Basic 서비스] 정수기 렌탈 5% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "[Pick 서비스] 선호영역(택1) 5% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/25/logo_img/863/ico_premium%28%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%29.png",
+        "category": "프리미엄",
+        "description": "티타늄 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 35,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2618/card_img/31391/2618card.png",
+    "card_name": "삼성 iD AUTO 카드",
+    "corp_name": "삼성카드",
+    "categories": ["교통", "여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2618",
+    "sale_stores": [
+      {
+        "store": "주유",
+        "num": "최대 90원/L 할인"
+      },
+      {
+        "store": "주차장·하이패스·대리운전",
+        "num": "10% 할인"
+      },
+      {
+        "store": "국내외 가맹점",
+        "num": "0.5% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 49,000원 / 해외겸용 49,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/122/logo_img/986/ico_oil.png",
+        "category": "주유소",
+        "description": "주유 리터당 70원·90원 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/20/logo_img/858/ico_car%28%EC%9E%90%EB%8F%99%EC%B0%A8%ED%95%98%EC%9D%B4%ED%8C%A8%EC%8A%A4%29.png",
+        "category": "자동차/하이패스",
+        "description": "주차장·하이패스·대리운전 10% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/180/logo_img/27494/ico_allStore.png",
+        "category": "국내외가맹점",
+        "description": "국내외 가맹점 0.5% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "할인점·온라인쇼핑몰·편의점·배달앱·커피전문점 1.5% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "영화 5,000원 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/118/logo_img/980/ico_carMaintenance.png",
+        "category": "정비",
+        "description": "차량 점검 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 36,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/1555/card_img/22679/1555card.png",
+    "card_name": "SKT 우리카드",
+    "corp_name": "우리카드",
+    "categories": ["여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/1555",
+    "sale_stores": [
+      {
+        "store": "SKT통신기기/서비스",
+        "num": "T라이트할부 제공"
+      },
+      {
+        "store": "SKT통신요금",
+        "num": "1만~2만원 청구할인"
+      },
+      {
+        "store": "커피전문점",
+        "num": "20% 청구할인"
+      }
+    ],
+    "ex_in_for": "해외겸용 10,000원 / 해외겸용 15,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/131/logo_img/994/ico_mobile.png",
+        "category": "SKT",
+        "description": "T라이트할부 및 SKT 통신요금 월 1만원 ~ 2만원 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "전국 영화관 3천원 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/135/logo_img/998/ico_food.png",
+        "category": "패밀리레스토랑",
+        "description": "VIPS, TGIF 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/127/logo_img/991/ico_cafe.png",
+        "category": "카페",
+        "description": "할리스, 엔제리너스 20% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/71/logo_img/926/ico_themePark.png",
+        "category": "테마파크",
+        "description": "롯데월드, 에버랜드, 서울랜드, 이월드(대구), 경주월드, 통도환타지아 자유이용권 50% 현장할인"
+      }
+    ]
+  },
+  {
+    "card_no": 37,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/712/card_img/22186/712card.png",
+    "card_name": "신한카드 국민행복",
+    "corp_name": "신한카드",
+    "categories": ["의료", "교육"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/712",
+    "sale_stores": [
+      {
+        "store": "넷플릭스/유튜브",
+        "num": "50% 할인"
+      },
+      {
+        "store": "배달앱",
+        "num": "10% 할인"
+      },
+      {
+        "store": "어린이집/유치원",
+        "num": "10% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 없음 / 해외겸용 없음",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/13/logo_img/851/ico_hospital%28%EB%B3%91%EC%9B%90%EC%95%BD%EA%B5%AD%29.png",
+        "category": "병원/약국",
+        "description": "병원/약국/산후조리원 5% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "쿠팡, SSG닷컴, 롯데ON, 11번가, G마켓 5% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/4/logo_img/909/ico_edu.png",
+        "category": "교육/육아",
+        "description": "어린이집/유치원 中 부모부담금,\n학원, 인터넷서점 (YES24, 알라딘, 교보문고) 10% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/139/logo_img/1002/ico_foodApp.png",
+        "category": "배달앱",
+        "description": "배달의민족, 요기요 10% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/169/logo_img/8178/ico_subscribe.png",
+        "category": "디지털구독",
+        "description": "넷플릭스, 유튜브프리미엄 50% 할인\n네이버-플러스멤버쉽, 쿠팡-로켓와우, 롯데ON-롯데오너스 3천원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/6/logo_img/911/ico_finance.png",
+        "category": "금융",
+        "description": "신한카드 국민행복 금융서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 38,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/1584/card_img/22633/1584card.png",
+    "card_name": "신협-신한카드 Hi-Point",
+    "corp_name": "신협",
+    "categories": ["교통", "통신"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/1584",
+    "sale_stores": [
+      {
+        "store": "전국가맹점",
+        "num": "0.2~2.0% 적립"
+      },
+      {
+        "store": "특정가맹점",
+        "num": "1~5% 적립"
+      },
+      {
+        "store": "현대오일뱅크",
+        "num": "60원/L 적립"
+      }
+    ],
+    "ex_in_for": "해외겸용 8,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "백화점/할인점/홈쇼핑·온라인몰 1.0~5.0% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/11/logo_img/916/ico_allStore.png",
+        "category": "모든가맹점",
+        "description": "전국 가맹점 0.2~2.0% 적립\n해외 가맹점 1~5% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/122/logo_img/986/ico_oil.png",
+        "category": "주유소",
+        "description": "S-OIL, 현대오일뱅크 주유 시 리터 당 60원 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/6/logo_img/911/ico_finance.png",
+        "category": "금융",
+        "description": "신한금융투자 CMA 결제계좌 0.2% 추가 적립\n마이신한포인트 가맹점 추가 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "SK텔레콤/KT/LG U+ 이동통신요금 1.0~5.0% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/7/logo_img/912/ico_etc.png",
+        "category": "기타",
+        "description": "무이자/영화/테마파크"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "포인트 적립상세 및 포인트 사용 안내"
+      }
+    ]
+  },
+  {
+    "card_no": 39,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2591/card_img/30912/2591card.png",
+    "card_name": "BC 바로 On&Off 카드",
+    "corp_name": "BC 바로카드",
+    "categories": ["식비"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2591",
+    "sale_stores": [
+      {
+        "store": "간편결제·온라인",
+        "num": "10% 할인"
+      },
+      {
+        "store": "대중교통·택시",
+        "num": "10% 할인"
+      },
+      {
+        "store": "해외가맹점",
+        "num": "10% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 5,000원 / 해외겸용 5,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/1/logo_img/747/ico_pay.png",
+        "category": "간편결제",
+        "description": "온라인/간편결제 10% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "음식점/커피 10% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/5/logo_img/910/ico_traffic.png",
+        "category": "교통",
+        "description": "버스/지하철/택시 10% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/27/logo_img/865/ico_foregin%28%ED%95%B4%EC%99%B8%29.png",
+        "category": "해외",
+        "description": "해외 10% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/65/logo_img/792/ico_monthlyInstallment.png",
+        "category": "무이자할부",
+        "description": "무이자할부 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "국제 브랜드 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 40,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/59/card_img/27711/59card.png",
+    "card_name": "삼성카드 taptap I",
+    "corp_name": "삼성카드",
+    "categories": ["여가", "식비"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/59",
+    "sale_stores": [
+      {
+        "store": "[일상팩]커피전문점",
+        "num": "30% 할인"
+      },
+      {
+        "store": "[일상팩]마켓컬리",
+        "num": "20% 할인"
+      },
+      {
+        "store": "[여가팩]KTX/SRT",
+        "num": "5,000원 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 49,000원 / 해외겸용 49,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "라이프스타일 패키지(옵션 패키지 중 택1)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/40/logo_img/760/ico_PP.png",
+        "category": "라운지키",
+        "description": "여가패키지: 해외 공항 라운지(Lounge Key) 본인 이용 무료"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/18/logo_img/856/ico_travel%28%EC%97%AC%ED%96%89%EC%88%99%EB%B0%95%29.png",
+        "category": "여행/숙박",
+        "description": "여가패키지: 해외·여행 3% 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "일상패키지: 슈퍼마켓·프리미엄 아울렛 등 3% 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/22/logo_img/860/ico_cafe%28%EC%B9%B4%ED%8E%98%EB%94%94%EC%A0%80%ED%8A%B8%29.png",
+        "category": "카페/디저트",
+        "description": "일상패키지: 10대 커피전문점·제과점 30% 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "일상패키지: 음식점·신선식품 배송 20% 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "일상패키지: 모든 영화관에서 6,000원 이상 결제 시 6,000원 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/113/logo_img/976/ico_book.png",
+        "category": "도서",
+        "description": "일상패키지: 서점·인터파크 티켓·동물병원에서 건별 50,000원 이상 결제 시 10,000원 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/51/logo_img/917/ico_train.png",
+        "category": "기차",
+        "description": "여가패키지: KTX, SRT 포함 철도 건별 30,000원 이상 결제 시 5,000원 결제일할인 (청구할인)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/25/logo_img/863/ico_premium%28%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%29.png",
+        "category": "프리미엄",
+        "description": "mastercard PLATINUM 등급 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/83/logo_img/948/ico_cashback.png",
+        "category": "캐시백",
+        "description": "국내외 연간 누적 이용금액 1,500만원당 30,000원 캐시백"
+      }
+    ]
+  },
+  {
+    "card_no": 41,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2453/card_img/27868/2453card.png",
+    "card_name": "신한카드 구독 좋아요",
+    "corp_name": "신한카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2453",
+    "sale_stores": [
+      {
+        "store": "디지털구독",
+        "num": "100% 할인"
+      },
+      {
+        "store": "정기결제 자동이체",
+        "num": "1천원 할인"
+      },
+      {
+        "store": "생활 서비스",
+        "num": "10% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 15,000원 / 해외겸용 18,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/169/logo_img/8178/ico_subscribe.png",
+        "category": "디지털구독",
+        "description": "5개 영역 디지털 구독 가맹점 정기결제 이용 시 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "서비스 대상 정기결제 자동이체 시 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "서비스 대상 배달앱/생활편의 가맹점 이용 시 결제일 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 42,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2555/card_img/33456/2555card.png",
+    "card_name": "K-패스카드",
+    "corp_name": "KB국민카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2555",
+    "sale_stores": [
+      {
+        "store": "대중교통",
+        "num": "10% 할인"
+      },
+      {
+        "store": "생활서비스",
+        "num": "5% 할인"
+      },
+      {
+        "store": "KB Pay 이용 시",
+        "num": "5% 추가할인"
+      }
+    ],
+    "ex_in_for": "국내전용 8,000원 / 해외겸용 8,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "청구 할인 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 43,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2348/card_img/25292/2348card.png",
+    "card_name": "BC 바로 페이백 플러스",
+    "corp_name": "BC 바로카드",
+    "categories": ["식비"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2348",
+    "sale_stores": [
+      {
+        "store": "전 가맹점",
+        "num": "0.7% 기본 할인"
+      },
+      {
+        "store": "온라인쇼핑",
+        "num": "6.3% 추가 할인"
+      },
+      {
+        "store": "음식점",
+        "num": "6.3% 추가 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 15,000원 / 해외겸용 15,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/11/logo_img/916/ico_allStore.png",
+        "category": "모든가맹점",
+        "description": "전 가맹점 0.7% 기본 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "[특별 할인] 온라인쇼핑/간편결제 6.3% 추가 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/133/logo_img/996/ico_food.png",
+        "category": "일반음식점",
+        "description": "[특별 할인] 음식점 6.3% 추가 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/7/logo_img/912/ico_etc.png",
+        "category": "기타",
+        "description": "[특별 할인] 교통/통신/스트리밍 6.3% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "VISA Platinum 등급 기본 서비스 제공"
+      }
+    ]
+  },
+  {
+    "card_no": 44,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2722/card_img/35971/2722card.png",
+    "card_name": "신한카드 SOL트래블",
+    "corp_name": "신한카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2722",
+    "sale_stores": [
+      {
+        "store": "해외 이용·ATM",
+        "num": "수수료 면제"
+      },
+      {
+        "store": "자유로운 해외 결제",
+        "num": "환율 100% 우대"
+      },
+      {
+        "store": "국내 이용금액",
+        "num": "최대 2% 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 27,000 / 해외겸용 30,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/27/logo_img/865/ico_foregin%28%ED%95%B4%EC%99%B8%29.png",
+        "category": "해외",
+        "description": "해외 이용 수수료 빼기 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/27/logo_img/865/ico_foregin%28%ED%95%B4%EC%99%B8%29.png",
+        "category": "해외",
+        "description": "해외 이용 더하기 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "국내 이용 더하기 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/39/logo_img/759/ico_lounge.png",
+        "category": "공항라운지",
+        "description": "신한카드 SOL트래블 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 45,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/591/card_img/21348/591card.png",
+    "card_name": "카카오뱅크 KB국민카드",
+    "corp_name": "KB국민카드",
+    "categories": ["식비", "여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/591",
+    "sale_stores": [
+      {
+        "store": "편의점",
+        "num": "3천원 할인"
+      },
+      {
+        "store": "PC방",
+        "num": "5천원 할인"
+      },
+      {
+        "store": "숙박앱",
+        "num": "5천원 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 15,000원 / 해외겸용 15,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/31/logo_img/750/ico_pay.png",
+        "category": "카카오페이",
+        "description": "간편결제 3천원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/77/logo_img/932/ico_convenienceStore.png",
+        "category": "편의점",
+        "description": "편의점 3천원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/19/logo_img/857/ico_ticket%28%EC%98%81%ED%99%94%EB%AC%B8%ED%99%94%29.png",
+        "category": "영화/문화",
+        "description": "영화·배달앱 3천원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "커피·제과·패스트푸드 3천원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/18/logo_img/856/ico_travel%28%EC%97%AC%ED%96%89%EC%88%99%EB%B0%95%29.png",
+        "category": "여행/숙박",
+        "description": "숙박앱 5천원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/8/logo_img/913/ico_sports.png",
+        "category": "레저/스포츠",
+        "description": "공연/음악 5천원 할인\n스포츠/놀이 5천원 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 46,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/661/card_img/21424/661card.png",
+    "card_name": "카드의정석 UNTACT AIR",
+    "corp_name": "우리카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/661",
+    "sale_stores": [
+      {
+        "store": "정기결제 최대",
+        "num": "20% 할인"
+      },
+      {
+        "store": "배달앱",
+        "num": "30% 적립"
+      },
+      {
+        "store": "쿠팡",
+        "num": "20% 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 15,000원 / 해외겸용 15,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "정기결제 10~20% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/7/logo_img/912/ico_etc.png",
+        "category": "기타",
+        "description": "UNTACT AIR 서비스,\nUNTACT SPECIAL 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/27/logo_img/865/ico_foregin%28%ED%95%B4%EC%99%B8%29.png",
+        "category": "해외",
+        "description": "해외 가맹점 (온라인/오프라인) 1% 적립"
+      }
+    ]
+  },
+  {
+    "card_no": 47,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2228/card_img/21353/2228card.png",
+    "card_name": "LOCA LIKIT",
+    "corp_name": "롯데카드",
+    "categories": ["여가", "교통", "통신"],
+    "new_card": "신규회원 연회비 100% 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/2228",
+    "sale_stores": [
+      {
+        "store": "스타벅스 최대",
+        "num": "60% 할인"
+      },
+      {
+        "store": "영화",
+        "num": "50% 할인"
+      },
+      {
+        "store": "이동통신",
+        "num": "10% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 10,000원 / 해외겸용 10,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/127/logo_img/991/ico_cafe.png",
+        "category": "카페",
+        "description": "스타벅스 50% 결제일 할인\n간편결제 시 스타벅스 60% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "롯데시네마, CGV 50% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/52/logo_img/767/ico_traffic.png",
+        "category": "대중교통",
+        "description": "시내버스, 지하철 10% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "SKT, KT, LG U+ 10% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/139/logo_img/1002/ico_foodApp.png",
+        "category": "배달앱",
+        "description": "배달의 민족, 쿠팡이츠 5% 결제일 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 48,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/1286/card_img/21020/1286card.png",
+    "card_name": "The CJ KB국민카드",
+    "corp_name": "KB국민카드",
+    "categories": ["식비", "여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/1286",
+    "sale_stores": [
+      {
+        "store": "CJ푸드빌 최대",
+        "num": "20% 할인"
+      },
+      {
+        "store": "CJ오쇼핑",
+        "num": "5% 할인"
+      },
+      {
+        "store": "CGV 최대",
+        "num": "6천원 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 5,000원 / 해외겸용 10,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "CJ오쇼핑, CJmall 5% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "CJ푸드빌 10~20% 현장할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/93/logo_img/955/ico_cosmetic.png",
+        "category": "화장품",
+        "description": "CJ올리브영 10% 현장할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "CGV 2~6천원 청구할인"
+      }
+    ]
+  },
+  {
+    "card_no": 49,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2459/card_img/28127/2459card.png",
+    "card_name": "삼성 iD NOMAD 카드",
+    "corp_name": "삼성카드",
+    "categories": ["여가", "식비"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2459",
+    "sale_stores": [
+      {
+        "store": "기프트서비스",
+        "num": "영역별 연 1회 제공"
+      },
+      {
+        "store": "국내외가맹점",
+        "num": "최대 2% 적립"
+      },
+      {
+        "store": "디지털콘텐츠/멤버십",
+        "num": "50% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 47,000원 / 해외겸용 49,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "GIFT 기프트 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "REWARD 국내외 가맹점 2%/1%/0.5% 빅포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/169/logo_img/8178/ico_subscribe.png",
+        "category": "디지털구독",
+        "description": "디지털콘텐츠/멤버십 50% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "영화 5,000원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/136/logo_img/999/ico_food.png",
+        "category": "패스트푸드",
+        "description": "쉐이크쉑/써브웨이 30% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "국제브랜드 서비스(해외겸용카드 전용)"
+      }
+    ]
+  },
+  {
+    "card_no": 50,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/630/card_img/21396/630card.png",
+    "card_name": "Easy all 카드",
+    "corp_name": "KB국민카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/630",
+    "sale_stores": [
+      {
+        "store": "16개 영역 중",
+        "num": "선택형 할인"
+      },
+      {
+        "store": "배달앱",
+        "num": "10% 할인"
+      },
+      {
+        "store": "대중교통",
+        "num": "7% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 20,000원 / 해외겸용 20,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "Easy all 선택 서비스(택1)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "1. Auto 모드 (많이 쓴 영역에서 자동 캐시백)\n2. DIY 모드 (원하는 영역에서 자유롭게 청구할인)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/25/logo_img/863/ico_premium%28%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%29.png",
+        "category": "프리미엄",
+        "description": "Visa Young Premium 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 51,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2658/card_img/32301/2658card.png",
+    "card_name": "I-나눔",
+    "corp_name": "IBK기업은행",
+    "categories": [],
+    "new_card": "1.4만원 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/2658",
+    "sale_stores": [
+      {
+        "store": "국내・외 가맹점",
+        "num": "0.5% 기부"
+      },
+      {
+        "store": "온라인쇼핑・홈쇼핑",
+        "num": "최대 1.5% 할인"
+      },
+      {
+        "store": "대형마트・편의점",
+        "num": "최대 1.5% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 14,000원 / 해외겸용 14,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/180/logo_img/27494/ico_allStore.png",
+        "category": "국내외가맹점",
+        "description": "[ALL] 국내・외 가맹점 0.5% 기부"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "[LIVING] 1%~1.5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "[MEMBERSHIP] 5%~7% 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 52,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/106/card_img/20264/106card.png",
+    "card_name": "굿데이카드",
+    "corp_name": "KB국민카드",
+    "categories": ["통신", "교육"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/106",
+    "sale_stores": [
+      {
+        "store": "주유",
+        "num": "60원/L 할인"
+      },
+      {
+        "store": "통신요금",
+        "num": "10% 할인"
+      },
+      {
+        "store": "커피",
+        "num": "10% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 5,000원 / 해외겸용 10,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/21/logo_img/859/ico_oil%28%EC%A3%BC%EC%9C%A0%29.png",
+        "category": "주유",
+        "description": "주유소, 충전소 업종 리터당 60원 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "전화요금, 인터넷이용료, 케이블TV 업종 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/5/logo_img/910/ico_traffic.png",
+        "category": "교통",
+        "description": "버스, 지하철, 택시 업종 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "음식점, 커피전문점, 편의점, 약국 업종 10% 추가 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/4/logo_img/909/ico_edu.png",
+        "category": "교육/육아",
+        "description": "학원, 휘트니스센터 업종 10% 추가 청구할인"
+      }
+    ]
+  },
+  {
+    "card_no": 53,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/592/card_img/28060/592card.png",
+    "card_name": "카카오뱅크 삼성카드",
+    "corp_name": "삼성카드",
+    "categories": ["식비", "여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/592",
+    "sale_stores": [
+      {
+        "store": "마트/편의점",
+        "num": "1% 할인"
+      },
+      {
+        "store": "스트리밍",
+        "num": "20% 할인"
+      },
+      {
+        "store": "영화관",
+        "num": "5천원 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 7,000원 / 해외겸용 7,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "조건 없이 국내외 가맹점 0.5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/9/logo_img/914/ico_mart.png",
+        "category": "마트/편의점",
+        "description": "조건 없이 마트/편의점 1% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/19/logo_img/857/ico_ticket%28%EC%98%81%ED%99%94%EB%AC%B8%ED%99%94%29.png",
+        "category": "영화/문화",
+        "description": "넷플릭스, 웨이브, 멜론 20% 할인\nCGV, 롯데시네마 5천원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "커피/교통 5% 할인\n쇼핑/배달앱 3% 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 54,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2544/card_img/29533/2544card.png",
+    "card_name": "zgm.play카드",
+    "corp_name": "NH농협카드",
+    "categories": ["여가", "식비"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2544",
+    "sale_stores": [
+      {
+        "store": "영화",
+        "num": "5,000원 할인"
+      },
+      {
+        "store": "커피",
+        "num": "30% 할인"
+      },
+      {
+        "store": "패스트푸드",
+        "num": "20% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 12,000원 / 해외겸용 12,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "[선택 서비스] 온라인-플레이 타입"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "[선택 서비스] 오프라인-플레이 타입"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "CGV, 롯데시네마, 메가박스 5천원 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/127/logo_img/991/ico_cafe.png",
+        "category": "카페",
+        "description": "스타벅스, 투썸플레이스, 커피빈 30% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/136/logo_img/999/ico_food.png",
+        "category": "패스트푸드",
+        "description": "패스트푸드업종 20% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "미용실·올리브영·CU/GS25 5% 청구할인 (H&B 편의점 통합 일 1회)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "쇼핑·서점 5% 청구할인 (통합 일 1회)"
+      }
+    ]
+  },
+  {
+    "card_no": 55,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2304/card_img/23588/2304card.png",
+    "card_name": "신한카드 Eats More(이츠모아)",
+    "corp_name": "신한카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2304",
+    "sale_stores": [
+      {
+        "store": "전가맹점 결제금액",
+        "num": "1천원미만 기본적립"
+      },
+      {
+        "store": "추가적립업종 건당",
+        "num": "최대 1,600P 추가적립"
+      },
+      {
+        "store": "환전수수료",
+        "num": "면제 서비스"
+      }
+    ],
+    "ex_in_for": "국내전용 15,000원 / 해외겸용 18,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "[기본 적립서비스]\n전 가맹점 5천원 이상 결제 시 1천원 미만 금액 마이신한포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "[추가 적립서비스]\n요식업종 / 배달앱 / 온라인마켓 이용건별 마이신한포인트 정액 적립(신한pLay앱을 통한 결제 시 건당 100포인트 추가 적립)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/6/logo_img/911/ico_finance.png",
+        "category": "금융",
+        "description": "[적립포인트 투자 서비스]\n신한은행 달러 예금 계좌 혜택: 마이신한포인트 외화체인지업 계좌 입금 시 환전수수료 면제(USD 계좌에 한함)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "원하는 플레이트 디자인 선택 가능"
+      }
+    ]
+  },
+  {
+    "card_no": 56,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/194/card_img/20414/194card.png",
+    "card_name": "롯데포인트 플러스 카드",
+    "corp_name": "롯데카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/194",
+    "sale_stores": [
+      {
+        "store": "L.POINT",
+        "num": "더블포인트 적립"
+      },
+      {
+        "store": "6개월",
+        "num": "슬림할부 서비스"
+      },
+      {
+        "store": "롯데백화점",
+        "num": "5% 할인쿠폰"
+      }
+    ],
+    "ex_in_for": "국내전용 5,000원 / 해외겸용 5,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "더블포인트 적립 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/65/logo_img/792/ico_monthlyInstallment.png",
+        "category": "무이자할부",
+        "description": "6개월 슬림할부(부분 무이자할부) 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/66/logo_img/793/ico_cardCompany.png",
+        "category": "카드사",
+        "description": "롯데카드 기본 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 57,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2472/card_img/28299/2472card.png",
+    "card_name": "SKT-현대카드M Edition3(라이트할부형2.0)",
+    "corp_name": "현대카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2472",
+    "sale_stores": [
+      {
+        "store": "SKT라이트할부 최대",
+        "num": "2만5천원 할인"
+      },
+      {
+        "store": "국내외가맹점 최대",
+        "num": "3% 적립"
+      },
+      {
+        "store": "신차 구매 시",
+        "num": "1.5% 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 20,000원 / 해외겸용 20,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/131/logo_img/994/ico_mobile.png",
+        "category": "SKT",
+        "description": "SKT 라이트할부 이용 시 최대 2만 5천원 할인 혜택"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "국내외 가맹점에서 0.5~3% M포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "현대자동차·기아 신차 구매 시 1.5% 적립\nGS칼텍스 주유 시 리터당 60 M포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "온라인쇼핑 결제 시 M포인트 추가 적립\nM포인트 신차구매통장 통장포인트 월 2% 적립받아 신차 구매 시 사용"
+      }
+    ]
+  },
+  {
+    "card_no": 58,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2380/card_img/25482/2380card.png",
+    "card_name": "신세계 BC 바로 콰트로 플러스",
+    "corp_name": "BC 바로카드",
+    "categories": ["식비"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2380",
+    "sale_stores": [
+      {
+        "store": "쇼핑",
+        "num": "5% 할인"
+      },
+      {
+        "store": "교통",
+        "num": "4% 할인"
+      },
+      {
+        "store": "온라인몰",
+        "num": "7% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 5,000원 / 해외겸용 5,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "[쇼핑] 신세계백화점·이마트 등 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/5/logo_img/910/ico_traffic.png",
+        "category": "교통",
+        "description": "[교통] 주유소·전기차·대중교통·택시 4% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "[온라인몰] SSG·쿠팡·G마켓·옥션·11번가 7% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "[생활] 병원·약국·통신3사휴대폰요금 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "[커피/외식] 스타벅스·이디야·아웃백 등 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/168/logo_img/4570/ico_business.png",
+        "category": "제휴/PLCC",
+        "description": "신세계백화점 제휴 서비스 제공"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "VISA Platinum 서비스 제공"
+      }
+    ]
+  },
+  {
+    "card_no": 59,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/931/card_img/33922/931card.png",
+    "card_name": "용인시민카드(신용)",
+    "corp_name": "IBK기업은행",
+    "categories": ["교통", "여가", "식비"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/931",
+    "sale_stores": [
+      {
+        "store": "용인 주요 테마파크",
+        "num": "최대 60% 할인"
+      },
+      {
+        "store": "대형마트",
+        "num": "5% 할인"
+      },
+      {
+        "store": "온라인쇼핑",
+        "num": "20% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 5,000원 / 해외겸용 7,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/52/logo_img/767/ico_traffic.png",
+        "category": "대중교통",
+        "description": "[Life in Yong-In] 버스, 지하철(용인시 경전철 포함) 3% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/21/logo_img/859/ico_oil%28%EC%A3%BC%EC%9C%A0%29.png",
+        "category": "주유",
+        "description": "[부가서비스] 전 주유소 리터당 60원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "[부가서비스] 이마트, 홈플러스, 롯데마트, 농협하나로클럽 5% 할인\n[Life in Yong-In] 쿠팡, 티몬, 위메프 20% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "[Life in Yong-In] CGV, 롯데시네마 4천원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "[Life in Yong-In] 아웃백, 빕스, 블랙스미스, 토다이, TGIF, 애슐리 20% 할인\n[Life in Yong-In] 불고기브라더스 20% 현장할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/127/logo_img/991/ico_cafe.png",
+        "category": "카페",
+        "description": "[Life in Yong-In] 주요 커피전문점 20% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/71/logo_img/926/ico_themePark.png",
+        "category": "테마파크",
+        "description": "[Play in Yong-In] 용인시 주요 놀이공원 할인 (통합 월 1회, 연 8회)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/64/logo_img/791/ico_zone.png",
+        "category": "지역",
+        "description": "용인시 시민 복지 증진 및 자긍심 고취를 위해 공연/문화/생활시설 할인 제공"
+      }
+    ]
+  },
+  {
+    "card_no": 60,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/50/card_img/27706/50card.png",
+    "card_name": "아시아나 삼성지엔미플래티늄카드",
+    "corp_name": "삼성카드",
+    "categories": ["교통", "여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/50",
+    "sale_stores": [
+      {
+        "store": "1,000원당",
+        "num": "1~5마일 적립"
+      },
+      {
+        "store": "S-OIL주유소",
+        "num": "40/L 적립"
+      },
+      {
+        "store": "CGV",
+        "num": "3,000원 할인"
+      }
+    ],
+    "ex_in_for": "해외전용 20,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/142/logo_img/1007/ico_mileage.png",
+        "category": "아시아나항공",
+        "description": "1,000원당 아시아나 1마일리지 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/122/logo_img/986/ico_oil.png",
+        "category": "주유소",
+        "description": "S-OIL 리터당 40 보너스포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/135/logo_img/998/ico_food.png",
+        "category": "패밀리레스토랑",
+        "description": "아웃백스테이크하우스 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/127/logo_img/991/ico_cafe.png",
+        "category": "카페",
+        "description": "스타벅스 1,000원 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "메가박스, CGV, 인터파크 영화 3,000원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/71/logo_img/926/ico_themePark.png",
+        "category": "테마파크",
+        "description": "놀이공원 할인 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/118/logo_img/980/ico_carMaintenance.png",
+        "category": "정비",
+        "description": "닥터카서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/65/logo_img/792/ico_monthlyInstallment.png",
+        "category": "무이자할부",
+        "description": "백화점·할인점 2~3개월 무이자할부"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/65/logo_img/792/ico_monthlyInstallment.png",
+        "category": "무이자할부",
+        "description": "의료점 2~3개월 무이자할부"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/69/logo_img/924/ico_stadium.png",
+        "category": "경기관람",
+        "description": "프로스포츠 프로모션 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 61,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/248/card_img/20475/248card.png",
+    "card_name": "#tag1카드 Navy",
+    "corp_name": "하나카드",
+    "categories": ["여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/248",
+    "sale_stores": [
+      {
+        "store": "아파트관리비",
+        "num": "5~10% 할인"
+      },
+      {
+        "store": "통신요금",
+        "num": "5~10% 할인"
+      },
+      {
+        "store": "주유소",
+        "num": "최대 60원/L 할인"
+      }
+    ],
+    "ex_in_for": "해외겸용 12,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "기본서비스(교육, 아파트관리비, 통신, 영화할인)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "선택서비스(쇼핑, 주유할인)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/75/logo_img/930/ico_mart.png",
+        "category": "대형마트",
+        "description": "우대PLUS서비스(대형마트, 외식할인)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/71/logo_img/926/ico_themePark.png",
+        "category": "테마파크",
+        "description": "주요 놀이공원 현장할인"
+      }
+    ]
+  },
+  {
+    "card_no": 62,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/108/card_img/20266/108card.png",
+    "card_name": "와이즈카드",
+    "corp_name": "KB국민카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/108",
+    "sale_stores": [
+      {
+        "store": "특별포인트리",
+        "num": "0.5~4.5% 적립"
+      },
+      {
+        "store": "기본포인트리",
+        "num": "0.5% 적립"
+      },
+      {
+        "store": "학원/병원/백화점",
+        "num": "2~3개월 무이자할부"
+      }
+    ],
+    "ex_in_for": "국내전용 5,000원 / 해외겸용 10,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "특별 포인트리"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/11/logo_img/916/ico_allStore.png",
+        "category": "모든가맹점",
+        "description": "기본 포인트리"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "보너스 포인트리"
+      }
+    ]
+  },
+  {
+    "card_no": 63,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2634/card_img/31799/2634card.png",
+    "card_name": "디지로카 Monaco",
+    "corp_name": "롯데카드",
+    "categories": ["통신"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2634",
+    "sale_stores": [
+      {
+        "store": "국내·해외",
+        "num": "1% 할인"
+      },
+      {
+        "store": "온라인쇼핑",
+        "num": "최대 5% 할인"
+      },
+      {
+        "store": "배달앱/이동통신/스트리밍",
+        "num": "5~50% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 125,000원 / 해외겸용 125,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/180/logo_img/27494/ico_allStore.png",
+        "category": "국내외가맹점",
+        "description": "어디서나 1% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "온라인 쇼핑 최대 5% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/139/logo_img/1002/ico_foodApp.png",
+        "category": "배달앱",
+        "description": "배달의 민족, 쿠팡이츠, 요기요 5% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "SKT, KT, LG U+ 5% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/169/logo_img/8178/ico_subscribe.png",
+        "category": "디지털구독",
+        "description": "넷플릭스, 유튜브프리미엄, 왓챠, 멜론, 지니뮤직 50% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/25/logo_img/863/ico_premium%28%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%29.png",
+        "category": "프리미엄",
+        "description": "SPECIAL GIFT 혜택"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "Master Platinum Service"
+      }
+    ]
+  },
+  {
+    "card_no": 64,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/241/card_img/20468/241card.png",
+    "card_name": "1Q Special+",
+    "corp_name": "하나카드",
+    "categories": ["식비", "여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/241",
+    "sale_stores": [
+      {
+        "store": "지역쇼핑/주유",
+        "num": "5,000 하나머니 적립"
+      },
+      {
+        "store": "온라인쇼핑",
+        "num": "5,000 하나머니 적립"
+      },
+      {
+        "store": "음식점",
+        "num": "1,000원 청구할인"
+      }
+    ],
+    "ex_in_for": "해외겸용 10,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "쇼핑 또는 주유 이용금액 스페셜 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "온라인쇼핑, 통신/교통/자동이체, 해외 이용금액 플러스적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/133/logo_img/996/ico_food.png",
+        "category": "일반음식점",
+        "description": "국내 음식업종 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/127/logo_img/991/ico_cafe.png",
+        "category": "카페",
+        "description": "스타벅스, 커피빈 4,000원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/2/logo_img/753/ico_bill.png",
+        "category": "공과금/렌탈",
+        "description": "아파트관리비, 4대보험 적립"
+      }
+    ]
+  },
+  {
+    "card_no": 65,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/455/card_img/20971/455card.png",
+    "card_name": "롯데 국민행복카드",
+    "corp_name": "롯데카드",
+    "categories": ["교육"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/455",
+    "sale_stores": [
+      {
+        "store": "어린이집보육료",
+        "num": "10% 할인"
+      },
+      {
+        "store": "병원",
+        "num": "5% 할인"
+      },
+      {
+        "store": "학원",
+        "num": "10% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 없음 / 해외겸용 없음",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/42/logo_img/901/ico_happy.png",
+        "category": "국민행복",
+        "description": "국가서비스 통합 지원"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "행복 맞춤 서비스 (통합 할인한도 내 적용)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/4/logo_img/909/ico_edu.png",
+        "category": "교육/육아",
+        "description": "롯데 국민행복카드 특화서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 66,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/18/card_img/20100/18card.png",
+    "card_name": "신한카드 Shopping",
+    "corp_name": "신한카드",
+    "categories": ["식비"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/18",
+    "sale_stores": [
+      {
+        "store": "온.오프라인",
+        "num": "10% 할인"
+      },
+      {
+        "store": "생활업종",
+        "num": "10% 할인"
+      },
+      {
+        "store": "해외이용",
+        "num": "5% 캐시백"
+      }
+    ],
+    "ex_in_for": "해외겸용 20,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "[쇼핑 할인] 오프라인 쇼핑(백화점, 프리미엄 아울렛, 마트, 창고형 할인매장) 10% 할인\n· 온라인 쇼핑(홈쇼핑, 소셜커머스) 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "[생활 할인] 커피전문점·잡화·온라인서점 10% 할인\n· 주유 60원/L 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/27/logo_img/865/ico_foregin%28%ED%95%B4%EC%99%B8%29.png",
+        "category": "해외",
+        "description": "[해외이용 캐시백] 해외이용금액 5% 캐시백"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "[제휴 할인] 마켓컬리, 프레딧, 집반찬연구소 10% 할인서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 67,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2482/card_img/28405/2482card.png",
+    "card_name": "I-ALL",
+    "corp_name": "IBK기업은행",
+    "categories": [],
+    "new_card": "최대 10만원 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/2482",
+    "sale_stores": [
+      {
+        "store": "국내·외 가맹점",
+        "num": "0.5% 할인"
+      },
+      {
+        "store": "홈쇼핑, 배달앱, 대형마트",
+        "num": "최대 1.5% 할인"
+      },
+      {
+        "store": "OTT, 온라인멤버십",
+        "num": "최대 7% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 14,000원 / 해외겸용 15,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/11/logo_img/916/ico_allStore.png",
+        "category": "모든가맹점",
+        "description": "ALL - 국내·외 가맹점 0.5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "LIVING - 1%~1.5% 할인\n온라인쇼핑, 홈쇼핑, 배달앱, 대형마트, 커피, 편의점, 교통, 주유/충전, 통신, 반려동물"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/169/logo_img/8178/ico_subscribe.png",
+        "category": "디지털구독",
+        "description": "MEMBERSHIP - 5%~7% 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 68,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2543/card_img/29519/2543card.png",
+    "card_name": "신세계 THE S VIP",
+    "corp_name": "삼성카드",
+    "categories": ["여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2543",
+    "sale_stores": [
+      {
+        "store": "신세계백화점",
+        "num": "1% 결제일할인"
+      },
+      {
+        "store": "국내외가맹점",
+        "num": "0.5% 결제일할인"
+      },
+      {
+        "store": "모든 영화관",
+        "num": "10,000원 결제일할인"
+      }
+    ],
+    "ex_in_for": "국내전용 47,000원 / 해외겸용 49,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/97/logo_img/961/ico_shopping.png",
+        "category": "백화점",
+        "description": "신세계백화점 1% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/180/logo_img/27494/ico_allStore.png",
+        "category": "국내외가맹점",
+        "description": "0.5% 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/7/logo_img/912/ico_etc.png",
+        "category": "기타",
+        "description": "교육•할인점•이동통신•병원•약국 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "모든 영화관 10,000원 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/127/logo_img/991/ico_cafe.png",
+        "category": "카페",
+        "description": "커피전문점 20% 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/135/logo_img/998/ico_food.png",
+        "category": "패밀리레스토랑",
+        "description": "VIPS•더플레이스 20,000원 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/71/logo_img/926/ico_themePark.png",
+        "category": "테마파크",
+        "description": "놀이공원•워터파크 할인 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/118/logo_img/980/ico_carMaintenance.png",
+        "category": "정비",
+        "description": "닥터카 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/97/logo_img/961/ico_shopping.png",
+        "category": "백화점",
+        "description": "신세계백화점 제휴 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "Mastercard PLATINUM 등급 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/69/logo_img/924/ico_stadium.png",
+        "category": "경기관람",
+        "description": "프로스포츠 프로모션 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 69,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/613/card_img/21380/613card.gif",
+    "card_name": "신한카드 YaY",
+    "corp_name": "신한카드",
+    "categories": [],
+    "new_card": "최대 2.6만원 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/613",
+    "sale_stores": [
+      {
+        "store": "배달앱 최대",
+        "num": "30% 적립"
+      },
+      {
+        "store": "온라인쇼핑 최대",
+        "num": "12,500포인트 적립"
+      },
+      {
+        "store": "홈게임방",
+        "num": "10% 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 23,000원 / 해외겸용 26,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "마리아쥬 서비스 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "온라인쇼핑 지원 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/7/logo_img/912/ico_etc.png",
+        "category": "기타",
+        "description": "홈DIY 적립"
+      }
+    ]
+  },
+  {
+    "card_no": 70,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2684/card_img/32813/2684card.png",
+    "card_name": "현대카드Z play",
+    "corp_name": "현대카드",
+    "categories": ["식비", "여가"],
+    "new_card": "2만원 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/2684",
+    "sale_stores": [
+      {
+        "store": "디지털콘텐츠",
+        "num": "10% 할인"
+      },
+      {
+        "store": "일반음식점",
+        "num": "10% 할인"
+      },
+      {
+        "store": "영화",
+        "num": "10% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 20,000원 / 해외겸용 20,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "온라인 쇼핑몰 10% 청구 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/133/logo_img/996/ico_food.png",
+        "category": "일반음식점",
+        "description": "일반음식점 10% 청구 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "영화 10% 청구 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/27/logo_img/865/ico_foregin%28%ED%95%B4%EC%99%B8%29.png",
+        "category": "해외",
+        "description": "해외 가맹점 10% 청구 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/169/logo_img/8178/ico_subscribe.png",
+        "category": "디지털구독",
+        "description": "디지털 콘텐츠 서비스 10% 청구 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 71,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/259/card_img/20485/259card.png",
+    "card_name": "Oil & Life카드(Life카드)",
+    "corp_name": "IBK기업은행",
+    "categories": ["통신", "식비", "여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/259",
+    "sale_stores": [
+      {
+        "store": "전국 음식점",
+        "num": "10% 할인"
+      },
+      {
+        "store": "커피전문점",
+        "num": "10% 할인"
+      },
+      {
+        "store": "GS칼텍스(LPG포함)",
+        "num": "60원/L 할인"
+      }
+    ],
+    "ex_in_for": "해외겸용 5,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "[기본서비스] 휴대폰 이용금액의 3% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/133/logo_img/996/ico_food.png",
+        "category": "일반음식점",
+        "description": "[특화서비스] 푸드, 커피, 제과업종 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/21/logo_img/859/ico_oil%28%EC%A3%BC%EC%9C%A0%29.png",
+        "category": "주유",
+        "description": "[특화서비스] GS칼텍스 리터당 60원 청구할인(LPG 포함)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/84/logo_img/947/ico_membership.png",
+        "category": "기타",
+        "description": "[기본서비스] GS&POINT 포인트 적립 및 다양한 혜택 제공"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "[기본서비스] CGV, 롯데시네마 2천원 현장할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/71/logo_img/926/ico_themePark.png",
+        "category": "테마파크",
+        "description": "[기본서비스] 주요 놀이공원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/56/logo_img/784/ico_finance.png",
+        "category": "은행사",
+        "description": "[기본서비스] 금융수수료 면제"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "Life Prime/Oil Prime 서비스 중 한가지 선택가능"
+      }
+    ]
+  },
+  {
+    "card_no": 72,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2504/card_img/28652/2504card.png",
+    "card_name": "팟(pod) 카드",
+    "corp_name": "BNK부산은행",
+    "categories": ["식비", "여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2504",
+    "sale_stores": [
+      {
+        "store": "간편결제",
+        "num": "10% 할인"
+      },
+      {
+        "store": "편의점",
+        "num": "10% 할인"
+      },
+      {
+        "store": "온라인쇼핑",
+        "num": "10% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 10,000원 / 해외겸용 15,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/1/logo_img/747/ico_pay.png",
+        "category": "간편결제",
+        "description": "네이버페이·카카오페이·삼성페이 결제 시, 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/77/logo_img/932/ico_convenienceStore.png",
+        "category": "편의점",
+        "description": "GS25, CU, 세븐일레븐, 이마트24에서 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/127/logo_img/991/ico_cafe.png",
+        "category": "카페",
+        "description": "스타벅스(사이렌오더 포함) 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "인생네컷 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/71/logo_img/926/ico_themePark.png",
+        "category": "테마파크",
+        "description": "에버랜드, 롯데월드, 통도환타지아, 경주월드, 이월드 자유이용권 50% 현장할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/169/logo_img/8178/ico_subscribe.png",
+        "category": "디지털구독",
+        "description": "넷플릭스, 멜론, 유튜브프리미엄, 디즈니플러스 30% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "카카오웹툰, 카카오페이지, 네이버웹툰 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "무신사, 에이블리, 지그재그, 마켓컬리, SSG, 쿠팡, G마켓, 옥션, 11번가 10% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/139/logo_img/1002/ico_foodApp.png",
+        "category": "배달앱",
+        "description": "요기요, 배달의 민족 10% 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 73,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/164/card_img/20384/164card.png",
+    "card_name": "ME+(미플러스)카드",
+    "corp_name": "NH농협카드",
+    "categories": ["식비", "여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/164",
+    "sale_stores": [
+      {
+        "store": "전국음식점",
+        "num": "7% 할인"
+      },
+      {
+        "store": "전국대중교통",
+        "num": "7% 할인"
+      },
+      {
+        "store": "커피전문점",
+        "num": "30% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 23,000원 / 해외겸용 25,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "전국 음식점 7% 청구할인(해외포함)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/5/logo_img/910/ico_traffic.png",
+        "category": "교통",
+        "description": "전국 대중교통 7% 청구할인(해외포함)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "국내외 온라인쇼핑 7% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/127/logo_img/991/ico_cafe.png",
+        "category": "카페",
+        "description": "국내외 커피전문점 30% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/71/logo_img/926/ico_themePark.png",
+        "category": "테마파크",
+        "description": "전국 주요 놀이공원 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 74,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/477/card_img/21167/477card.png",
+    "card_name": "신한카드 Deep Taking",
+    "corp_name": "신한카드",
+    "categories": ["식비"],
+    "new_card": "최대 2만원 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/477",
+    "sale_stores": [
+      {
+        "store": "최다이용영역",
+        "num": "2% 적립"
+      },
+      {
+        "store": "푸드",
+        "num": "2% 적립"
+      },
+      {
+        "store": "생활",
+        "num": "2% 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 20,000원 / 해외겸용 20,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "[Taking 10 서비스] 가장 많이 이용한 5개 영역 각 2%씩 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "백화점, 마트, 홈쇼핑, 온라인쇼핑, 소셜몰, 패션&뷰티 2% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "커피전문점, 편의점, 베이커리, 배달앱 2% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/27/logo_img/865/ico_foregin%28%ED%95%B4%EC%99%B8%29.png",
+        "category": "해외",
+        "description": "해외, 항공&면세점 2% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "주유, 교육, 병원, 이동통신, 대중교통 2% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "[My Pick 서비스] 마이신한포인트 1,000포인트 적립"
+      }
+    ]
+  },
+  {
+    "card_no": 75,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/125/card_img/20355/125card.png",
+    "card_name": "E1 LPG KB국민카드",
+    "corp_name": "KB국민카드",
+    "categories": ["식비", "여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/125",
+    "sale_stores": [
+      {
+        "store": "E1 LPG충전소",
+        "num": "100원/L 할인"
+      },
+      {
+        "store": "인터넷 쇼핑몰",
+        "num": "10% 할인"
+      },
+      {
+        "store": "CGV",
+        "num": "10% 할인"
+      }
+    ],
+    "ex_in_for": "해외겸용 20,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/21/logo_img/859/ico_oil%28%EC%A3%BC%EC%9C%A0%29.png",
+        "category": "주유",
+        "description": "E1 LPG충전소 리터당 100원 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/8/logo_img/913/ico_sports.png",
+        "category": "레저/스포츠",
+        "description": "골프장, 골프연습장 이용금액 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "인터넷 쇼핑몰/소셜커머스 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "패밀리레스토랑 이용금액 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/19/logo_img/857/ico_ticket%28%EC%98%81%ED%99%94%EB%AC%B8%ED%99%94%29.png",
+        "category": "영화/문화",
+        "description": "CGV 영화관 이용금액 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/5/logo_img/910/ico_traffic.png",
+        "category": "교통",
+        "description": "대중교통 이용금액 10% 청구할인"
+      }
+    ]
+  },
+  {
+    "card_no": 76,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2442/card_img/28284/2442card.png",
+    "card_name": "KB국민 Our WE:SH 카드",
+    "corp_name": "KB국민카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2442",
+    "sale_stores": [
+      {
+        "store": "대형마트",
+        "num": "5% 청구할인"
+      },
+      {
+        "store": "영화관,공연장/전시장",
+        "num": "10% 청구할인"
+      },
+      {
+        "store": "이동통신 자동납부",
+        "num": "10% 청구할인"
+      }
+    ],
+    "ex_in_for": "국내전용 15,000원 / 해외겸용 15,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "2번의 선택 서비스 | '우리'의 소비패턴에 맞게 2번의 선택\n1st 선택 | '우리'를 위한 선택"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "2번의 선택 서비스 | '우리'의 소비패턴에 맞게 2번의 선택\n2nd 선택 | '두리(나의 소중한 당신)'를 위한 선택"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/59/logo_img/939/ico_finance.png",
+        "category": "기타",
+        "description": "기본 ‘함께’ & WE:SH 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "카드 플레이트 선택 가능"
+      }
+    ]
+  },
+  {
+    "card_no": 77,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/36/card_img/23899/36card.png",
+    "card_name": "신한카드 Cube Platinum#",
+    "corp_name": "신한카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/36",
+    "sale_stores": [
+      {
+        "store": "선택서비스",
+        "num": "5% 할인"
+      },
+      {
+        "store": "1천원미만의",
+        "num": "잔돈 할인"
+      },
+      {
+        "store": "모든주유소",
+        "num": "60원/L 할인"
+      }
+    ],
+    "ex_in_for": "해외겸용 32,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "Cube 선택서비스 - 선택서비스 5개, 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "Coin-Save(잔돈할인) 서비스 - 잔돈은 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "Platinum# 서비스 및 국제브랜드사 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 78,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/476/card_img/21166/476card.png",
+    "card_name": "신한카드 Deep Making",
+    "corp_name": "신한카드",
+    "categories": ["식비"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/476",
+    "sale_stores": [
+      {
+        "store": "DIY서비스",
+        "num": "17% 적립"
+      },
+      {
+        "store": "쇼핑",
+        "num": "1~5% 적립"
+      },
+      {
+        "store": "푸드",
+        "num": "1~5% 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 30,000원 / 해외겸용 30,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "[Making 17 서비스] 포인트 적립받을 영역과 적립율을 직접 선택하는 DIY 서비스!"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "백화점, 마트, 홈쇼핑, 온라인쇼핑, 소셜몰, 패션&뷰티 1~5% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "커피전문점, 편의점, 베이커리, 배달앱 1~5% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/27/logo_img/865/ico_foregin%28%ED%95%B4%EC%99%B8%29.png",
+        "category": "해외",
+        "description": "해외, 항공&면세점 1~5% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "주유, 교육, 병원, 이동통신, 대중교통 1~5% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "[My Pick 서비스] 마이신한포인트 2,000포인트 적립"
+      }
+    ]
+  },
+  {
+    "card_no": 79,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/655/card_img/21418/655card.png",
+    "card_name": "Daily With(데일리위드)카드",
+    "corp_name": "IBK기업은행",
+    "categories": ["식비", "통신", "의료"],
+    "new_card": "최대 1.2만원 캐시백",
+    "detail_link": "https://www.card-gorilla.com/card/detail/655",
+    "sale_stores": [
+      {
+        "store": "6대생활영역",
+        "num": "1% 기본캐시백"
+      },
+      {
+        "store": "최다이용영역",
+        "num": "1% 추가캐시백"
+      }
+    ],
+    "ex_in_for": "국내전용 10,000원 / 해외겸용 12,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/85/logo_img/949/ico_discount.png",
+        "category": "할인",
+        "description": "6대 생활영역 캐시백"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "[6대생활영역] 음식점"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "[6대생활영역] 온라인쇼핑"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/9/logo_img/914/ico_mart.png",
+        "category": "마트/편의점",
+        "description": "[6대생활영역] 대형마트·편의점"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "[6대 생활영역] 통신비"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/87/logo_img/951/ico_hospital.png",
+        "category": "병원",
+        "description": "[6대 생활영역] 병원비"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/5/logo_img/910/ico_traffic.png",
+        "category": "교통",
+        "description": "[6대 생활영역] 교통"
+      }
+    ]
+  },
+  {
+    "card_no": 80,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2615/card_img/31432/2615card-%281%29.png",
+    "card_name": "IBK KaPick",
+    "corp_name": "IBK기업은행",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2615",
+    "sale_stores": [
+      {
+        "store": "국내・외 가맹점",
+        "num": "0.5% 카카오페이 포인트 적립"
+      },
+      {
+        "store": "주요소비영역 최대",
+        "num": "1.5% 카카오페이 포인트 적립"
+      },
+      {
+        "store": "멤버십 영역 최대",
+        "num": "7% 카카오페이 포인트 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 14,000원 / 해외겸용 15,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/31/logo_img/750/ico_pay.png",
+        "category": "카카오페이",
+        "description": "ALL - 국내・외 가맹점 0.5% 카카오페이 포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/31/logo_img/750/ico_pay.png",
+        "category": "카카오페이",
+        "description": "LIVING - 주요소비영역 1%~1.5% 카카오페이 포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/31/logo_img/750/ico_pay.png",
+        "category": "카카오페이",
+        "description": "MEMBERSHIP - 멤버십 영역 5%~7% 카카오페이 포인트 적립"
+      }
+    ]
+  },
+  {
+    "card_no": 81,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/1859/card_img/22152/1859card.png",
+    "card_name": "OK캐쉬백 위비할인카드",
+    "corp_name": "우리카드",
+    "categories": ["여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/1859",
+    "sale_stores": [
+      {
+        "store": "쇼핑",
+        "num": "7% 할인"
+      },
+      {
+        "store": "생활",
+        "num": "7% 할인"
+      },
+      {
+        "store": "OK캐쉬백",
+        "num": "멤버십 서비스"
+      }
+    ],
+    "ex_in_for": "국내전용 10,000원 / 해외겸용 12,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/81/logo_img/944/ico_membership.png",
+        "category": "OK캐쉬백",
+        "description": "OK캐쉬백 멤버십 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "각영역별 주요 9대 업종 7% 청구할인\n자동이체시 매월 포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/19/logo_img/857/ico_ticket%28%EC%98%81%ED%99%94%EB%AC%B8%ED%99%94%29.png",
+        "category": "영화/문화",
+        "description": "NHN Entertainment 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "치킨/피자, 영화관, 커피, 놀이공원, 전기차충전 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 82,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/182/card_img/20399/182card.png",
+    "card_name": "SolSol++(쏠쏠투플러스)카드",
+    "corp_name": "NH농협카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/182",
+    "sale_stores": [
+      {
+        "store": "주요 12대 생활업종",
+        "num": "최대 12% 할인"
+      },
+      {
+        "store": "커피",
+        "num": "10% 할인"
+      },
+      {
+        "store": "국내선 동반자",
+        "num": "무료 항공권"
+      }
+    ],
+    "ex_in_for": "해외겸용 50,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/11/logo_img/916/ico_allStore.png",
+        "category": "모든가맹점",
+        "description": "기본캐시백: 전월 실적조건 없이 0.5% 캐시백\n특별캐시백: 최대 5% 캐시백"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "플래티넘(Platinum) 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/10/logo_img/915/ico_membership.png",
+        "category": "멤버십포인트",
+        "description": "L.POINT"
+      }
+    ]
+  },
+  {
+    "card_no": 83,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2226/card_img/21355/2226card.png",
+    "card_name": "카카오뱅크 롯데카드",
+    "corp_name": "롯데카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2226",
+    "sale_stores": [
+      {
+        "store": "국내외가맹점",
+        "num": "0.5% 캐시백"
+      },
+      {
+        "store": "스페셜가맹점",
+        "num": "5% 캐시백"
+      }
+    ],
+    "ex_in_for": "국내전용 15,000원 / 해외겸용 15,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "온라인쇼핑몰, 대형마트, 소셜커머스, 백화점 10% 포인트리 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "아파트 관리비, 편의점, 배달앱 5% 포인트리 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/1/logo_img/747/ico_pay.png",
+        "category": "간편결제",
+        "description": "온라인쇼핑몰에서 KB Pay 이용 시 5% 포인트리 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "Master 티타늄 서비스\nK-WORLD/국내전용 티타늄 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 84,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/912/card_img/21632/912card.png",
+    "card_name": "Easy shopping 티타늄카드",
+    "corp_name": "KB국민카드",
+    "categories": ["식비"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/912",
+    "sale_stores": [
+      {
+        "store": "온라인쇼핑몰/마트",
+        "num": "10% 적립"
+      },
+      {
+        "store": "KB Pay 이용 시",
+        "num": "5% 추가적립"
+      },
+      {
+        "store": "관리비/편의점/배달앱",
+        "num": "5% 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 30,000원 / 해외겸용 30,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "[바로카드 Pick! 적립] 쇼픽 그룹 7% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "[바로카드 Pick! 적립] 먹픽 그룹 7% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "[바로카드 Pick! 적립] 생픽 그룹 7% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "[전월 실적, 한도 없는 적립] 국내 카카오페이 결제 1% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/27/logo_img/865/ico_foregin%28%ED%95%B4%EC%99%B8%29.png",
+        "category": "해외",
+        "description": "[전월 실적, 한도 없는 적립] 해외 온/오프라인 결제 2% 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/65/logo_img/792/ico_monthlyInstallment.png",
+        "category": "무이자할부",
+        "description": "전국 모든 가맹점 2~3개월 무이자할부 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "MasterCard Platinum 기본 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 85,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2724/card_img/36084/2724card.png",
+    "card_name": "BC 바로 KaPick",
+    "corp_name": "BC 바로카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2724",
+    "sale_stores": [
+      {
+        "store": "쇼핑",
+        "num": "7% 적립"
+      },
+      {
+        "store": "커피, 편의점, 배달",
+        "num": "7% 적립"
+      },
+      {
+        "store": "생활",
+        "num": "7% 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 15,000원 / 해외겸용 15,000원",
+    "ex_l_mth": "전월실적 15만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/169/logo_img/8178/ico_subscribe.png",
+        "category": "디지털구독",
+        "description": "네이버 디지털콘텐츠/네이버플러스 멤버십 50% 네이버페이 포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/29/logo_img/748/ico_pay.png",
+        "category": "네이버페이",
+        "description": "네이버페이로 결제 시 국내 가맹점 1% 네이버페이 포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/29/logo_img/748/ico_pay.png",
+        "category": "네이버페이",
+        "description": "배달앱/커피전문점 5% 네이버페이 포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "온라인쇼핑몰 5% 네이버페이 포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/150/logo_img/1015/ico_foregincard.png",
+        "category": "해외이용",
+        "description": "해외 1% 네이버페이 포인트 적립"
+      }
+    ]
+  },
+  {
+    "card_no": 86,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2517/card_img/28787/2517card.png",
+    "card_name": "네이버웹툰 삼성 iD 카드",
+    "corp_name": "삼성카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2517",
+    "sale_stores": [
+      {
+        "store": "네이버 디지털콘텐츠",
+        "num": "50% 적립"
+      },
+      {
+        "store": "국내 가맹점",
+        "num": "1% 적립"
+      },
+      {
+        "store": "배달앱·스타벅스",
+        "num": "5% 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 10,000원 / 해외겸용 10,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/30/logo_img/749/ico_pay.png",
+        "category": "삼성페이",
+        "description": "삼성페이 10% 할인서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "주요 생활영역 5% 할인서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 87,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/148/card_img/20374/148card.png",
+    "card_name": "삼성페이 KB국민카드",
+    "corp_name": "KB국민카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/148",
+    "sale_stores": [
+      {
+        "store": "삼성페이 간편결제",
+        "num": "10% 청구할인"
+      },
+      {
+        "store": "주요생활영역",
+        "num": "5% 청구할인"
+      }
+    ],
+    "ex_in_for": "해외겸용 15,000원",
+    "ex_l_mth": "전월실적 40만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/7/logo_img/912/ico_etc.png",
+        "category": "기타",
+        "description": "[매일할인] 점심식사·배달앱·대중교통 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "[라이프스타일 할인] 신세계·온라인쇼핑·뷰티·통신 등 7% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/168/logo_img/4570/ico_business.png",
+        "category": "제휴/PLCC",
+        "description": "신세계백화점 제휴 서비스 제공"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "VISA Platinum 서비스 제공"
+      }
+    ]
+  },
+  {
+    "card_no": 88,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2384/card_img/25486/2384card.png",
+    "card_name": "신세계 BC 바로 클리어 플러스",
+    "corp_name": "BC 바로카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2384",
+    "sale_stores": [
+      {
+        "store": "점심식사",
+        "num": "5% 할인"
+      },
+      {
+        "store": "신세계백화점",
+        "num": "7% 할인"
+      },
+      {
+        "store": "신세계백화점",
+        "num": "제휴 서비스 제공"
+      }
+    ],
+    "ex_in_for": "국내전용 5,000원 / 해외겸용 5,000원",
+    "ex_l_mth": "전월실적 20만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/123/logo_img/987/ico_oil.png",
+        "category": "충전소",
+        "description": "SK 충전소에서 건당 3만원이상 충전 시 1,500원 정액 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/118/logo_img/980/ico_carMaintenance.png",
+        "category": "정비",
+        "description": "스피드메이트 차량정비 현장할인 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/135/logo_img/998/ico_food.png",
+        "category": "패밀리레스토랑",
+        "description": "3대 패밀리레스토랑(아웃백,VIPS,TGIF) 이용 시 10% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/65/logo_img/792/ico_monthlyInstallment.png",
+        "category": "무이자할부",
+        "description": "백화점, 대형마트, 정비, 손해보험 업종 2~3개월 무이자할부 서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 89,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/107/card_img/20265/107card.png",
+    "card_name": "SK LPG SAVE KB국민카드",
+    "corp_name": "KB국민카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/107",
+    "sale_stores": [
+      {
+        "store": "SK에너지(LPG) 충전시",
+        "num": "1,500원 정액할인"
+      },
+      {
+        "store": "엔진오일",
+        "num": "연 1회 무료교환"
+      },
+      {
+        "store": "패밀리레스토랑",
+        "num": "10% 청구할인"
+      }
+    ],
+    "ex_in_for": "국내전용 3,000원 / 해외겸용 5,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/165/logo_img/985/ico_car.png",
+        "category": "자동차",
+        "description": "자동차금융 이용고객 월 납부금 최대 1만원 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/21/logo_img/859/ico_oil%28%EC%A3%BC%EC%9C%A0%29.png",
+        "category": "주유",
+        "description": "주유소/충전소 리터당 70원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/117/logo_img/979/ico_carInsurance.png",
+        "category": "보험",
+        "description": "자동차 보험 최대 2만원 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/118/logo_img/980/ico_carMaintenance.png",
+        "category": "정비",
+        "description": "스피드메이트 엔진오일 및 차량정비 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/164/logo_img/984/ico_car.png",
+        "category": "렌터카",
+        "description": "SK렌터카 최대 70% 현장할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "영화관, 패밀리레스토랑, 커피 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 90,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/953/card_img/21590/953card.png",
+    "card_name": "마이카 우리카드",
+    "corp_name": "우리카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/953",
+    "sale_stores": [
+      {
+        "store": "자동차금융 최대",
+        "num": "1만원 할인"
+      },
+      {
+        "store": "주유소/충전소",
+        "num": "70원/L 할인"
+      },
+      {
+        "store": "자동차보험 최대",
+        "num": "2만원 할인"
+      }
+    ],
+    "ex_in_for": "해외겸용 12,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "국내/외 이용가맹점 0.7% NH포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "6개 영역 중 당월(1일~말일) 이용금액 1위/2위 영역은 기본적립의 5배/3배 자동적용"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/6/logo_img/911/ico_finance.png",
+        "category": "금융",
+        "description": "농협 인터넷·모바일·스마트·텔레뱅킹 이체수수료 통합 월 10회"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/157/logo_img/1004/ico_premium.png",
+        "category": "프리미엄 서비스",
+        "description": "브랜드서비스 제공"
+      }
+    ]
+  },
+  {
+    "card_no": 91,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/636/card_img/21402/636card.png",
+    "card_name": "올바른 NEW HAVE+카드",
+    "corp_name": "NH농협카드",
+    "categories": ["여가", "식비", "통신"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/636",
+    "sale_stores": [
+      {
+        "store": "국내외가맹점",
+        "num": "0.7% 적립"
+      },
+      {
+        "store": "이용금액 1위",
+        "num": "5배 적립"
+      },
+      {
+        "store": "이용금액 2위",
+        "num": "3배 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 23,000원 / 해외겸용 25,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "CJ온스타일 7% 결제일 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/90/logo_img/954/ico_cosmetic.png",
+        "category": "드럭스토어",
+        "description": "올리브영 10% 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/125/logo_img/989/ico_bakery.png",
+        "category": "베이커리",
+        "description": "뚜레쥬르 10% 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/135/logo_img/998/ico_food.png",
+        "category": "패밀리레스토랑",
+        "description": "VIPS 20% 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "CGV 4,000원·8,000원 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/169/logo_img/8178/ico_subscribe.png",
+        "category": "디지털구독",
+        "description": "티빙 30% 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/139/logo_img/1002/ico_foodApp.png",
+        "category": "배달앱",
+        "description": "배달앱 5% 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/77/logo_img/932/ico_convenienceStore.png",
+        "category": "편의점",
+        "description": "편의점 5% 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "이동통신요금 5% 결제일할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/80/logo_img/943/ico_membership.png",
+        "category": "CJ ONE",
+        "description": "CJ ONE 멤버십 기능"
+      }
+    ]
+  },
+  {
+    "card_no": 92,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2392/card_img/28098/2392card.png",
+    "card_name": "CJ 삼성 iD 카드",
+    "corp_name": "삼성카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2392",
+    "sale_stores": [
+      {
+        "store": "CJ온스타일",
+        "num": "7% 할인"
+      },
+      {
+        "store": "올리브영",
+        "num": "10% 할인"
+      },
+      {
+        "store": "뚜레쥬르",
+        "num": "10% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 10,000원 / 해외겸용 10,000원",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "요일별 서비스영역 대상 가맹점 이용시 5% 카카오페이포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/1/logo_img/747/ico_pay.png",
+        "category": "간편결제",
+        "description": "토/일 카카오페이로 이용 시, 3천 카카오페이포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "OTT 및 멤버십 서비스, 커피 대상가맹점 이용 시 10% 카카오페이포인트 적립"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "다양한 플레이트 선택 가능"
+      }
+    ]
+  },
+  {
+    "card_no": 93,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2549/card_img/29581/2549card.png",
+    "card_name": "신한카드 KaPick",
+    "corp_name": "신한카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2549",
+    "sale_stores": [
+      {
+        "store": "주중 서비스 요일별",
+        "num": "5% 포인트 적립"
+      },
+      {
+        "store": "토/일 서비스",
+        "num": "월 최대 1만2천 포인트 적립"
+      },
+      {
+        "store": "월간서비스",
+        "num": "10% 포인트 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 19,000원 / 해외겸용 22,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/169/logo_img/8178/ico_subscribe.png",
+        "category": "디지털구독",
+        "description": "우주패스 구독료 캐시백 서비스\n최대 9,900원 캐시백"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "할인점, 온라인쇼핑 이용 시 5% 적립\n생활친화업종 이용 시 10% 적립"
+      }
+    ]
+  },
+  {
+    "card_no": 94,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2302/card_img/23140/2302card.png",
+    "card_name": "T우주 신한카드",
+    "corp_name": "신한카드",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2302",
+    "sale_stores": [
+      {
+        "store": "우주패스 구독료",
+        "num": "최대9,900원 캐시백"
+      },
+      {
+        "store": "할인점/온라인쇼핑",
+        "num": "최대5% 적립"
+      },
+      {
+        "store": "생활친화업종",
+        "num": "최대10% 적립"
+      }
+    ],
+    "ex_in_for": "국내전용 15,000원 / 해외겸용 18,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "6대 생활영역 이용금액 1% 기본캐시백\n음식점, 온라인쇼핑, 대형마트·편의점, 통신비, 병원비, 교통"
+      }
+    ]
+  },
+  {
+    "card_no": 95,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2483/card_img/28404/2483card.png",
+    "card_name": "IBK DC히어로즈 카드(신용)",
+    "corp_name": "IBK기업은행",
+    "categories": ["의료"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2483",
+    "sale_stores": [
+      {
+        "store": "음식점",
+        "num": "1% 캐시백"
+      },
+      {
+        "store": "병원비",
+        "num": "1% 캐시백"
+      },
+      {
+        "store": "이용금액 최다영역",
+        "num": "1% 추가캐시백"
+      }
+    ],
+    "ex_in_for": "국내전용 10,000원 / 해외겸용 12,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/42/logo_img/901/ico_happy.png",
+        "category": "국민행복",
+        "description": "신청 및 바우처 안내"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/45/logo_img/904/icon_daycare.png",
+        "category": "어린이집",
+        "description": "선택서비스 : for Green Life Service(C-Type)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/48/logo_img/907/ico_edu.png",
+        "category": "학원",
+        "description": "선택서비스 : for Children Service(B-Type)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/87/logo_img/951/ico_hospital.png",
+        "category": "병원",
+        "description": "선택서비스 : for Baby Service(A-Type)"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/84/logo_img/947/ico_membership.png",
+        "category": "기타",
+        "description": "그린카드 멤버십서비스"
+      }
+    ]
+  },
+  {
+    "card_no": 96,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/260/card_img/20486/260card.png",
+    "card_name": "국민행복카드(신용)",
+    "corp_name": "IBK기업은행",
+    "categories": [],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/260",
+    "sale_stores": [
+      {
+        "store": "어린이집/유치원/학원",
+        "num": "5% 할인"
+      },
+      {
+        "store": "커피전문점",
+        "num": "20% 할인"
+      },
+      {
+        "store": "병/의원, 산후조리원",
+        "num": "5% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 없음",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/168/logo_img/4570/ico_business.png",
+        "category": "제휴/PLCC",
+        "description": "캐롯손해보험료 청구 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/86/logo_img/950/ico_point.png",
+        "category": "적립",
+        "description": "업종별 0.5~3% 적립\n월 100만원 이상 이용 시 1.5배 적립"
+      }
+    ]
+  },
+  {
+    "card_no": 97,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/2198/card_img/21812/2198card.png",
+    "card_name": "캐롯손해보험-현대카드M Edition3",
+    "corp_name": "현대카드",
+    "categories": ["교통", "여가"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/2198",
+    "sale_stores": [
+      {
+        "store": "캐롯손해보험료 납부 시",
+        "num": "최대 24,000원 할인"
+      },
+      {
+        "store": "업종별",
+        "num": "0.5~3% 적립"
+      },
+      {
+        "store": "현대,기아차 구매 시",
+        "num": "1.5% 특별적립"
+      }
+    ],
+    "ex_in_for": "국내 30,000원 / 해외겸용 30,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/121/logo_img/983/ico_car.png",
+        "category": "기타",
+        "description": "경차 유류세 환급"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/122/logo_img/986/ico_oil.png",
+        "category": "주유소",
+        "description": "주유 할인 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/52/logo_img/767/ico_traffic.png",
+        "category": "대중교통",
+        "description": "교통 할인 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "쇼핑 할인 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/118/logo_img/980/ico_carMaintenance.png",
+        "category": "정비",
+        "description": "정비(엔진오일) 할인 서비스"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/92/logo_img/957/ico_hair.png",
+        "category": "헤어",
+        "description": "미용실 최대 20% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/71/logo_img/926/ico_themePark.png",
+        "category": "테마파크",
+        "description": "놀이공원 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/69/logo_img/924/ico_stadium.png",
+        "category": "경기관람",
+        "description": "롯데 자이언츠 20% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/115/logo_img/2330/ico_movie.png",
+        "category": "영화",
+        "description": "뮤지컬, 연극 등 공연 10~30% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/135/logo_img/998/ico_food.png",
+        "category": "패밀리레스토랑",
+        "description": "외식 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 98,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/207/card_img/20431/207card.png",
+    "card_name": "경차 smart 롯데카드",
+    "corp_name": "롯데카드",
+    "categories": ["식비", "여가", "교통", "통신"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/207",
+    "sale_stores": [
+      {
+        "store": "경차",
+        "num": "유류세 환급"
+      },
+      {
+        "store": "주유소",
+        "num": "리터당 80원 할인"
+      },
+      {
+        "store": "스피드메이트",
+        "num": "엔진오일 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 없음 / 해외겸용 없음",
+    "ex_l_mth": "전월실적 30만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/99/logo_img/963/ico_onlineShopping.png",
+        "category": "온라인쇼핑",
+        "description": "[Easy on 특화서비스] 인터넷 쇼핑몰 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "[Easy on 특화서비스] 음식 업종 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/101/logo_img/965/ico_socialCommerce.png",
+        "category": "소셜커머스",
+        "description": "[Easy on 특화서비스] 소셜커머스 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/139/logo_img/1002/ico_foodApp.png",
+        "category": "배달앱",
+        "description": "[Easy on 특화서비스] 배달앱 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/97/logo_img/961/ico_shopping.png",
+        "category": "백화점",
+        "description": "[Easy on 특화서비스] 백화점 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/127/logo_img/991/ico_cafe.png",
+        "category": "카페",
+        "description": "[Easy on 특화서비스] 커피 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/77/logo_img/932/ico_convenienceStore.png",
+        "category": "편의점",
+        "description": "[Easy on 특화서비스] 편의점 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/52/logo_img/767/ico_traffic.png",
+        "category": "대중교통",
+        "description": "[Easy on Plus 서비스] 대중교통 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/23/logo_img/861/ico_mobile%28%ED%86%B5%EC%8B%A0%29.png",
+        "category": "통신",
+        "description": "[Easy on Plus 서비스] 이동통신요금 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/154/logo_img/923/ico_life.png",
+        "category": "생활",
+        "description": "[Easy on Plus 서비스] 온라인 음원, 숙박앱 5% 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/33/logo_img/898/ico_app.png",
+        "category": "APP",
+        "description": "[Easy on Plus 서비스] 인터넷 쇼핑몰 앱카드 결제 5% 할인"
+      }
+    ]
+  },
+  {
+    "card_no": 99,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/470/card_img/21160/470card.png",
+    "card_name": "Easy on카드",
+    "corp_name": "KB국민카드",
+    "categories": ["식비", "교육", "의료"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/470",
+    "sale_stores": [
+      {
+        "store": "푸드, 배달앱, 커피",
+        "num": "5% 할인"
+      },
+      {
+        "store": "온라인음원, 숙박앱",
+        "num": "5% 할인"
+      }
+    ],
+    "ex_in_for": "국내전용 20,000원 / 해외겸용 20,000원",
+    "ex_l_mth": "전월실적 50만원 이상",
+    "extra_info": null,
+    "benefits": [
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/68/logo_img/8897/ico_diy.png",
+        "category": "선택형",
+        "description": "7개 업종 중 선택한 1개 업종 가맹점에서 카드 사용 시 7% 청구 할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/9/logo_img/914/ico_mart.png",
+        "category": "마트/편의점",
+        "description": "[선택] 전국 모든 마트, 슈퍼, 편의점 7% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/24/logo_img/862/ico_food%28%ED%91%B8%EB%93%9C%29.png",
+        "category": "푸드",
+        "description": "[선택] 전국 모든 음식점, 제과점 7% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/16/logo_img/854/ico_shopping%28%EC%87%BC%ED%95%91%29.png",
+        "category": "쇼핑",
+        "description": "[선택] 전국 모든 백화점, 면세점, 홈쇼핑, 온라인쇼핑 7% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/8/logo_img/913/ico_sports.png",
+        "category": "레저/스포츠",
+        "description": "[선택] 전국 모든 스포츠/놀이공원/영화관/여행 업종 7% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/4/logo_img/909/ico_edu.png",
+        "category": "교육/육아",
+        "description": "[선택] 전국 모든 학원(온라인 강의 제외) 7% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/13/logo_img/851/ico_hospital%28%EB%B3%91%EC%9B%90%EC%95%BD%EA%B5%AD%29.png",
+        "category": "병원/약국",
+        "description": "[선택] 전국 모든 병원(동물병원 제외), 의원, 한의원, 약국, 산후조리원 7% 청구할인"
+      },
+      {
+        "image_url": "https://d1c5n4ri2guedi.cloudfront.net/benefit/21/logo_img/859/ico_oil%28%EC%A3%BC%EC%9C%A0%29.png",
+        "category": "주유",
+        "description": "[선택] 전국 모든 주유소, 가스충전소에서 카드 사용 시 리터당 60원 청구할인"
+      }
+    ]
+  },
+  {
+    "card_no": 100,
+    "card_img": "https://d1c5n4ri2guedi.cloudfront.net/card/1961/card_img/22037/1961card.png",
+    "card_name": "S1카드",
+    "corp_name": "Sh수협은행",
+    "categories": ["의료"],
+    "new_card": null,
+    "detail_link": "https://www.card-gorilla.com/card/detail/1961",
+    "sale_stores": [
+      {
+        "store": "7개 업종 중",
+        "num": "1개 업종 청구할인"
+      },
+      {
+        "store": "마트,슈퍼,편의점",
+        "num": "7% 청구할인"
+      },
+      {
+        "store": "음식점, 제과점",
+        "num": "7% 청구할인"
+      }
+    ],
+    "ex_in_for": "국내전용 10,000원 해외겸용 12,000원",
+    "ex_l_mth": "전월실적 없음",
+    "extra_info": null
+  }
+]

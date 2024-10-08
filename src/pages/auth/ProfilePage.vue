@@ -10,17 +10,17 @@ const router = useRouter();
 
 // 아바타 처리를 위한 Ref
 const avatar = ref(null); // 아바타 파일 입력 참조
-const avatarPath = ref('/assets/media/avatars/default_avatar.png'); // 기본 아바타 이미지 경로
+const avatarPath = ref('/src/assets/media/avatars/black.png'); // 기본 아바타 이미지 경로
 
 // 회원 정보를 담고 있는 reactive 상태
 const member = reactive({
-  user_id: auth.user_id,
-  birthdate: auth.birthdate, // 추가: 생년월일
+  username: auth.username,
+  birth: auth.birth, // 추가: 생년월일
   oldPassword: '',
   newPassword: '',
   newPassword2: '',
   avatar: null,
-  mbti: auth.mbti, // 추가: MBTI
+  mbti: auth.mbti_no, // 추가: MBTI
 });
 
 // 비밀번호 변경 상태
@@ -42,6 +42,8 @@ const disableSubmit = computed(
     !changePassword.newPassword ||
     !changePassword.newPassword2
 );
+
+
 const logout = (e) => {
   // 로그아웃 처리
   auth.logout();
@@ -109,7 +111,7 @@ const onAvatarChange = (event) => {
 
 // 아바타 삭제 핸들러 (기본 이미지로 재설정)
 const onDeleteAvatar = () => {
-  avatarPath.value = '/assets/media/avatars/default_avatar.png'; // 기본 아바타 이미지로 설정
+  avatarPath.value = '/src/assets/media/avatars/black.png'; // 기본 아바타 이미지로 설정
   alert('프로필 사진이 삭제되었습니다.');
 };
 </script>
@@ -167,24 +169,12 @@ const onDeleteAvatar = () => {
                 type="text"
                 class="form-control"
                 id="user_id"
-                v-model="member.user_id"
+                v-model="member.username"
                 readonly
               />
             </div>
           </div>
-          <div class="mb-6 row">
-            <label for="email" class="col-sm-4 col-form-label fw-bold"
-              >E-mail</label
-            >
-            <div class="col-sm-8">
-              <input
-                type="text"
-                class="form-control"
-                id="email"
-                v-model="member.email"
-              />
-            </div>
-          </div>
+          
           <div class="mb-6 row">
             <label for="birthdate" class="col-sm-4 col-form-label fw-bold"
               >생년월일</label
@@ -194,8 +184,7 @@ const onDeleteAvatar = () => {
                 type="text"
                 class="form-control"
                 id="birth"
-                v-model="member.birthdate"
-                readonly
+                v-model="member.birth"
               />
             </div>
           </div>
