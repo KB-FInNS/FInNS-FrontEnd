@@ -3,12 +3,12 @@
       <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold justify-content-center">
         <!--begin::Nav item-->
         <li class="nav-item">
-          <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/profile/spending" exact-active-class="active">소비 내역</router-link>
+          <router-link class="nav-link text-active-primary ms-0 me-10 py-5" :to="`/profile/${userNo}/spending`" exact-active-class="active">소비 내역</router-link>
         </li>
         <!--end::Nav item-->
         <!--begin::Nav item-->
         <li class="nav-item" style="margin-left: 300px">
-          <router-link class="nav-link text-active-primary ms-0 me-10 py-5" to="/profile/analysis" exact-active-class="active">분석</router-link>
+          <router-link class="nav-link text-active-primary ms-0 me-10 py-5" :to="`/profile/${userNo}/analysis`" exact-active-class="active">분석</router-link>
         </li>
         <!--end::Nav item-->
       </ul>
@@ -35,11 +35,11 @@
               <tr
                 v-for="(item, index) in percentageCategories"
                 :key="index"
-                :style="{ backgroundColor: bgColors[index] }"
+                :style="{ backgroundColor: categoryMap.get(item.category).bgColor }"
                 @click="categoryClick(item.category)"
                 style="cursor: pointer; line-height: 2.5;">
                 <td class="src" style="border-radius: 30px 0px 0px 30px; padding: 10px 20px;">
-                  <img :src="getCategoryIcon(item.category)" style="width: 40px; height: 40px; margin-left: 40px; margin-top: -5px" />
+                  <img :src="categoryMap.get(item.category).img_url" style="width: 40px; height: 40px; margin-left: 40px; margin-top: -5px" />
                   <span class="ms-8 fs-2 fw-bold" style="color: #4A4A4A">{{ item.category }}</span>
                 </td>
                 <td class="percentage fs-2 fw-bold text-center" style="color: #4A4A4A; border-radius: 0px 30px 30px 0px; padding: 10px 20px;">
@@ -66,35 +66,33 @@
 
 <script setup>
 import DataTables from '@/components/common/DataTables.vue'
-import { ref, onMounted, computed } from 'vue';
 import CardComponent from '@/components/common/CardComponent.vue';
+import { ref, onMounted, computed } from 'vue';
+import { useRoute } from 'vue-router';
 
-const category = [
-    { name: '식비 · 카페', icon: '/assets/media/category/meal.png' },
-    { name: '쇼핑', icon: '/assets/media/category/shopping.png' },
-    { name: '미용', icon: '/assets/media/category/beauty.png' },
-    { name: '의료', icon: '/assets/media/category/health.png' },
-    { name: '통신', icon: '/assets/media/category/communication.png' },
-    { name: '교통', icon: '/assets/media/category/car.png' },
-    { name: '문화 · 여행', icon: '/assets/media/category/travel.png' },
-    { name: '교육', icon: '/assets/media/category/study.png' },
-    { name: '술 · 유흥', icon: '/assets/media/category/play.png' },
-    { name: '기타', icon: '/assets/media/category/else.png' }
-];
+const route = useRoute();
+const userNo = route.params.userNo;
 
-const getCategoryIcon = (categoryName) => {
-    const categoryItem = category.find(item => item.name === categoryName);
-    return categoryItem ? categoryItem.icon : '/assets/media/category/default.png';
-};
+const categoryMap = new Map([
+  ['식비 · 카페', { img_url: '/assets/media/category/meal.png', bgColor: '#8DC3FF' }],
+  ['쇼핑', { img_url: '/assets/media/category/shopping.png', bgColor: '#FF8690' }],
+  ['의료', { img_url: '/assets/media/category/health.png', bgColor: '#88E793' }],
+  ['통신', { img_url: '/assets/media/category/communication.png', bgColor: '#EEA4FB' }],
+  ['술 · 유흥', { img_url: '/assets/media/category/play.png', bgColor: '#FFBE5F' }],
+  ['미용', { img_url: '/assets/media/category/beauty.png', bgColor: '#D46B7E' }],
+  ['교통', { img_url: '/assets/media/category/car.png', bgColor: '#7ED7E9' }],
+  ['문화 · 여행', { img_url: '/assets/media/category/travel.png', bgColor: '#5ECBCB' }],
+  ['교육', { img_url: '/assets/media/category/study.png', bgColor: '#B5BDC4' }],
+  ['기타', { img_url: '/assets/media/category/else.png', bgColor: '#DCE775' }]
+]);
 
 let sortedCategories = ref([]);
 let isTableVisible = ref(false); // 테이블 표시 여부
 let isListVisible = ref(false); // 테이블 표시 여부
-const bgColors = ['#8DC3FF', '#FF949D', '#E1BEE7', '#FFE57F', '#88E793', '#FFB74D', '#80CBC4', '#90CAF9', '#FFAB91', '#DCE775'];
 
 const fetchSortedCategories = async () => {
   try {
-    const response = await axios.get('http://localhost:8080/users/1/amountByCategory');
+    const response = await axios.get(`http://localhost:8080/users/${userNo}/amountByCategory`);
     sortedCategories.value = response.data;
     
   } catch (error) {
@@ -143,7 +141,9 @@ const drawChart = () => {
           fontSize: 24, // 타이틀 글씨 크기 설정
           color: '#005E92', // 글씨 색상 설정
       },
-      slices: bgColors.reduce((acc, color, idx) => {
+      slices: sortedCategories.value.reduce((acc, item, idx) => {
+        const color = categoryMap.get(item.category).bgColor;
+
         acc[idx] = { offset: 0.02, color: color };
         return acc;
       }, {}),
@@ -162,7 +162,7 @@ const totalList = ref([]);
 const getPostsByCategory = async (category) => {
   try {
     const postRequestByCategoryDTO = {
-      userNo: 1,
+      userNo: userNo,
       category: category,
       isOnlyPublic: false
     }
@@ -179,7 +179,7 @@ const categoryClick = (category) => {
   getPostsByCategory(category);
 
   window.scrollTo({
-    top: 930, // 페이지의 전체 높이로 스크롤
+    top: 1120, // 페이지의 전체 높이로 스크롤
     behavior: 'smooth' // 부드러운 스크롤 효과
   });
 };

@@ -5,7 +5,7 @@
     <h1 class="text-center" style="margin-top: 20px; margin-bottom: 150px">소비 내역이 없습니다!</h1>
   </div>
   <div v-else>
-    <div class="table-responsive" style="height: 610px; overflow-y: auto; margin-bottom: 150px">
+    <div class="table-responsive" style="height: 610px; overflow-y: auto; margin-bottom: 100px">
       <table
         id="kt_datatable_vertical_scroll"
         class="table table-row-bordered gy-5 gs-7 text-center"
@@ -44,7 +44,7 @@
             </td>
             <td></td>
             <td class="category">
-              <img :src="getCategoryIcon(post.category)" style="width: 40px; height: 40px" />
+              <img :src="categoryMap.get(post.category).img_url" style="width: 40px; height: 40px" />
             </td>
             <td></td>
 
@@ -76,23 +76,18 @@ const props = defineProps({
   },
 });
 
-const category = [
-    { name: '식비 · 카페', icon: '/assets/media/category/meal.png' },
-    { name: '쇼핑', icon: '/assets/media/category/shopping.png' },
-    { name: '미용', icon: '/assets/media/category/beauty.png' },
-    { name: '의료', icon: '/assets/media/category/health.png' },
-    { name: '통신', icon: '/assets/media/category/communication.png' },
-    { name: '교통', icon: '/assets/media/category/car.png' },
-    { name: '문화 · 여행', icon: '/assets/media/category/travel.png' },
-    { name: '교육', icon: '/assets/media/category/study.png' },
-    { name: '술 · 유흥', icon: '/assets/media/category/play.png' },
-    { name: '기타', icon: '/assets/media/category/else.png' }
-];
-
-const getCategoryIcon = (categoryName) => {
-    const categoryItem = category.find(item => item.name === categoryName);
-    return categoryItem ? categoryItem.icon : '/assets/media/category/default.png';
-};
+const categoryMap = new Map([
+  ['식비 · 카페', { img_url: '/assets/media/category/meal.png' }],
+  ['쇼핑', { img_url: '/assets/media/category/shopping.png' }],
+  ['의료', { img_url: '/assets/media/category/health.png' }],
+  ['통신', { img_url: '/assets/media/category/communication.png' }],
+  ['술 · 유흥', { img_url: '/assets/media/category/play.png' }],
+  ['미용', { img_url: '/assets/media/category/beauty.png' }],
+  ['교통', { img_url: '/assets/media/category/car.png' }],
+  ['문화 · 여행', { img_url: '/assets/media/category/travel.png' }],
+  ['교육', { img_url: '/assets/media/category/study.png' }],
+  ['기타', { img_url: '/assets/media/category/else.png' }]
+]);
 
 const togglePublicStatus = async (postNo) => {
   // 디비에 공개 범위 바꾸는 코드
