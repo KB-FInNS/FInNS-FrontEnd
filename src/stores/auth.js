@@ -1,23 +1,23 @@
-import { ref, computed, reactive } from 'vue';
+import { ref, computed } from 'vue';
 import { defineStore } from 'pinia';
 import axios from 'axios';
 
 const initState = {
   token: '', // 접근 토큰(JWT)
   user: {
-    user_no: '', // 사용자 no
-    username: '', // 사용자 ID
-    mbti_no: '', // 추가된 필드
+    userNo: '', // 사용자 no
+    userName: '', // 사용자 ID
+    mbtiName: '', // 추가된 필드
     birth: '', // 추가된 필드
   },
 };
 
 export const useAuthStore = defineStore('auth', () => {
   const state = ref({ ...initState });
-  const isLogin = computed(() => !!state.value.user.username); // 로그인 여부
-  const username = computed(() => state.value.user.username); // 로그인 사용자 ID
+  const isLogin = computed(() => !!state.value.user.userName); // 로그인 여부
+  const userName = computed(() => state.value.user.userName); // 로그인 사용자 ID
   const email = computed(() => state.value.user.email); // 로그인 사용자 email
-  const mbti_no = computed(() => state.value.user.mbti_no); // mbti
+  const mbtiName = computed(() => state.value.user.mbtiName); // mbti
   const birth = computed(() => state.value.user.birth); // 생년월일
 
   const login = async (member) => {
@@ -43,10 +43,10 @@ export const useAuthStore = defineStore('auth', () => {
     }
   };
   const changeProfile = (member) => {
-    state.value.user.username = member.username; // username 업데이트
+    state.value.user.userName = member.userName; // userName 업데이트
     state.value.user.email = member.email; // email 업데이트
     state.value.user.birth = member.birth; // birth 업데이트
-    state.value.user.mbti_no = member.mbti_no; // mbti 업데이트
+    state.value.user.mbtiName = member.mbtiName; // mbti 업데이트
     localStorage.setItem('auth', JSON.stringify(state.value));
   };
 
@@ -54,10 +54,10 @@ export const useAuthStore = defineStore('auth', () => {
 
   return {
     state,
-    username,
+    userName,
     email,
     birth,
-    mbti_no,
+    mbtiName,
     isLogin,
     changeProfile,
     login,
