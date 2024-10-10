@@ -131,7 +131,6 @@ const fetchDistinctPostNos = async () => {
     try {
         const response = await axios.get('http://localhost:8080/posts/images/distinct');
         allPostNos.value = response.data; // 전체 데이터를 받아옴
-
         // 처음 5개의 데이터만 설정
         postNos.value = allPostNos.value.slice(0, 5);
     } catch (error) {

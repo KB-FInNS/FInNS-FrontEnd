@@ -40,11 +40,11 @@ const router = createRouter({
           // beforeEnter: isAuthenticated,,
         },
         {
-          path: 'profile',
+          path: '/profile/:userNo',
           name: 'Profile',
           component: Profile,
-          redirect: '/profile/spending',
-          // beforeEnter: isAuthenticated,,
+          redirect: (to) => `/profile/${to.params.userNo}/spending`,
+          // beforeEnter: isAuthenticated,
           children: [
             {
               path: 'spending',
@@ -126,7 +126,7 @@ const router = createRouter({
           component: CardDetail,
         },
         {
-          path: '/postView',
+          path: '/postView/:postNo',
           name: 'PostViewPage',
           component: PostViewPage,
         },

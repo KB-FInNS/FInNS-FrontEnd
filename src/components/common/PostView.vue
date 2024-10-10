@@ -93,7 +93,6 @@
                     <Slide v-for="(image, index) in post.imgUrls" :key="index">
                         <img :src="image" alt="Image Slide" class="carousel-image" />
                     </Slide>
-
                     <template #addons>
                         <Navigation />
                         <Pagination />

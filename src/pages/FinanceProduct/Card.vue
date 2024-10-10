@@ -44,11 +44,11 @@
                                     <span class="path1"></span>
                                     <span class="path2"></span>
                                 </i>
-                                <input v-model="searchCard" type="text" class="form-control form-control-solid ps-10"
+                                <input v-model="searchCard" @keyup.enter="searchEnter" type="text" class="form-control form-control-solid ps-10"
                                     placeholder="은행명, 카드명을 입력해주세요.">
                             </div>
                             <div>
-                                <button class="btn btn-primary px-4" @click="searchFunction">검색</button>
+                                <button class="btn btn-primary px-4" @click="searchEnter">검색</button>
                             </div>
                         </div>
                     </div>
@@ -189,7 +189,6 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { ref, computed, onMounted } from 'vue';
-import Banner from "@/components/common/Banner.vue";
 
 const router = useRouter();
 
@@ -209,24 +208,9 @@ onMounted(async () => {
     }
 });
 
-// 이미지 로드 시 호출되는 함수
-// const onImageLoad = (event) => {
-//   const img = event.target;
-//   const width = img.naturalWidth;
-//   const height = img.naturalHeight;
-
-//   // 세로가 가로보다 크면 90도 회전
-//   if (height > width) {
-//     img.style.transform = 'rotate(90deg)';
-//     // img.style.height = '300px'; // 세로 길이를 180px로 설정
-//     // img.style.width = '285px'; // 가로는 자동으로 설정
-//     // img.style.objectFit = 'contain';
-//   }
-// };
-
 // 선택된 탭과 검색어 관리
 const selectedTab = ref('전체');
-const searchInstallment = ref('');
+const searchCard = ref('');
 
 // 페이지네이션 상태
 const itemsPerPage = ref(5);
@@ -234,11 +218,12 @@ const currentPage = ref(1);
 
 // 필터링된 카드 리스트 계산
 const filteredCards = computed(() => {
-    return cards.value.filter(card => {
-        return (selectedTab.value === '전체' || card.category === selectedTab.value);
+    return cards.value.filter(item => {
+       const matchesSearch = item.card_name.includes(searchCard.value) || item.corp_name.includes(searchCard.value);
+        const matchesCategory = selectedTab.value === '전체' || item.category === selectedTab.value;
+        return matchesSearch && matchesCategory;
     });
 });
-
 // 페이지네이션을 적용한 카드 리스트 계산
 const paginatedCards = computed(() => {
     const start = (currentPage.value - 1) * itemsPerPage.value;

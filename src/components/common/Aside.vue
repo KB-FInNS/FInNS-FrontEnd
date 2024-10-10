@@ -46,7 +46,7 @@
           <!--begin:Menu item-->
           <div class="menu-item mt-5">
             <!--begin:Menu link-->
-            <router-link class="menu-link" to="/profile" active-class="active">
+            <router-link class="menu-link" active-class="active" :to="`/profile/${2}`">
               <span class="menu-icon svg-icon svg-icon-2hx" style="color: palevioletred">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path opacity="0.3"

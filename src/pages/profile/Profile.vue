@@ -10,7 +10,7 @@
           <!--begin: Pic-->
           <div class="me-7 mb-4">
             <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-              <img src="/assets/media/avatars/300-1.jpg" alt="image" />
+              <img :src="user.imgUrl" alt="image" />
             </div>
           </div>
           <!--end::Pic-->
@@ -22,7 +22,7 @@
               <div class="d-flex flex-column">
                 <!--begin::Name-->
                 <div class="d-flex align-items-center mb-2">
-                  <span class="text-gray-900 fs-2 fw-bold me-1">{{username}}</span>
+                  <span class="text-gray-900 fs-2 fw-bold me-1">{{ user.userName }}</span>
                   <button class="btn btn-sm ms-10" :class="isFollow ? 'btn-light' : 'btn-primary'"
                     @click="toggleFollow()">
                     <span>{{ isFollow ? '팔로잉' : '팔로우' }}</span>
@@ -39,7 +39,7 @@
                       <span class="path2"></span>
                       <span class="path3"></span>
                     </i>
-                    {{auth.mbti_no}}
+                    {{user.mbtiName}}
                   </router-link>
                 </div>
                 <!--end::Info-->
@@ -49,9 +49,9 @@
               <!--begin::Actions-->
               <div class="d-flex">
                 <!-- 라우팅 -->
-                <router-link to="/mbti" class="btn btn-sm btn-primary me-3">
+                 <div class="btn btn-sm btn-primary me-3" @click="analysisMbti()">
                   금융 MBTI 진단
-                </router-link>
+                 </div>
 
                 <!-- 모달 트리거 버튼 (display: none; - JS를 통해 제어) -->
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal"
@@ -103,7 +103,7 @@
                 <!--begin::Stats-->
                 <div class="d-flex flex-wrap">
                   <!--begin::Stat-->
-                  <router-link to="/profile/spending"
+                  <router-link :to="`/profile/${userNo}/spending`"
                     class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
                     <!--begin::Label-->
                     <div class="fs-5 text-center">
@@ -123,13 +123,13 @@
                         </svg>
                       </span>
 
-                      <count-up class="fs-2 text-gray-900 text-hover-primary fw-bold mt-2" :end-val="67"></count-up>
+                      <count-up class="fs-2 text-gray-900 text-hover-primary fw-bold mt-2" :end-val="spendingCounts"></count-up>
                     </div>
                     <!--end::Number-->
                   </router-link>
                   <!--end::Stat-->
                   <!--begin::Stat-->
-                  <router-link to="/profile/follower"
+                  <router-link :to="`/profile/${userNo}/follower`"
                     class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
                     <!--begin::Label-->
                     <div class="fs-5 text-center">
@@ -149,7 +149,7 @@
                   <!--end::Stat-->
                   <!--begin::Stat-->
 
-                  <router-link to="/profile/following"
+                  <router-link :to="`/profile/${userNo}/following`"
                     class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
                     <!--begin::Label-->
                     <div class="fs-5 text-center">
@@ -168,7 +168,7 @@
                   </router-link>
 
                   <div style="position: absolute; bottom: 10px; right: 20px">
-                    <i class="ki-duotone ki-arrows-circle text-primary fs-3x" style="cursor: pointer;" @click="renew(1)">
+                    <i class="ki-duotone ki-arrows-circle text-primary fs-3x" style="cursor: pointer;" @click="renew()">
                       <span class="path1"></span>
                       <span class="path2"></span>
                     </i>
@@ -209,7 +209,7 @@
 
       <Carousel style="width: 50%; margin-left: -30px">
         <Slide v-for="(item, index) in cards" :key="index" @click="gotoCardDetail(item)">
-          <div style="text-align: center;">
+          <div style="text-align: center; cursor: pointer;">
             <img :src="item.card_img_url" ref="image" style="width: 100px; display: block; margin: 0 auto;">
             <div class="mt-3 fs-1 fw-bold text-hover-primary" style="color: black;">
               {{ item.card_name }}
@@ -233,21 +233,45 @@
 import SearchComponent from "@/components/common/SearchComponent.vue";
 import "vue3-carousel/dist/carousel.css";
 import CountUp from 'vue-countup-v3';
-import { ref, onMounted, nextTick } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, onMounted, nextTick, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
-import { useAuthStore } from '@/stores/auth';
 import axios from 'axios';
 
-
-const auth = useAuthStore();
-
-const username = auth.username;
-
+const route = useRoute();
 const router = useRouter();
 
+const userNo = route.params.userNo;
+const user = ref({});
 
-const renew = async (userNo) => {
+watch(() => route.params.userNo, () => {
+  window.location.reload();
+});
+
+const getUser = async () => {
+  try {
+    const response = await axios.get(`http://localhost:8080/users/${userNo}`);
+    user.value = response.data;
+
+    console.log(user.value);
+
+  } catch (error) {
+    console.error('Error renewing posts:', error);
+  }
+};
+
+let spendingCounts = ref(0);
+const getSpendingCounts = async () => {
+  try {
+    const response = await axios.get(`http://localhost:8080/users/${userNo}/posts/count`);
+    spendingCounts.value = response.data;
+
+  } catch (error) {
+    console.error('Error renewing posts:', error);
+  }
+};
+
+const renew = async () => {
   try {
     const response = await axios.put(`http://localhost:8080/users/${userNo}/renew`);
     location.reload();
@@ -256,8 +280,18 @@ const renew = async (userNo) => {
   }
 };
 
-const isFollow = ref(false);
+const analysisMbti = async () => {
+  try {
+    const response = await axios.put(`http://localhost:8080/users/${userNo}/mbti`);
 
+  } catch (error) {
+    console.error('Error analysis mbti:', error);
+  }
+
+  router.push("/mbti");
+};
+
+const isFollow = ref(false);
 const toggleFollow = () => {
   isFollow.value = !isFollow.value; // 선택한 사용자의 팔로우 상태 전환
 
@@ -365,6 +399,9 @@ const modalTrigger = ref(null);
 const menuButton = ref(null);
 
 onMounted(async () => {
+  await getUser();
+  await getSpendingCounts();
+
   // DOM이 렌더링된 후 초기화
   await nextTick();
 

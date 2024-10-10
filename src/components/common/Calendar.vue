@@ -8,10 +8,12 @@
 import { Calendar } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
-
+import { useRoute } from 'vue-router';
 import { getCurrentInstance, onMounted } from 'vue';
 import axios from 'axios';
 
+const route = useRoute();
+const userNo = route.params.userNo;
 
 const internalInstance = getCurrentInstance(); 
 const emitter = internalInstance.appContext.config.globalProperties.emitter;
@@ -20,14 +22,12 @@ let calendar;
 
 const addCalendarEvent = async () => {
   try {
-    const response = await axios.get(`http://localhost:8080/users/1/amountByDate`);
+    const response = await axios.get(`http://localhost:8080/users/${userNo}/amountByDate`);
 
     let events = response.data.map(item => ({
       title: `${item.amount.toLocaleString()}원`, // amount 값을 포맷하여 title로 사용
       start: item.transactionDate, // transaction_date를 start로 사용
     }));
-
-    console.log(events);
 
     // 이벤트를 캘린더에 추가
     events.forEach(event => calendar.addEvent(event));
@@ -45,9 +45,9 @@ const initializeCalendar = () => {
     selectable: true,
     locale: "ko",
     headerToolbar: {
-      left: 'prev,next today',
+      left: '',
       center: 'title',
-      right: 'today prev,next',
+      right: '',
     },
     showNonCurrentDates: false,
     fixedWeekCount: false,
@@ -81,7 +81,7 @@ const initializeCalendar = () => {
       emitter.emit('day_click', info.startStr);
 
       window.scrollTo({
-        top: document.body.scrollHeight, // 페이지의 전체 높이로 스크롤
+        top: 950,
         behavior: 'smooth' // 부드러운 스크롤 효과
       });
     },
