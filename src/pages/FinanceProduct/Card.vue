@@ -219,7 +219,7 @@ const currentPage = ref(1);
 // 필터링된 카드 리스트 계산
 const filteredCards = computed(() => {
     return cards.value.filter(item => {
-       const matchesSearch = item.card_name.includes(searchCard.value) || item.corp_name.includes(searchCard.value);
+        const matchesSearch = item.card_name.includes(searchCard.value) || item.corp_name.includes(searchCard.value);
         const matchesCategory = selectedTab.value === '전체' || item.category === selectedTab.value;
         return matchesSearch && matchesCategory;
     });

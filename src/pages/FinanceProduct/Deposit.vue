@@ -160,12 +160,12 @@
             <tbody>
               <tr v-for="(item, index) in sortedDataList" :key="index" style="font-weight: 500; font-size: 14px;">
                 <td>
-                  <img :src="item.img_url" alt="depositkor_co_nm" width="28" height="24" loading="eager" />
-                  {{ item.kor_co_nm }}
+                  <img :src="item.imgUrl" alt="depositkor_co_nm" width="28" height="24" loading="eager" />
+                  {{ item.korCoNm }}
                 </td>
-                <td>{{ item.fin_prdt_nm }}</td>
-                <td>{{ item.intr_rate }}</td>
-                <td>{{ item.intr_rate2 }}</td>
+                <td>{{ item.finPrdtNm }}</td>
+                <td>{{ item.intrRate }}</td>
+                <td>{{ item.intrRate2 }}</td>
                 <td>
                   <a class="btn btn-sm btn-primary me-3" @click="gotoDepositDetail(item)">자세히 보기</a>
                 </td>
@@ -217,21 +217,24 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { ref, computed, watch, onMounted } from 'vue';
-import Banner from "@/components/common/Banner.vue";
 
 const router = useRouter();
 
 // 데이터를 가져오기 위한 일시적 데이터 변수
 const dataList = ref([]);
 
-// 컴포넌트가 마운트될 때 데이터를 가져오기
-onMounted(async () => {
+const getProducts = async () => {
   try {
-    const response = await fetch('/assets/dataList.json');
-    dataList.value = await response.json();
+    const response = await axios.get('http://localhost:8080/product/01');
+    dataList.value = response.data;
   } catch (error) {
-    alert('Error fetching data:', error);
+    console.error('Error fetching data:', error);  // 에러를 콘솔에 출력
   }
+};
+
+// 컴포넌트가 마운트될 때 데이터를 가져오기
+onMounted(() => {
+  getProducts();
 });
 
 // 필터링 상태 관리
@@ -248,11 +251,11 @@ const selectedSort = ref('default');
 // 가입 기간 옵션 배열
 const periods = ref([
   { label: '전체', value: '전체' },
-  { label: '1개월', value: '1' },
-  { label: '3개월', value: '3' },
-  { label: '1년', value: '12' },
-  { label: '2년', value: '24' },
-  { label: '3년', value: '36' },
+  { label: '1개월', value: 1 },
+  { label: '3개월', value: 3 },
+  { label: '1년', value: 12 },
+  { label: '2년', value: 24 },
+  { label: '3년', value: 36 },
 ]);
 
 // 이자 계산 방식 옵션 배열
@@ -281,12 +284,12 @@ const joinWayOptions = ref([
 // 필터링된 데이터 리스트 계산
 const filteredDataList = computed(() => {
   return dataList.value.filter(item => {
-    const matchesSearch = item.fin_prdt_nm.includes(searchDeposit.value) || item.kor_co_nm.includes(searchDeposit.value);
-    const matchesPeriod = selectedPeriod.value === '전체' || item.save_trm === selectedPeriod.value;
-    const matchesInttype = selectedInttype.value === '전체' || item.intr_rate_type_nm === selectedInttype.value;
-    const matchesMemberCheck = selectedMember.value.includes('제한없음') && item.join_member === '제한없음'
-      || selectedMember.value.includes('제한있음') && item.join_member !== '제한없음';
-    const matchesJoinWayCheck = selectedJoinWay.value.includes('전체') || selectedJoinWay.value.includes(item.join_way);
+    const matchesSearch = item.finPrdtNm.includes(searchDeposit.value) || item.korCoNm.includes(searchDeposit.value);
+    const matchesPeriod = selectedPeriod.value === '전체' || item.saveTrm === selectedPeriod.value;
+    const matchesInttype = selectedInttype.value === '전체' || item.intrRateTypeNm === selectedInttype.value;
+    const matchesMemberCheck = selectedMember.value.includes('제한없음') && item.joinMember === '제한없음'
+      || selectedMember.value.includes('제한있음') && item.joinMember !== '제한없음';
+    const matchesJoinWayCheck = selectedJoinWay.value.includes('전체') || selectedJoinWay.value.some(joinWay => item.joinWay.includes(joinWay));
 
     return matchesSearch && matchesPeriod && matchesInttype && matchesMemberCheck && matchesJoinWayCheck;
   });
@@ -305,7 +308,7 @@ const toggleAllJoinWays = () => {
 const sortedDataList = computed(() => {
   const data = [...filteredDataList.value];
   if (selectedSort.value === 'intr_rate2') {
-    data.sort((a, b) => parseFloat(b.intr_rate2) - parseFloat(a.intr_rate2));
+    data.sort((a, b) => parseFloat(b.intrRate2) - parseFloat(a.intrRate2));
   }
   const start = (currentPage.value - 1) * itemsPerPage.value;
   return data.slice(start, start + itemsPerPage.value);
@@ -353,7 +356,7 @@ const visiblePages = computed(() => {
 // 상세 페이지로 이동
 const gotoDepositDetail = (item) => {
   router.push({
-    path: `/Deposit/${item.financial_product_no}`,
+    path: `/Deposit/${item.financialProductNo}`,
     query: {
       item: JSON.stringify(item),
     },
