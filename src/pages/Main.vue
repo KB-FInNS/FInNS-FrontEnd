@@ -119,11 +119,25 @@
 <script setup>
 import PostView from '@/components/common/PostView.vue';
 import SearchComponent from '@/components/common/SearchComponent.vue'
-import { ref, onMounted, onBeforeUnmount, watch } from 'vue';
-
-let postNos = ref([1, 2, 3, 4, 5]); // 실제로 렌더링할 번호
-let nextNo = 6;
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+import axios from 'axios';
+let postNos = ref([]);
+let nextNo;
+let next2No;
 let bottomCheck = false;
+const allPostNos = ref([]);
+
+const fetchDistinctPostNos = async () => {
+    try {
+        const response = await axios.get('http://localhost:8080/posts/images/distinct');
+        allPostNos.value = response.data; // 전체 데이터를 받아옴
+
+        // 처음 5개의 데이터만 설정
+        postNos.value = allPostNos.value.slice(0, 5);
+    } catch (error) {
+        console.error('Error fetching distinct post numbers:', error);
+    }
+};
 
 // 스크롤이 하단에 도달하면 postNos에 2개의 번호 추가
 const handleScrollBottom = () => {
@@ -132,27 +146,33 @@ const handleScrollBottom = () => {
     const documentHeight = document.documentElement.scrollHeight;
 
     // 스크롤 위치가 문서의 하단에 근접한 경우
-    if (!bottomCheck && scrollTop + windowHeight >= documentHeight) {
+    if (!bottomCheck && scrollTop + windowHeight >= documentHeight - 5) {
+
+        //더 불러올 번호가 없으면 중지
+        if (allPostNos.value.length === postNos.value.length) return;
+
         // bottomCheck를 true로 설정하여 중복 실행 방지
         bottomCheck = true;
-
+        // 다음 번호 계산
+        nextNo = allPostNos.value[postNos.value.length];
+        next2No = allPostNos.value[postNos.value.length + 1];
         // 0.5초 후에 다음 번호 2개를 postNos에 추가
+
+        postNos.value.push(nextNo, next2No);
         setTimeout(() => {
-            postNos.value.push(nextNo, nextNo + 1);
             console.log(postNos.value);
-
-            // 다음 번호 계산
-            nextNo = postNos.value[postNos.value.length - 1] + 1;
-
             // bottomCheck를 false로 재설정하여 다음 스크롤 이벤트를 처리할 수 있게 함
             bottomCheck = false;
-        }, 100); // 0.1초의 지연 (500ms)
+        }, 100); // 0.1초의 지연 (100ms)
     }
+
+
 };
 
 
 // 컴포넌트가 마운트될 때 초기 데이터를 가져오기
 onMounted(() => {
+    fetchDistinctPostNos();
     window.addEventListener('scroll', handleScrollBottom);
 });
 

@@ -17,7 +17,7 @@
                     <!--begin::Info-->
                     <div class="flex-grow-1">
                         <a href="profile/spending" class="text-gray-800 text-hover-primary fs-4 fw-bold">
-                            {{ post.author || 'Unknown' }}
+                            {{ post.userName || '알 수 없음' }}
                         </a>
                         <span class="text-gray-500 fw-semibold d-block">
                             {{ post.transactionDate ? formatDate(post.transactionDate) : 'Unknown Date' }}
@@ -84,13 +84,13 @@
                     </span>
                     <!--가격-->
                     <span class="fs-6 fw-bold text-gray-700 mb-5 ms-2">
-                        {{ post.amount ? `${post.amount.toLocaleString()}원` : 'Unknown Amount' }}
+                        {{ post.amount ? `${post.amount.toLocaleString()}원` : '0원 ' }}
                     </span>
                 </div>
                 <!--end::Post content-->
                 <!--begin:: 게시물 사진-->
-                <Carousel v-if="images.length > 0">
-                    <Slide v-for="(image, index) in images" :key="index">
+                <Carousel v-if="post.imgUrls.length > 0">
+                    <Slide v-for="(image, index) in post.imgUrls" :key="index">
                         <img :src="image" alt="Image Slide" class="carousel-image" />
                     </Slide>
 
@@ -208,7 +208,6 @@ import { useRouter } from 'vue-router';
 import axios from 'axios';
 import { defineProps } from 'vue';
 
-// props로 postNo와 post를 받아옵니다.
 const props = defineProps({
     postNo: {
         type: Number,
@@ -221,7 +220,7 @@ const getCategoryIcon = (categoryName) => {
     return categoryItem ? categoryItem.icon : '/assets/media/category/default.png';
 };
 
-const post = ref(null); // 전달된 post가 있으면 사용하고, 없으면 null로 초기화
+const post = ref(null); 
 const goodisActive = ref(false);
 const badisActive = ref(false);
 
@@ -353,13 +352,6 @@ const category = [
     { name: '술 · 유흥', icon: '/assets/media/category/play.png' },
     { name: '기타', icon: '/assets/media/category/else.png' }
 ];
-
-// 이미지 목록
-const images = ref([
-    '/assets/media/food/samgeob1.jpg',
-    '/assets/media/food/samgeob2.jpg',
-    '/assets/media/food/samgeob3.jpg',
-]);
 
 
 // 새로운 댓글을 입력할 변수
