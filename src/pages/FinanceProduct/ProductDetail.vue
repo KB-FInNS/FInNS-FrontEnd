@@ -4,10 +4,10 @@
             <!-- 금융상품 정보 -->
             <div class="card-body">
                 <div class="d-flex align-items-center mb-4">
-                    <img :src="productData.img_url" alt="bank logo" class="bank-logo" width="50px" height="50px" />
-                    <p style="margin-left: 10px; font-size: 22px; font-weight: 800 ; margin-top: 10px; color: #717272;">{{ productData.kor_co_nm }}</p>
+                    <img :src="productData.imgUrl" alt="bank logo" class="bank-logo" width="50px" height="50px" />
+                    <p style="margin-left: 10px; font-size: 22px; font-weight: 800 ; margin-top: 10px; color: #717272;">{{ productData.korCoNm }}</p>
                 </div>
-                <h1 style="font-size: 30px; font-weight: bold; margin-left: 10px;">{{ productData.fin_prdt_nm }}</h1>
+                <h1 style="font-size: 30px; font-weight: bold; margin-left: 10px;">{{ productData.finPrdtNm }}</h1>
             </div>
         </div>
         <div style="display: flex; padding-left: 65px;">
@@ -18,14 +18,14 @@
                 <!-- 자세한 정보 -->
                 <div class="product-details">
                     <div class="d-flex" style="gap: 50px;">
-                        <p><strong>최고 금리:</strong> <strong style="color: #216DBE;">{{ productData.intr_rate2 }}</strong>
+                        <p><strong>최고 금리:</strong> <strong style="color: #216DBE;">{{ productData.intrRate2 }}</strong>
                         </p>
-                        <p><strong>기본 금리:</strong> {{ productData.intr_rate }}</p>
+                        <p><strong>기본 금리:</strong> {{ productData.intrRate }}</p>
                     </div>
-                    <p><strong>가입 대상:</strong> {{ productData.join_member }}</p>
-                    <p><strong>가입 방법:</strong> {{ productData.join_way }}</p>
-                    <p><strong>가입 기간:</strong> {{ productData.save_trm }}개월</p>
-                    <p><strong>저축 금리유형:</strong> {{ productData.intr_rate_type_nm }}</p>
+                    <p><strong>가입 대상:</strong> {{ productData.joinMember }}</p>
+                    <p><strong>가입 방법:</strong> {{ productData.intrRate }}</p>
+                    <p><strong>가입 기간:</strong> {{ productData.saveTrm }}개월</p>
+                    <p><strong>저축 금리유형:</strong> {{ productData.intrRateTypeNm }}</p>
                 </div>
 
                 <!-- 혜택 -->
@@ -61,16 +61,30 @@
 <script setup>
 import { useRoute } from 'vue-router';
 import { reactive, onMounted } from 'vue';
+import axios from 'axios';
 
 const route = useRoute();
 const productData = reactive({});
 
+// 특정 금융 상품 조회 함수
+const getProductByNo = async (financeProductNo) => {
+  try {
+    const response = await axios.get(`http://localhost:8080/product/no/${financeProductNo}`);
+    console.log(response.data);
+    Object.assign(productData, response.data); 
+  } catch (error) {
+    console.error('Error fetching product data:', error); 
+  }
+};
+
+// 컴포넌트가 마운트될 때 데이터를 가져오기
 onMounted(() => {
-    if (route.query && route.query.item) {
-        Object.assign(productData, JSON.parse(route.query.item));
-    } else {
-        console.error('No data passed to this route.');
-    }
+  const financeProductNo = route.params.financeProductNo; 
+  if (financeProductNo) {
+    getProductByNo(financeProductNo);
+  } else {
+    console.error('No financeProductNo passed to this route.');
+  }
 });
 
 // 버튼 클릭 시 호출될 함수

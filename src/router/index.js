@@ -108,13 +108,13 @@ const router = createRouter({
           component: WinnerCard,
         },
         {
-          path: '/deposit/:financial_product_no', // 예금 상품 상세 페이지
+          path: '/deposit/:financeProductNo', // 예금 상품 상세 페이지
           name: 'DepositDetail',
           // component: DepositDetail,
           component: ProductDetail,
         },
         {
-          path: '/installmentSavings/:financial_product_no', // 적금 상품 상세 페이지
+          path: '/installmentSavings/:financeProductNo', // 적금 상품 상세 페이지
           name: 'installmentSavingsDetail',
           // component: installmentSavingsDetail,
           component: ProductDetail,
