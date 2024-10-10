@@ -11,16 +11,16 @@
                 <div class="d-flex align-items-center">
                     <!--begin::Avatar-->
                     <div class="symbol symbol-50px me-5">
-                        <img src="/assets/media/avatars/300-4.jpg" class="" alt="" />
+                        <img :src="`${post.userImgUrl}`" class="" alt="" />
                     </div>
                     <!--end::Avatar-->
                     <!--begin::Info-->
                     <div class="flex-grow-1">
-                        <a href="profile/spending" class="text-gray-800 text-hover-primary fs-4 fw-bold">
-                            {{ post?.userName || 'Unknown' }}
+                        <a :href="`profile/${post.userNo}/spending`" class="text-gray-800 text-hover-primary fs-4 fw-bold">
+                            {{ post.userName || '알 수 없음' }}
                         </a>
                         <span class="text-gray-500 fw-semibold d-block">
-                            {{ post?.transactionDate ? formatDate(post.transactionDate) : 'Unknown Date' }}
+                            {{ post.transactionDate ? formatDate(post.transactionDate) : 'Unknown Date' }}
                         </span>
                     </div>
 
@@ -69,7 +69,7 @@
                     </span>
                     <!--장소-->
                     <span class="fs-6 fw-bold text-gray-700 mb-5 ms-2">
-                        {{ post?.place || 'Unknown Place' }}
+                        {{ post.place || 'Unknown Place' }}
                     </span>
                 </div>
                 <div class="pt-2 pb-3">
@@ -84,16 +84,15 @@
                     </span>
                     <!--가격-->
                     <span class="fs-6 fw-bold text-gray-700 mb-5 ms-2">
-                        {{ post?.amount ? `${post.amount.toLocaleString()}원` : 'Unknown Amount' }}
+                        {{ post.amount ? `${post.amount.toLocaleString()}원` : '0원 ' }}
                     </span>
                 </div>
                 <!--end::Post content-->
                 <!--begin:: 게시물 사진-->
-                <Carousel v-if="images.length > 0">
-                    <Slide v-for="(image, index) in images" :key="index">
+                <Carousel v-if="post.imgUrls.length > 0">
+                    <Slide v-for="(image, index) in post.imgUrls" :key="index">
                         <img :src="image" alt="Image Slide" class="carousel-image" />
                     </Slide>
-
                     <template #addons>
                         <Navigation />
                         <Pagination />
@@ -103,7 +102,7 @@
                     <!--가격 카테고리-->
                     <span class="fw-bold p-3" style="background-color: #F1F7FF; border-radius: 5px;">
                         <img :src="getCategoryIcon(post.category)" alt="icon" style="height: 26px; width: 26px;" />
-                        {{ post?.category || 'Unknown Category' }}
+                        {{ post.category || 'Unknown Category' }}
                     </span>
                     <span class="fs-6 fw-bold text-gray-700 mb-5 ms-2">에 소비했어요</span>
                 </div>
@@ -208,23 +207,19 @@ import { useRouter } from 'vue-router';
 import axios from 'axios';
 import { defineProps } from 'vue';
 
-// props로 postNo와 post를 받아옵니다.
 const props = defineProps({
     postNo: {
         type: Number,
         required: true,
     },
-    post: {
-        type: Object,
-        required: false,
-    },
+    
 });
 const getCategoryIcon = (categoryName) => {
     const categoryItem = category.find(item => item.name === categoryName);
     return categoryItem ? categoryItem.icon : '/assets/media/category/default.png';
 };
 
-const post = ref(props.post || null); // 전달된 post가 있으면 사용하고, 없으면 null로 초기화
+const post = ref(null); 
 const goodisActive = ref(false);
 const badisActive = ref(false);
 
@@ -243,17 +238,19 @@ const fetchPost = async () => {
         console.error('Error fetching post data:', error);
     }
 };
-
-// 좋아요 카운트를 증가시키는 함수
+// 좋은소비 카운트를 증가 또는 감소시키는 함수
 const incrementGreatCount = async () => {
     try {
-        if (badisActive.value) {
-            // '이돈이면'이 활성화된 경우 비활성화하고 카운트를 감소시킴
-            post.value.stupidCount -= 1;
-            badisActive.value = false;
-        }
-
-        if (!goodisActive.value) {
+        if (goodisActive.value) {
+            // '좋은소비'가 이미 활성화된 상태에서 다시 누르면 비활성화하고 카운트를 감소시킴
+            post.value.greatCount -= 1;
+            goodisActive.value = false;
+        } else {
+            if (badisActive.value) {
+                // '이돈이면'이 활성화된 경우 비활성화하고 카운트를 감소시킴
+                post.value.stupidCount -= 1;
+                badisActive.value = false;
+            }
             // '좋은소비'가 비활성화된 상태에서 활성화함
             post.value.greatCount += 1;
             goodisActive.value = true;
@@ -268,15 +265,20 @@ const incrementGreatCount = async () => {
         console.error('Error updating counts:', error);
     }
 };
+
+// 이돈이면 카운트를 증가 또는 감소시키는 함수
 const incrementStupidCount = async () => {
     try {
-        if (goodisActive.value) {
-            // '좋은소비'가 활성화된 경우 비활성화하고 카운트를 감소시킴
-            post.value.greatCount -= 1;
-            goodisActive.value = false;
-        }
-
-        if (!badisActive.value) {
+        if (badisActive.value) {
+            // '이돈이면'이 이미 활성화된 상태에서 다시 누르면 비활성화하고 카운트를 감소시킴
+            post.value.stupidCount -= 1;
+            badisActive.value = false;
+        } else {
+            if (goodisActive.value) {
+                // '좋은소비'가 활성화된 경우 비활성화하고 카운트를 감소시킴
+                post.value.greatCount -= 1;
+                goodisActive.value = false;
+            }
             // '이돈이면'이 비활성화된 상태에서 활성화함
             post.value.stupidCount += 1;
             badisActive.value = true;
@@ -349,13 +351,6 @@ const category = [
     { name: '술 · 유흥', icon: '/assets/media/category/play.png' },
     { name: '기타', icon: '/assets/media/category/else.png' }
 ];
-
-// 이미지 목록
-const images = ref([
-    '/assets/media/food/samgeob1.jpg',
-    '/assets/media/food/samgeob2.jpg',
-    '/assets/media/food/samgeob3.jpg',
-]);
 
 
 // 새로운 댓글을 입력할 변수

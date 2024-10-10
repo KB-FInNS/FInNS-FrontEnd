@@ -167,12 +167,18 @@
                     <!--end::Number-->
                   </router-link>
 
-                  <div style="position: absolute; bottom: 10px; right: 20px">
-                    <i class="ki-duotone ki-arrows-circle text-primary fs-3x" style="cursor: pointer;" @click="renew()">
+                  <!-- 아이콘이 텍스트 상단에 위치하도록 조정 -->
+                  <div style="position: absolute; bottom: 40px; right: 25px;">
+                    <i class="ki-duotone ki-arrows-circle text-primary fs-3x" 
+                      style="cursor: pointer;" 
+                      @click="renew()">
                       <span class="path1"></span>
                       <span class="path2"></span>
                     </i>
                   </div>
+                  <span class="text-gray-700 me-3" style="position: absolute; bottom: 10px; right: 20px;">
+                    마지막 갱신 일자 : {{ user.renewTime }}
+                  </span>
                   <!--end::Stat-->
                 </div>
                 <!--end::Stats-->
