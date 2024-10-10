@@ -157,7 +157,7 @@
             <tbody>
               <tr v-for="(item, index) in sortedDataList" :key="index">
                 <td>
-                  <img :src="item.imgUrl" alt="depositkor_co_nm" width="28" height="24" loading="eager" />
+                  <img :src="item.imgUrl" width="28" height="24" loading="eager" />
                   {{ item.korCoNm }}
                 </td>
                 <td>{{ item.finPrdtNm }}</td>
