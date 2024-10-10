@@ -235,17 +235,6 @@ onMounted(() => {
   getProducts();
 });
 
-// 컴포넌트가 마운트될 때 데이터를 가져오기
-onMounted (async() => {
-  try {
-    const response = await axios.get('http://localhost:8080/product/02');
-    dataList.value = response.data;
-    console.log(dataList.value);
-  } catch (error) {
-    console.error('Error fetching data:', error);  // 에러를 콘솔에 출력
-  }
-});
-
 // 필터링 상태 관리
 const searchInstallment = ref('');
 const selectedPeriod = ref('전체');
