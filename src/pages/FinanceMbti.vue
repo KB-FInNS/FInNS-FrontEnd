@@ -159,8 +159,7 @@
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
                   쇼핑몰에 가면 눈에<br /> 보이는 건 전부 내 꺼!<br /> 최신 유행 아이템부터
-                  <br />희귀템까지
-                  쇼핑 카트는 언제나 가득 차 있다!
+                  <br />희귀템까지 쇼핑 카트는<br>언제나 가득 차 있다!
                 </p>
               </div>
             </div>
@@ -201,7 +200,7 @@
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
-                  
+                외모와 건강 관리를<br>최우선으로 생각하는 사람!<br>최신 뷰티 제품과 고급<br>서비스를 위해선 아낌없이 투자하는 유형이다!!
                 </p>
               </div>
             </div>
@@ -242,7 +241,7 @@
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
-                  건강이 최우선! 병원비와 의료비 지출이 큰 비중을 차지하는
+                  건강이 최우선! 병원비와 <br>의료비 지출이 큰 비중을<br>차지하는
                   유형이다!!<br />
                   정기적인 건강 관리와 <br />치료를 위해 병원과 늘 <br />가까운 사이.
                 </p>
@@ -285,7 +284,7 @@
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
-                
+                최신 휴대폰과 초고속 <br>인터넷 없인 못 사는 유형!<br>데이터와 통신비 절약을 <br>위한 소비 습관을 길러보자!!
                 </p>
               </div>
             </div>
@@ -325,7 +324,7 @@
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
                   대중교통을 애용하는 <br />뚜벅초형!!
-                  지하철, 버스, 택시 등 교통비가 주된 <br />지출이며, 경제적이고 <br />빠른
+                  지하철, 버스, <br>택시 등 교통비가 주된 <br />지출이며, 경제적이고 <br />빠른
                   이동을 추구하는 <br />실속파.
                 </p>
               </div>
@@ -410,7 +409,7 @@
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
-                  
+                교육과 학습에 아낌없이 <br>투자하는 당신!!<br>강의, 학원, 도서, 온라인 <br>강좌 등 지식 습득을 위한 <br>교육비가 가장 큰 지출 항목.
                 </p>
               </div>
             </div>
@@ -451,7 +450,7 @@
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
-                  
+                술과 유흥을 즐기는 당신!!<br>술자리와 유흥비가 가장 <br>큰 지출이며, 언제나 즐거운 <br>시간을 추구하는 캐릭터.
                 </p>
               </div>
             </div>
