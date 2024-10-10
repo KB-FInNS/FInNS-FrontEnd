@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div class="justify-content-center align-items-center text-center bg-title">
     <h1 class="text-gray-900 fw-bold pt-8 mt-9 my-1" style="font-size: xx-large;">적금 상품</h1>
     <h2 class="text-gray-700 fw-bold p-4 fs-2">
@@ -156,12 +157,12 @@
             <tbody>
               <tr v-for="(item, index) in sortedDataList" :key="index">
                 <td>
-                  <img :src="item.img_url" alt="depositkor_co_nm" width="28" height="24" loading="eager" />
-                  {{ item.kor_co_nm }}
+                  <img :src="item.imgUrl" alt="depositkor_co_nm" width="28" height="24" loading="eager" />
+                  {{ item.korCoNm }}
                 </td>
-                <td>{{ item.fin_prdt_nm }}</td>
-                <td>{{ item.intr_rate }}</td>
-                <td>{{ item.intr_rate2 }}</td>
+                <td>{{ item.finPrdtNm }}</td>
+                <td>{{ item.intrRate }}</td>
+                <td>{{ item.intrRate2 }}</td>
                 <td>
                   <a class="btn btn-sm btn-primary me-3" @click="gotoInstallmentDetail(item)">자세히 보기</a>
                 </td>
@@ -208,25 +209,40 @@
         </div>
       </div>
     </div>
-  <
+  </div>
 </template>
 <script setup>
 import { useRouter } from 'vue-router';
 import { ref, computed, watch, onMounted } from 'vue';
-import Banner from "@/components/common/Banner.vue";
+import axios from 'axios';
 
 const router = useRouter();
 
 // 데이터를 가져오기 위한 일시적 데이터 변수
 const dataList = ref([]);
 
-// 컴포넌트가 마운트될 때 데이터를 가져오기
-onMounted(async () => {
+const getProducts = async () => {
   try {
-    const response = await fetch('/assets/dataList.json');
-    dataList.value = await response.json();
+    const response = await axios.get('http://localhost:8080/product/02');
+    dataList.value = response.data;
   } catch (error) {
-    alert('Error fetching data:', error);
+    console.error('Error fetching data:', error);  // 에러를 콘솔에 출력
+  }
+};
+
+// 컴포넌트가 마운트될 때 데이터를 가져오기
+onMounted(() => {
+  getProducts();
+});
+
+// 컴포넌트가 마운트될 때 데이터를 가져오기
+onMounted (async() => {
+  try {
+    const response = await axios.get('http://localhost:8080/product/02');
+    dataList.value = response.data;
+    console.log(dataList.value);
+  } catch (error) {
+    console.error('Error fetching data:', error);  // 에러를 콘솔에 출력
   }
 });
 
@@ -237,7 +253,6 @@ const selectedInttype = ref('전체');
 const selectedMember = ref(["제한없음", "제한있음"]);
 const selectedJoinWay = ref(["전체", "영업점", "인터넷", "스마트폰", "모집인", "전화(텔레뱅킹)"]);
 
-
 // 페이지네이션 상태
 const itemsPerPage = ref(10);
 const currentPage = ref(1);
@@ -246,11 +261,11 @@ const selectedSort = ref('default');
 // 가입 기간 옵션 배열
 const periods = ref([
   { label: '전체', value: '전체' },
-  { label: '1개월', value: '1' },
-  { label: '3개월', value: '3' },
-  { label: '1년', value: '12' },
-  { label: '2년', value: '24' },
-  { label: '3년', value: '36' },
+  { label: '1개월', value: 1 },
+  { label: '3개월', value: 3 },
+  { label: '1년', value: 12 },
+  { label: '2년', value: 24 },
+  { label: '3년', value: 36 },
 ]);
 
 // 이자 계산 방식 옵션 배열
@@ -279,12 +294,13 @@ const joinWayOptions = ref([
 // '전체' 체크박스의 클릭 동작 처리
 const filteredDataList = computed(() => {
   return dataList.value.filter(item => {
-    const matchesSearch = item.fin_prdt_nm.includes(searchInstallment.value) || item.kor_co_nm.includes(searchInstallment.value);
-    const matchesPeriod = selectedPeriod.value === '전체' || item.save_trm === selectedPeriod.value;
-    const matchesInttype = selectedInttype.value === '전체' || item.intr_rate_type_nm === selectedInttype.value;
-    const matchesMemberCheck = selectedMember.value.includes('제한없음') && item.join_member === '제한없음'
-      || selectedMember.value.includes('제한있음') && item.join_member !== '제한없음';
-    const matchesJoinWayCheck = selectedJoinWay.value.includes('전체') || selectedJoinWay.value.includes(item.join_way);
+    const matchesSearch = item.finPrdtNm.includes(searchInstallment.value) || item.korCoNm.includes(searchInstallment.value);
+    const matchesPeriod = selectedPeriod.value === '전체' || item.saveTrm === selectedPeriod.value;
+    const matchesInttype = selectedInttype.value === '전체' || item.intrRateTypeNm === selectedInttype.value;
+    const matchesMemberCheck = selectedMember.value.includes('제한없음') && item.joinMember === '제한없음'
+      || selectedMember.value.includes('제한있음') && item.joinMember !== '제한없음';
+    const matchesJoinWayCheck = selectedJoinWay.value.includes('전체') || selectedJoinWay.value.some(joinWay => item.joinWay.includes(joinWay));
+    
 
     return matchesSearch && matchesPeriod && matchesInttype && matchesMemberCheck && matchesJoinWayCheck;
   });
@@ -309,9 +325,10 @@ watch(selectedJoinWay, (newVal) => {
   }
 });
 
+const allJoinWays = ["전체", "영업점", "인터넷", "스마트폰", "모집인", "전화(텔레뱅킹)"];
 // 체크박스 동작 처리
 const toggleAllJoinWays = () => {
-  selectedJoinWay.value = selectedJoinWay.value.includes('전체') ? [] : ["전체", "영업점", "인터넷", "스마트폰", "모집인", "전화(텔레뱅킹)"];
+  selectedJoinWay.value = selectedJoinWay.value.includes('전체') ? [] : allJoinWays;
 };
 
 // 검색 버튼
