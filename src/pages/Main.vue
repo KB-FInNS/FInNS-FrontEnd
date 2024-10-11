@@ -127,6 +127,8 @@ let next2No;
 let bottomCheck = false;
 const allPostNos = ref([]);
 
+const auth = JSON.parse(localStorage.getItem('auth'));
+
 const fetchDistinctPostNos = async () => {
     try {
         const response = await axios.get('http://localhost:8080/posts/images/distinct');
@@ -207,7 +209,7 @@ const getTop3Users = async () => {
 const users = ref([]);
 const getRecommendUsers = async () => {
   try {
-    const response = await axios.get(`http://localhost:8080/users/${1}/recommend5`);
+    const response = await axios.get(`http://localhost:8080/users/${auth.user.user_no}/recommend5`);
     users.value = response.data;
 
   } catch (error) {

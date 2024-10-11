@@ -84,12 +84,12 @@ const router = createRouter({
           // beforeEnter: isAuthenticated,,
         },
         {
-          path: '/payDetails/:id', // 소비 상세 페이지
+          path: '/payDetails/:postNo', // 소비 상세 페이지
           name: 'PayDetails',
           component: PayDetails,
         },
         {
-          path: '/postDetails', // 게시물 상세 페이지
+          path: '/postDetails/:postNo', // 게시물 상세 페이지
           name: 'PostDetails',
           component: PostDetails,
         },

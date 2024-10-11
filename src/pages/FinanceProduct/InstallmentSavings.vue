@@ -134,7 +134,7 @@
                 <select v-model="selectedSort" class="form-select form-select-solid" data-control="select1"
                   data-placeholder="Select an option" data-hide-search="true">
                   <option value="default" selected>기본 정렬</option>
-                  <option value="intr_rate2">최고 금리순</option>
+                  <option value="intrRate2">최고 금리순</option>
                 </select>
                 <!--end::Select-->
               </div>
@@ -298,8 +298,8 @@ const filteredDataList = computed(() => {
 // 정렬된 데이터 계산
 const sortedDataList = computed(() => {
   const data = [...filteredDataList.value];
-  if (selectedSort.value === 'intr_rate2') {
-    data.sort((a, b) => parseFloat(b.intr_rate2) - parseFloat(a.intr_rate2));
+  if (selectedSort.value === 'intrRate2') {
+    data.sort((a, b) => parseFloat(b.intrRate2) - parseFloat(a.intrRate2));
   }
   const start = (currentPage.value - 1) * itemsPerPage.value;
   return data.slice(start, start + itemsPerPage.value);
@@ -358,7 +358,7 @@ const visiblePages = computed(() => {
 // 상세 정보로 이동
 const gotoInstallmentDetail = (item) => {
   router.push({
-    path: `/installmentSavings/${item.financial_product_no}`,
+    path: `/installmentSavings/${item.financeProductNo}`,
     query: {
       item: JSON.stringify(item)
     },
