@@ -1,5 +1,8 @@
 <script setup>
 import authApi from '@/api/authApi';
+import followApi from '@/api/followApi';
+import FollowButton from '@/components/common/FollowButton.vue';
+
 import { useAuthStore } from '@/stores/auth';
 import { computed, reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
@@ -11,16 +14,16 @@ const router = useRouter();
 // 아바타 처리를 위한 Ref
 const avatar = ref(null); // 아바타 파일 입력 참조
 const avatarPath = ref('/src/assets/media/avatars/black.png'); // 기본 아바타 이미지 경로
-
+console.log('asd', auth.mbti_name);
 // 회원 정보를 담고 있는 reactive 상태
 const member = reactive({
-  username: auth.username,
+  username: auth.state.user.username,
   birth: auth.birth, // 추가: 생년월일
   oldPassword: '',
   newPassword: '',
   newPassword2: '',
   avatar: null,
-  mbti: auth.mbti_no, // 추가: MBTI
+  mbti_name: auth.state.user.mbti_name, // 추가: MBTI
 });
 
 // 비밀번호 변경 상태
@@ -42,7 +45,6 @@ const disableSubmit = computed(
     !changePassword.newPassword ||
     !changePassword.newPassword2
 );
-
 
 const logout = (e) => {
   // 로그아웃 처리
@@ -73,7 +75,7 @@ const onSubmit = async () => {
   const formData = new FormData();
   formData.append('user_id', member.user_id);
   formData.append('birthdate', member.birthdate);
-  formData.append('mbti', member.mbti);
+  formData.append('mbti_name', member.mbti_name);
   formData.append('oldPassword', member.oldPassword);
   formData.append('newPassword', member.newPassword);
 
@@ -114,9 +116,18 @@ const onDeleteAvatar = () => {
   avatarPath.value = '/src/assets/media/avatars/black.png'; // 기본 아바타 이미지로 설정
   alert('프로필 사진이 삭제되었습니다.');
 };
+
+// const
 </script>
 
 <template>
+  <!-- 팔로우/언팔로우 버튼 -->
+  <div class="d-flex justify-content-end mt-3">
+    <!-- <button @click="handleFollow" class="btn btn-info btn-lg me-2">
+      {{ followStatus ? '언팔로우' : '팔로우' }}
+    </button> -->
+    <FollowButton />
+  </div>
   <div class="justify-content-center align-items-center text-center bg-title">
     <h1 class="text-gray-900 fw-bold pt-8 mt-14 my-1 fs-1">마이페이지</h1>
     <h2 class="text-gray-700 fw-bold p-4 fs-2">개인정보를 수정해주세요.</h2>
@@ -174,7 +185,7 @@ const onDeleteAvatar = () => {
               />
             </div>
           </div>
-          
+
           <div class="mb-6 row">
             <label for="birthdate" class="col-sm-4 col-form-label fw-bold"
               >생년월일</label
@@ -185,6 +196,7 @@ const onDeleteAvatar = () => {
                 class="form-control"
                 id="birth"
                 v-model="member.birth"
+                readonly
               />
             </div>
           </div>
@@ -231,15 +243,15 @@ const onDeleteAvatar = () => {
             </div>
           </div>
           <div class="mb-6 row">
-            <label for="mbti" class="col-sm-4 col-form-label fw-bold"
+            <label for="mbti_name" class="col-sm-4 col-form-label fw-bold"
               >MBTI</label
             >
             <div class="col-sm-8">
               <input
                 type="text"
                 class="form-control"
-                id="mbti"
-                v-model="member.mbti"
+                id="mbti_name"
+                v-model="member.mbti_name"
                 readonly
               />
             </div>

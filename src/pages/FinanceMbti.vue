@@ -8,7 +8,12 @@
   <!--begin::Toolbar-->
   <!--begin::Title-->
   <div class="justify-content-center align-items-center text-center bg-title">
-    <h1 class="text-gray-900 fw-bold pt-8 mt-9 my-1" style="font-size: xx-large;">금융 MBTI</h1>
+    <h1
+      class="text-gray-900 fw-bold pt-8 mt-9 my-1"
+      style="font-size: xx-large"
+    >
+      금융 MBTI
+    </h1>
     <h2 class="text-gray-700 fw-bold p-4 fs-2">
       소비 내역 분석을 바탕으로 한 나의 MBTI를 확인해 보세요.
     </h2>
@@ -28,46 +33,53 @@
   </div>
   <!--end::Toolbar-->
   <div class="parent-container pt-5 pb-5 fs-1">
-    <div class="custom-style">
-      나의 MBTI
-    </div>
+    <div class="custom-style">나의 MBTI</div>
   </div>
 
   <!--begin::Container-->
   <div class="container-xxl">
     <!--begin::Navbar-->
-      <!-- '나의 MBTI' 관련 섹션 -->
+    <!-- '나의 MBTI' 관련 섹션 -->
     <div class="card-body pt-9 pb-0">
       <!--begin::Details-->
       <div class="d-flex flex-wrap flex-sm-nowrap">
         <!--begin: Pic-->
-        <div class="me-10" style="margin-left: 110px;">
+        <div class="me-10" style="margin-left: 110px">
           <!-- MBTI 프로필 사진을 보여주는 부분에서 mbti_no 사용 -->
-          <img :src="mbtiData.get(auth.mbtiName)?.img_url || mbtiData.get('default').img_url"/>
-        </div>        
+          <img
+            :src="
+              mbtiData.get(auth.state.user.mbti_name)?.img_url ||
+              mbtiData.get('default').img_url
+            "
+          />
+        </div>
         <!--end::Pic-->
 
         <!--begin::Info-->
         <div class="flex-grow-1">
           <!--begin::Title-->
-          <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+          <div
+            class="d-flex justify-content-between align-items-start flex-wrap mb-2"
+          >
             <!--begin::User-->
             <div class="d-flex flex-column">
               <!--begin::Name-->
               <div class="d-flex align-items-center mb-2 pt-5">
                 <!-- mbti_no 사용 -->
-                <p class="fs-1 fw-bold">
-                  {{ auth.mbtiName }}
-                </p>
+                <p class="fs-1 fw-bold">{{ auth.state.user.mbti_name }}</p>
               </div>
               <!--end::Name-->
               <!--begin::Info-->
               <div class="d-flex flex-wrap fw-semibold fs-3 mb-4 pe-2 mt-4">
-                <p class="align-items-center text-gray-800 me-5 mb-2" 
-                   v-html="mbtiData.get(auth.mbtiName)?.description || mbtiData.get('default').description">
-                </p>
+                <p
+                  class="align-items-center text-gray-800 me-5 mb-2"
+                  v-html="
+                    mbtiData.get(auth.state.user.mbti_name)?.description ||
+                    mbtiData.get('default').description
+                  "
+                ></p>
               </div>
-              
+
               <!--end::Info-->
             </div>
             <!--end::User-->
@@ -80,9 +92,7 @@
     </div>
 
     <div class="parent-container pt-5 fs-1 mt-8">
-      <div class="custom-style">
-        다른 MBTI
-      </div>
+      <div class="custom-style">다른 MBTI</div>
     </div>
     <!--begin::Row-->
     <div class="row g-6 g-xl-9 mt-7" style="width: 800px; margin: auto">
@@ -117,7 +127,8 @@
                 </div>
                 <p class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 text-center">
                   음식에 대한 사랑은 곧 <br />소비로 이어지는 타입! <br />
-                  맛집 탐방, 고급 요리, <br />신상 메뉴라면 지출도 <br />아깝지 않다!!
+                  맛집 탐방, 고급 요리, <br />신상 메뉴라면 지출도 <br />아깝지
+                  않다!!
                 </p>
               </div>
             </div>
@@ -158,8 +169,10 @@
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
-                  쇼핑몰에 가면 눈에<br /> 보이는 건 전부 내 꺼!<br /> 최신 유행 아이템부터
-                  <br />희귀템까지 쇼핑 카트는<br>언제나 가득 차 있다!
+                  쇼핑몰에 가면 눈에<br />
+                  보이는 건 전부 내 꺼!<br />
+                  최신 유행 아이템부터 <br />희귀템까지 쇼핑 카트는<br />언제나
+                  가득 차 있다!
                 </p>
               </div>
             </div>
@@ -200,7 +213,9 @@
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
-                외모와 건강 관리를<br>최우선으로 생각하는 사람!<br>최신 뷰티 제품과 고급<br>서비스를 위해선 아낌없이 투자하는 유형이다!!
+                  외모와 건강 관리를<br />최우선으로 생각하는 사람!<br />최신
+                  뷰티 제품과 고급<br />서비스를 위해선 아낌없이 투자하는
+                  유형이다!!
                 </p>
               </div>
             </div>
@@ -224,7 +239,7 @@
               <!--begin::Card body-->
               <div class="card-body">
                 <!-- 이미지 추가 -->
-                <div class="image-container mt-4" style="margin-left: -10px;">
+                <div class="image-container mt-4" style="margin-left: -10px">
                   <img src="/assets/media/avatars/kb_sick.png" />
                 </div>
               </div>
@@ -241,9 +256,10 @@
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
-                  건강이 최우선! 병원비와 <br>의료비 지출이 큰 비중을<br>차지하는
+                  건강이 최우선! 병원비와 <br />의료비 지출이 큰 비중을<br />차지하는
                   유형이다!!<br />
-                  정기적인 건강 관리와 <br />치료를 위해 병원과 늘 <br />가까운 사이.
+                  정기적인 건강 관리와 <br />치료를 위해 병원과 늘 <br />가까운
+                  사이.
                 </p>
               </div>
             </div>
@@ -284,7 +300,8 @@
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
-                최신 휴대폰과 초고속 <br>인터넷 없인 못 사는 유형!<br>데이터와 통신비 절약을 <br>위한 소비 습관을 길러보자!!
+                  최신 휴대폰과 초고속 <br />인터넷 없인 못 사는 유형!<br />데이터와
+                  통신비 절약을 <br />위한 소비 습관을 길러보자!!
                 </p>
               </div>
             </div>
@@ -323,9 +340,9 @@
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
-                  대중교통을 애용하는 <br />뚜벅초형!!
-                  지하철, 버스, <br>택시 등 교통비가 주된 <br />지출이며, 경제적이고 <br />빠른
-                  이동을 추구하는 <br />실속파.
+                  대중교통을 애용하는 <br />뚜벅초형!! 지하철, 버스, <br />택시
+                  등 교통비가 주된 <br />지출이며, 경제적이고 <br />빠른 이동을
+                  추구하는 <br />실속파.
                 </p>
               </div>
             </div>
@@ -367,8 +384,8 @@
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
                   여행을 위해 사는 당신!!<br />
-                  비행기 표, 숙소, <br />맛집 탐방까지 여행에  <br />아낌없이 투자하며,
-                  <br />새로운 모험을 즐기는  <br />여행 마니아.
+                  비행기 표, 숙소, <br />맛집 탐방까지 여행에 <br />아낌없이
+                  투자하며, <br />새로운 모험을 즐기는 <br />여행 마니아.
                 </p>
               </div>
             </div>
@@ -392,8 +409,11 @@
               <!--begin::Card body-->
               <div class="card-body">
                 <!-- 이미지 추가 -->
-                <div class="image-container" style="margin-top: -18px; margin-left: -8px;">
-                  <img src="/assets/media/avatars/study.png" height="220px"/>
+                <div
+                  class="image-container"
+                  style="margin-top: -18px; margin-left: -8px"
+                >
+                  <img src="/assets/media/avatars/study.png" height="220px" />
                 </div>
               </div>
             </div>
@@ -409,7 +429,9 @@
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
-                교육과 학습에 아낌없이 <br>투자하는 당신!!<br>강의, 학원, 도서, 온라인 <br>강좌 등 지식 습득을 위한 <br>교육비가 가장 큰 지출 항목.
+                  교육과 학습에 아낌없이 <br />투자하는 당신!!<br />강의, 학원,
+                  도서, 온라인 <br />강좌 등 지식 습득을 위한 <br />교육비가
+                  가장 큰 지출 항목.
                 </p>
               </div>
             </div>
@@ -422,7 +444,7 @@
       <div class="col-md-6 col-xl-4">
         <!--begin::Card-->
         <div class="card-container">
-          <div class="card ">
+          <div class="card">
             <!-- Card Front -->
             <div class="card-front text-center bg-nine">
               <!--begin::Card header-->
@@ -450,7 +472,8 @@
                 <p
                   class="text-gray-800 fw-semibold fs-2 mt-1 pt-5 mb-7 text-center"
                 >
-                술과 유흥을 즐기는 당신!!<br>술자리와 유흥비가 가장 <br>큰 지출이며, 언제나 즐거운 <br>시간을 추구하는 캐릭터.
+                  술과 유흥을 즐기는 당신!!<br />술자리와 유흥비가 가장 <br />큰
+                  지출이며, 언제나 즐거운 <br />시간을 추구하는 캐릭터.
                 </p>
               </div>
             </div>
@@ -468,56 +491,85 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue';
-  import { useAuthStore } from '@/stores/auth';
+import { ref } from 'vue';
+import { useAuthStore } from '@/stores/auth';
 
-  const auth = useAuthStore();
+const auth = useAuthStore();
+console.log('auth 상태:', auth.state.user.mbti_name);
 
-  const mbtiData = new Map([
-  ['먹는게제일좋아형', {
-    img_url: '/assets/media/avatars/kb_eat.png',
-    description: `음식에 대한 사랑은 곧 소비로 이어지는 타입!<br>맛집 탐방, 고급 요리, 신상 메뉴라면 지출도 아깝지 않다!!`
-  }],
-  ['이것도저것도내꺼형', {
-    img_url: '/assets/media/avatars/kb_2my.png',
-    description: `쇼핑몰에 가면 눈에 보이는 건 전부 내 꺼!<br>최신 유행 아이템부터 희귀템까지 쇼핑 카트는 언제나 가득 차 있다!!`
-  }],
-  ['자기관리마니아형', {
-    img_url: '/assets/media/avatars/kb_rabbit.png',
-    description: `외모와 건강 관리를 최우선으로 생각하는 사람!<br>최신 뷰티 제품과 고급 서비스를 위해선 아낌없이 투자하는 유형이다!!`
-  }],
-  ['마이아파형', {
-    img_url: '/assets/media/avatars/kb_sick.png',
-    description: `건강이 최우선! 병원비와 의료비 지출이 큰 비중을 차지하는 유형이다!!<br>정기적인 건강 관리와 치료를 위해 병원과 늘 가까운 사이.`
-  }],
-  ['통신보안형', {
-    img_url: '/assets/media/avatars/kb_phone.png',
-    description: `최신 휴대폰과 초고속 인터넷 없인 못 사는 유형!<br>데이터와 통신비 절약을 위한 소비 습관을 길러보자!!`
-  }],
-  ['뚜벅초형', {
-    img_url: '/assets/media/avatars/kb_ddubeok.png',
-    description: `대중교통을 애용하는 뚜벅초형!!<br>지하철, 버스, 택시 등 교통비가 주된 지출이며, 경제적이고 빠른 이동을 추구하는 실속파.`
-  }],
-  ['배낭을매고형', {
-    img_url: '/assets/media/avatars/kb_back.png',
-    description: `여행을 위해 사는 당신!!<br>비행기 표, 숙소, 맛집 탐방까지 여행에 아낌없이 투자하며, 새로운 모험을 즐기는 여행 마니아.`
-  }],
-  ['아인슈타인형', {
-    img_url: '/assets/media/avatars/study.png',
-    description: `교육과 학습에 아낌없이 투자하는 당신!!<br>강의, 학원, 도서, 온라인 강좌 등 지식 습득을 위한 교육비가 가장 큰 지출 항목.`
-  }],
-  ['술술들어간다형', {
-    img_url: '/assets/media/avatars/kb_sul.png',
-    description: `술과 유흥을 즐기는 당신!!<br>술자리와 유흥비가 가장 큰 지출이며, 언제나 즐거운 시간을 추구하는 캐릭터.`
-  }],
-  ['default', {
-    img_url: '/assets/media/avatars/default_avatar.png',
-    description: `금융 MBTI를 진단받아보세요!`
-  }]
+const mbtiData = new Map([
+  [
+    '먹는게제일좋아형',
+    {
+      img_url: '/assets/media/avatars/kb_eat.png',
+      description: `음식에 대한 사랑은 곧 소비로 이어지는 타입!<br>맛집 탐방, 고급 요리, 신상 메뉴라면 지출도 아깝지 않다!!`,
+    },
+  ],
+  [
+    '이것도저것도내꺼형',
+    {
+      img_url: '/assets/media/avatars/kb_2my.png',
+      description: `쇼핑몰에 가면 눈에 보이는 건 전부 내 꺼!<br>최신 유행 아이템부터 희귀템까지 쇼핑 카트는 언제나 가득 차 있다!!`,
+    },
+  ],
+  [
+    '자기관리마니아형',
+    {
+      img_url: '/assets/media/avatars/kb_rabbit.png',
+      description: `외모와 건강 관리를 최우선으로 생각하는 사람!<br>최신 뷰티 제품과 고급 서비스를 위해선 아낌없이 투자하는 유형이다!!`,
+    },
+  ],
+  [
+    '마이아파형',
+    {
+      img_url: '/assets/media/avatars/kb_sick.png',
+      description: `건강이 최우선! 병원비와 의료비 지출이 큰 비중을 차지하는 유형이다!!<br>정기적인 건강 관리와 치료를 위해 병원과 늘 가까운 사이.`,
+    },
+  ],
+  [
+    '통신보안형',
+    {
+      img_url: '/assets/media/avatars/kb_phone.png',
+      description: `최신 휴대폰과 초고속 인터넷 없인 못 사는 유형!<br>데이터와 통신비 절약을 위한 소비 습관을 길러보자!!`,
+    },
+  ],
+  [
+    '뚜벅초형',
+    {
+      img_url: '/assets/media/avatars/kb_ddubeok.png',
+      description: `대중교통을 애용하는 뚜벅초형!!<br>지하철, 버스, 택시 등 교통비가 주된 지출이며, 경제적이고 빠른 이동을 추구하는 실속파.`,
+    },
+  ],
+  [
+    '배낭을매고형',
+    {
+      img_url: '/assets/media/avatars/kb_back.png',
+      description: `여행을 위해 사는 당신!!<br>비행기 표, 숙소, 맛집 탐방까지 여행에 아낌없이 투자하며, 새로운 모험을 즐기는 여행 마니아.`,
+    },
+  ],
+  [
+    '아인슈타인형',
+    {
+      img_url: '/assets/media/avatars/study.png',
+      description: `교육과 학습에 아낌없이 투자하는 당신!!<br>강의, 학원, 도서, 온라인 강좌 등 지식 습득을 위한 교육비가 가장 큰 지출 항목.`,
+    },
+  ],
+  [
+    '술술들어간다형',
+    {
+      img_url: '/assets/media/avatars/kb_sul.png',
+      description: `술과 유흥을 즐기는 당신!!<br>술자리와 유흥비가 가장 큰 지출이며, 언제나 즐거운 시간을 추구하는 캐릭터.`,
+    },
+  ],
+  [
+    'default',
+    {
+      img_url: '/assets/media/avatars/default_avatar.png',
+      description: `금융 MBTI를 진단받아보세요!`,
+    },
+  ],
 ]);
-
 </script>
-
 
 <style scoped>
 .card-container {
@@ -540,7 +592,6 @@
   height: 100%;
   backface-visibility: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
 }
 
 .card-front {
@@ -560,10 +611,10 @@
   background-color: #eff6f9; /* card 첫번째 색상 */
 }
 .bg-Two {
-  background-color: #EFFFEC; /* Powder Blue 색상 */
+  background-color: #efffec; /* Powder Blue 색상 */
 }
 .bg-Three {
-  background-color: #FFF2FF; /* Powder Blue 색상 */
+  background-color: #fff2ff; /* Powder Blue 색상 */
 }
 .bg-four {
   background-color: #f3f2ff; /* Powder Blue 색상 */
@@ -572,10 +623,10 @@
   background-color: #fff6f2; /* Powder Blue 색상 */
 }
 .bg-six {
-  background-color: #FFFEED; /* Powder Blue 색상 */
+  background-color: #fffeed; /* Powder Blue 색상 */
 }
 .bg-seven {
-  background-color: #FFF2FB; /* Powder Blue 색상 */
+  background-color: #fff2fb; /* Powder Blue 색상 */
 }
 .bg-eight {
   background-color: #ebfdff; /* Powder Blue 색상 */
@@ -603,5 +654,4 @@
   background-color: #f0f6f9; /* Powder Blue 색상 */
   height: 180px;
 }
-
 </style>

@@ -71,7 +71,7 @@
             :disabled="disableSubmit"
             style="border-radius: 13px; height: 50px"
           >
-          <div style="font-weight: 550; font-size: 17px">로그인</div>
+            <div style="font-weight: 550; font-size: 17px">로그인</div>
           </button>
           <!-- <div class="text-center">또는</div>
           <button class="btn btn-success mt-2 w-100 naver-login-btn">
@@ -116,7 +116,7 @@ const login = async () => {
     console.log('로그인 요청 데이터:', member); // 데이터가 보내지기 전에 콘솔 출력
 
     await auth.login(member);
-    
+
     console.log('로그인 성공'); // 로그인 성공 시 메시지 출력
     router.push('/');
   } catch (e) {
@@ -126,7 +126,6 @@ const login = async () => {
     console.error('로그인 에러:', error.value); // 에러 메시지 출력
   }
 };
-
 
 const passwordText = ref('');
 const passwordHidden = ref(true);
