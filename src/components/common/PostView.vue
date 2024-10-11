@@ -128,7 +128,7 @@
                         <li class="nav-item">
                             <button class="btn btn-sm"
                                 :style="{ backgroundColor: goodisActive ? '#F1F7FF' : '#FFFFFF' }"
-                                @click="incrementGreatCount" style="height: 32px;">
+                                @click="toggleGreatOrStupid(true)" style="height: 32px;">
                                 <i class="ki-duotone ki-like text-primary fs-2 me-1">
                                     <span class="path1"></span>
                                     <span class="path2"></span>
@@ -139,7 +139,7 @@
                         <!--이돈이면 버튼-->
                         <li class="nav-item">
                             <button class="btn btn-sm" :style="{ backgroundColor: badisActive ? '#FFEFEF' : '#FFFFFF' }"
-                                @click="incrementStupidCount" style="height: 32px;">
+                                @click="toggleGreatOrStupid(false)" style="height: 32px;">
                                 <i class="ki-duotone ki-dislike text-danger fs-2 me-1">
                                     <span class="path1"></span>
                                     <span class="path2"></span>
@@ -199,6 +199,7 @@
     </div>
     <!-- </div> -->
 </template>
+
 <script setup>
 import { ref, onMounted, nextTick, watch } from 'vue';
 import "vue3-carousel/dist/carousel.css";
@@ -212,7 +213,6 @@ const props = defineProps({
         type: Number,
         required: true,
     },
-    
 });
 const getCategoryIcon = (categoryName) => {
     const categoryItem = category.find(item => item.name === categoryName);
@@ -222,6 +222,7 @@ const getCategoryIcon = (categoryName) => {
 const post = ref(null); 
 const goodisActive = ref(false);
 const badisActive = ref(false);
+const isGreat = ref(null);
 
 // 서버에서 게시물 데이터를 가져오는 함수
 const fetchPost = async () => {
@@ -234,65 +235,98 @@ const fetchPost = async () => {
         const response = await axios.get(`http://localhost:8080/posts/${props.postNo}`);
         console.log('Fetched Post Data:', response.data);
         post.value = response.data; // 가져온 게시물 데이터를 저장
+        // console.log(typeof(post.value.postNo));
     } catch (error) {
         console.error('Error fetching post data:', error);
     }
 };
-// 좋은소비 카운트를 증가 또는 감소시키는 함수
-const incrementGreatCount = async () => {
-    try {
-        if (goodisActive.value) {
-            // '좋은소비'가 이미 활성화된 상태에서 다시 누르면 비활성화하고 카운트를 감소시킴
-            post.value.greatCount -= 1;
-            goodisActive.value = false;
-        } else {
-            if (badisActive.value) {
-                // '이돈이면'이 활성화된 경우 비활성화하고 카운트를 감소시킴
-                post.value.stupidCount -= 1;
-                badisActive.value = false;
-            }
-            // '좋은소비'가 비활성화된 상태에서 활성화함
-            post.value.greatCount += 1;
-            goodisActive.value = true;
-        }
 
-        // 서버로 좋아요 및 싫어요 상태를 업데이트
-        await axios.put(`http://localhost:8080/posts/${post.value.postNo}/updateCounts`, {
-            greatCount: post.value.greatCount,
-            stupidCount: post.value.stupidCount,
-        });
+// isGreat 값을 가져오는 함수
+const fetchIsGreat = async () => {
+    try {
+        const response = await axios.get(`http://localhost:8080/greatOrStupid/${post.value.userNo}/${post.value.postNo}/isGreat`);
+        isGreat.value = response.data; 
+        goodisActive.value = isGreat.value === true; // isGreat가 true이면 goodisActive를 true로 설정
+        badisActive.value = isGreat.value === false; // isGreat가 false이면 badisActive를 true로 설정
+        console.log(isGreat.value); 
     } catch (error) {
-        console.error('Error updating counts:', error);
+        console.error('Error fetching isGreat value:', error);
+    }
+    
+};
+
+const toggleGreatOrStupid = async (greatOrStupid) => {
+    try {
+        const requestData = {
+            userNo: 1,
+            postNo: props.postNo,
+            greatOrStupid: greatOrStupid
+        };
+
+        const response = await axios.put(`http://localhost:8080/greatOrStupid`, requestData);
+        location.reload();
+    } catch (error) {
+        console.error('Error toggling great status:', error);
     }
 };
 
-// 이돈이면 카운트를 증가 또는 감소시키는 함수
-const incrementStupidCount = async () => {
-    try {
-        if (badisActive.value) {
-            // '이돈이면'이 이미 활성화된 상태에서 다시 누르면 비활성화하고 카운트를 감소시킴
-            post.value.stupidCount -= 1;
-            badisActive.value = false;
-        } else {
-            if (goodisActive.value) {
-                // '좋은소비'가 활성화된 경우 비활성화하고 카운트를 감소시킴
-                post.value.greatCount -= 1;
-                goodisActive.value = false;
-            }
-            // '이돈이면'이 비활성화된 상태에서 활성화함
-            post.value.stupidCount += 1;
-            badisActive.value = true;
-        }
 
-        // 서버로 좋아요 및 싫어요 상태를 업데이트
-        await axios.put(`http://localhost:8080/posts/${post.value.postNo}/updateCounts`, {
-            greatCount: post.value.greatCount,
-            stupidCount: post.value.stupidCount,
-        });
-    } catch (error) {
-        console.error('Error updating counts:', error);
-    }
-};
+// // 좋은소비 카운트를 증가 또는 감소시키는 함수
+// const incrementGreatCount = async () => {
+//     try {
+//         if (goodisActive.value) {
+//             // '좋은소비'가 이미 활성화된 상태에서 다시 누르면 비활성화하고 카운트를 감소시킴
+//             post.value.greatCount -= 1;
+//             goodisActive.value = false;
+//         } else {
+//             if (badisActive.value) {
+//                 // '이돈이면'이 활성화된 경우 비활성화하고 카운트를 감소시킴
+//                 post.value.stupidCount -= 1;
+//                 badisActive.value = false;
+//             }
+//             // '좋은소비'가 비활성화된 상태에서 활성화함
+//             post.value.greatCount += 1;
+//             goodisActive.value = true;
+//         }
+
+//         // 서버로 좋아요 및 싫어요 상태를 업데이트
+//         await axios.put(`http://localhost:8080/posts/${post.value.postNo}/updateCounts`, {
+//             greatCount: post.value.greatCount,
+//             stupidCount: post.value.stupidCount,
+//         });
+//     } catch (error) {
+//         console.error('Error updating counts:', error);
+//     }
+// };
+
+// // 이돈이면 카운트를 증가 또는 감소시키는 함수
+// const incrementStupidCount = async () => {
+//     try {
+//         if (badisActive.value) {
+//             // '이돈이면'이 이미 활성화된 상태에서 다시 누르면 비활성화하고 카운트를 감소시킴
+//             post.value.stupidCount -= 1;
+//             badisActive.value = false;
+//         } else {
+//             if (goodisActive.value) {
+//                 // '좋은소비'가 활성화된 경우 비활성화하고 카운트를 감소시킴
+//                 post.value.greatCount -= 1;
+//                 goodisActive.value = false;
+//             }
+//             // '이돈이면'이 비활성화된 상태에서 활성화함
+//             post.value.stupidCount += 1;
+//             badisActive.value = true;
+//         }
+
+//         // 서버로 좋아요 및 싫어요 상태를 업데이트
+//         await axios.put(`http://localhost:8080/posts/${post.value.postNo}/updateCounts`, {
+//             greatCount: post.value.greatCount,
+//             stupidCount: post.value.stupidCount,
+//         });
+//     } catch (error) {
+//         console.error('Error updating counts:', error);
+//     }
+// };
+
 // 날짜 형식을 변환하는 함수
 const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -303,13 +337,18 @@ const formatDate = (dateString) => {
     return `${month}월 ${day}일 ${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
 };
 
-// `postNo`가 변경될 때마다 데이터를 가져옵니다.
 watch(() => props.postNo, fetchPost);
 
-// 컴포넌트가 마운트될 때 게시물 데이터를 가져옵니다.
-onMounted(() => {
-    if (!post.value) {
-        fetchPost(); // post가 없으면 서버에서 데이터를 가져옵니다.
+onMounted(async () => {
+    // 게시물 데이터를 먼저 가져옵니다.
+    await fetchPost(); // `fetchPost`가 완료된 후에만 실행됩니다.
+    
+    // `post.value`가 존재하고, `userNo`가 유효한 경우에만 `fetchIsGreat`를 호출합니다.
+    if (post.value && post.value.userNo) {
+        console.log('fetchisGreat 실행');
+        await fetchIsGreat();
+    } else {
+        console.warn('No userNo found in post data for fetching isGreat value');
     }
 });
 
