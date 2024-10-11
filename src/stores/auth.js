@@ -18,6 +18,7 @@ export const useAuthStore = defineStore('auth', () => {
   const state = ref({ ...initState });
 
   const isLogin = computed(() => !!state.value.user.userName); // 로그인 여부
+  const userNo = computed(() => state.value.user.userNo);
   const userName = computed(() => state.value.user.userName); // 로그인 사용자 ID
   const email = computed(() => state.value.user.email); // 로그인 사용자 email
   const mbtiName = computed(() => state.value.user.mbtiName); // mbti
@@ -75,6 +76,7 @@ export const useAuthStore = defineStore('auth', () => {
   return {
     state,
     userName,
+    userNo,
     email,
     birth,
     mbtiName,
