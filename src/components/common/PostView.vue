@@ -16,7 +16,8 @@
                     <!--end::Avatar-->
                     <!--begin::Info-->
                     <div class="flex-grow-1">
-                        <a :href="`profile/${post.userNo}/spending`" class="text-gray-800 text-hover-primary fs-4 fw-bold">
+                        <a :href="`profile/${post.userNo}/spending`"
+                            class="text-gray-800 text-hover-primary fs-4 fw-bold">
                             {{ post.userName || '알 수 없음' }}
                         </a>
                         <span class="text-gray-500 fw-semibold d-block">
@@ -28,26 +29,22 @@
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal"
                         style="display: none" ref="modalTrigger"></button>
 
-                    <!--begin::Menu-->
-                    <div class="me-0">
+                    <div class="dropdown me-0">
                         <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
-                            data-kt-menu-trigger="click" ref="menuButton">
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="ki-solid ki-dots-horizontal fs-2x me-1"></i>
                         </button>
-                        <!--begin::Menu 3-->
-                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3"
-                            data-kt-menu="true">
+                        <!-- Dropdown Menu -->
+                        <ul class="dropdown-menu">
                             <!-- 메뉴 항목들 -->
-                            <div class="menu-item px-3">
-                                <!-- 프로필 수정 버튼 -->
-                                <router-link to="/postDetails" class="menu-link px-3">
+                            <li>
+                                <button class="dropdown-item" style="text-align: center;" @click="goToPostView(post.postNo)">
                                     게시물 상세
-                                </router-link>
-                            </div>
-                        </div>
-                        <!--end::Menu 3-->
+                                </button>
+                            </li>
+                        </ul>
                     </div>
-                    <!--end::Menu-->
+
                 </div>
                 <!--end::Author-->
             </div>
@@ -219,7 +216,7 @@ const getCategoryIcon = (categoryName) => {
     return categoryItem ? categoryItem.icon : '/assets/media/category/default.png';
 };
 
-const post = ref(null); 
+const post = ref(null);
 const goodisActive = ref(false);
 const badisActive = ref(false);
 const isGreat = ref(null);
@@ -231,7 +228,6 @@ const fetchPost = async () => {
             console.warn('No post number provided for fetching post data');
             return; // `postNo`가 유효하지 않은 경우 요청을 중단합니다.
         }
-
         const response = await axios.get(`http://localhost:8080/posts/${props.postNo}`);
         console.log('Fetched Post Data:', response.data);
         post.value = response.data; // 가져온 게시물 데이터를 저장
@@ -245,14 +241,14 @@ const fetchPost = async () => {
 const fetchIsGreat = async () => {
     try {
         const response = await axios.get(`http://localhost:8080/greatOrStupid/${post.value.userNo}/${post.value.postNo}/isGreat`);
-        isGreat.value = response.data; 
+        isGreat.value = response.data;
         goodisActive.value = isGreat.value === true; // isGreat가 true이면 goodisActive를 true로 설정
         badisActive.value = isGreat.value === false; // isGreat가 false이면 badisActive를 true로 설정
-        console.log(isGreat.value); 
+        console.log(isGreat.value);
     } catch (error) {
         console.error('Error fetching isGreat value:', error);
     }
-    
+
 };
 
 const toggleGreatOrStupid = async (greatOrStupid) => {
@@ -271,62 +267,6 @@ const toggleGreatOrStupid = async (greatOrStupid) => {
 };
 
 
-// // 좋은소비 카운트를 증가 또는 감소시키는 함수
-// const incrementGreatCount = async () => {
-//     try {
-//         if (goodisActive.value) {
-//             // '좋은소비'가 이미 활성화된 상태에서 다시 누르면 비활성화하고 카운트를 감소시킴
-//             post.value.greatCount -= 1;
-//             goodisActive.value = false;
-//         } else {
-//             if (badisActive.value) {
-//                 // '이돈이면'이 활성화된 경우 비활성화하고 카운트를 감소시킴
-//                 post.value.stupidCount -= 1;
-//                 badisActive.value = false;
-//             }
-//             // '좋은소비'가 비활성화된 상태에서 활성화함
-//             post.value.greatCount += 1;
-//             goodisActive.value = true;
-//         }
-
-//         // 서버로 좋아요 및 싫어요 상태를 업데이트
-//         await axios.put(`http://localhost:8080/posts/${post.value.postNo}/updateCounts`, {
-//             greatCount: post.value.greatCount,
-//             stupidCount: post.value.stupidCount,
-//         });
-//     } catch (error) {
-//         console.error('Error updating counts:', error);
-//     }
-// };
-
-// // 이돈이면 카운트를 증가 또는 감소시키는 함수
-// const incrementStupidCount = async () => {
-//     try {
-//         if (badisActive.value) {
-//             // '이돈이면'이 이미 활성화된 상태에서 다시 누르면 비활성화하고 카운트를 감소시킴
-//             post.value.stupidCount -= 1;
-//             badisActive.value = false;
-//         } else {
-//             if (goodisActive.value) {
-//                 // '좋은소비'가 활성화된 경우 비활성화하고 카운트를 감소시킴
-//                 post.value.greatCount -= 1;
-//                 goodisActive.value = false;
-//             }
-//             // '이돈이면'이 비활성화된 상태에서 활성화함
-//             post.value.stupidCount += 1;
-//             badisActive.value = true;
-//         }
-
-//         // 서버로 좋아요 및 싫어요 상태를 업데이트
-//         await axios.put(`http://localhost:8080/posts/${post.value.postNo}/updateCounts`, {
-//             greatCount: post.value.greatCount,
-//             stupidCount: post.value.stupidCount,
-//         });
-//     } catch (error) {
-//         console.error('Error updating counts:', error);
-//     }
-// };
-
 // 날짜 형식을 변환하는 함수
 const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -340,10 +280,9 @@ const formatDate = (dateString) => {
 watch(() => props.postNo, fetchPost);
 
 onMounted(async () => {
-    // 게시물 데이터를 먼저 가져옵니다.
-    await fetchPost(); // `fetchPost`가 완료된 후에만 실행됩니다.
-    
-    // `post.value`가 존재하고, `userNo`가 유효한 경우에만 `fetchIsGreat`를 호출합니다.
+    await fetchPost(); 
+
+    // post.value가 존재하고, userNo가 유효한 경우
     if (post.value && post.value.userNo) {
         console.log('fetchisGreat 실행');
         await fetchIsGreat();
@@ -391,6 +330,12 @@ const category = [
     { name: '기타', icon: '/assets/media/category/else.png' }
 ];
 
+const goToPostView = (postNo) => {
+    router.push({
+        path: `/postView/${postNo}` // Use path parameter instead of query
+    });
+    window.scrollTo(0, 0);
+};
 
 // 새로운 댓글을 입력할 변수
 const newComment = ref('');
