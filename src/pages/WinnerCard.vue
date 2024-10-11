@@ -1,9 +1,7 @@
 <template>
-   <div class="justify-content-center align-items-center text-center bg-title">
-    <h1 class="text-gray-900 fw-bold pt-8 mt-14 my-1" style="font-size: xx-large;">카드 월드컵 우승</h1>
-    <h2 class="text-gray-700 fw-bold p-4 fs-2">
-      최종 선택된 우승 카드 입니다.
-    </h2>
+  <div class="bg-title">
+    <h1 class="title">카드 월드컵 우승</h1>
+    <h2 class="subtitle">최종 선택된 우승 카드 입니다.</h2>
   </div>
 
   <!-- 큰 카드 영역 -->
@@ -21,7 +19,9 @@
       </div>
     </div>
   </div>
-  <div><h1>하단 카드 추천 문구</h1></div>
+
+  <div><h1 class="recommendation-heading">하단 카드 추천 문구</h1></div>
+
   <!-- 작은 카드 영역 -->
   <div class="small-card-container">
     <div v-for="(card, index) in smallCards" :key="index" class="small-card">
@@ -34,7 +34,6 @@
     </div>
   </div>
 </template>
-
 <script setup>
 import { ref } from 'vue';
 
@@ -77,7 +76,6 @@ const smallCards = ref([
   },
 ]);
 </script>
-
 <style scoped>
 /* 큰 카드 스타일 */
 
@@ -174,7 +172,7 @@ const smallCards = ref([
   text-decoration: underline;
 }
 
-/* 작은 카드 스타일 (변경하지 않음) */
+/* 작은 카드 스타일 */
 .small-card-container {
   display: flex;
   justify-content: center;

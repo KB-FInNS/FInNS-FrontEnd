@@ -159,7 +159,7 @@ const handleScrollBottom = () => {
 
         postNos.value.push(nextNo, next2No);
         setTimeout(() => {
-            console.log(postNos.value);
+            // console.log(postNos.value);
             // bottomCheck를 false로 재설정하여 다음 스크롤 이벤트를 처리할 수 있게 함
             bottomCheck = false;
         }, 100); // 0.1초의 지연 (100ms)
