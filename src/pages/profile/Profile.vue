@@ -12,7 +12,7 @@
             <div
               class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative"
             >
-              <img src="/assets/media/avatars/300-1.jpg" alt="image" />
+              <img :src="user.imgUrl" alt="image" />
             </div>
           </div>
           <!--end::Pic-->
@@ -27,11 +27,15 @@
                 <!--begin::Name-->
                 <div class="d-flex align-items-center mb-2">
                   <span class="text-gray-900 fs-2 fw-bold me-1">{{
-                    member.username
+                    user.userName
                   }}</span>
-                  <!-- Follow/Unfollow Button -->
-
-                  <FollowButton />
+                  <button
+                    class="btn btn-sm ms-10"
+                    :class="isFollow ? 'btn-light' : 'btn-primary'"
+                    @click="toggleFollow()"
+                  >
+                    <span>{{ isFollow ? '팔로잉' : '팔로우' }}</span>
+                  </button>
                 </div>
                 <!--end::Name-->
 
@@ -46,7 +50,7 @@
                       <span class="path2"></span>
                       <span class="path3"></span>
                     </i>
-                    {{ member.mbti_name }}
+                    {{ user.mbtiName }}
                   </router-link>
                 </div>
                 <!--end::Info-->
@@ -56,9 +60,12 @@
               <!--begin::Actions-->
               <div class="d-flex">
                 <!-- 라우팅 -->
-                <router-link to="/mbti" class="btn btn-sm btn-primary me-3">
+                <div
+                  class="btn btn-sm btn-primary me-3"
+                  @click="analysisMbti()"
+                >
                   금융 MBTI 진단
-                </router-link>
+                </div>
 
                 <!-- 모달 트리거 버튼 (display: none; - JS를 통해 제어) -->
                 <button
@@ -123,7 +130,7 @@
                 <div class="d-flex flex-wrap">
                   <!--begin::Stat-->
                   <router-link
-                    to="/profile/spending"
+                    :to="`/profile/${userNo}/spending`"
                     class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3"
                   >
                     <!--begin::Label-->
@@ -159,21 +166,17 @@
                         </svg>
                       </span>
 
-<<<<<<< HEAD
                       <count-up
                         class="fs-2 text-gray-900 text-hover-primary fw-bold mt-2"
-                        :end-val="67"
+                        :end-val="spendingCounts"
                       ></count-up>
-=======
-                      <count-up class="fs-2 text-gray-900 text-hover-primary fw-bold mt-2" :end-val="spendingCounts"></count-up>
->>>>>>> bf204a281f0020e54d7ed106ffc7bd640669b37a
                     </div>
                     <!--end::Number-->
                   </router-link>
                   <!--end::Stat-->
                   <!--begin::Stat-->
                   <router-link
-                    to="/profile/follower"
+                    :to="`/profile/${userNo}/follower`"
                     class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3"
                   >
                     <!--begin::Label-->
@@ -208,7 +211,7 @@
                   <!--begin::Stat-->
 
                   <router-link
-                    to="/profile/following"
+                    :to="`/profile/${userNo}/following`"
                     class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3"
                   >
                     <!--begin::Label-->
@@ -240,19 +243,23 @@
                     <!--end::Number-->
                   </router-link>
 
-                  <div style="position: absolute; bottom: 10px; right: 20px">
-<<<<<<< HEAD
+                  <!-- 아이콘이 텍스트 상단에 위치하도록 조정 -->
+                  <div style="position: absolute; bottom: 40px; right: 25px">
                     <i
                       class="ki-duotone ki-arrows-circle text-primary fs-3x"
-                      @click="updateHistory"
+                      style="cursor: pointer"
+                      @click="renew()"
                     >
-=======
-                    <i class="ki-duotone ki-arrows-circle text-primary fs-3x" style="cursor: pointer;" @click="renew(1)">
->>>>>>> bf204a281f0020e54d7ed106ffc7bd640669b37a
                       <span class="path1"></span>
                       <span class="path2"></span>
                     </i>
                   </div>
+                  <span
+                    class="text-gray-700 me-3"
+                    style="position: absolute; bottom: 10px; right: 20px"
+                  >
+                    마지막 갱신 일자 : {{ user.renewTime }}
+                  </span>
                   <!--end::Stat-->
                 </div>
                 <!--end::Stats-->
@@ -304,13 +311,12 @@
       </table>
 
       <Carousel style="width: 50%; margin-left: -30px">
-<<<<<<< HEAD
         <Slide
           v-for="(item, index) in cards"
           :key="index"
           @click="gotoCardDetail(item)"
         >
-          <div style="text-align: center">
+          <div style="text-align: center; cursor: pointer">
             <img
               :src="item.card_img_url"
               ref="image"
@@ -320,12 +326,6 @@
               class="mt-3 fs-1 fw-bold text-hover-primary"
               style="color: black"
             >
-=======
-        <Slide v-for="(item, index) in cards" :key="index" @click="gotoCardDetail(item)">
-          <div style="text-align: center; cursor: pointer;">
-            <img :src="item.card_img_url" ref="image" style="width: 100px; display: block; margin: 0 auto;">
-            <div class="mt-3 fs-1 fw-bold text-hover-primary" style="color: black;">
->>>>>>> bf204a281f0020e54d7ed106ffc7bd640669b37a
               {{ item.card_name }}
             </div>
           </div>
@@ -349,39 +349,75 @@ import FollowButton from '@/components/common/FollowButton.vue';
 import SearchComponent from '@/components/common/SearchComponent.vue';
 import 'vue3-carousel/dist/carousel.css';
 import CountUp from 'vue-countup-v3';
-import { ref, onMounted, nextTick } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, onMounted, nextTick, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
-import { useAuthStore } from '@/stores/auth';
 import axios from 'axios';
 
-const auth = useAuthStore();
-
-const member = ref({
-  username: auth.username,
-  mbti_name: auth.mbti_name,
-});
-
+const route = useRoute();
 const router = useRouter();
 
-let spendingCounts = ref(0);
-const getSpendingCounts = async (userNo) => {
-  try {
-    const response = await axios.get(`http://localhost:8080/users/${userNo}/posts/count`);
-    spendingCounts.value = response.data;
+const userNo = route.params.userNo;
+const user = ref({});
 
+watch(
+  () => route.params.userNo,
+  () => {
+    window.location.reload();
+  }
+);
+
+const getUser = async () => {
+  try {
+    const response = await axios.get(`http://localhost:8080/users/${userNo}`);
+    user.value = response.data;
+
+    console.log(user.value);
   } catch (error) {
     console.error('Error renewing posts:', error);
   }
 };
 
-const renew = async (userNo) => {
+let spendingCounts = ref(0);
+const getSpendingCounts = async () => {
   try {
-    const response = await axios.put(`http://localhost:8080/users/${userNo}/renew`);
+    const response = await axios.get(
+      `http://localhost:8080/users/${userNo}/posts/count`
+    );
+    spendingCounts.value = response.data;
+  } catch (error) {
+    console.error('Error renewing posts:', error);
+  }
+};
+
+const renew = async () => {
+  try {
+    const response = await axios.put(
+      `http://localhost:8080/users/${userNo}/renew`
+    );
     location.reload();
   } catch (error) {
     console.error('Error renewing posts:', error);
   }
+};
+
+const analysisMbti = async () => {
+  try {
+    const response = await axios.put(
+      `http://localhost:8080/users/${userNo}/mbti`
+    );
+  } catch (error) {
+    console.error('Error analysis mbti:', error);
+  }
+
+  router.push('/mbti');
+};
+
+const isFollow = ref(false);
+const toggleFollow = () => {
+  isFollow.value = !isFollow.value; // 선택한 사용자의 팔로우 상태 전환
+
+  // true, false 값에 따라 디비에 수정돼야함
 };
 
 // 일시적인 데이터set
@@ -491,7 +527,8 @@ const modalTrigger = ref(null);
 const menuButton = ref(null);
 
 onMounted(async () => {
-  getSpendingCounts(1);
+  await getUser();
+  await getSpendingCounts();
 
   // DOM이 렌더링된 후 초기화
   await nextTick();

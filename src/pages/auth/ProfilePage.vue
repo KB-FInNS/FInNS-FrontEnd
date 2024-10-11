@@ -1,6 +1,7 @@
 <script setup>
 import authApi from '@/api/authApi';
 import followApi from '@/api/followApi';
+import FollowButton from '@/components/common/FollowButton.vue';
 
 import { useAuthStore } from '@/stores/auth';
 import { computed, reactive, ref } from 'vue';
@@ -13,16 +14,16 @@ const router = useRouter();
 // 아바타 처리를 위한 Ref
 const avatar = ref(null); // 아바타 파일 입력 참조
 const avatarPath = ref('/src/assets/media/avatars/black.png'); // 기본 아바타 이미지 경로
-
+console.log('asd', auth.mbti_name);
 // 회원 정보를 담고 있는 reactive 상태
 const member = reactive({
-  username: auth.username,
+  username: auth.state.user.username,
   birth: auth.birth, // 추가: 생년월일
   oldPassword: '',
   newPassword: '',
   newPassword2: '',
   avatar: null,
-  mbti_name: auth.mbti_name, // 추가: MBTI
+  mbti_name: auth.state.user.mbti_name, // 추가: MBTI
 });
 
 // 비밀번호 변경 상태
@@ -125,6 +126,7 @@ const onDeleteAvatar = () => {
     <!-- <button @click="handleFollow" class="btn btn-info btn-lg me-2">
       {{ followStatus ? '언팔로우' : '팔로우' }}
     </button> -->
+    <FollowButton />
   </div>
   <div class="justify-content-center align-items-center text-center bg-title">
     <h1 class="text-gray-900 fw-bold pt-8 mt-14 my-1 fs-1">마이페이지</h1>
@@ -194,6 +196,7 @@ const onDeleteAvatar = () => {
                 class="form-control"
                 id="birth"
                 v-model="member.birth"
+                readonly
               />
             </div>
           </div>
