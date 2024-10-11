@@ -160,7 +160,7 @@
             <tbody>
               <tr v-for="(item, index) in sortedDataList" :key="index" style="font-weight: 500; font-size: 14px;">
                 <td>
-                  <img :src="item.imgUrl" alt="depositkor_co_nm" width="28" height="24" loading="eager" />
+                  <img :src="item.imgUrl" width="28" height="24" loading="eager" />
                   {{ item.korCoNm }}
                 </td>
                 <td>{{ item.finPrdtNm }}</td>
@@ -227,6 +227,7 @@ const getProducts = async () => {
   try {
     const response = await axios.get('http://localhost:8080/product/01');
     dataList.value = response.data;
+    // console.log(dataList.value);
   } catch (error) {
     console.error('Error fetching data:', error);  // 에러를 콘솔에 출력
   }
@@ -356,7 +357,7 @@ const visiblePages = computed(() => {
 // 상세 페이지로 이동
 const gotoDepositDetail = (item) => {
   router.push({
-    path: `/Deposit/${item.financialProductNo}`,
+    path: `/Deposit/${item.financeProductNo}`,
     query: {
       item: JSON.stringify(item),
     },
