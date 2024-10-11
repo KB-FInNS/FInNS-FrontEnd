@@ -42,21 +42,21 @@
                             </h2>
 
                             <ul>
-                                <li v-for="(item, idx) in category.items" :key="idx">
+                                <li v-for="(user, idx) in category.users" :key="idx">
                                     <span class="ms-3 me-5 fw-bold fs-1" style="font-variant-numeric: tabular-nums;">{{
                                         idx + 1 }}</span>
 
                                     <!-- 유저 목록 -->
                                     <div class="symbol symbol-40px me-5 ms-1">
-                                        <img :src="`${item.profileImage}`" class="h-50 align-self-center" alt="" />
+                                        <img :src="`${user.imgUrl}`" />
                                     </div>
                                     <div class="flex-grow-1 me-6">
-                                        <a href="profile/spending"
+                                        <a :href="`profile/${user.userNo}/spending`"
                                             class="text-gray-800 text-hover-primary fs-6 fw-bold">
-                                            {{ item.name }}
+                                            {{ user.userName }}
                                         </a>
                                     </div>
-                                    <span style="position: absolute; right: 40px;" class="ms-10 ps-7">{{ item.amount
+                                    <span style="position: absolute; right: 40px;" class="ms-10 ps-7">{{ user.totalAmount
                                         }}</span>
                                 </li>
                             </ul>
@@ -69,7 +69,7 @@
             <!--추천 친구-->
             <div class="card mb-5 mb-xl-8">
                 <div class="card-header border-0 pt-5">
-                    <h3 class="card-title align-items-start flex-column">
+                    <h3 class="card-title align-items-center flex-column mb-5">
                         <span class="d-flex align-items-center card-label fw-bold text-gray-900 fs-4">
                             <i class="ki-duotone ki-people fs-2hx me-2">
                                 <span class="path1"></span>
@@ -78,9 +78,9 @@
                                 <span class="path4"></span>
                                 <span class="path5"></span>
                             </i>
-                            회원님을 위한 추천
+                            <span class="fs-1" style="font-weight: 700;">회원님을 위한 추천</span>
                         </span>
-                        <span class="text-muted mt-1 fw-bold fs-7 ms-11">나와 비슷한 소비 습관을 가진 사용자</span>
+                        <span class="text-muted mt-2 fw-bold fs-4 ms-2">나와 비슷한 소비 습관을 가진 사용자</span>
                     </h3>
 
                 </div>
@@ -91,12 +91,12 @@
                         <div class="d-flex flex-stack">
                             <!-- 유저 아바타 -->
                             <div class="symbol symbol-40px me-5">
-                                <img :src="`${user.avatar}`" class="h-50 align-self-center" alt="" />
+                                <img :src="`${user.imgUrl}`" />
                             </div>
                             <!-- 유저 이름 및 회사 정보 -->
                             <div class="flex-grow-1 me-5">
-                                <a href="profile/spending" class="text-gray-800 text-hover-primary fs-6 fw-bold">
-                                    {{ user.name }}
+                                <a :href="`profile/${user.userNo}/spending`" class="text-gray-800 text-hover-primary fs-6 fw-bold">
+                                    {{ user.userName }}
                                 </a>
                             </div>
                             <div class="ms-2">
@@ -168,10 +168,63 @@ const handleScrollBottom = () => {
 
 };
 
+const rankings = ref([
+    {
+        title: '소비 TOP 3',
+        users: [
+            { userName: 'Yujin_1219', totalAmount: '1,000,000원', imgUrl: '/assets/media/avatars/300-11.jpg' },
+            { userName: 'Yujin_1219', totalAmount: '900,000원', imgUrl: '/assets/media/avatars/300-12.jpg' },
+            { userName: 'Yujin_1219', totalAmount: '600,000원', imgUrl: '/assets/media/avatars/300-16.jpg' },
+        ],
+    },
+    {
+        title: '좋은소비 TOP 3',
+        users: [
+            { userName: 'Yujin_1219', totalAmount: '1,000,000회', imgUrl: '/assets/media/avatars/300-4.jpg' },
+            { userName: 'Yujin_1219', totalAmount: '900,000회', imgUrl: '/assets/media/avatars/300-2.jpg' },
+            { userName: 'Yujin_1219', totalAmount: '100,000회', imgUrl: '/assets/media/avatars/300-6.jpg' },
+        ],
+    },
+]);
+
+const getTop3Users = async () => {
+  try {
+    const nowDate = new Date();
+    const response = await axios.get(`http://localhost:8080/users/top3/${nowDate.getFullYear()}/${nowDate.getMonth() + 1}`);
+
+    const formattedTotalAmount = response.data.map(item => ({
+      ...item,
+      totalAmount: item.totalAmount.toLocaleString() + '원'
+    }));
+    rankings.value[0].users = formattedTotalAmount;
+
+  } catch (error) {
+    console.error('Error fetching top 3 users:', error);
+    throw error;
+  }
+};
+
+const users = ref([]);
+const getRecommendUsers = async () => {
+  try {
+    const response = await axios.get(`http://localhost:8080/users/${1}/recommend5`);
+    users.value = response.data;
+
+  } catch (error) {
+    console.error('Error fetching recommend 5 users:', error);
+    throw error;
+  }
+};
+
+const toggleFollow = (user) => {
+    user.isFollowing = !user.isFollowing; // 선택한 사용자의 팔로우 상태 전환
+};
 
 // 컴포넌트가 마운트될 때 초기 데이터를 가져오기
 onMounted(() => {
     fetchDistinctPostNos();
+    getTop3Users();
+    getRecommendUsers();
     window.addEventListener('scroll', handleScrollBottom);
 });
 
@@ -179,61 +232,6 @@ onMounted(() => {
 onBeforeUnmount(() => {
     window.removeEventListener('scroll', handleScrollBottom);
 });
-
-const rankings = ref([
-    {
-        title: '소비 TOP 3',
-        items: [
-            { name: 'Yujin_1219', amount: '1,000,000원', profileImage: '/assets/media/avatars/300-11.jpg' },
-            { name: 'Yujin_1219', amount: '900,000원', profileImage: '/assets/media/avatars/300-12.jpg' },
-            { name: 'Yujin_1219', amount: '600,000원', profileImage: '/assets/media/avatars/300-16.jpg' },
-        ],
-    },
-    {
-        title: '좋은소비 TOP 3',
-        items: [
-            { name: 'Yujin_1219', amount: '1,000,000회', profileImage: '/assets/media/avatars/300-4.jpg' },
-            { name: 'Yujin_1219', amount: '900,000회', profileImage: '/assets/media/avatars/300-2.jpg' },
-            { name: 'Yujin_1219', amount: '100,000회', profileImage: '/assets/media/avatars/300-6.jpg' },
-        ],
-    },
-]);
-
-const users = ref([
-    {
-        name: "Jacob Jones",
-        avatar: '/assets/media/avatars/300-11.jpg',
-        profileLink: "pages/user-profile/overview.html",
-        isFollowing: true
-    },
-    {
-        name: "Annette Black",
-        avatar: "/assets/media/avatars/300-2.jpg",
-        profileLink: "pages/user-profile/overview.html",
-        isFollowing: true
-    },
-    {
-        name: "Devon Lane",
-        avatar: "/assets/media/avatars/300-7.jpg",
-        profileLink: "pages/user-profile/overview.html",
-        isFollowing: true
-    },
-    {
-        name: "Kristin Watson",
-        avatar: "/assets/media/avatars/300-9.jpg",
-        profileLink: "pages/user-profile/overview.html",
-        isFollowing: true
-    },
-    {
-        name: "Eleanor Pena",
-        avatar: "/assets/media/avatars/300-12.jpg",
-        profileLink: "pages/user-profile/overview.html",
-        isFollowing: true
-    }
-]);
-const toggleFollow = (user) => {
-    user.isFollowing = !user.isFollowing; // 선택한 사용자의 팔로우 상태 전환
-};
 </script>
 
 <style scoped>

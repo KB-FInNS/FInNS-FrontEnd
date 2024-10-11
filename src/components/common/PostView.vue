@@ -11,12 +11,12 @@
                 <div class="d-flex align-items-center">
                     <!--begin::Avatar-->
                     <div class="symbol symbol-50px me-5">
-                        <img src="/assets/media/avatars/300-4.jpg" class="" alt="" />
+                        <img :src="`${post.userImgUrl}`" class="" alt="" />
                     </div>
                     <!--end::Avatar-->
                     <!--begin::Info-->
                     <div class="flex-grow-1">
-                        <a href="profile/spending" class="text-gray-800 text-hover-primary fs-4 fw-bold">
+                        <a :href="`profile/${post.userNo}/spending`" class="text-gray-800 text-hover-primary fs-4 fw-bold">
                             {{ post.userName || '알 수 없음' }}
                         </a>
                         <span class="text-gray-500 fw-semibold d-block">
