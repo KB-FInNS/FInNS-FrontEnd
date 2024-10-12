@@ -48,9 +48,10 @@
           <!-- MBTI 프로필 사진을 보여주는 부분에서 mbti_no 사용 -->
           <img
             :src="
-              mbtiData.get(auth.state.user.mbti_name)?.img_url ||
-              mbtiData.get('default').img_url
+              user?.mbtiName
+                ? mbtiData.get(user.mbtiName)?.img_url : mbtiData.get('default').img_url
             "
+            alt="MBTI Image"
           />
         </div>
         <!--end::Pic-->
@@ -66,7 +67,7 @@
               <!--begin::Name-->
               <div class="d-flex align-items-center mb-2 pt-5">
                 <!-- mbti_no 사용 -->
-                <p class="fs-1 fw-bold">{{ auth.state.user.mbti_name }}</p>
+                <p class="fs-1 fw-bold">{{ user?.mbtiName }}</p>
               </div>
               <!--end::Name-->
               <!--begin::Info-->
@@ -74,8 +75,8 @@
                 <p
                   class="align-items-center text-gray-800 me-5 mb-2"
                   v-html="
-                    mbtiData.get(auth.state.user.mbti_name)?.description ||
-                    mbtiData.get('default').description
+                    user?.mbtiName
+                      ? mbtiData.get(user.mbtiName).description : mbtiData.get('default').description
                   "
                 ></p>
               </div>
@@ -491,11 +492,23 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { useAuthStore } from '@/stores/auth';
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
 
-const auth = useAuthStore();
-console.log('auth 상태:', auth.state.user.mbti_name);
+const auth = JSON.parse(localStorage.getItem('auth'));
+const user = ref(null);
+
+// 서버에서 유저 데이터를 가져오는 함수
+const fetchUser = async () => {
+    try {
+        const response = await axios.get(`http://localhost:8080/users/${auth.user.user_no}`);
+        user.value = response.data;
+        console.log(user.value);
+
+    } catch (error) {
+        console.error('Error fetching user data:', error);
+    }
+};
 
 const mbtiData = new Map([
   [
@@ -569,6 +582,11 @@ const mbtiData = new Map([
     },
   ],
 ]);
+
+onMounted(() => {
+  fetchUser();
+});
+
 </script>
 
 <style scoped>

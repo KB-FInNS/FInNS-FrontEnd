@@ -148,7 +148,7 @@ const join = async () => {
   }
   try {
     await authApi.create(member);
-    router.push({ name: 'Main' });
+    router.push({ name: 'Login' });
   } catch (e) {
     console.error(e);
   }
