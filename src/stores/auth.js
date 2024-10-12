@@ -19,6 +19,7 @@ export const useAuthStore = defineStore('auth', () => {
   const state = ref({ ...initState });
 
   const isLogin = computed(() => {
+    // console.log('isLogin 계산:', !!state.value.token);
     return !!state.value.token;
   });
   const isSignedUp = computed(() => state.value.user.isSignedUp); // 회원가입 여부
@@ -45,6 +46,8 @@ export const useAuthStore = defineStore('auth', () => {
       };
   
       localStorage.setItem('auth', JSON.stringify(state.value));
+      // console.log('로그인 후 state:', state.value);
+      // console.log('로그인 직후 isLogin:', isLogin.value);
       return true;
     } catch (error) {
       console.error('로그인 실패:', error.response ? error.response.data : error);
