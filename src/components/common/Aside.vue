@@ -199,7 +199,6 @@
 import { ref } from 'vue';
 
 const auth = JSON.parse(localStorage.getItem('auth'));
-
 const products = ref([
 {
     icon: '/assets/media/icons/sug1.jpg', // 아이콘 링크

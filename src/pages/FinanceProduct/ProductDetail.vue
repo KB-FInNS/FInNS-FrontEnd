@@ -89,7 +89,7 @@ onMounted(() => {
 
 // 버튼 클릭 시 호출될 함수
 const viewProductDetails = () => {
-    alert('상품 자세히 보기 클릭됨');
+    window.location.href = productData.companyUrl;
 };
 </script>
 
