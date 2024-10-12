@@ -71,6 +71,8 @@ import { ref, onMounted, computed } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
+
+const auth = JSON.parse(localStorage.getItem('auth'));
 const userNo = route.params.userNo;
 
 const categoryMap = new Map([
@@ -164,7 +166,7 @@ const getPostsByCategory = async (category) => {
     const postRequestByCategoryDTO = {
       userNo: userNo,
       category: category,
-      isOnlyPublic: false
+      isOnlyPublic: userNo == auth.user.user_no ? true : false
     }
 
     const response = await axios.post(`http://localhost:8080/posts/byCategory`, postRequestByCategoryDTO);

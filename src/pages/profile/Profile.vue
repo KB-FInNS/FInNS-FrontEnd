@@ -30,6 +30,7 @@
                     user.userName
                   }}</span>
                   <button
+                    v-if="user.userNo != auth.user.user_no"
                     class="btn btn-sm ms-10"
                     :class="isFollow ? 'btn-light' : 'btn-primary'"
                     @click="toggleFollow()"
@@ -50,7 +51,7 @@
                       <span class="path2"></span>
                       <span class="path3"></span>
                     </i>
-                    {{ user.mbtiName }}
+                    {{ user.mbtiName ? user.mbtiName : "MBTI를 진단해주세요."}}
                   </router-link>
                 </div>
                 <!--end::Info-->
@@ -61,6 +62,7 @@
               <div class="d-flex">
                 <!-- 라우팅 -->
                 <div
+                  v-if="user.userNo == auth.user.user_no"
                   class="btn btn-sm btn-primary me-3"
                   @click="analysisMbti()"
                 >
@@ -68,16 +70,16 @@
                 </div>
 
                 <!-- 모달 트리거 버튼 (display: none; - JS를 통해 제어) -->
-                <button
+                <!-- <button
                   class="btn btn-primary"
                   data-bs-toggle="modal"
                   data-bs-target="#kt_modal_offer_a_deal"
                   style="display: none"
                   ref="modalTrigger"
-                ></button>
+                ></button> -->
 
                 <!--begin::Menu-->
-                <div class="me-0">
+                <div class="me-0" v-if="user.userNo == auth.user.user_no">
                   <button
                     class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
                     data-kt-menu-trigger="click"
@@ -96,23 +98,6 @@
                       <router-link to="/auth/update" class="menu-link px-3">
                         프로필 수정
                       </router-link>
-                    </div>
-                    <div class="menu-item px-3">
-                      <!-- Create Payment 버튼과 툴팁 -->
-                      <a href="#" class="menu-link flex-stack px-3">
-                        Create Payment
-                        <span
-                          class="ms-2"
-                          data-bs-toggle="tooltip"
-                          title="Specify a target name for future usage and reference"
-                        >
-                          <i class="ki-duotone ki-information fs-6">
-                            <span class="path1"></span>
-                            <span class="path2"></span>
-                            <span class="path3"></span>
-                          </i>
-                        </span>
-                      </a>
                     </div>
                   </div>
                   <!--end::Menu 3-->
@@ -244,7 +229,7 @@
                   </router-link>
 
                   <!-- 아이콘이 텍스트 상단에 위치하도록 조정 -->
-                  <div style="position: absolute; bottom: 40px; right: 25px">
+                  <div style="position: absolute; bottom: 40px; right: 25px" v-if="user.userNo == auth.user.user_no">
                     <i
                       class="ki-duotone ki-arrows-circle text-primary fs-3x"
                       style="cursor: pointer"
@@ -356,6 +341,8 @@ import axios from 'axios';
 
 const route = useRoute();
 const router = useRouter();
+
+const auth = JSON.parse(localStorage.getItem('auth'));
 
 const userNo = route.params.userNo;
 const user = ref({});
