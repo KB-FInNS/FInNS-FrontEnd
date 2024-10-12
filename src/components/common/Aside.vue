@@ -7,7 +7,7 @@
     <div class="aside-logo flex-column-auto px-10 pt-9 pb-5" id="kt_aside_logo">
       <!--begin::Logo-->
       <router-link to="/">
-        <img alt="Logo" src="/assets/media/logos/logo-FInNS.png" width="120px" style="margin-left: 1px;"/>
+        <img alt="Logo" src="/assets/media/logos/logo-FInNS.png" width="120px" style="margin-left: 1px;" />
       </router-link>
       <!--end::Logo-->
     </div>
@@ -171,7 +171,6 @@
           <!--금융상품추천-->
           <div class="recommendation-container">
             <div class="card-container">
-
               <div v-for="(item, index) in products" :key="index" class="recommendation-card">
                 <div class="icon">
                   <img :src="item.icon" alt="상품 아이콘" />
@@ -179,9 +178,9 @@
                 <div class="card-content pt-12">
                   <h4>{{ item.title }}</h4>
                   <p>
-                    <router-link :to="item.link1">{{ item.linkText1 }}</router-link>
+                    <router-link :to="`/Deposit/${item.link1}`">{{ item.linkText1 }}</router-link>
                     |
-                    <router-link :to="item.link2">{{ item.linkText2 }}</router-link>
+                    <router-link :to="`/installmentSavings/${item.link2}`">{{ item.linkText2 }}</router-link>
                   </p>
                 </div>
               </div>
@@ -196,29 +195,92 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, watch } from 'vue';
+import axios from 'axios';
+import { useRoute, useRouter } from 'vue-router';
 
+// Auth 데이터 가져오기 (localStorage에서)
 const auth = JSON.parse(localStorage.getItem('auth'));
 
+// Vue Router 인스턴스 가져오기
+const route = useRoute();
+const router = useRouter();
+
+// Product 데이터 저장 변수
 const products = ref([
-{
-    icon: '/assets/media/icons/sug1.jpg', // 아이콘 링크
+  {
+    icon: '/assets/media/icons/sug1.jpg',
     title: '금리가 가장 높은 상품',
-    link1: { name: 'Deposit' }, 
-    link2: { name: 'InstallmentSavings' }, 
-    linkText1: '예금 상품', 
-    linkText2: '적금 상품', 
+    link1: '',
+    link2: '',
+    linkText1: '예금 상품',
+    linkText2: '적금 상품',
   },
   {
-    icon: '/assets/media/icons/sug2.jpg', // 아이콘 링크
+    icon: '/assets/media/icons/sug2.jpg',
     title: '최다 가입 상품',
-    link1: { name: 'Deposit' }, 
-    link2: { name: 'InstallmentSavings' }, // 라우트 이름
-    linkText1: '예금 상품', // 링크에 표시될 텍스트
-    linkText2: '적금 상품', // 링크에 표시될 텍스트
+    link1: '',
+    link2: '',
+    linkText1: '예금 상품',
+    linkText2: '적금 상품',
   },
 ]);
+
+// 예금 및 적금 데이터
+const TopDeposit = ref({});
+const TopSaving = ref({});
+const TopDeposit2 = ref({});
+const TopSaving2 = ref({});
+
+// 첫 번째 상품 데이터를 가져오는 함수
+const getTopProduct = async () => {
+  try {
+    const response1 = await axios.get('http://localhost:8080/product/highest/deposit');
+    TopDeposit.value = response1.data;
+    const response2 = await axios.get('http://localhost:8080/product/highest/savings');
+    TopSaving.value = response2.data;
+
+    // products 배열 업데이트
+    products.value[0].link1 = TopDeposit.value.financeProductNo;
+    products.value[0].link2 = TopSaving.value.financeProductNo;
+  } catch (error) {
+    console.error('Error fetching top product data:', error);
+  }
+};
+
+// 두 번째 상품 데이터를 가져오는 함수
+const getTopProduct2 = async () => {
+  try {
+    const response1 = await axios.get('http://localhost:8080/product/top/deposit');
+    TopDeposit2.value = response1.data;
+    const response2 = await axios.get('http://localhost:8080/product/top/savings');
+    TopSaving2.value = response2.data;
+
+    // products 배열 업데이트
+    products.value[1].link1 = TopDeposit2.value.financeProductNo;
+    products.value[1].link2 = TopSaving2.value.financeProductNo;
+  } catch (error) {
+    console.error('Error fetching top product data:', error);
+  }
+};
+
+// 컴포넌트가 마운트될 때 데이터를 가져오기
+onMounted(() => {
+  getTopProduct();
+  getTopProduct2();
+});
+
+// 경로 파라미터가 변경될 때 데이터를 다시 가져오기
+watch(
+  () => route.params, // 경로 파라미터 감시
+  (newParams, oldParams) => {
+    if (newParams.financeProductNo !== oldParams.financeProductNo) {
+      location.reload();
+    }
+  }
+);
 </script>
+
 
 <style scoped>
 .recommendation-container {
@@ -248,8 +310,9 @@ const products = ref([
 
 .icon {
   margin-bottom: 30px;
-  position: absolute; /* card-container의 왼쪽 상단에 고정 */
-  
+  position: absolute;
+  /* card-container의 왼쪽 상단에 고정 */
+
 }
 
 .icon img {
