@@ -137,7 +137,7 @@
                 <select v-model="selectedSort" class="form-select form-select-solid" data-control="select1"
                   data-placeholder="Select an option" data-hide-search="true">
                   <option value="default" selected>기본 정렬</option>
-                  <option value="intr_rate2">최고 금리순</option>
+                  <option value="intrRate2">최고 금리순</option>
                 </select>
                 <!--end::Select-->
               </div>
@@ -308,7 +308,7 @@ const toggleAllJoinWays = () => {
 // 정렬된 데이터 리스트 계산
 const sortedDataList = computed(() => {
   const data = [...filteredDataList.value];
-  if (selectedSort.value === 'intr_rate2') {
+  if (selectedSort.value === 'intrRate2') {
     data.sort((a, b) => parseFloat(b.intrRate2) - parseFloat(a.intrRate2));
   }
   const start = (currentPage.value - 1) * itemsPerPage.value;

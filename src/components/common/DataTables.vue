@@ -12,7 +12,7 @@
       >
         <thead>
           <tr class="fw-bold fs-3 text-gray-800">
-            <th>공개유무</th>
+            <th v-if="userNo == auth.user.user_no">공개유무</th>
             <th></th>
             <th>카테고리</th>
             <th></th>
@@ -32,7 +32,7 @@
             @click="goToPostView(post.postNo)"
             style="cursor: pointer;"
           >
-            <td class="form-check form-check-solid form-check-custom form-switch justify-content-center mt-2" style="border: none;">
+            <td v-if="userNo == auth.user.user_no" class="form-check form-check-solid form-check-custom form-switch justify-content-center mt-2" style="border: none;">
                 <input
                   class="form-check-input"
                   type="checkbox"
@@ -65,8 +65,9 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
+const route = useRoute();
 const router = useRouter();
 
 const props = defineProps({
@@ -75,6 +76,9 @@ const props = defineProps({
     required: true,
   },
 });
+
+const auth = JSON.parse(localStorage.getItem('auth'));
+const userNo = route.params.userNo;
 
 const categoryMap = new Map([
   ['식비 · 카페', { img_url: '/assets/media/category/meal.png' }],

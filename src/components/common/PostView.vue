@@ -26,10 +26,10 @@
                     </div>
 
                     <!-- 모달 트리거 버튼 (display: none; - JS를 통해 제어) -->
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal"
-                        style="display: none" ref="modalTrigger"></button>
+                    <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal"
+                        style="display: none" ref="modalTrigger"></button> -->
 
-                    <div class="dropdown me-0">
+                    <div v-if="post.userNo == auth.user.user_no" class="dropdown me-0">
                         <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="ki-solid ki-dots-horizontal fs-2x me-1"></i>
@@ -124,7 +124,7 @@
                         <!--좋은소비 버튼-->
                         <li class="nav-item">
                             <button class="btn btn-sm"
-                                :style="{ backgroundColor: goodisActive ? '#F1F7FF' : '#FFFFFF' }"
+                                :style="{ backgroundColor: (goodisActive ? '#F1F7FF' : '#FFFFFF') }"
                                 @click="toggleGreatOrStupid(true)" style="height: 32px;">
                                 <i class="ki-duotone ki-like text-primary fs-2 me-1">
                                     <span class="path1"></span>
@@ -135,7 +135,8 @@
                         </li>
                         <!--이돈이면 버튼-->
                         <li class="nav-item">
-                            <button class="btn btn-sm" :style="{ backgroundColor: badisActive ? '#FFEFEF' : '#FFFFFF' }"
+                            <button class="btn btn-sm"
+                                :style="{ backgroundColor: (badisActive ? '#FFEFEF' : '#FFFFFF') }"
                                 @click="toggleGreatOrStupid(false)" style="height: 32px;">
                                 <i class="ki-duotone ki-dislike text-danger fs-2 me-1">
                                     <span class="path1"></span>
@@ -198,12 +199,16 @@
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick, watch } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
 import { defineProps } from 'vue';
+
+const router = useRouter();
+
+const auth = JSON.parse(localStorage.getItem('auth'));
 
 const props = defineProps({
     postNo: {
@@ -224,14 +229,9 @@ const isGreat = ref(null);
 // 서버에서 게시물 데이터를 가져오는 함수
 const fetchPost = async () => {
     try {
-        if (!props.postNo) {
-            console.warn('No post number provided for fetching post data');
-            return; // `postNo`가 유효하지 않은 경우 요청을 중단합니다.
-        }
         const response = await axios.get(`http://localhost:8080/posts/${props.postNo}`);
-        console.log('Fetched Post Data:', response.data);
         post.value = response.data; // 가져온 게시물 데이터를 저장
-        // console.log(typeof(post.value.postNo));
+
     } catch (error) {
         console.error('Error fetching post data:', error);
     }
@@ -240,21 +240,20 @@ const fetchPost = async () => {
 // isGreat 값을 가져오는 함수
 const fetchIsGreat = async () => {
     try {
-        const response = await axios.get(`http://localhost:8080/greatOrStupid/${post.value.userNo}/${post.value.postNo}/isGreat`);
+        const response = await axios.get(`http://localhost:8080/greatOrStupid/${auth.user.user_no}/${props.postNo}/isGreat`);
         isGreat.value = response.data;
+
         goodisActive.value = isGreat.value === true; // isGreat가 true이면 goodisActive를 true로 설정
         badisActive.value = isGreat.value === false; // isGreat가 false이면 badisActive를 true로 설정
-        console.log(isGreat.value);
     } catch (error) {
         console.error('Error fetching isGreat value:', error);
     }
-
 };
 
 const toggleGreatOrStupid = async (greatOrStupid) => {
     try {
         const requestData = {
-            userNo: 1,
+            userNo: auth.user.user_no,
             postNo: props.postNo,
             greatOrStupid: greatOrStupid
         };
@@ -277,20 +276,6 @@ const formatDate = (dateString) => {
     return `${month}월 ${day}일 ${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
 };
 
-watch(() => props.postNo, fetchPost);
-
-onMounted(async () => {
-    await fetchPost(); 
-
-    // post.value가 존재하고, userNo가 유효한 경우
-    if (post.value && post.value.userNo) {
-        console.log('fetchisGreat 실행');
-        await fetchIsGreat();
-    } else {
-        console.warn('No userNo found in post data for fetching isGreat value');
-    }
-});
-
 // 모달 트리거를 위한 ref
 const modalTrigger = ref(null);
 // 메뉴를 위한 ref
@@ -309,9 +294,10 @@ onMounted(async () => {
     if (window.KTMenu && menuButton.value) {
         window.KTMenu.createInstances();
     }
-});
 
-const router = useRouter();
+    fetchPost();
+    fetchIsGreat();
+});
 
 const goToPostViewPage = () => {
     router.push('/postView'); // PostViewPage로 이동
@@ -332,7 +318,7 @@ const category = [
 
 const goToPostView = (postNo) => {
     router.push({
-        path: `/postView/${postNo}` // Use path parameter instead of query
+        path: `/postDetails/${postNo}` // Use path parameter instead of query
     });
     window.scrollTo(0, 0);
 };
