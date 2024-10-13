@@ -1,33 +1,28 @@
 <template>
-  <div class="Head">
-    <Banner
-      titleText="게시물 상세 "
-      descriptionText="게시물을 상세하게 확인 및 수정할 수 있습니다"
-    />
-  </div>
+  <Banner
+    titleText="게시물 상세 "
+    descriptionText="게시물을 상세하게 확인 및 수정할 수 있습니다"
+  />
 
-  <div class="container post-edit mt-0 p-4 rounded">
+  <div class="container post-edit mt-5 p-4 rounded">
     <!-- 공개 범위 선택 -->
     <div class="form-group mb-4 public-scope">
-      <label for="public-range" class="form-label font-weight-bold"
-        >공개 범위</label
-      >
-
+      <label for="public-range" class="form-label font-weight-bold">공개 범위</label>
       <div class="d-flex align-items-center">
         <div class="form-check me-3">
           <input
             type="radio"
             id="all"
             class="form-check-input"
-            value="전체공개"
-            v-model="publicScope"
+            :value="true"
+            v-model="post.publicStatus"
           />
           <label
             for="all"
             class="form-check-label"
             :class="{
-              'selected-color': publicScope === '전체공개',
-              'default-color': publicScope !== '전체공개',
+              'selected-color': post.publicStatus === true,
+              'default-color': post.publicStatus !== true,
             }"
           >
             전체공개
@@ -38,15 +33,15 @@
             type="radio"
             id="private"
             class="form-check-input"
-            value="비공개"
-            v-model="publicScope"
+            :value="false"
+            v-model="post.publicStatus"
           />
           <label
             for="private"
             class="form-check-label"
             :class="{
-              'selected-color': publicScope === '비공개',
-              'default-color': publicScope !== '비공개',
+              'selected-color': post.publicStatus === false,
+              'default-color': post.publicStatus !== false,
             }"
           >
             비공개
@@ -55,33 +50,38 @@
       </div>
     </div>
 
-    <!-- 사용 금액 표시 -->
-    <div class="form-group mb-4 amount">
-      <label class="form-label font-weight-bold">사용 금액</label>
-      <p class="amount-text">{{ amount.toLocaleString() }} 원</p>
-    </div>
-
     <!-- 카테고리 선택 -->
     <div class="form-group mb-4 category">
       <label for="category" class="form-label font-weight-bold">카테고리</label>
-      <select id="category" class="form-select gray-input" v-model="category">
+      <select id="category" class="form-select gray-input" v-model="post.category">
         <option value="">카테고리를 선택하세요.</option>
-        <option value="식비">식비</option>
-        <option value="여가">여가</option>
-        <option value="생활">생활</option>
-        <option value="교통">교통</option>
-        <option value="문화">문화</option>
+        <option value="식비 · 카페">식비 · 카페</option>
+        <option value="쇼핑">쇼핑</option>
+        <option value="미용">미용</option>
         <option value="의료">의료</option>
+        <option value="통신">통신</option>
+        <option value="교통">교통</option>
+        <option value="문화 · 여행">문화 · 여행</option>
+        <option value="교육">교육</option>
+        <option value="술 · 유흥">술 · 유흥</option>
+        <option value="기타">기타</option>
       </select>
+    </div>
+
+    <!-- 사용 금액 표시 -->
+    <div class="form-group mb-4 amount">
+      <label class="form-label font-weight-bold">사용 금액</label>
+      <p class="amount-text">{{ post.amount.toLocaleString() }} 원</p>
     </div>
 
     <br />
     <br />
     <br />
+
     <div>
       <!--begin:: 게시물 사진-->
       <Carousel>
-        <Slide v-for="(image, index) in images" :key="index">
+        <Slide v-for="(image, index) in post.imgUrls" :key="index">
           <img :src="image" alt="Image Slide" class="carousel-image" />
         </Slide>
 
@@ -129,7 +129,7 @@
       <br /><br /><br />
 
       <!-- 저장 버튼 -->
-      <div class="d-flex justify-content-between mt-4">
+      <div class="d-flex justify-content-between mt-4" style="margin-bottom: 100px;">
         <button class="btn btn-secondary" @click="cancel">취소</button>
         <button class="btn btn-primary" @click="confirm">확인</button>
       </div>
@@ -139,36 +139,57 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import Dropzone from 'dropzone';
 import 'dropzone/dist/dropzone.css';
 import Banner from '@/components/common/Banner.vue';
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
 
-// 공개 범위, 카테고리, 금액의 상태 관리
-const publicScope = ref('전체공개');
-const category = ref('');
-const amount = ref(5000); // 거래 내역에 따라 설정된 금액
-
-// Vue Router
+const route = useRoute();
 const router = useRouter();
+const postNo = route.params.postNo;
+
+// 기본값을 설정하여 post가 undefined일 때 오류 방지
+let post = ref({
+  publicStatus: '', // 공개 범위
+  category: '', // 카테고리
+  amount: 0, // 금액
+  imgUrls: []
+});
+
+const getPost = async () => {
+  try {
+    const response = await axios.get(`http://localhost:8080/posts/${postNo}`);
+    post.value = response.data;
+  } catch (error) {
+    console.error('Error fetching post:', error);
+  }
+};
 
 // 취소 버튼 동작
 function cancel() {
   router.go(-1); // 이전 페이지로 돌아가기
 }
 
+const putPost = async () => {
+  try {
+    const targetData = {
+      publicStatus: post.value.publicStatus,
+      category: post.value.category,
+      memo: post.value.memo
+    };
+
+    const response = await axios.put(`http://localhost:8080/posts/${postNo}/update`, targetData);
+  } catch (error) {
+    console.error('Error fetching post:', error);
+  }
+};
+
 // 저장 버튼 동작
 function confirm() {
-  alert('게시물 수정이 완료되었습니다.');
+  putPost();
+  router.push(`/postView/${postNo}`);
 }
-
-// 이미지 목록
-const images = ref([
-  '/assets/media/food/samgeob1.jpg',
-  '/assets/media/food/samgeob2.jpg',
-  '/assets/media/food/samgeob3.jpg',
-]);
 
 // Dropzone 초기화
 onMounted(() => {
@@ -186,6 +207,8 @@ onMounted(() => {
       }
     },
   });
+
+  getPost();
 });
 </script>
 

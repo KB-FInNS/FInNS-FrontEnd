@@ -102,7 +102,7 @@
       </div>
     </div>
 
-    <div class="d-flex justify-content-between" style="margin-top: 100px;">
+    <div class="d-flex justify-content-between" style="margin-top: 60px; margin-bottom: 100px">
       <button class="btn btn-secondary" @click="cancel">취소</button>
       <button class="btn btn-primary" @click="confirm">확인</button>
     </div>
@@ -147,10 +147,23 @@ function cancel() {
   router.go(-1); // 이전 페이지로 돌아가기
 }
 
+const putPost = async () => {
+  try {
+    const targetData = {
+      publicStatus: post.value.publicStatus,
+      category: post.value.category,
+      memo: post.value.memo
+    };
+
+    const response = await axios.put(`http://localhost:8080/posts/${postNo}/update`, targetData);
+  } catch (error) {
+    console.error('Error fetching post:', error);
+  }
+};
+
 function confirm() {
-  console.log(post.value);
-  // 백으로 update 날리기!
-  
+  putPost();
+  router.go(-1);
 }
 </script>
 
