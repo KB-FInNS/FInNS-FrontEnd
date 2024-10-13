@@ -298,10 +298,6 @@ onMounted(async () => {
     fetchIsGreat();
 });
 
-const goToPostViewPage = () => {
-    router.push('/postView'); // PostViewPage로 이동
-};
-
 const category = [
     { name: '식비 · 카페', icon: '/assets/media/category/meal.png' },
     { name: '쇼핑', icon: '/assets/media/category/shopping.png' },
