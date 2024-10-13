@@ -31,13 +31,10 @@
         <ul class="list-group" style="max-height: 200px; overflow-y: auto;">
           <!-- 여러 개의 검색 결과를 출력 -->
           <li v-for="user in filteredUsers" :key="user.id" class="list-group-item">
-            <div class="symbol symbol-35px symbol-circle">
-              <span class="symbol-label bg-light-danger text-danger fw-semibold">{{ user.initial }}</span>
+            <div class="symbol symbol-40px">
+              <img :src="`${user.imgUrl}`" />
             </div>
-            <div class="ms-5">
-              <a href="profile/spending" class="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">{{ user.name }}</a>
-              <div class="fw-semibold text-muted">{{ user.email }}</div>
-            </div>
+            <a :href="`profile/${user.userNo}/spending`" class="fs-5 fw-bold text-gray-900 text-hover-primary mb-1">{{ user.userName }}</a>
             <button class="btn btn-sm" :class="user.isFollowing ? 'btn-primary' : 'btn-light'" @click="toggleFollow(user)">
               <span>{{ user.isFollowing ? '팔로잉' : '팔로우' }}</span>
             </button>
@@ -53,7 +50,7 @@
               <span class="symbol-label bg-light-danger text-danger fw-semibold">{{ user.initial }}</span>
             </div>
             <div class="ms-5">
-              <a href="profile/spending" class="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">{{ user.name }}</a>
+              <a href="profile/spending" class="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">{{ user.userName }}</a>
               <div class="fw-semibold text-muted">{{ user.email }}</div>
             </div>
             <button class="btn btn-sm" :class="user.isFollowing ? 'btn-primary' : 'btn-light'" @click="toggleFollow(user)">
@@ -68,25 +65,23 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
+import axios from 'axios';
 
-const users = ref([
-  { id: 1, name: 'Melody Macy', initial: 'M', isFollowing: true },
-  { id: 2, name: 'John Doe', initial: 'J', isFollowing: true },
-  { id: 3, name: 'Alice Smith', initial: 'A', isFollowing: true },
-  { id: 4, name: 'Bob Johnson', initial: 'B', isFollowing: true },
-  { id: 5, name: 'Carol White', initial: 'C', isFollowing: true },
-  { id: 6, name: 'David Brown', initial: 'D', isFollowing: true },
-  { id: 7, name: 'Eve Davis', initial: 'E', isFollowing: true },
-  { id: 8, name: 'Frank Miller', initial: 'F', isFollowing: true },
-  { id: 9, name: 'Grace Wilson', initial: 'G', isFollowing: true },
-  { id: 10, name: 'Henry Moore', initial: 'H', isFollowing: true },
-]);
+const users = ref([]);
+const getUsers = async () => {
+    try {
+        const response = await axios.get(`http://localhost:8080/users`);
+        users.value = response.data;
+    } catch (error) {
+        console.error('Error fetching users value:', error);
+    }
+};
 
 const recentUsers = ref([
-  { id: 1, name: 'Melody Macy', initial: 'M', isFollowing: true },
-  { id: 2, name: 'John Doe', initial: 'J', isFollowing: true },
-  { id: 3, name: 'Alice Smith', initial: 'A', isFollowing: true },
-  { id: 4, name: 'Bob Johnson', initial: 'B', isFollowing: true },
+  { id: 1, userName: 'Melody Macy', initial: 'M', isFollowing: true },
+  { id: 2, userName: 'John Doe', initial: 'J', isFollowing: true },
+  { id: 3, userName: 'Alice Smith', initial: 'A', isFollowing: true },
+  { id: 4, userName: 'Bob Johnson', initial: 'B', isFollowing: true },
 ]);
 
 const searchQuery = ref('');
@@ -101,7 +96,7 @@ const searchUsers = () => {
     return;
   }
 
-  filteredUsers.value = users.value.filter(user => user.name.toLowerCase().includes(query));
+  filteredUsers.value = users.value.filter(user => user.userName.toLowerCase().includes(query));
 };
 
 // 입력 창 외부 클릭 시 dropdown 숨기기
@@ -114,8 +109,9 @@ const handleClickOutside = (event) => {
 };
 
 // 컴포넌트가 마운트된 후 이벤트 리스너 등록
-onMounted(() => {
+onMounted(async () => {
   document.addEventListener('click', handleClickOutside);
+  await getUsers();
 });
 
 // 컴포넌트가 언마운트될 때 이벤트 리스너 해제
@@ -160,5 +156,11 @@ onBeforeUnmount(() => {
 
 .dropdown-content a {
   display: block;
+}
+
+img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
 }
 </style>

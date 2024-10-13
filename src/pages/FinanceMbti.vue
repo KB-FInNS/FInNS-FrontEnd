@@ -1,23 +1,5 @@
 <template>
-  <!--begin::Content-->
-  <!-- <div
-    class="content fs-6 d-flex flex-column flex-column-fluid"
-    id="kt_content"
-    style="background-color: white"
-  > -->
-  <!--begin::Toolbar-->
-  <!--begin::Title-->
-  <div class="justify-content-center align-items-center text-center bg-title">
-    <h1
-      class="text-gray-900 fw-bold pt-8 mt-9 my-1"
-      style="font-size: xx-large"
-    >
-      금융 MBTI
-    </h1>
-    <h2 class="text-gray-700 fw-bold p-4 fs-2">
-      소비 내역 분석을 바탕으로 한 나의 MBTI를 확인해 보세요.
-    </h2>
-  </div>
+  <Banner titleText="금융 MBTI" descriptionText="소비 내역 분석을 바탕으로 한 나의 MBTI를 확인해 보세요." />
 
   <!--end::Title-->
   <div class="toolbar mt-8" id="kt_toolbar">
@@ -492,6 +474,7 @@
 </template>
 
 <script setup>
+import Banner from '@/components/common/Banner.vue';
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 

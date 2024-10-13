@@ -1,6 +1,5 @@
-<!-- Header.vue -->
 <template>
-  <div class="justify-content-center align-items-center text-center bg-title">
+  <div class="justify-content-center align-items-center text-center" style="background-color: #f0f6f9; height: 180px">
     <h1
       class="text-gray-900 fw-bold pt-8 mt-9 my-1"
       style="font-size: xx-large"
@@ -18,19 +17,12 @@ export default {
   props: {
     titleText: {
       type: String,
-      default: '알아서쓰세요',
+      default: 'titleText',
     },
     descriptionText: {
       type: String,
-      default: '알아서쓰세요',
+      default: 'descriptionText',
     },
   },
 };
 </script>
-
-<style scoped>
-.bg-title {
-  background-color: #f0f6f9; /* Powder Blue 색상 */
-  height: 180px;
-}
-</style>

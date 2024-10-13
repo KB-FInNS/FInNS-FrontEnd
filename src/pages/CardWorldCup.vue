@@ -1,8 +1,6 @@
 <template>
-  <div class="title-box">
-    <h1 class="title">카드 월드컵</h1>
-    <p class="sub-title">더 마음에 드는 카드를 골라주세요</p>
-  </div>
+  <Banner titleText="카드 월드컵" descriptionText="더 마음에 드는 카드를 골라주세요." />
+
   <!-- 라운드 및 진행 상황 표시 -->
   <div>
     <h1 class="match">
@@ -10,7 +8,7 @@
       <span v-if="roundLabel !== '결승전!'"> {{ currentSelection }}/{{ totalSelectionsInRound }} </span>
     </h1>
   </div>
-  <div class="card-container" v-if="matchcard.length === 2">
+  <div class="card-container" v-if="matchcard.length === 2" style="margin-bottom: 100px;">
     <!-- <CardComponent v-for="(card, index) in cards" :key="index" :cardNo="card.cardNo" :cardName="card.cardName" :imgUrl="card.imgUrl" :benefit="card.benefit"/> -->
 
     <div class="card" v-for="(card, index) in matchcard" :key="index">
@@ -25,7 +23,7 @@
   </div>
 </template>
 <script setup>
-// import CardComponent from '@/components/common/CardComponent.vue';
+import Banner from '@/components/common/Banner.vue';
 import { ref, onMounted, computed } from 'vue';
 import { useRouter } from 'vue-router';
 
