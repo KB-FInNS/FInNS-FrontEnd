@@ -85,7 +85,7 @@
                             <div class="card card-flush shadow-sm m-5">
                                 <div class="card-side d-flex justify-content-between m-7 align-items-center">
                                     <div class="text-center ms-5" style="width: 200px;">
-                                        <img :src="item.card_img_url" ref="image" @load="onImageLoad($event)"
+                                        <img :src="item.imgUrl" ref="image" @load="onImageLoad"
                                             style="width: 100px; ">
                                     </div>
                                     <div class="flex-grow-1 ms-10 ">
@@ -94,7 +94,7 @@
                                                 <div class="d-flex align-items-center mb-1">
                                                     <a href="#"
                                                         class="text-gray-800 text-hover-primary fs-2 fw-bold me-3">{{
-                                                            item.copr_name }} {{ item.card_name }}</a>
+                                                            item.corpName }} {{ item.cardName }}</a>
                                                 </div>
                                             </div>
                                             <div class="d-flex mb-4">
@@ -199,13 +199,19 @@ const image = ref(null);
 const cards = ref([]); // 카드 데이터를 담을 ref
 
 // 컴포넌트가 마운트될 때 데이터를 가져오기
-onMounted(async () => {
+const getCards = async () => {
     try {
-        const response = await fetch('/assets/cardList.json');
-        cards.value = await response.json();
+        const response = await axios.get('http://localhost:8080/product/card');
+        cards.value = response.data;
+        console.log(cards);
     } catch (error) {
         alert('Error fetching data:', error);
     }
+
+}
+
+onMounted(async () => {
+    getCards();
 });
 
 // 선택된 탭과 검색어 관리
@@ -219,11 +225,12 @@ const currentPage = ref(1);
 // 필터링된 카드 리스트 계산
 const filteredCards = computed(() => {
     return cards.value.filter(item => {
-        const matchesSearch = item.card_name.includes(searchCard.value) || item.corp_name.includes(searchCard.value);
-        const matchesCategory = selectedTab.value === '전체' || item.category === selectedTab.value;
+        const matchesSearch = item.cardName.includes(searchCard.value) || item.corpName.includes(searchCard.value);
+        const matchesCategory = selectedTab.value === '전체' || item.cardCategories.split(',').map(c => c.trim()).includes(selectedTab.value);
         return matchesSearch && matchesCategory;
     });
 });
+
 // 페이지네이션을 적용한 카드 리스트 계산
 const paginatedCards = computed(() => {
     const start = (currentPage.value - 1) * itemsPerPage.value;
@@ -263,7 +270,7 @@ const visiblePages = computed(() => {
 // 상세 페이지로 이동
 const gotoCardDetail = (item) => {
     router.push({
-        path: `/Card/${item.card_no}`,
+        path: `/Card/${item.cardNo}`,
         query: {
             item: JSON.stringify(item),
         },

@@ -130,7 +130,7 @@ const router = createRouter({
           //beforeEnter: isAuthenticated,
         },
         {
-          path: '/card/:card_no', // 적금 상품 상세 페이지
+          path: '/card/:cardNo', // 적금 상품 상세 페이지
           name: 'CardDetail',
           // component: CardDetail,
           component: CardDetail,
