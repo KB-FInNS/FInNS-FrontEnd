@@ -22,6 +22,7 @@ import ProductDetail from '@/pages/FinanceProduct/ProductDetail.vue';
 import CardDetail from '@/pages/FinanceProduct/CardDetail.vue';
 import PostViewPage from '@/pages/PostViewPage.vue';
 import WinnerCard from '@/pages/WinnerCard.vue';
+import { useAuthStore } from '@/stores/auth';
 // import DepositDetail from '@/pages/DepositDetail.vue';
 // import installmentSavingsDetail from '@/pages/installmentSavingsDetail.vue';
 const router = createRouter({
@@ -37,31 +38,34 @@ const router = createRouter({
           path: 'mbti',
           name: 'Mbti',
           component: Mbti,
-          // beforeEnter: isAuthenticated,,
+          //beforeEnter: isAuthenticated,
         },
         {
           path: '/profile/:userNo',
           name: 'Profile',
           component: Profile,
           redirect: (to) => `/profile/${to.params.userNo}/spending`,
-          // beforeEnter: isAuthenticated,
+          //beforeEnter: isAuthenticated,
           children: [
             {
               path: 'spending',
               component: Spending,
+              //beforeEnter: isAuthenticated,
             },
             {
               path: 'analysis',
               component: Analysis,
-              // beforeEnter: isAuthenticated,,
+              //beforeEnter: isAuthenticated,
             },
             {
               path: 'follower',
               component: Follower,
+              //beforeEnter: isAuthenticated,
             },
             {
               path: 'following',
               component: Following,
+              //beforeEnter: isAuthenticated,
             },
           ],
         },
@@ -69,66 +73,74 @@ const router = createRouter({
           path: '/deposit',
           name: 'Deposit',
           component: Deposit,
-          // beforeEnter: isAuthenticated,,
+          //beforeEnter: isAuthenticated,
         },
         {
           path: '/installmentSavings',
           name: 'InstallmentSavings',
           component: InstallmentSavings,
-          // beforeEnter: isAuthenticated,,
+          //beforeEnter: isAuthenticated,
         },
         {
           path: '/card',
           name: 'Card',
           component: Card,
-          // beforeEnter: isAuthenticated,,
+          //beforeEnter: isAuthenticated,
         },
         {
           path: '/payDetails/:postNo', // 소비 상세 페이지
           name: 'PayDetails',
           component: PayDetails,
+          //beforeEnter: isAuthenticated,
         },
         {
           path: '/postDetails/:postNo', // 게시물 상세 페이지
           name: 'PostDetails',
           component: PostDetails,
+          //beforeEnter: isAuthenticated,
         },
         {
           path: '/auth/update',
           name: 'Update',
           component: Update,
-          // beforeEnter: isAuthenticated,,
+          //beforeEnter: isAuthenticated,
         },
         {
           path: 'cardworldcup',
           component: CardWorldCup,
+          //beforeEnter: isAuthenticated,
         },
         {
           path: '/cardworldcup/winnercard',
           component: WinnerCard,
+          //beforeEnter: isAuthenticated,
         },
         {
           path: '/deposit/:financeProductNo', // 예금 상품 상세 페이지
           name: 'DepositDetail',
           // component: DepositDetail,
           component: ProductDetail,
+          //beforeEnter: isAuthenticated,
         },
         {
           path: '/installmentSavings/:financeProductNo', // 적금 상품 상세 페이지
           name: 'installmentSavingsDetail',
           // component: installmentSavingsDetail,
           component: ProductDetail,
+          //beforeEnter: isAuthenticated,
         },
         {
-          path: '/card/:card_no', // 적금 상품 상세 페이지
+          path: '/card/:cardNo', // 적금 상품 상세 페이지
           name: 'CardDetail',
           // component: CardDetail,
           component: CardDetail,
+          //beforeEnter: isAuthenticated,
         },
         {
           path: '/postView/:postNo',
           name: 'PostViewPage',
           component: PostViewPage,
+          //beforeEnter: isAuthenticated,
         },
       ],
     },
@@ -145,19 +157,32 @@ const router = createRouter({
   ],
 });
 
-// // 글로벌 가드 설정
-// router.beforeEach((to, from, next) => {
-//   // 여기서 모든 경로에 대한 전처리 작업을 수행
-//   console.log('Navigating to:', to.path);
 
-//   // 예: 로그인 확인 또는 권한 체크
-//   if (to.path !== '/auth/login') {
-//     // next('/auth/login'); // 로그인 페이지로 리디렉션
-//     console.log('로긴안됌!');
-//   } else {
-//     next(); // 계속 진행
-//     console.log('로긴됌!');
-//   }
-// });
+router.beforeEach((to, from, next) => {
+  const auth = useAuthStore();
+
+  // 로그인이 필요하지 않은 페이지 목록
+  const publicPages = ['/auth/login', '/auth/join'];
+  const authRequired = !publicPages.includes(to.path);
+
+  // 사용자가 로그인하지 않은 상태이고, 인증이 필요한 페이지로 접근하려 할 때
+  if (authRequired && !auth.isLogin) {
+    next('/auth/login');
+  } 
+  // 사용자가 이미 로그인한 상태에서 로그인 또는 회원가입 페이지로 접근하려 할 때
+  else if (auth.isLogin && publicPages.includes(to.path)) {
+    next('/');
+  }
+  // 그 외의 경우 (인증이 필요 없는 페이지이거나, 인증된 사용자가 인증이 필요한 페이지에 접근할 때)
+  else {
+    next();
+  }
+});
+
+
+
+
+
+
 
 export default router;

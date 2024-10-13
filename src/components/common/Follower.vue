@@ -1,18 +1,19 @@
 <template>
   <div class="box">
-    <div><h1>팔로워 목록</h1></div>
+    <div><h1>팔로잉 목록</h1></div>
     <div
       v-for="user in users"
-      :key="user.id"
+      :key="user.user_no"
       class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed"
     >
       <!--begin::Details-->
       <div class="d-flex align-items-center">
         <!--begin::Avatar-->
         <div class="symbol symbol-35px symbol-circle">
-          <span class="symbol-label bg-light-danger text-danger fw-semibold">{{
-            user.initial
-          }}</span>
+          <span class="symbol-label bg-light-danger text-danger fw-semibold">
+            {{ user.username[0].toUpperCase() }}
+            <!-- 이름 첫 글자 표시 -->
+          </span>
         </div>
         <!--end::Avatar-->
         <!--begin::Details-->
@@ -20,8 +21,9 @@
           <a
             href="#"
             class="fs-5 fw-bold text-gray-900 text-hover-primary mb-2"
-            >{{ user.name }}</a
           >
+            {{ user.username }}
+          </a>
           <div class="fw-semibold text-muted">{{ user.email }}</div>
         </div>
         <!--end::Details-->
@@ -43,23 +45,20 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import axios from 'axios';
+import { ref, onMounted } from 'vue';
 
-const users = ref([
-  { id: 1, name: 'Melody Macy', initial: 'M', isFollowing: 1 },
-  { id: 2, name: 'John Doe', initial: 'J', isFollowing: true },
-  { id: 3, name: 'Alice Smith', initial: 'A', isFollowing: true },
-  { id: 4, name: 'Bob Johnson', initial: 'B', isFollowing: true },
-  { id: 5, name: 'Carol White', initial: 'C', isFollowing: true },
-  { id: 6, name: 'David Brown', initial: 'D', isFollowing: true },
-  { id: 7, name: 'Eve Davis', initial: 'E', isFollowing: true },
-  { id: 8, name: 'Frank Miller', initial: 'F', isFollowing: true },
-  { id: 9, name: 'Grace Wilson', initial: 'G', isFollowing: true },
-  { id: 10, name: 'Henry Moore', initial: 'H', isFollowing: true },
-]);
+// 사용자 리스트를 저장할 변수
+const users = ref([]);
+// API를 통해 팔로잉 목록을 불러옴
+const response = await axios.get(`/follow/follower/${user_no}`);
 
+// 응답 데이터 확인
+console.log(response.data);
+
+// 팔로우 상태 전환 함수
 const toggleFollow = (user) => {
-  user.isFollowing = !user.isFollowing; // 선택한 사용자의 팔로우 상태 전환
+  user.isFollowing = !user.isFollowing; // 팔로우 상태 토글
 };
 </script>
 
@@ -68,7 +67,39 @@ const toggleFollow = (user) => {
   width: 700px;
   margin: 0 auto;
 }
-.container-xxl {
-  text-align: center;
+
+.symbol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  height: 35px;
+  width: 35px;
+}
+
+.symbol-circle {
+  border-radius: 50%;
+  background-color: #f5f5f5;
+}
+
+.ms-5 {
+  margin-left: 1rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-stack {
+  justify-content: space-between;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 </style>

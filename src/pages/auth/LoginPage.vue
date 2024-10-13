@@ -105,27 +105,34 @@ const cr = useRoute();
 const router = useRouter();
 const auth = useAuthStore();
 const member = reactive({
-  username: 'hyuk_kang88',
+  username: 'asd1',
   password: '1234',
 });
 const error = ref('');
 const disableSubmit = computed(() => !(member.username && member.password));
-
+localStorage.clear();
 const login = async () => {
   try {
-    console.log('로그인 요청 데이터:', member); // 데이터가 보내지기 전에 콘솔 출력
+    // console.log('로그인 요청 데이터:', member);
 
-    await auth.login(member);
+    const loginSuccess = await auth.login(member);
+    // console.log('로그인 성공 여부:', loginSuccess);
+    // console.log('로그인 후 auth.isLogin:', auth.isLogin);
 
-    console.log('로그인 성공'); // 로그인 성공 시 메시지 출력
-    router.push('/');
+    if (loginSuccess && auth.isLogin) {
+      // console.log('로그인 성공, 메인 페이지로 이동 시도');
+      await router.push('/');
+      // console.log('메인 페이지로 이동 완료');
+    } else {
+      // console.log('로그인 실패 또는 isLogin이 false');
+      error.value = '로그인에 실패하였습니다. 다시 시도해주세요.';
+    }
   } catch (e) {
-    // 로그인 에러가 발생하는 경우 처리
-    error.value =
-      e.response?.data || '로그인에 실패하였습니다. 다시 시도해주세요.';
-    console.error('로그인 에러:', error.value); // 에러 메시지 출력
+    error.value = e.response?.data || '로그인 처리 중 오류가 발생했습니다.';
+    // console.error('로그인 에러:', error.value);
   }
 };
+
 
 const passwordText = ref('');
 const passwordHidden = ref(true);

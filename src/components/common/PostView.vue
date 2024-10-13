@@ -265,7 +265,6 @@ const toggleGreatOrStupid = async (greatOrStupid) => {
     }
 };
 
-
 // 날짜 형식을 변환하는 함수
 const formatDate = (dateString) => {
     const date = new Date(dateString);

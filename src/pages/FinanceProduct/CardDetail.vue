@@ -3,11 +3,11 @@
         <div class=" m-10 pb-10">
             <!-- 카드 정보 -->
             <div class="card-header">
-                <h4 class="corp-name">{{ productData.corp_name }}</h4>
-                <h2 class="card_name">{{ productData.card_name }}</h2>
+                <h4 class="corp-name">{{ productData.corpName }}</h4>
+                <h2 class="card_name">{{ productData.cardName }}</h2>
             </div>
             <div class="img-wrapper">
-                <img :src="productData.card_img_url" alt="카드 이미지" class="card-img">
+                <img :src="productData.imgUrl" alt="카드 이미지" class="card-img">
             </div>
             <div style="display: flex; justify-content: center; padding-left: 20px; padding-top: 20px;">
                 <hr style="border-top: 8px solid #C1C1C1; width: 70%;">
@@ -52,21 +52,35 @@
 <script setup>
 import { useRoute } from 'vue-router';
 import { reactive, onMounted } from 'vue';
-const productData = reactive({});
+import axios from 'axios';
 
 const route = useRoute();
+const productData = reactive({});
 
+// 특정 카드 상품 조회 함수
+const getProductByNo = async (cardNo) => {
+  try {
+    const response = await axios.get(`http://localhost:8080/product/card/${cardNo}`);
+    console.log(response.data);
+    Object.assign(productData, response.data); 
+  } catch (error) {
+    console.error('Error fetching product data:', error); 
+  }
+};
+
+// 컴포넌트가 마운트될 때 데이터를 가져오기
 onMounted(() => {
-    if (route.query && route.query.item) {
-        Object.assign(productData, JSON.parse(route.query.item)); // 
-    } else {
-        console.error('No data passed to this route.');
-    }
+  const cardNo = route.params.cardNo; 
+  if (cardNo) {
+    getProductByNo(cardNo);
+  } else {
+    console.error('No cardNo passed to this route.');
+  }
 });
 
 // 버튼 클릭 시 호출될 함수
 const viewProductDetails = () => {
-    alert('상품 자세히 보기 클릭됨');
+    window.location.href = productData.detailLink;
 };
 </script>
 
