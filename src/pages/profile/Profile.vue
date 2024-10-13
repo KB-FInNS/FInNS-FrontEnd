@@ -29,14 +29,12 @@
                   <span class="text-gray-900 fs-2 fw-bold me-1">{{
                     user.userName
                   }}</span>
-                  <button
-                    v-if="user.userNo != auth.user.user_no"
-                    class="btn btn-sm ms-10"
-                    :class="isFollow ? 'btn-light' : 'btn-primary'"
-                    @click="toggleFollow()"
-                  >
-                    <span>{{ isFollow ? '팔로잉' : '팔로우' }}</span>
-                  </button>
+                  <FollowButton 
+          v-if="user.userNo != auth.user.user_no"
+          :to_user_no="user.userNo"
+          :initialIsFollowing="user.following"
+          @follow-status-changed="updateFollowStatus"
+        />
                 </div>
                 <!--end::Name-->
 
@@ -187,7 +185,7 @@
 
                       <count-up
                         class="fs-2 text-gray-900 text-hover-primary fw-bold mt-2"
-                        :end-val="91"
+                        :end-val="followerCount"
                       ></count-up>
                     </div>
                     <!--end::Number-->
@@ -222,7 +220,7 @@
 
                       <count-up
                         class="fs-2 text-gray-900 text-hover-primary fw-bold mt-2"
-                        :end-val="113"
+                        :end-val="followingCount"
                       ></count-up>
                     </div>
                     <!--end::Number-->
@@ -346,7 +344,20 @@ const auth = JSON.parse(localStorage.getItem('auth'));
 
 const userNo = route.params.userNo;
 const user = ref({});
+const followerCount = ref(0);
+const followingCount = ref(0);
 
+
+
+const getFollowCounts = async () => {
+  try {
+    const response = await axios.get(`http://localhost:8080/follow/counts/${userNo}`);
+    followerCount.value = response.data.followerCount;
+    followingCount.value = response.data.followingCount;
+  } catch (error) {
+    console.error('팔로워/팔로잉 수를 가져오는 데 실패했습니다:', error);
+  }
+};
 watch(
   () => route.params.userNo,
   () => {
@@ -400,12 +411,8 @@ const analysisMbti = async () => {
   router.push('/mbti');
 };
 
-const isFollow = ref(false);
-const toggleFollow = () => {
-  isFollow.value = !isFollow.value; // 선택한 사용자의 팔로우 상태 전환
 
-  // true, false 값에 따라 디비에 수정돼야함
-};
+
 
 // 일시적인 데이터set
 const dataList = ref([]);
@@ -508,6 +515,7 @@ const cards = ref([
   },
 ]);
 
+
 // 모달 트리거를 위한 ref
 const modalTrigger = ref(null);
 // 메뉴를 위한 ref
@@ -516,7 +524,7 @@ const menuButton = ref(null);
 onMounted(async () => {
   await getUser();
   await getSpendingCounts();
-
+  await getFollowCounts();
   // DOM이 렌더링된 후 초기화
   await nextTick();
 
