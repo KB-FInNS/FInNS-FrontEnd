@@ -1,6 +1,6 @@
 <template>
     <div class="header ms-10">
-        <SearchComponent />
+        <SearchUser />
     </div>
     <!-- <div class="maincontainer"> -->
     <div class="row ms-7 me-7">
@@ -157,7 +157,7 @@
 
 <script setup>
 import PostView from '@/components/common/PostView.vue';
-import SearchComponent from '@/components/common/SearchComponent.vue'
+import SearchUser from '@/components/common/SearchUser.vue'
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import axios from 'axios';
 let postNos = ref([]);
@@ -314,7 +314,6 @@ li {
 li:last-child {
     border-bottom: none;
 }
-
 
 img {
     border-radius: 50%;

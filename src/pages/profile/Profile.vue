@@ -1,6 +1,6 @@
 <template>
   <div class="header ms-10">
-    <SearchComponent />
+    <SearchUser />
   </div>
   <div class="ms-10 me-10">
     <div class="card mb-5">
@@ -331,7 +331,7 @@
 <script setup>
 import FollowButton from '@/components/common/FollowButton.vue';
 
-import SearchComponent from '@/components/common/SearchComponent.vue';
+import SearchUser from '@/components/common/SearchUser.vue';
 import 'vue3-carousel/dist/carousel.css';
 import CountUp from 'vue-countup-v3';
 import { ref, onMounted, nextTick, watch } from 'vue';

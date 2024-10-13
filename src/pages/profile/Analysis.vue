@@ -55,11 +55,8 @@
   
   <DataTables v-if="isListVisible" style="margin-top: -20px;" :posts="totalList"/>
 
-  <div style="background-color: #D6EDFA; text-align: center; padding: 36px; background-color: #eff6f9; margin-bottom: 40px;">
-    <div style="font-size: 30px; font-weight: 900;">추천카드</div>
-    <div style="font-size: 20px; font-weight: 650; color: #005E92;">소비 내역을 분석해서 골라봤어요</div>
-  </div>
-  <div class="card-container">
+  <Banner titleText="추천 카드" descriptionText="소비 내역을 분석해서 골라봤어요." style="margin-bottom: 80px; height:150px"/>
+  <div class="card-container" style="margin-bottom: 100px;">
     <CardComponent v-for="(card, index) in cards" :key="index" :cardNo="card.cardNo" :cardName="card.cardName" :imgUrl="card.imgUrl" :benefit="card.benefit"/>
   </div>
 </template>
@@ -67,6 +64,8 @@
 <script setup>
 import DataTables from '@/components/common/DataTables.vue'
 import CardComponent from '@/components/common/CardComponent.vue';
+import Banner from '@/components/common/Banner.vue';
+
 import { ref, onMounted, computed } from 'vue';
 import { useRoute } from 'vue-router';
 

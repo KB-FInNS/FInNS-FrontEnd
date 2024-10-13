@@ -1,10 +1,11 @@
 <template>
-    <div class="justify-content-center align-items-center text-center bg-title">
-    <h1 class="text-gray-900 fw-bold pt-8 mt-9 my-1" style="font-size: xx-large;">카드 상품</h1>
-    <h2 class="text-gray-700 fw-bold p-4 fs-2">
-      자신에게 맞는 조건을 선택하여 맞춤 카드 상품을 확인해보세요.
-    </h2>
-  </div>
+    <!-- <div class="justify-content-center align-items-center text-center bg-title">
+        <h1 class="text-gray-900 fw-bold pt-8 mt-9 my-1" style="font-size: xx-large;">카드 상품</h1>
+        <h2 class="text-gray-700 fw-bold p-4 fs-2">
+        자신에게 맞는 조건을 선택하여 맞춤 카드 상품을 확인해보세요.
+        </h2>
+    </div> -->
+    <Banner titleText="카드 상품" descriptionText="자신에게 맞는 조건을 선택하여 맞춤 카드 상품을 확인해보세요." />
     <!-- 탭 -->
     <div class="m-5">
         <ul class="nav nav-tabs nav-line-tabs mb-5 fs-6">
@@ -187,6 +188,7 @@
 </template>
 
 <script setup>
+import Banner from '@/components/common/Banner.vue';
 import { useRouter } from 'vue-router';
 import { ref, computed, onMounted } from 'vue';
 
