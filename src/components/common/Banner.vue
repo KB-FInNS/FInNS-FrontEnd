@@ -1,8 +1,15 @@
 <!-- Header.vue -->
 <template>
-  <div class="title-container">
-    <h1 class="title">{{ titleText }}</h1>
-    <p class="description">{{ descriptionText }}</p>
+  <div class="justify-content-center align-items-center text-center bg-title">
+    <h1
+      class="text-gray-900 fw-bold pt-8 mt-9 my-1"
+      style="font-size: xx-large"
+    >
+    {{ titleText }}
+    </h1>
+    <h2 class="text-gray-700 fw-bold p-4 fs-2">
+      {{ descriptionText }}
+    </h2>
   </div>
 </template>
 
@@ -22,25 +29,8 @@ export default {
 </script>
 
 <style scoped>
-.title-container {
-  display: flex;
-  flex-direction: column; /* 수직 방향으로 정렬 */
-  justify-content: center; /* 수직 중앙 정렬 */
-  align-items: center; /* 수평 중앙 정렬 */
-  text-align: center;
-  margin-bottom: 20px;
-  background-color: #f0f6f9;
-  height: 150px;
-  width: 100%;
-}
-
-.title {
-  font-size: 30px;
-  font-weight: 700;
-}
-
-.description {
-  font-size: 19px;
-  color: #666;
+.bg-title {
+  background-color: #f0f6f9; /* Powder Blue 색상 */
+  height: 180px;
 }
 </style>

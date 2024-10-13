@@ -55,7 +55,7 @@
             </td>
             <td class="date">{{ post.transactionDate }}</td>
             <td class="">
-              <a @click.stop="goToPayDetail" class="btn btn-sm btn-primary hover-scale fw-bold">소비 상세</a>
+              <a @click.stop="goToPayDetail(post.postNo)" class="btn btn-sm btn-primary hover-scale fw-bold">소비 상세</a>
             </td>
           </tr>
         </tbody>

@@ -1,21 +1,26 @@
 <template>
   <div class="card">
-    <h3 class="card-title">{{ title }}</h3>
-    <img :src="image" class="card-image" alt="Card Image" />
-    <ul class="card-description">
-      <li v-for="(item, index) in description" :key="index">{{ item }}</li>
-    </ul>
-    <button class="select-button">선택{{ item }}</button>
+    <h3 class="card-title">{{ cardName }}</h3>
+    <img :src="imgUrl" class="card-image" alt="Card Image" />
+    <div class="card-description">
+      {{ formattedBenefit }}
+    </div>
+    <button class="select-button">선택</button>
     <a @click.prevent="goToCard" href="#" class="more-info">자세한 정보 알아보기</a>
   </div>
 </template>
 
 <script setup>
-const props = defineProps(['title', 'image', 'description', 'url']);
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const props = defineProps(['cardNo', 'cardName', 'imgUrl', 'benefit']);
+console.log(props.cardName);
+const formattedBenefit = props.benefit.replace(/#/g, ' : ').replace(/\|/g, '\n');
 
 const goToCard = () => {
-  const url = props.url;
-  window.location.href = url; // URL로 이동
+  router.push(`/card/${props.cardNo}`);
 };
 </script>
 
@@ -23,7 +28,7 @@ const goToCard = () => {
 .card {
   background-color: #f1f7ff;
   border-radius: 10px;
-  padding: 30px;
+  padding: 20px 30px 15px 30px;
   width: 320px;
   text-align: center;
 }
@@ -41,11 +46,12 @@ const goToCard = () => {
 }
 
 .card-description {
-  text-align: left;
+  text-align: center;
   margin-bottom: 20px;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 2;
+  white-space: pre-line; /* 줄바꿈을 실제 줄바꿈으로 표시 */
 }
 
 .select-button {
@@ -54,11 +60,10 @@ const goToCard = () => {
   border: none;
   padding: 8px 10px;
   border-radius: 7px;
-  cursor: pointer;
-  margin-bottom: 10px;
+  margin: 0 auto 10px auto; /* 버튼을 중앙 정렬 */
   font-weight: bold;
-  font-size: 15px;
-  width: 70px;
+  font-size: 16px;
+  width: 80px;
 }
 
 .more-info {
