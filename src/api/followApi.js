@@ -2,9 +2,6 @@ import api from '@/api'; // 인터셉터가 적용된 axios 인스턴스
 
 const BASE_URL = 'http://localhost:8080';
 
-// const get = reactive({
-//   user_no: auth.user_no,
-// });
 // 토큰에서 user_no 추출
 function getUserNoFromToken() {
   const auth = localStorage.getItem('auth'); // 토큰이 저장된 위치
@@ -41,7 +38,7 @@ export default {
   async getFollowingList() {
     const user_no = getUserNoFromToken();
     try {
-      const { data } = await api.get(`${BASE_URL}/following/${user_no}`);
+      const { data } = await api.get(`${BASE_URL}/follow/following/${user_no}`);
       console.log('Following List:', data);
       return data;
     } catch (error) {
@@ -53,7 +50,7 @@ export default {
   async getFollowerList() {
     const user_no = getUserNoFromToken();
     try {
-      const { data } = await api.get(`${BASE_URL}/followers/${user_no}`);
+      const { data } = await api.get(`${BASE_URL}/follow/followers/${user_no}`);
       console.log('Follower List:', data);
       return data;
     } catch (error) {
