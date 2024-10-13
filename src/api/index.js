@@ -3,7 +3,7 @@ import { useAuthStore } from '@/stores/auth';
 import router from '@/router';
 
 const instance = axios.create({
-  timeout: 3000,
+  timeout: 30000,
 });
 
 // 응답 인터셉터

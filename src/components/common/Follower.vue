@@ -1,65 +1,80 @@
 <template>
   <div class="box">
-    <div><h1>팔로잉 목록</h1></div>
+    <div><h1>팔로워 목록</h1></div>
     <div
       v-for="user in users"
       :key="user.user_no"
       class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed"
     >
-      <!--begin::Details-->
       <div class="d-flex align-items-center">
-        <!--begin::Avatar-->
         <div class="symbol symbol-35px symbol-circle">
-          <span class="symbol-label bg-light-danger text-danger fw-semibold">
+          <img :src="user.img_url" alt="User Image" v-if="user.img_url">
+          <span class="symbol-label bg-light-danger text-danger fw-semibold" v-else>
             {{ user.username[0].toUpperCase() }}
-            <!-- 이름 첫 글자 표시 -->
           </span>
         </div>
-        <!--end::Avatar-->
-        <!--begin::Details-->
         <div class="ms-5">
-          <a
-            href="#"
-            class="fs-5 fw-bold text-gray-900 text-hover-primary mb-2"
-          >
+          <a href="#" class="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">
             {{ user.username }}
           </a>
-          <div class="fw-semibold text-muted">{{ user.email }}</div>
+          <div class="fw-semibold text-muted">{{ formatBirthDate(user.birth) }}</div>
         </div>
-        <!--end::Details-->
       </div>
-      <!--end::Details-->
-      <!--begin::Follow/Following button-->
       <div class="ms-2">
-        <button
-          class="btn btn-sm"
-          :class="user.isFollowing ? 'btn-primary' : 'btn-light'"
-          @click="toggleFollow(user)"
-        >
-          <span>{{ user.isFollowing ? '팔로잉' : '팔로우' }}</span>
-        </button>
+        <FollowButton 
+          :to_user_no="user.user_no" 
+          :initialIsFollowing="user.following"
+          @follow-status-changed="updateFollowStatus" 
+        />
       </div>
-      <!--end::Follow/Following button-->
     </div>
   </div>
 </template>
 
 <script setup>
-import axios from 'axios';
 import { ref, onMounted } from 'vue';
+import axios from 'axios';
+import FollowButton from './FollowButton.vue';
+import moment from 'moment';
 
-// 사용자 리스트를 저장할 변수
 const users = ref([]);
-// API를 통해 팔로잉 목록을 불러옴
-const response = await axios.get(`/follow/follower/${user_no}`);
 
-// 응답 데이터 확인
-console.log(response.data);
+const getFollowerList = async () => {
+  try {
+    const authData = JSON.parse(localStorage.getItem('auth'));
+    const user_no = authData.user.user_no;
+    const token = authData.token;
+    
+    const response = await axios.get(`http://localhost:8080/follow/followers/${user_no}`, {
+      headers: { 'Authorization': `Bearer ${token}` }
+    });
 
-// 팔로우 상태 전환 함수
-const toggleFollow = (user) => {
-  user.isFollowing = !user.isFollowing; // 팔로우 상태 토글
+    if (Array.isArray(response.data)) {
+      users.value = response.data.map(user => ({
+        ...user,
+        following: user.following // 서버에서 제공하는 following 값을 사용
+      }));
+    } else {
+      users.value = [];
+    }
+    console.log('팔로워 목록:', users.value);
+  } catch (error) {
+    console.error('팔로워 목록을 가져오는 데 실패했습니다:', error);
+  }
 };
+
+const formatBirthDate = (timestamp) => {
+  return moment(timestamp).format('YYYY-MM-DD');
+};
+
+const updateFollowStatus = (to_user_no, isFollowing) => {
+  const user = users.value.find(u => u.user_no === to_user_no);
+  if (user) {
+    user.following = isFollowing;
+  }
+};
+
+onMounted(getFollowerList);
 </script>
 
 <style scoped>
