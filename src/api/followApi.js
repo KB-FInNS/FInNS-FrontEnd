@@ -16,7 +16,6 @@ export default {
   async follow(to_user_no, isFollowing) {
     console.log(isFollowing);
     const user_no = getUserNoFromToken(); // 토큰에서 user_no 추출
-    const followDTO = { user_no, to_user_no }; // followDTO 정의
 
     try {
       if (isFollowing) {

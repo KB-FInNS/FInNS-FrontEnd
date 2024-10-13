@@ -14,7 +14,6 @@ const router = useRouter();
 // 아바타 처리를 위한 Ref
 const avatar = ref(null); // 아바타 파일 입력 참조
 const avatarPath = ref('/src/assets/media/avatars/black.png'); // 기본 아바타 이미지 경로
-console.log('asd', auth.mbti_name);
 // 회원 정보를 담고 있는 reactive 상태
 const member = reactive({
   username: auth.state.user.username,
