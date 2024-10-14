@@ -14,112 +14,74 @@
           </span>
         </div>
         <div class="ms-5">
-          <a href="#" class="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">
+          <router-link 
+            :to="{ name: 'Profile', params: { userNo: user.user_no } }" 
+            class="fs-5 fw-bold text-gray-900 text-hover-primary mb-2"
+          >
             {{ user.username }}
-          </a>
+          </router-link>
           <div class="fw-semibold text-muted">{{ formatBirthDate(user.birth) }}</div>
         </div>
       </div>
       <div class="ms-2">
         <FollowButton 
-        :to_user_no="user.user_no" 
-        :initialIsFollowing="user.isFollowing"
-        @follow-status-changed="updateFollowStatus" 
-      />
+          :to_user_no="user.user_no" 
+          :initialIsFollowing="user.following"
+          @follow-status-changed="updateFollowStatus" 
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-  import { ref, onMounted } from 'vue';
-  import axios from 'axios';
-  import FollowButton from './FollowButton.vue';
-  import moment from 'moment';
-  
-  const users = ref([]);
-  
-  const getFollowingList = async () => {
-    try {
-      const authData = JSON.parse(localStorage.getItem('auth'));
-      const user_no = authData.user.user_no;
-      const token = authData.token;
-      
-      const response = await axios.get(`http://localhost:8080/follow/following/${user_no}`, {
-        headers: { 'Authorization': `Bearer ${token}` }
-      });
-  
-      if (Array.isArray(response.data)) {
-        users.value = response.data.map(user => ({
-          ...user,
-          isFollowing: true // 팔로잉 목록이므로 기본값을 true로 설정
-        }));
-      } else {
-        users.value = [];
-      }
-    } catch (error) {
-      console.error('팔로잉 목록을 가져오는 데 실패했습니다:', error);
+import { ref, onMounted, computed } from 'vue';
+import axios from 'axios';
+import FollowButton from './FollowButton.vue';
+import moment from 'moment';
+import { useRoute, useRouter } from 'vue-router';
+
+const route = useRoute();
+const router = useRouter();
+const users = ref([]);
+
+const userNo = computed(() => route.params.userNo);
+
+const getFollowingList = async () => {
+  try {
+    console.log('사용자 번호:', userNo.value);
+    
+    const response = await axios.get(`http://localhost:8080/follow/following/${userNo.value}`);
+    
+    console.log('서버 응답:', response);
+    
+    if (Array.isArray(response.data)) {
+      users.value = response.data.map(user => ({
+        ...user,
+        following: true // 팔로잉 목록이므로 기본값을 true로 설정
+      }));
+    } else {
+      users.value = [];
     }
-  };
-  
-  const formatBirthDate = (timestamp) => {
-    return moment(timestamp).format('YYYY-MM-DD');
-  };
-  
-  const updateFollowStatus = (to_user_no, isFollowing) => {
-    const user = users.value.find(u => u.user_no === to_user_no);
-    if (user) {
-      user.isFollowing = isFollowing;
-    }
-  };
-  
-  onMounted(getFollowingList);
-  </script>
-  
+    console.log('팔로잉 목록:', users.value);
+  } catch (error) {
+    console.error('팔로잉 목록을 가져오는 데 실패했습니다:', error);
+  }
+};
 
+const formatBirthDate = (timestamp) => {
+  return moment(timestamp).format('YYYY-MM-DD');
+};
 
-<style scoped>
-.box {
-  width: 700px;
-  margin: 0 auto;
-}
+const updateFollowStatus = (to_user_no, isFollowing) => {
+  const user = users.value.find(u => u.user_no === to_user_no);
+  if (user) {
+    user.following = isFollowing;
+  }
+};
 
-.symbol {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  height: 35px;
-  width: 35px;
-}
-
-.symbol-circle {
-  border-radius: 50%;
-  background-color: #f5f5f5;
-}
-
-.ms-5 {
-  margin-left: 1rem;
-}
-
-.d-flex {
-  display: flex;
-}
-
-.flex-stack {
-  justify-content: space-between;
-}
-
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-</style>
-
+onMounted(getFollowingList);
+</script>
 
 <style scoped>
 .box {
