@@ -29,9 +29,9 @@
                   <span class="text-gray-900 fs-2 fw-bold me-1">{{
                     user.userName
                   }}</span>
-                  <FollowButton
-                    v-if="user.userNo != auth.user.user_no"
-                    :to_user_no="user.userNo"
+
+                  <FollowButton v-if="auth.user.user_no != userNo"
+                    :to_user_no="userNo" 
                     :initialIsFollowing="following"
                   />
                 </div>
@@ -334,7 +334,7 @@ import FollowButton from '@/components/common/FollowButton.vue';
 import SearchUser from '@/components/common/SearchUser.vue';
 import 'vue3-carousel/dist/carousel.css';
 import CountUp from 'vue-countup-v3';
-import { ref, onMounted, nextTick, watch, reactive } from 'vue';
+import { ref, onMounted, nextTick, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
 import axios from 'axios';
@@ -352,7 +352,7 @@ const followingCount = ref(0);
 const getFollowCounts = async () => {
   try {
     const response = await axios.get(
-      `http://localhost:8080/follow/counts/${userNo}`
+      `http://localhost:8080/users/${userNo}/followCounts`
     );
     followerCount.value = response.data.followerCount;
     followingCount.value = response.data.followingCount;
@@ -360,21 +360,18 @@ const getFollowCounts = async () => {
     console.error('팔로워/팔로잉 수를 가져오는 데 실패했습니다:', error);
   }
 };
-watch(
+
+watch (
   () => route.params.userNo,
-  () => {
-    window.location.reload();
-  }
+  () => window.location.reload()
 );
+
 // 팔로잉 상태 가져오기 함수
 const getFollowingStatus = async () => {
   try {
-    const user_no = auth.user.user_no;
-    console.log('aauser', user_no);
-
     // 서버에서 두 사용자 간의 팔로잉 상태 확인
     const response = await axios.get(
-      `http://localhost:8080/follow/followingcheck`,
+      `http://localhost:8080/followingcheck`,
       {
         params: {
           user_no: auth.user.user_no,
@@ -385,22 +382,18 @@ const getFollowingStatus = async () => {
 
     // 팔로잉 상태 값을 명확히 Boolean으로 변환
     following.value = response.data;
-    console.log('팔로잉 상태:', following.value);
   } catch (error) {
     console.error('팔로잉 상태를 가져오는 데 실패했습니다:', error);
-    following.value = false;
   }
-};
-
-// 팔로잉 상태 변경 이벤트 처리
-const updateFollowStatus = (isFollowing) => {
-  following.value = isFollowing;
 };
 
 const getUser = async () => {
   try {
     const response = await axios.get(`http://localhost:8080/users/${userNo}`);
     user.value = response.data;
+
+    console.log('aaaaaaaaaaaa유저정보 : ');
+    console.log(user.value);
   } catch (error) {
     console.error('Error renewing posts:', error);
   }
@@ -480,9 +473,10 @@ const menuButton = ref(null);
 
 onMounted(async () => {
   await getUser();
+  await getFollowingStatus();
   await getSpendingCounts();
   await getFollowCounts();
-  await getFollowingStatus();
+
   // DOM이 렌더링된 후 초기화
   await nextTick();
 
