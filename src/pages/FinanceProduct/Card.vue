@@ -45,8 +45,8 @@
                                     <span class="path1"></span>
                                     <span class="path2"></span>
                                 </i>
-                                <input v-model="searchCard" @keyup.enter="searchEnter" type="text" class="form-control form-control-solid ps-10"
-                                    placeholder="은행명, 카드명을 입력해주세요.">
+                                <input v-model="searchCard" @keyup.enter="searchEnter" type="text"
+                                    class="form-control form-control-solid ps-10" placeholder="은행명, 카드명을 입력해주세요.">
                             </div>
                             <div>
                                 <button class="btn btn-primary px-4" @click="searchEnter">검색</button>
@@ -86,8 +86,7 @@
                             <div class="card card-flush shadow-sm m-5">
                                 <div class="card-side d-flex justify-content-between m-7 align-items-center">
                                     <div class="text-center ms-5" style="width: 200px;">
-                                        <img :src="item.imgUrl" ref="image" @load="onImageLoad"
-                                            style="width: 100px; ">
+                                        <img :src="item.imgUrl" ref="image" @load="onImageLoad" style="width: 100px; ">
                                     </div>
                                     <div class="flex-grow-1 ms-10 ">
                                         <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
@@ -108,28 +107,13 @@
                                         <div class="d-flex flex-wrap justify-content-start">
                                             <!--begin::Stats-->
                                             <div class="d-flex flex-wrap">
-                                                <div
+                                                <div v-for="(benefit, index) in parseBenefits(item.benefit)"
+                                                    :key="index"
                                                     class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
                                                     <div class="d-flex align-items-center">
-                                                        <div class="fs-4 fw-bold">전기/수소차 충전</div>
+                                                        <div class="fs-4 fw-bold">{{ benefit[0] }}</div>
                                                     </div>
-                                                    <div class="fw-semibold fs-6 text-gray-500">
-                                                        20% 청구 할인</div>
-                                                </div>
-                                                <div
-                                                    class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="fs-4 fw-bold">주차, 세차</div>
-                                                    </div>
-                                                    <div class="fw-semibold fs-6 text-gray-500">
-                                                        20% 청구 할인</div>
-                                                </div>
-                                                <div
-                                                    class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="fs-4 fw-bold">OTT</div>
-                                                    </div>
-                                                    <div class="fw-semibold fs-6 text-gray-500">20% 청구 할인</div>
+                                                    <div class="fw-semibold fs-6 text-gray-500">{{ benefit[1] }}</div>
                                                 </div>
                                             </div>
                                             <!--end::Stats-->
@@ -212,6 +196,13 @@ const getCards = async () => {
 
 }
 
+// 요약 혜택 ' | ' 기준으로, '#'기준으로 split 
+const parseBenefits = (benefit) => {
+    if (!benefit) 
+        return [];
+    return benefit.split(' | ').map(item => item.split('#'));
+};
+
 onMounted(async () => {
     getCards();
 });
@@ -286,9 +277,11 @@ const gotoCardDetail = (item) => {
     font-weight: bold;
     border-bottom: 2px solid #216DBE;
 }
+
 .bg-title {
-  background-color: #f0f6f9; /* Powder Blue 색상 */
-  height: 180px;
+    background-color: #f0f6f9;
+    /* Powder Blue 색상 */
+    height: 180px;
 
 }
 </style>

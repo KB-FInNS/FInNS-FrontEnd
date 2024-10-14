@@ -19,13 +19,13 @@
             <div class="card-details" style="margin-left: 280px;">
                 <div class="info-block">
                     <h3>전월실적</h3>
-                    <p>최소 50만원</p>
+                    <p>{{ productData.exLMth }}</p>
                 </div>
                 <div class="info-block">
                     <h3>연회비</h3>
-                    <p>국내전용 20,000원</p>
-                    <p>MASTER 20,000원</p>
-                    <p>연회비 100% 캐시백</p>
+                    <div v-if="productData.exInFor">
+                        <p v-for="(fee, index) in feeArray" :key="index">{{ fee }}</p>
+                    </div>
                 </div>
             </div>
 
@@ -33,17 +33,19 @@
             <div class="card-benefits" style="margin-left: 280px;">
                 <h3>혜택</h3>
                 <ul>
-                    <li>
-                        <div class="benefit-text">
-                            <strong>전기, 수소차 충전</strong>
-                            <p>20%청구할인</p>
-                        </div>
-                    </li>
+                    <div v-for="(benefit, index) in benefitArray" :key="index">
+                        <li>
+                            <strong>{{ benefit[0] }}</strong>
+                            <p>{{ benefit[1] }}</p>
+
+                        </li>
+                    </div>
                 </ul>
             </div>
             <!-- 해당 카드 더 자세한 정보 사이트 -->
             <div class="product-footer">
-                <button class="btn btn-sm btn-primary mt-13" style="margin-left: -50px;" @click="viewProductDetails">상품 자세히 보기</button>
+                <button class="btn btn-sm btn-primary mt-13" style="margin-left: -50px;" @click="viewProductDetails">상품
+                    자세히 보기</button>
             </div>
         </div>
     </div>
@@ -51,31 +53,49 @@
 
 <script setup>
 import { useRoute } from 'vue-router';
-import { reactive, onMounted } from 'vue';
+import { ref, reactive, onMounted } from 'vue';
 import axios from 'axios';
 
 const route = useRoute();
 const productData = reactive({});
+const feeArray = ref([]);
+const benefitArray = ref([]);
+
+// 연회비 데이터를 처리하는 함수
+const parseExInFor = (exInFor) => {
+    if (!exInFor) return [];
+    return exInFor.split(' / ');
+};
+
+// 혜택 데이터를 처리하는 함수
+const parseBenefitDetail = (benefitDetail) => {
+    if (!benefitDetail) return [];
+    return benefitDetail.split(' | ').map(item => item.split('#'));
+};
 
 // 특정 카드 상품 조회 함수
 const getProductByNo = async (cardNo) => {
-  try {
-    const response = await axios.get(`http://localhost:8080/product/card/${cardNo}`);
-    console.log(response.data);
-    Object.assign(productData, response.data); 
-  } catch (error) {
-    console.error('Error fetching product data:', error); 
-  }
+    try {
+        const response = await axios.get(`http://localhost:8080/product/card/${cardNo}`);
+        console.log(response.data);
+        Object.assign(productData, response.data);
+        feeArray.value = parseExInFor(productData.exInFor);
+        benefitArray.value = parseBenefitDetail(productData.benefitDetail);
+    } catch (error) {
+        console.error('Error fetching product data:', error);
+    }
 };
+
+
 
 // 컴포넌트가 마운트될 때 데이터를 가져오기
 onMounted(() => {
-  const cardNo = route.params.cardNo; 
-  if (cardNo) {
-    getProductByNo(cardNo);
-  } else {
-    console.error('No cardNo passed to this route.');
-  }
+    const cardNo = route.params.cardNo;
+    if (cardNo) {
+        getProductByNo(cardNo);
+    } else {
+        console.error('No cardNo passed to this route.');
+    }
 });
 
 // 버튼 클릭 시 호출될 함수
