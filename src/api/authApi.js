@@ -35,31 +35,10 @@ export default {
     }
   },
   async update(member) {
-    console.log('업데이트 요청 username:', member.username); // 로그에서 정확한 필드명 사용
-    const formData = new FormData();
-    formData.append('username', member.username);
-    formData.append('password', member.password);
-
-    // `birth` 형식 변환
-    formData.append(
-      'birth',
-      member.birth instanceof Date
-        ? member.birth.toISOString().split('T')[0] // ISO 형식에서 날짜 부분만 사용
-        : member.birth
-    );
-
-    if (member.avatar) {
-      formData.append('avatar', member.avatar);
-    }
-
     try {
-      const { data } = await api.put(
-        `${BASE_URL}/${member.username}`,
-        formData,
-        {
-          headers,
-        }
-      );
+      const { data } = await api.put(`${BASE_URL}/${member.username}`, member, {
+        headers,
+      });
       console.log('AUTH PUT: ', data);
       return data;
     } catch (error) {
@@ -67,6 +46,7 @@ export default {
       throw error;
     }
   },
+
   // async changePassword(formData) {
   //   try {
   //     const { data } = await api.put(

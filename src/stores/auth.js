@@ -34,7 +34,7 @@ export const useAuthStore = defineStore('auth', () => {
   const login = async (member) => {
     try {
       const { data } = await axios.post('/api/auth/login', member);
-  
+
       // state 업데이트
       state.value = {
         token: data.token,
@@ -42,20 +42,24 @@ export const useAuthStore = defineStore('auth', () => {
           ...data.user,
           user_no: data.user.user_no,
           birth: moment(data.user.birth).format('YYYY-MM-DD'),
-          renew_time: moment(data.user.renew_time).format('YYYY-MM-DD HH:mm:ss'),
+          renew_time: moment(data.user.renew_time).format(
+            'YYYY-MM-DD HH:mm:ss'
+          ),
         },
       };
-  
+
       localStorage.setItem('auth', JSON.stringify(state.value));
       // console.log('로그인 후 state:', state.value);
       // console.log('로그인 직후 isLogin:', isLogin.value);
       return true;
     } catch (error) {
-      console.error('로그인 실패:', error.response ? error.response.data : error);
+      console.error(
+        '로그인 실패:',
+        error.response ? error.response.data : error
+      );
       return false;
     }
   };
-  
 
   const logout = () => {
     localStorage.clear();

@@ -33,7 +33,6 @@
                     v-if="user.userNo != auth.user.user_no"
                     :to_user_no="user.userNo"
                     :initialIsFollowing="following"
-                    @follow-status-changed="updateFollowStatus"
                   />
                 </div>
                 <!--end::Name-->
