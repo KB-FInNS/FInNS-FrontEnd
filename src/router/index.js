@@ -157,7 +157,6 @@ const router = createRouter({
   ],
 });
 
-
 router.beforeEach((to, from, next) => {
   const auth = useAuthStore();
 
@@ -168,7 +167,7 @@ router.beforeEach((to, from, next) => {
   // 사용자가 로그인하지 않은 상태이고, 인증이 필요한 페이지로 접근하려 할 때
   if (authRequired && !auth.isLogin) {
     next('/auth/login');
-  } 
+  }
   // 사용자가 이미 로그인한 상태에서 로그인 또는 회원가입 페이지로 접근하려 할 때
   else if (auth.isLogin && publicPages.includes(to.path)) {
     next('/');
@@ -178,11 +177,5 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
-
-
-
-
-
-
 
 export default router;

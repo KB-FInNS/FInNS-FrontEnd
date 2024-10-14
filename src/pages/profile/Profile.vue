@@ -29,14 +29,11 @@
                   <span class="text-gray-900 fs-2 fw-bold me-1">{{
                     user.userName
                   }}</span>
-                  <button
+                  <FollowButton
                     v-if="user.userNo != auth.user.user_no"
-                    class="btn btn-sm ms-10"
-                    :class="isFollow ? 'btn-light' : 'btn-primary'"
-                    @click="toggleFollow()"
-                  >
-                    <span>{{ isFollow ? '팔로잉' : '팔로우' }}</span>
-                  </button>
+                    :to_user_no="user.userNo"
+                    :initialIsFollowing="following"
+                  />
                 </div>
                 <!--end::Name-->
 
@@ -187,7 +184,7 @@
 
                       <count-up
                         class="fs-2 text-gray-900 text-hover-primary fw-bold mt-2"
-                        :end-val="91"
+                        :end-val="followerCount"
                       ></count-up>
                     </div>
                     <!--end::Number-->
@@ -222,14 +219,17 @@
 
                       <count-up
                         class="fs-2 text-gray-900 text-hover-primary fw-bold mt-2"
-                        :end-val="113"
+                        :end-val="followingCount"
                       ></count-up>
                     </div>
                     <!--end::Number-->
                   </router-link>
 
                   <!-- 아이콘이 텍스트 상단에 위치하도록 조정 -->
-                  <div style="position: absolute; bottom: 40px; right: 25px" v-if="user.userNo == auth.user.user_no">
+                  <div
+                    style="position: absolute; bottom: 40px; right: 25px"
+                    v-if="user.userNo == auth.user.user_no"
+                  >
                     <i
                       class="ki-duotone ki-arrows-circle text-primary fs-3x"
                       style="cursor: pointer"
@@ -334,7 +334,7 @@ import FollowButton from '@/components/common/FollowButton.vue';
 import SearchUser from '@/components/common/SearchUser.vue';
 import 'vue3-carousel/dist/carousel.css';
 import CountUp from 'vue-countup-v3';
-import { ref, onMounted, nextTick, watch } from 'vue';
+import { ref, onMounted, nextTick, watch, reactive } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
 import axios from 'axios';
@@ -343,23 +343,64 @@ const route = useRoute();
 const router = useRouter();
 
 const auth = JSON.parse(localStorage.getItem('auth'));
-
+const following = ref(false); // 팔로잉 상태를 저장할 변수
 const userNo = route.params.userNo;
 const user = ref({});
+const followerCount = ref(0);
+const followingCount = ref(0);
 
+const getFollowCounts = async () => {
+  try {
+    const response = await axios.get(
+      `http://localhost:8080/follow/counts/${userNo}`
+    );
+    followerCount.value = response.data.followerCount;
+    followingCount.value = response.data.followingCount;
+  } catch (error) {
+    console.error('팔로워/팔로잉 수를 가져오는 데 실패했습니다:', error);
+  }
+};
 watch(
   () => route.params.userNo,
   () => {
     window.location.reload();
   }
 );
+// 팔로잉 상태 가져오기 함수
+const getFollowingStatus = async () => {
+  try {
+    const user_no = auth.user.user_no;
+    console.log('aauser', user_no);
+
+    // 서버에서 두 사용자 간의 팔로잉 상태 확인
+    const response = await axios.get(
+      `http://localhost:8080/follow/followingcheck`,
+      {
+        params: {
+          user_no: auth.user.user_no,
+          to_user_no: userNo,
+        },
+      }
+    );
+
+    // 팔로잉 상태 값을 명확히 Boolean으로 변환
+    following.value = response.data;
+    console.log('팔로잉 상태:', following.value);
+  } catch (error) {
+    console.error('팔로잉 상태를 가져오는 데 실패했습니다:', error);
+    following.value = false;
+  }
+};
+
+// 팔로잉 상태 변경 이벤트 처리
+const updateFollowStatus = (isFollowing) => {
+  following.value = isFollowing;
+};
 
 const getUser = async () => {
   try {
     const response = await axios.get(`http://localhost:8080/users/${userNo}`);
     user.value = response.data;
-
-    console.log(user.value);
   } catch (error) {
     console.error('Error renewing posts:', error);
   }
@@ -398,13 +439,6 @@ const analysisMbti = async () => {
   }
 
   router.push('/mbti');
-};
-
-const isFollow = ref(false);
-const toggleFollow = () => {
-  isFollow.value = !isFollow.value; // 선택한 사용자의 팔로우 상태 전환
-
-  // true, false 값에 따라 디비에 수정돼야함
 };
 
 // 일시적인 데이터set
@@ -447,7 +481,8 @@ const menuButton = ref(null);
 onMounted(async () => {
   await getUser();
   await getSpendingCounts();
-
+  await getFollowCounts();
+  await getFollowingStatus();
   // DOM이 렌더링된 후 초기화
   await nextTick();
 

@@ -133,7 +133,6 @@ const login = async () => {
   }
 };
 
-
 const passwordText = ref('');
 const passwordHidden = ref(true);
 const togglePasswordVisibility = () => {
