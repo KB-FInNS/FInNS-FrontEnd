@@ -194,7 +194,7 @@
                     <!-- Input and Button Wrapper -->
                     <div class="d-flex w-100">
                         <!-- Comment Input -->
-                        <input v-model="newComment" type="text" class="form-control form-control-solid border ps-5 me-2"
+                        <input v-model="newComment" @keyup.enter.prevent="addComment" type="text" class="form-control form-control-solid border ps-5 me-2"
                             name="search" placeholder="댓글을 작성하세요." />
                         <!-- Submit Button -->
                         <button @click="addComment" class="btn btn-primary"
@@ -342,16 +342,32 @@ const fetchComments = async () => {
     try {
         const response = await axios.get(`http://localhost:8080/comment/${props.postNo}`);
         comments.value = response.data;
-        console.log(response.data);
     } catch (error) {
         console.error('Error fetching comments:', error);
     }
 };
+
 // 댓글을 추가하는 함수
-const addComment = () => {
-    if (newComment.value.trim() !== '') {
-        comments.value.push({ name: 'Yujin_1219', text: newComment.value });
-        newComment.value = ''; // 입력 필드 초기화
+const addComment = async () => {
+    if (newComment.value.trim() === '') {
+        alert('댓글을 입력하세요.');
+        return;
+    }
+
+    try {
+        const requestData = {
+            postNo: props.postNo,
+            userNo: auth.user.user_no,
+            content: newComment.value,
+        };
+
+        await axios.post('http://localhost:8080/comment', requestData);
+
+        newComment.value = ''; 
+        await fetchComments();
+    } catch (error) {
+        console.error('댓글 추가 중 오류 발생:', error);
+        alert('댓글 추가에 실패했습니다.');
     }
 };
 </script>
