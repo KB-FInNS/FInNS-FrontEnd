@@ -171,7 +171,7 @@
                             <div class="d-flex pt-6" v-for="(comment, index) in comments" :key="index">
                                 <!-- 아바타 -->
                                 <div class="symbol symbol-45px me-5">
-                                    <img src="/assets/media/avatars/300-13.jpg" alt="" />
+                                    <img :src="comment.imgUrl" alt="" />
                                 </div>
 
                                 <!-- 댓글 내용 -->
@@ -179,10 +179,10 @@
                                     <div class="d-flex align-items-center flex-wrap mb-0">
                                         <!-- 댓글 작성자 -->
                                         <a href="#" class="text-gray-800 text-hover-primary fw-bold me-6">{{
-                                            comment.name }}</a>
+                                            comment.userName }}</a>
                                     </div>
                                     <!-- 댓글 텍스트 -->
-                                    <span class="text-gray-800 fs-7 fw-normal pt-1">{{ comment.text }}</span>
+                                    <span class="text-gray-800 fs-7 fw-normal pt-1">{{ comment.content }}</span>
                                 </div>
                             </div>
                         </div>
@@ -309,6 +309,7 @@ onMounted(async () => {
 
     fetchPost();
     fetchIsGreat();
+    fetchComments();
 });
 
 const category = [
@@ -337,6 +338,15 @@ const newComment = ref('');
 const comments = ref([
     { name: 'Mr. Anderson', text: '맛있는 삼겹살을 드셨네요! 근데 과소비 하신건 아닌지....' }
 ]);
+const fetchComments = async () => {
+    try {
+        const response = await axios.get(`http://localhost:8080/comment/${props.postNo}`);
+        comments.value = response.data;
+        console.log(response.data);
+    } catch (error) {
+        console.error('Error fetching comments:', error);
+    }
+};
 // 댓글을 추가하는 함수
 const addComment = () => {
     if (newComment.value.trim() !== '') {
