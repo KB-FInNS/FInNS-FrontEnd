@@ -14,7 +14,8 @@ const router = useRouter();
 
 // 아바타 처리를 위한 Ref
 const avatar = ref(null); // 아바타 파일 입력 참조
-const avatarPath = ref('/src/assets/media/avatars/black.png'); // 기본 아바타 이미지 경로
+const avatarPath = ref('/assets/media/avatars/blank.png'); // 기본 아바타 이미지 경로
+
 // 회원 정보를 담고 있는 reactive 상태
 const member = reactive({
   username: auth.state.user.username,
@@ -22,7 +23,7 @@ const member = reactive({
   oldPassword: '',
   newPassword: '',
   newPassword2: '',
-  avatar: null,
+  avatar: auth.img_url,
   mbti_name: auth.state.user.mbti_name, // 추가: MBTI
 });
 
@@ -76,21 +77,24 @@ const onSubmit = async () => {
   member.oldPassword = changePassword.oldPassword;
   member.newPassword = changePassword.newPassword;
 
-  // FormData 객체 생성
-  const formData = new FormData();
-  formData.append('username', member.username);
 
-  if (member.birth) {
-    formData.append('birth', moment(member.birth).format('YYYY-MM-DD'));
-  }
-  formData.append('mbti_name', member.mbti_name);
-  formData.append('oldPassword', member.oldPassword);
-  formData.append('newPassword', member.newPassword);
-  // 아바타가 있을 경우 FormData에 추가
-  if (member.avatar) {
-    formData.append('avatar', member.avatar);
-  }
-  console.log('FormData username:', formData.get('username'));
+// FormData 객체 생성
+const formData = new FormData();
+formData.append('username', member.username);
+
+if (member.birth) {
+  formData.append('birth', moment(member.birth).format('YYYY-MM-DD'));
+}
+formData.append('mbti_name', member.mbti_name);
+
+// 비밀번호 변경 관련 정보 추가
+formData.append('oldPassword', changePassword.oldPassword);  // 수정된 부분
+formData.append('newPassword', changePassword.newPassword);  // 수정된 부분
+
+// 아바타가 있을 경우 FormData에 추가
+if (member.avatar) {
+  formData.append('avatar', member.avatar);
+}
 
   // API 호출을 통한 프로필 업데이트 시도
   try {
@@ -120,7 +124,7 @@ const onAvatarChange = (event) => {
 
 // 아바타 삭제 핸들러 (기본 이미지로 재설정)
 const onDeleteAvatar = () => {
-  avatarPath.value = '/src/assets/media/avatars/black.png'; // 기본 아바타 이미지로 설정
+  avatarPath.value = '/assets/media/avatars/blank.png'; // 기본 아바타 이미지로 설정
   member.avatar = null; // member 객체에 avatar를 null로 설정
   alert('프로필 사진이 삭제되었습니다.');
 };
