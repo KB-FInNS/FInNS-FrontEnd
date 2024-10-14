@@ -48,7 +48,7 @@
                       <span class="path2"></span>
                       <span class="path3"></span>
                     </i>
-                    {{ user.mbtiName ? user.mbtiName : 'MBTI를 진단해주세요.' }}
+                    {{ user.mbtiName ? user.mbtiName : "MBTI 정보 없음"}}
                   </router-link>
                 </div>
                 <!--end::Info-->
@@ -270,26 +270,26 @@
       >
         <tbody>
           <tr
-            v-for="(item, index) in dataList"
+            v-for="(product, index) in productsList"
             :key="index"
-            @click="gotoDepositDetail(item)"
+            @click="gotoDepositDetail(product.financeProductNo)"
             class="fs-4 text-gray-600 fw-bold"
             style="cursor: pointer"
           >
             <td>
               <img
-                :src="item.img_url"
+                :src="product.imgUrl"
                 alt="depositkor_co_nm"
                 width="28"
                 height="24"
                 loading="eager"
               />
               <span class="ms-3 text-hover-primary" style="color: black">{{
-                item.kor_co_nm
+                product.korCoNm
               }}</span>
             </td>
             <td>
-              <span class="text-hover-primary">{{ item.fin_prdt_nm }}</span>
+              <span class="text-hover-primary">{{ product.finPrdtNm }}</span>
             </td>
           </tr>
         </tbody>
@@ -297,21 +297,21 @@
 
       <Carousel style="width: 50%; margin-left: -30px">
         <Slide
-          v-for="(item, index) in cards"
+          v-for="(card, index) in cards"
           :key="index"
-          @click="gotoCardDetail(item)"
+          @click="gotoCardDetail(card.cardNo)"
         >
           <div style="text-align: center; cursor: pointer">
             <img
-              :src="item.card_img_url"
+              :src="card.imgUrl"
               ref="image"
-              style="width: 100px; display: block; margin: 0 auto"
+              style="width: 260px; height: 150px;"
             />
             <div
               class="mt-3 fs-1 fw-bold text-hover-primary"
               style="color: black"
             >
-              {{ item.card_name }}
+              {{ card.cardName }}
             </div>
           </div>
         </Slide>
@@ -442,105 +442,36 @@ const analysisMbti = async () => {
 };
 
 // 일시적인 데이터set
-const dataList = ref([]);
-const setDataList = async () => {
-  dataList.value = [
-    // 예금 상품 2개
-    {
-      financial_product_no: 1,
-      save_trm: '12',
-      intr_rate_type_nm: '단리',
-      join_member: '제한없음',
-      join_way: '인터넷',
-      img_url:
-        'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_KB_Symbol.png',
-      kor_co_nm: 'KB국민은행',
-      fin_prdt_nm: '주택청약종합저축',
-      intr_rate: '1.5%',
-      intr_rate2: '3.5%',
-    },
-    {
-      financial_product_no: 2,
-      save_trm: '24',
-      intr_rate_type_nm: '단리',
-      join_member: '제한없음',
-      join_way: '스마트폰',
-      img_url:
-        'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_SHINHAN_Symbol.png',
-      kor_co_nm: '신한은행',
-      fin_prdt_nm: '자유적립예금',
-      intr_rate: '1.7%',
-      intr_rate2: '3.8%',
-    },
+const productsList = ref([]);
+const setProductsList = async () => {
+  try {
+    const response = await axios.get(`http://localhost:8080/users/${userNo}/products`);
+    productsList.value = response.data;
 
-    // 적금 상품 2개
-    {
-      financial_product_no: 3,
-      save_trm: '36',
-      intr_rate_type_nm: '복리',
-      join_member: '일부제한',
-      join_way: '영업점',
-      img_url:
-        'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_WOORI_Symbol.png',
-      kor_co_nm: '우리은행',
-      fin_prdt_nm: '정기예금',
-      intr_rate: '2.0%',
-      intr_rate2: '4.0%',
-    },
-    {
-      financial_product_no: 3,
-      save_trm: '36',
-      intr_rate_type_nm: '복리',
-      join_member: '일부제한',
-      join_way: '영업점',
-      img_url:
-        'https://financial.pstatic.net/pie/common-bi/1.9.2/images/BK_WOORI_Symbol.png',
-      kor_co_nm: '우리은행',
-      fin_prdt_nm: '정기예금',
-      intr_rate: '2.0%',
-      intr_rate2: '4.0%',
-    },
-  ];
+  } catch (error) {
+    console.error('Error fetch products :', error);
+  }
 };
 
 // 해당 item 전체를 문자열로 변환하여 넘김
-const gotoDepositDetail = (item) => {
-  router.push({
-    path: `/Deposit/${item.financial_product_no}`,
-    query: {
-      item: JSON.stringify(item),
-    },
-  });
+const gotoDepositDetail = (no) => {
+  router.push(`/deposit/${no}`);
 };
 // 카드 상세 페이지로 이동
-const gotoCardDetail = (item) => {
-  router.push({
-    path: `/Card/${item.card_no}`,
-    query: {
-      item: JSON.stringify(item),
-    },
-  });
+const gotoCardDetail = (no) => {
+  router.push(`/card/${no}`);
 };
-const cards = ref([
-  {
-    card_no: 1,
-    corp_name: '삼성카드',
-    card_name: '삼성카드 taptap O',
-    category: '식비',
-    card_img_url:
-      'https://d1c5n4ri2guedi.cloudfront.net/card/49/card_img/27705/49card.png',
-    name: '[KB]Our WE_SH 카드',
-  },
-  {
-    card_no: 1,
-    corp_name: '삼성카드',
-    card_name: '삼성카드 taptap O',
-    category: '식비',
-    card_img_url:
-      'https://d1c5n4ri2guedi.cloudfront.net/card/49/card_img/27705/49card.png',
-    name: '[KB]Our WE_SH 카드',
-  },
-]);
+
+const cards = ref([]);
+const setCardsList = async () => {
+  try {
+    const response = await axios.get(`http://localhost:8080/users/${userNo}/cards`);
+    cards.value = response.data;
+
+  } catch (error) {
+    console.error('Error fetch products :', error);
+  }
+};
 
 // 모달 트리거를 위한 ref
 const modalTrigger = ref(null);
@@ -565,7 +496,8 @@ onMounted(async () => {
     window.KTMenu.createInstances();
   }
 
-  setDataList();
+  setProductsList();
+  setCardsList();
 });
 </script>
 

@@ -5,7 +5,6 @@
     <div class="card-description">
       {{ formattedBenefit }}
     </div>
-    <button class="select-button">선택</button>
     <a @click.prevent="goToCard" href="#" class="more-info">자세한 정보 알아보기</a>
   </div>
 </template>
@@ -40,14 +39,15 @@ const goToCard = () => {
 }
 
 .card-image {
-  width: 100%;
+  width: 260px;
+  height: 150px;
   border-radius: 5px;
   margin-bottom: 30px;
 }
 
 .card-description {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   font-weight: normal;
   font-size: 18px;
   line-height: 2;
@@ -70,8 +70,8 @@ const goToCard = () => {
   font-size: 12px;
   color: #6c757d;
   text-decoration: none;
-  display: block;
-  text-align: right;
-  margin-top: 20px;
+  position: absolute; /* 절대 위치 설정 */
+  right: 15px; /* 부모의 오른쪽에 고정 */
+  bottom: 15px; /* 부모의 아래에 고정 */
 }
 </style>
