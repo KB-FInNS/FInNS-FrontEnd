@@ -59,7 +59,7 @@
                             </li>
                         </ul>
                         <br>
-                        <!--좋아요 TOP3 게시글 목록-->
+                        <!--좋은소비 TOP3 게시글 목록-->
                         <h2 class="ms-2 fs-1">
                             <span class="svg-icon svg-icon-warning svg-icon-2hx me-2"><svg width="26" height="26"
                                     viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,7 +69,7 @@
                                         fill="currentColor" />
                                 </svg>
                             </span>
-                            <span class="fs-2">좋아요 TOP3</span>
+                            <span class="fs-2">좋은소비 TOP3</span>
                         </h2>
                         <ul>
                             <li v-for="(post, idx) in TopPost" :key="idx">
@@ -128,23 +128,22 @@
                         <!-- 유저 정보 -->
                         <div class="d-flex flex-stack">
                             <!-- 유저 아바타 -->
-                            <div class="symbol symbol-40px me-5">
+                            <div class="ms-5 symbol symbol-40px">
                                 <img :src="`${user.imgUrl}`" />
                             </div>
                             <!-- 유저 이름 및 회사 정보 -->
-                            <div class="flex-grow-1 me-5">
+                            <div class="ms-5 flex-grow-1">
                                 <a :href="`profile/${user.userNo}/spending`"
                                     class="text-gray-800 text-hover-primary fs-6 fw-bold">
                                     {{ user.userName }}
                                 </a>
                             </div>
-                            <div class="ms-2">
-                                <button class="btn btn-sm" :class="user.isFollowing ? 'btn-primary' : 'btn-light'"
-                                    @click="toggleFollow(user)" style="height : 32px;">
-                                    <span>{{ user.isFollowing ? '팔로잉' : '팔로우' }}</span>
-                                </button>
+                            <div class="me-5">
+                                <FollowButton
+                                    :to_user_no="user.userNo" 
+                                    :initialIsFollowing="user.follow"
+                                />
                             </div>
-
                         </div>
                         <div v-if="index !== users.length - 1" class="separator separator-dashed my-4"></div>
                     </div>
@@ -156,6 +155,7 @@
 </template>
 
 <script setup>
+import FollowButton from '@/components/common/FollowButton.vue';
 import PostView from '@/components/common/PostView.vue';
 import SearchUser from '@/components/common/SearchUser.vue'
 import { ref, onMounted, onBeforeUnmount } from 'vue';

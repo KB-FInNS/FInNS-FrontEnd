@@ -438,7 +438,7 @@ const analysisMbti = async () => {
 const productsList = ref([]);
 const setProductsList = async () => {
   try {
-    const response = await axios.get(`http://localhost:8080/users/${userNo}/products`);
+    const response = await axios.get(`http://localhost:8080/product/users/${userNo}/products`);
     productsList.value = response.data;
 
   } catch (error) {
