@@ -178,7 +178,7 @@
                                 <div class="d-flex flex-column flex-row-fluid">
                                     <div class="d-flex align-items-center flex-wrap mb-0">
                                         <!-- 댓글 작성자 -->
-                                        <a href="#" class="text-gray-800 text-hover-primary fw-bold me-6">{{
+                                        <a :href="`/profile/${comment.userNo}/spending`" class="text-gray-800 text-hover-primary fw-bold me-6">{{
                                             comment.userName }}</a>
                                     </div>
                                     <!-- 댓글 텍스트 -->
