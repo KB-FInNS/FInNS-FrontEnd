@@ -39,12 +39,11 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-// import { useRouter } from 'vue-router';
 
 // 데이터 초기화
 const bigCard = ref(null);
 const smallCards = ref([]);
-const dataLoaded = ref();
+const dataLoaded = ref(false); // 데이터 로딩 상태 초기화
 
 // 필요한 데이터만 사용하도록 필터링하는 함수
 const filterCardData = (card) => ({
@@ -53,9 +52,7 @@ const filterCardData = (card) => ({
   benefitList: card.benefit.split('\n'), // 혜택 정보를 줄바꿈 기준으로 배열로 변환
   url: card.url, // 카드 상세정보 URL
 });
-// const { winnerCard, copyCards } = history.state;
-// console.log('데이터 오나?', history.state);
-// console.log('데이터 오나?', copyCards);
+
 onMounted(() => {
   // history.state에서 데이터 받기
   const { winnerCard, copyCards } = history.state;
@@ -64,10 +61,14 @@ onMounted(() => {
     // 우승 카드에서 필요한 데이터만 사용
     bigCard.value = filterCardData(winnerCard);
 
-    // 4강 카드 처리
-    smallCards.value = copyCards.map(filterCardData);
+    // 4강 카드 중 우승 카드를 제외한 나머지 카드들 처리
+    smallCards.value = copyCards
+      .filter((card) => card.cardNo !== winnerCard.cardNo) // 우승카드를 제외
+      .map(filterCardData); // 필요한 데이터만 추출
 
     dataLoaded.value = true; // 데이터 로딩 완료
+  } else {
+    console.error('State data is missing.');
   }
 });
 </script>
