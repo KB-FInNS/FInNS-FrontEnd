@@ -36,9 +36,11 @@
               <img :src="`${user.imgUrl}`" />
             </div>
             <div @click="insertRecentUser(user.userNo)" class="fs-5 fw-bold text-gray-900 text-hover-primary mb-1">{{ user.userName }}</div>
-            <button class="btn btn-sm" :class="user.isFollowing ? 'btn-primary' : 'btn-light'" @click="toggleFollow(user)">
-              <span>{{ user.isFollowing ? '팔로잉' : '팔로우' }}</span>
-            </button>
+
+            <FollowButton
+              :to_user_no="user.userNo" 
+              :initialIsFollowing="user.follow"
+            />
           </li>
         </ul>
       </div>
@@ -52,9 +54,11 @@
               <img :src="`${user.imgUrl}`" />
             </div>
             <div @click="insertRecentUser(user.userNo)" class="fs-5 fw-bold text-gray-900 text-hover-primary mb-1">{{ user.userName }}</div>
-            <button class="btn btn-sm" :class="user.isFollowing ? 'btn-primary' : 'btn-light'" @click="toggleFollow(user)">
-              <span>{{ user.isFollowing ? '팔로잉' : '팔로우' }}</span>
-            </button>
+
+            <FollowButton
+              :to_user_no="user.userNo" 
+              :initialIsFollowing="user.follow"
+            />
           </li>
         </ul>
       </div>
@@ -63,6 +67,7 @@
 </template>
 
 <script setup>
+import FollowButton from './FollowButton.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import axios from 'axios';
 import router from '@/router';
@@ -72,7 +77,7 @@ const auth = JSON.parse(localStorage.getItem('auth'));
 const users = ref([]);
 const getUsers = async () => {
     try {
-        const response = await axios.get(`http://localhost:8080/users`);
+        const response = await axios.get(`http://localhost:8080/users/search/${auth.user.user_no}`);
         users.value = response.data;
     } catch (error) {
         console.error('Error fetching getUsers value:', error);
@@ -84,6 +89,7 @@ const getRecentUsers = async () => {
     try {
         const response = await axios.get(`http://localhost:8080/users/${auth.user.user_no}/recentUser`);
         recentUsers.value = response.data;
+        console.log(recentUsers.value);
     } catch (error) {
         console.error('Error fetching getRecentUsers value:', error);
     }

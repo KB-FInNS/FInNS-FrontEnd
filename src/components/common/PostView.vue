@@ -272,7 +272,10 @@ const toggleGreatOrStupid = async (greatOrStupid) => {
         };
 
         const response = await axios.put(`http://localhost:8080/greatOrStupid`, requestData);
-        location.reload();
+        post.value.greatCount = response.data.greatCount;
+        post.value.stupidCount = response.data.stupidCount;
+
+        fetchIsGreat();
     } catch (error) {
         console.error('Error toggling great status:', error);
     }

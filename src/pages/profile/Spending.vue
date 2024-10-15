@@ -43,7 +43,7 @@ const dayClick = async (date) => {
     const postRequestByDateDTO = {
       userNo: userNo, // 사용자 번호 등 추가 필요한 정보
       date: date, // 필요한 형식으로 날짜를 전달
-      isOnlyPublic: userNo == auth.user.user_no ? true : false  // 공개 여부 등 추가 필요한 정보
+      isOnlyPublic: userNo == auth.user.user_no ? false : true  // 공개 여부 등 추가 필요한 정보
     };
 
     // 서버에 요청 보내기
