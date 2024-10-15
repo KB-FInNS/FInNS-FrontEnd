@@ -86,7 +86,7 @@
                             <div class="card card-flush shadow-sm m-5">
                                 <div class="card-side d-flex justify-content-between m-7 align-items-center">
                                     <div class="text-center ms-5" style="width: 200px;">
-                                        <img :src="item.imgUrl" ref="image" @load="onImageLoad" style="width: 100px; ">
+                                        <img :src="item.imgUrl" ref="image" @load="onImageLoad" style="width: 180px;">
                                     </div>
                                     <div class="flex-grow-1 ms-10 ">
                                         <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">

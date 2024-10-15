@@ -20,7 +20,6 @@
         {{ card.benefit }}
       </div>
       <button class="select-button" @click="select(card.cardNo)">선택</button>
-      <a @click.prevent="goToCard(card.cardNo)" class="more-info">자세한 정보 알아보기</a>
     </div>
   </div>
   <!-- 결승 이후 우승자 카드 월드컵 텍스트 -->
