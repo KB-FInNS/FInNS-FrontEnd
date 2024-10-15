@@ -112,6 +112,7 @@ const router = createRouter({
         },
         {
           path: '/cardworldcup/winnercard',
+          name: 'winnercard',
           component: WinnerCard,
           //beforeEnter: isAuthenticated,
         },
