@@ -59,8 +59,7 @@ const filterCardData = (card) => ({
 onMounted(() => {
   // history.state에서 데이터 받기
   const { winnerCard, copyCards } = history.state;
-  console.log('데이터 오나?', history.state);
-  console.log('데이터 오나?', copyCards);
+
   if (winnerCard && copyCards) {
     // 우승 카드에서 필요한 데이터만 사용
     bigCard.value = filterCardData(winnerCard);

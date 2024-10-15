@@ -90,18 +90,17 @@ const select = (cardNo) => {
     matchcard.value = cardscopy.value.splice(0, 2); // 새로운 카드 두 장 설정
     // 결승전 이후에는 우승카드와 4개의 카피카드를 state로 전달
     if (matchcard.value.length !== 2) {
-      const winnerCard = selectedCard; // 우승 카드
+      const winnerCard = { ...selectedCard }; // 우승 카드
       const copyCards = selectcard4copy.value.map((card) => ({ ...card })); // Proxy 객체를 일반 객체로 변환
+      console.log('우승 카드와 4강 카드 배열 전달:', winnerCard, copyCards);
 
       router.push({
         name: 'winnercard',
         state: {
-          winnerCard: 444, // 우승 카드
-          copyCards: 555, // 변환된 4강 카드 배열
+          winnerCard: winnerCard, // 우승 카드
+          copyCards: copyCards, // 변환된 4강 카드 배열
         },
       });
-
-      console.log('우승 카드와 4강 카드 배열 전달:', winnerCard, copyCards);
     }
     currentRoundSize.value /= 2;
   }
