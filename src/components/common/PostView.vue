@@ -171,7 +171,7 @@
                             <div class="d-flex pt-6" v-for="(comment, index) in comments" :key="index">
                                 <!-- 아바타 -->
                                 <div class="symbol symbol-45px me-5">
-                                    <img src="/assets/media/avatars/300-13.jpg" alt="" />
+                                    <img :src="comment.imgUrl" alt="" />
                                 </div>
 
                                 <!-- 댓글 내용 -->
@@ -179,10 +179,10 @@
                                     <div class="d-flex align-items-center flex-wrap mb-0">
                                         <!-- 댓글 작성자 -->
                                         <a href="#" class="text-gray-800 text-hover-primary fw-bold me-6">{{
-                                            comment.name }}</a>
+                                            comment.userName }}</a>
                                     </div>
                                     <!-- 댓글 텍스트 -->
-                                    <span class="text-gray-800 fs-7 fw-normal pt-1">{{ comment.text }}</span>
+                                    <span class="text-gray-800 fs-7 fw-normal pt-1">{{ comment.content }}</span>
                                 </div>
                             </div>
                         </div>
@@ -194,7 +194,7 @@
                     <!-- Input and Button Wrapper -->
                     <div class="d-flex w-100">
                         <!-- Comment Input -->
-                        <input v-model="newComment" type="text" class="form-control form-control-solid border ps-5 me-2"
+                        <input v-model="newComment" @keyup.enter.prevent="addComment" type="text" class="form-control form-control-solid border ps-5 me-2"
                             name="search" placeholder="댓글을 작성하세요." />
                         <!-- Submit Button -->
                         <button @click="addComment" class="btn btn-primary"
@@ -309,6 +309,7 @@ onMounted(async () => {
 
     fetchPost();
     fetchIsGreat();
+    fetchComments();
 });
 
 const category = [
@@ -337,11 +338,36 @@ const newComment = ref('');
 const comments = ref([
     { name: 'Mr. Anderson', text: '맛있는 삼겹살을 드셨네요! 근데 과소비 하신건 아닌지....' }
 ]);
+const fetchComments = async () => {
+    try {
+        const response = await axios.get(`http://localhost:8080/comment/${props.postNo}`);
+        comments.value = response.data;
+    } catch (error) {
+        console.error('Error fetching comments:', error);
+    }
+};
+
 // 댓글을 추가하는 함수
-const addComment = () => {
-    if (newComment.value.trim() !== '') {
-        comments.value.push({ name: 'Yujin_1219', text: newComment.value });
-        newComment.value = ''; // 입력 필드 초기화
+const addComment = async () => {
+    if (newComment.value.trim() === '') {
+        alert('댓글을 입력하세요.');
+        return;
+    }
+
+    try {
+        const requestData = {
+            postNo: props.postNo,
+            userNo: auth.user.user_no,
+            content: newComment.value,
+        };
+
+        await axios.post('http://localhost:8080/comment', requestData);
+
+        newComment.value = ''; 
+        await fetchComments();
+    } catch (error) {
+        console.error('댓글 추가 중 오류 발생:', error);
+        alert('댓글 추가에 실패했습니다.');
     }
 };
 </script>

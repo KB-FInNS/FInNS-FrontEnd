@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <div><h1>팔로잉 목록</h1></div>
+    <div class="text-center mt-10 mb-5"><h1>팔로잉 목록</h1></div>
     <div
       v-for="user in users"
       :key="user.user_no"
@@ -24,10 +24,9 @@
         </div>
       </div>
       <div class="ms-2">
-        <FollowButton 
+        <FollowButton v-if="auth.user.user_no != user.user_no"
           :to_user_no="user.user_no" 
           :initialIsFollowing="user.following"
-          @follow-status-changed="updateFollowStatus" 
         />
       </div>
     </div>
@@ -35,34 +34,25 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import FollowButton from './FollowButton.vue';
 import moment from 'moment';
-import { useRoute, useRouter } from 'vue-router';
+import { useRoute } from 'vue-router';
 
 const route = useRoute();
-const router = useRouter();
 const users = ref([]);
-
-const userNo = computed(() => route.params.userNo);
+const userNo = route.params.userNo;
+const auth = JSON.parse(localStorage.getItem('auth'));
 
 const getFollowingList = async () => {
   try {
-    console.log('사용자 번호:', userNo.value);
+    console.log('사용자 번호:', userNo);
     
-    const response = await axios.get(`http://localhost:8080/follow/following/${userNo.value}`);
-    
+    const response = await axios.get(`http://localhost:8080/users/${userNo}/following/${auth.user.user_no}`);
     console.log('서버 응답:', response);
-    
-    if (Array.isArray(response.data)) {
-      users.value = response.data.map(user => ({
-        ...user,
-        following: true // 팔로잉 목록이므로 기본값을 true로 설정
-      }));
-    } else {
-      users.value = [];
-    }
+
+    users.value = response.data;
     console.log('팔로잉 목록:', users.value);
   } catch (error) {
     console.error('팔로잉 목록을 가져오는 데 실패했습니다:', error);
@@ -73,14 +63,9 @@ const formatBirthDate = (timestamp) => {
   return moment(timestamp).format('YYYY-MM-DD');
 };
 
-const updateFollowStatus = (to_user_no, isFollowing) => {
-  const user = users.value.find(u => u.user_no === to_user_no);
-  if (user) {
-    user.following = isFollowing;
-  }
-};
-
-onMounted(getFollowingList);
+onMounted(() => {
+  getFollowingList();
+});
 </script>
 
 <style scoped>
