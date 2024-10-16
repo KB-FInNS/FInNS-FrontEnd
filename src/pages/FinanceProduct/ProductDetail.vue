@@ -42,7 +42,7 @@
                 </div>
 
                 <!-- 해당 카드 더 자세한 정보 사이트 -->
-                <div class="product-footer mt-4 text-center">
+                <div class="product-footer" style="margin-top: 70px;">
                     <button class="btn btn-sm btn-primary me-3" @click="viewProductDetails">상품 자세히 보기</button>
                 </div>
             </div>
@@ -91,7 +91,7 @@ const viewProductDetails = () => {
 };
 </script>
 
-<style>
+<style scoped>
 .advantages ul {
     list-style-type: none;
     padding: 0;
@@ -111,4 +111,9 @@ const viewProductDetails = () => {
 .product-footer button {
     padding: 10px 20px;
 }
+
+.product-footer {
+    display: flex;             /* Flexbox로 정렬 제어 */
+    justify-content: flex-start; /* 왼쪽 정렬 */
+  }
 </style>
