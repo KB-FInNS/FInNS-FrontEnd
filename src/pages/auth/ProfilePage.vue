@@ -128,6 +128,12 @@ const onDeleteAvatar = () => {
   member.avatar = null; // member 객체에 avatar를 null로 설정
   alert('프로필 사진이 삭제되었습니다.');
 };
+
+const goToProfile = () => {
+  console.log(auth);
+  router.push(`/profile/${auth.state.user.user_no}/spending`)
+};
+
 </script>
 
 <template>
@@ -262,7 +268,7 @@ const onDeleteAvatar = () => {
       </div>
       <div v-if="error" class="text-danger text-center">{{ error }}</div>
       <div class="d-flex justify-content-end mt-3">
-        <button type="button" class="btn btn-light btn-lg me-2">취소</button>
+        <button @click="goToProfile()" type="button" class="btn btn-light btn-lg me-2">취소</button>
         <button
           type="submit"
           class="btn btn-primary btn-lg"
