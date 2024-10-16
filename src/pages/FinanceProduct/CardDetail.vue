@@ -44,7 +44,7 @@
             </div>
             <!-- 해당 카드 더 자세한 정보 사이트 -->
             <div class="product-footer">
-                <button class="btn btn-sm btn-primary mt-13" style="margin-left: -50px;" @click="viewProductDetails">상품
+                <button class="btn btn-sm btn-primary mt-13" style="margin-left: -50px; margin-bottom: 150px" @click="viewProductDetails">상품
                     자세히 보기</button>
             </div>
         </div>
