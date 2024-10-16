@@ -65,11 +65,14 @@ const getProductByNo = async (financeProductNo) => {
         const response = await axios.get(`http://localhost:8080/product/no/${financeProductNo}`);
         console.log(response.data);
         Object.assign(productData, response.data);
-        if (productData.mtrtInt && productData.mtrtInt.includes('|')) {
-            mtrtIntArray.value = productData.mtrtInt.split(' | ');
+        if (productData.mtrtInt) {
+            if(productData.mtrtInt.includes('|')){
+                mtrtIntArray.value = productData.mtrtInt.split(' | ');
+            }else{
+                mtrtIntArray.value = [productData.mtrtInt];
+            }
             console.log(mtrtIntArray.data);
         }
-
     } catch (error) {
         console.error('Error fetching product data:', error);
     }
