@@ -19,14 +19,14 @@
   </div>
 
   <!--begin::Container-->
-  <div class="container-xxl">
+  <div class="container-xxl" style="margin-bottom: 150px;">
     <!--begin::Navbar-->
     <!-- '나의 MBTI' 관련 섹션 -->
     <div class="card-body pt-9 pb-0">
       <!--begin::Details-->
       <div class="d-flex flex-wrap flex-sm-nowrap">
         <!--begin: Pic-->
-        <div class="me-10" style="margin-left: 110px">
+        <div class="me-10" style="margin-left: 230px">
           <!-- MBTI 프로필 사진을 보여주는 부분에서 mbti_no 사용 -->
           <img
             :src="
@@ -603,6 +603,7 @@ onMounted(() => {
   background-color: #f8f9fa;
   transform: rotateY(180deg);
 }
+
 
 .card-container:hover .card {
   transform: rotateY(180deg);
