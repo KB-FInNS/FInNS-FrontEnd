@@ -64,7 +64,7 @@ src/
 
 ## 📸 주요 화면
 
-[1. 금융 프로젝트.pdf](https://github.com/user-attachments/files/21429961/1.pdf)
+![Image](https://github.com/user-attachments/assets/6e922fdd-3bab-49db-b5c1-e7043ea6d09a)
 
 ## 💬 협업 방식
 
@@ -78,5 +78,5 @@ src/
 ## 📎 관련 링크
 
 - 🔗 [백엔드 저장소](https://github.com/KB-FInNS/FInNS-BackEnd)
-- 📑 발표 자료 (첨부 시 링크 삽입)
+- 📑 발표 자료 [FInNS_portfolio.pdf](https://github.com/user-attachments/files/21430052/FInNS_portfolio.pdf)
 - 🎓 부트캠프: KB국민은행 it's your life 5기
